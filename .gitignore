@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+preview.log
+test-out.txt
+*.log

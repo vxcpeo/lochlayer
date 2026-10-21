@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-labelledby="miston-plate-t">
+  <title id="miston-plate-t">Tide lines</title>
+  <path d="M -40 90 C 240 64, 420 116, 700 74.4 S 1180 113.4, 1640 80.9" fill="none" stroke="#0a5fc4" stroke-opacity="0.500" stroke-width="2"/>
+  <path d="M -40 148 C 240 113, 420 183, 700 127 S 1180 179.5, 1640 135.75" fill="none" stroke="#0a5fc4" stroke-opacity="0.474" stroke-width="1.2"/>
+  <path d="M -40 206 C 240 162, 420 250, 700 179.6 S 1180 245.6, 1640 190.6" fill="none" stroke="#0a5fc4" stroke-opacity="0.448" stroke-width="1.2"/>
+  <path d="M -40 264 C 240 211, 420 317, 700 232.2 S 1180 311.7, 1640 245.45" fill="none" stroke="#0a5fc4" stroke-opacity="0.422" stroke-width="2"/>
+  <path d="M -40 322 C 240 296, 420 348, 700 306.4 S 1180 345.4, 1640 312.9" fill="none" stroke="#0a5fc4" stroke-opacity="0.396" stroke-width="1.2"/>
+  <path d="M -40 380 C 240 345, 420 415, 700 359 S 1180 411.5, 1640 367.75" fill="none" stroke="#0a5fc4" stroke-opacity="0.370" stroke-width="1.2"/>
+  <path d="M -40 438 C 240 394, 420 482, 700 411.6 S 1180 477.6, 1640 422.6" fill="none" stroke="#0a5fc4" stroke-opacity="0.344" stroke-width="2"/>
+  <path d="M -40 496 C 240 443, 420 549, 700 464.2 S 1180 543.7, 1640 477.45" fill="none" stroke="#0a5fc4" stroke-opacity="0.318" stroke-width="1.2"/>
+  <path d="M -40 554 C 240 528, 420 580, 700 538.4 S 1180 577.4, 1640 544.9" fill="none" stroke="#0a5fc4" stroke-opacity="0.292" stroke-width="1.2"/>
+  <path d="M -40 612 C 240 577, 420 647, 700 591 S 1180 643.5, 1640 599.75" fill="none" stroke="#0a5fc4" stroke-opacity="0.266" stroke-width="2"/>
+  <path d="M -40 670 C 240 626, 420 714, 700 643.6 S 1180 709.6, 1640 654.6" fill="none" stroke="#0a5fc4" stroke-opacity="0.240" stroke-width="1.2"/>
+  <path d="M -40 728 C 240 675, 420 781, 700 696.2 S 1180 775.7, 1640 709.45" fill="none" stroke="#0a5fc4" stroke-opacity="0.214" stroke-width="1.2"/>
+  <path d="M -40 786 C 240 760, 420 812, 700 770.4 S 1180 809.4, 1640 776.9" fill="none" stroke="#0a5fc4" stroke-opacity="0.188" stroke-width="2"/>
+  <path d="M -40 844 C 240 809, 420 879, 700 823 S 1180 875.5, 1640 831.75" fill="none" stroke="#0a5fc4" stroke-opacity="0.162" stroke-width="1.2"/>
+  <line x1="100" y1="0" x2="100" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="500" y1="0" x2="500" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="700" y1="0" x2="700" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="1100" y1="0" x2="1100" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="1300" y1="0" x2="1300" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <line x1="1500" y1="0" x2="1500" y2="900" stroke="#0a5fc4" stroke-opacity="0.05" stroke-width="1"/>
+  <ellipse cx="1120" cy="600" rx="60" ry="40" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+  <ellipse cx="1120" cy="600" rx="114" ry="76" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+  <ellipse cx="1120" cy="600" rx="168" ry="112" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+  <ellipse cx="1120" cy="600" rx="222" ry="148" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+  <ellipse cx="1120" cy="600" rx="276" ry="184" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+  <ellipse cx="1120" cy="600" rx="330" ry="220" fill="none" stroke="#0a5fc4" stroke-opacity="0.12" stroke-width="1.1"/>
+</svg>
