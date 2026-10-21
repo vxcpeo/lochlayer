@@ -1,5 +1,5 @@
 // Append-only Poseidon Merkle tree, the same algorithm as
-// programs/miston_pool/src/merkle.rs and the circuit's MerkleProof:
+// programs/velaira_pool/src/merkle.rs and the circuit's MerkleProof:
 // empty leaf 0, zeros[i + 1] = Poseidon(zeros[i], zeros[i]),
 // node = Poseidon(left, right), bit i of the leaf index = 0 means the node is
 // the LEFT child at level i.
@@ -7,7 +7,7 @@
 import { poseidon2 } from "poseidon-lite/poseidon2";
 
 import { FIELD_MODULUS, TREE_DEPTH } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 
 /** Membership path of one leaf, in the form the circuit takes. */
 export interface MerklePath {
@@ -41,7 +41,7 @@ export function zeroValues(depth: number = TREE_DEPTH): readonly bigint[] {
   let zeros = zeroCache.get(depth);
   if (!zeros) {
     if (!Number.isInteger(depth) || depth < 1 || depth > 32) {
-      throw new MistonError("INVALID_ARGUMENT", "tree depth must be an integer from 1 to 32");
+      throw new VelairaError("INVALID_ARGUMENT", "tree depth must be an integer from 1 to 32");
     }
     const values = [0n];
     for (let i = 0; i < depth; i++) values.push(poseidon2([values[i]!, values[i]!]));
@@ -86,7 +86,7 @@ export class MerkleTree {
   /** Restores a tree from {@link MerkleTree.toJSON}. Rehashes every node. */
   static fromJSON(json: MerkleTreeJSON): MerkleTree {
     if (typeof json !== "object" || json === null || !Array.isArray(json.leaves)) {
-      throw new MistonError("INVALID_ARGUMENT", "not a serialised Merkle tree");
+      throw new VelairaError("INVALID_ARGUMENT", "not a serialised Merkle tree");
     }
     return MerkleTree.fromLeaves(json.leaves.map(parseNode), json.depth);
   }
@@ -98,17 +98,17 @@ export class MerkleTree {
    */
   static fromSnapshot(snapshot: MerkleTreeSnapshot): MerkleTree {
     if (typeof snapshot !== "object" || snapshot === null || !Array.isArray(snapshot.layers)) {
-      throw new MistonError("INVALID_ARGUMENT", "not a Merkle tree snapshot");
+      throw new VelairaError("INVALID_ARGUMENT", "not a Merkle tree snapshot");
     }
     const tree = new MerkleTree(snapshot.depth);
     if (snapshot.layers.length !== tree.depth + 1) {
-      throw new MistonError("INVALID_ARGUMENT", "Merkle tree snapshot has the wrong number of layers");
+      throw new VelairaError("INVALID_ARGUMENT", "Merkle tree snapshot has the wrong number of layers");
     }
     let expected = Array.isArray(snapshot.layers[0]) ? snapshot.layers[0].length : -1;
-    if (expected > 2 ** tree.depth) throw new MistonError("INVALID_ARGUMENT", "Merkle tree snapshot has too many leaves");
+    if (expected > 2 ** tree.depth) throw new VelairaError("INVALID_ARGUMENT", "Merkle tree snapshot has too many leaves");
     snapshot.layers.forEach((layer, level) => {
       if (!Array.isArray(layer) || layer.length !== expected) {
-        throw new MistonError("INVALID_ARGUMENT", "Merkle tree snapshot has an inconsistent shape");
+        throw new VelairaError("INVALID_ARGUMENT", "Merkle tree snapshot has an inconsistent shape");
       }
       tree.layers[level] = layer.map(parseNode);
       expected = Math.ceil(expected / 2);
@@ -161,16 +161,16 @@ export class MerkleTree {
    * Appends leaves in order and returns the index of the first one. Much
    * cheaper than repeated {@link insert}: shared ancestors are hashed once.
    *
-   * @throws MistonError `INVALID_ARGUMENT` if a leaf is not a field element or
+   * @throws VelairaError `INVALID_ARGUMENT` if a leaf is not a field element or
    *   the tree would overflow. Nothing is appended in that case.
    */
   append(leaves: readonly bigint[]): number {
     const start = this.size;
     if (leaves.length === 0) return start;
-    if (start + leaves.length > this.capacity) throw new MistonError("INVALID_ARGUMENT", "the Merkle tree is full");
+    if (start + leaves.length > this.capacity) throw new VelairaError("INVALID_ARGUMENT", "the Merkle tree is full");
     for (const leaf of leaves) {
       if (typeof leaf !== "bigint" || leaf < 0n || leaf >= FIELD_MODULUS) {
-        throw new MistonError("INVALID_ARGUMENT", "a Merkle leaf must be a field element");
+        throw new VelairaError("INVALID_ARGUMENT", "a Merkle leaf must be a field element");
       }
     }
     const bottom = this.layers[0]!;
@@ -194,11 +194,11 @@ export class MerkleTree {
    * Drops every leaf from index `size` on, restoring the tree to an earlier
    * state (after a failed sync or a fork). About `depth` hashes.
    *
-   * @throws MistonError `INVALID_ARGUMENT` if `size` is not between 0 and the current size.
+   * @throws VelairaError `INVALID_ARGUMENT` if `size` is not between 0 and the current size.
    */
   truncate(size: number): void {
     if (!Number.isInteger(size) || size < 0 || size > this.size) {
-      throw new MistonError("INVALID_ARGUMENT", "cannot truncate to a size outside the tree");
+      throw new VelairaError("INVALID_ARGUMENT", "cannot truncate to a size outside the tree");
     }
     if (size === this.size) return;
     let count = size;
@@ -224,11 +224,11 @@ export class MerkleTree {
   /**
    * Sibling path of leaf `index` against the current root.
    *
-   * @throws MistonError `INVALID_ARGUMENT` if there is no such leaf.
+   * @throws VelairaError `INVALID_ARGUMENT` if there is no such leaf.
    */
   path(index: number): MerklePath {
     if (!Number.isInteger(index) || index < 0 || index >= this.size) {
-      throw new MistonError("INVALID_ARGUMENT", "no leaf at that index");
+      throw new VelairaError("INVALID_ARGUMENT", "no leaf at that index");
     }
     const pathElements: bigint[] = [];
     let position = index;
@@ -252,9 +252,9 @@ export class MerkleTree {
 
 function parseNode(text: unknown): bigint {
   if (typeof text !== "string" || !/^(0|[1-9][0-9]*)$/.test(text)) {
-    throw new MistonError("INVALID_ARGUMENT", "a Merkle node must be a decimal string");
+    throw new VelairaError("INVALID_ARGUMENT", "a Merkle node must be a decimal string");
   }
   const value = BigInt(text);
-  if (value >= FIELD_MODULUS) throw new MistonError("INVALID_ARGUMENT", "a Merkle node must be a field element");
+  if (value >= FIELD_MODULUS) throw new VelairaError("INVALID_ARGUMENT", "a Merkle node must be a field element");
   return value;
 }

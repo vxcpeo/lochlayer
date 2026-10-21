@@ -2,10 +2,10 @@
 // commitments and the spent nullifiers, apply them to the wallet state and
 // check the result against the on-chain tree.
 //
-// Everything sync asks the RPC for is the same for every Miston client: the
+// Everything sync asks the RPC for is the same for every Velaira client: the
 // pool's transaction list, those transactions, and the tree account. Nothing
 // depends on the wallet's keys or notes, so an RPC that watches the requests
-// learns that this client uses Miston and nothing about which notes are its own.
+// learns that this client uses Velaira and nothing about which notes are its own.
 
 import { PublicKey } from "@solana/web3.js";
 import type { Connection, Finality } from "@solana/web3.js";
@@ -14,7 +14,7 @@ import { fetchTreeAccount } from "./accounts";
 import { DEFAULT_COMMITMENT, PROGRAM_ID } from "./constants";
 import { SyncError } from "./errors";
 import { type NewCommitmentEvent, type TransactionEffects, type TransactionLike, type TransactionTime, effectsOf, transactionTime } from "./events";
-import type { MistonKeys } from "./keys";
+import type { VelairaKeys } from "./keys";
 import type { MerkleTree } from "./merkle";
 import { treePda } from "./pda";
 import { type OwnedNote, type ReceivedNote, type WalletState, applyEvents, assertStateMatches, ownedNotes, treeFromState } from "./wallet";
@@ -144,7 +144,7 @@ async function fetchTransaction(
  * checked by anything; a node that does not know a block's time leaves it out.
  *
  * Privacy: the RPC sees that this client reads the pool's history, which
- * every Miston client does. Nothing here depends on the wallet's keys.
+ * every Velaira client does. Nothing here depends on the wallet's keys.
  *
  * @throws SyncError `gap` if indices are not contiguous, `unavailable` if the
  *   RPC fails to return a listed transaction or keeps returning the same page
@@ -312,7 +312,7 @@ export interface SyncResult {
 export async function syncWallet(
   connection: SyncConnection,
   state: WalletState,
-  keys: MistonKeys,
+  keys: VelairaKeys,
   options: SyncOptions = {},
 ): Promise<SyncResult> {
   const programId = programOf(state);

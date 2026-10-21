@@ -1,7 +1,7 @@
-// Shielded address: bech32m, prefix "miston", payload = publicKey (32 bytes
+// Shielded address: bech32m, prefix "velaira", payload = publicKey (32 bytes
 // big-endian) || encryptionPublic (32 bytes). Always 116 characters.
 //
-// Payment code: bech32m, prefix "mistonpay", payload = the address payload ||
+// Payment code: bech32m, prefix "velairapay", payload = the address payload ||
 // secret (32 bytes). Always 170 characters. An address with a secret that the
 // recipient and one payer share: see docs/protocol.md section 4.
 
@@ -9,8 +9,8 @@ import { bech32m } from "@scure/base";
 
 import { bigIntToBytesBE, bytesToBigIntBE, concatBytes, copyBytes } from "./bytes";
 import { ADDRESS_PREFIX, FIELD_MODULUS, PAYMENT_CODE_PREFIX } from "./constants";
-import { AddressError, MistonError } from "./errors";
-import { type MistonKeys, isValidEncryptionPublicKey, paymentCodeSecret } from "./keys";
+import { AddressError, VelairaError } from "./errors";
+import { type VelairaKeys, isValidEncryptionPublicKey, paymentCodeSecret } from "./keys";
 
 /** The public half of a key set: what a sender needs to pay someone privately. */
 export interface ShieldedAddress {
@@ -27,9 +27,9 @@ const BECH32_CHARSET = /^[qpzry9x8gf2tvdw0s3jn54khce6mua7l]+$/;
 
 /**
  * Encodes a shielded address. Accepts a full key set as well, since
- * `MistonKeys` has both fields.
+ * `VelairaKeys` has both fields.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the public key is not a field
+ * @throws VelairaError `INVALID_ARGUMENT` if the public key is not a field
  *   element or the encryption key is not a canonical X25519 public key
  *   (32 bytes, below 2^255 - 19, not of low order).
  */
@@ -41,13 +41,13 @@ export function encodeShieldedAddress(address: ShieldedAddress): string {
 function addressPayload(address: ShieldedAddress): Uint8Array {
   const { publicKey, encryptionPublic } = address;
   if (typeof publicKey !== "bigint" || publicKey < 0n || publicKey >= FIELD_MODULUS) {
-    throw new MistonError("INVALID_ARGUMENT", "publicKey is not a field element");
+    throw new VelairaError("INVALID_ARGUMENT", "publicKey is not a field element");
   }
   if (!(encryptionPublic instanceof Uint8Array) || encryptionPublic.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "encryptionPublic must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "encryptionPublic must be 32 bytes");
   }
   if (!isValidEncryptionPublicKey(encryptionPublic)) {
-    throw new MistonError("INVALID_ARGUMENT", "encryptionPublic is not a canonical X25519 public key");
+    throw new VelairaError("INVALID_ARGUMENT", "encryptionPublic is not a canonical X25519 public key");
   }
   return concatBytes(bigIntToBytesBE(publicKey, 32), encryptionPublic);
 }
@@ -57,7 +57,7 @@ function addressPayload(address: ShieldedAddress): Uint8Array {
  * mixed case is not.
  *
  * @throws AddressError with `reason`: `encoding` (not bech32 at all), `prefix`
- *   (not a "miston" address), `checksum` (mistyped or not bech32m), `length`
+ *   (not a "velaira" address), `checksum` (mistyped or not bech32m), `length`
  *   (payload is not 64 bytes), `public_key_range` (public key not below r),
  *   `encryption_key` (the encryption key is not a canonical X25519 public
  *   key: its value is 2^255 - 19 or more, or it is a point of low order).
@@ -98,7 +98,7 @@ export function decodePayload(text: string, form: Form): Uint8Array {
   const prefix = lower.slice(0, separator);
   const data = lower.slice(separator + 1);
   if (prefix !== form.prefix) {
-    throw new AddressError("prefix", `not a Miston ${what}: expected the prefix "${form.prefix}"`);
+    throw new AddressError("prefix", `not a Velaira ${what}: expected the prefix "${form.prefix}"`);
   }
   if (data.length < 6 || !BECH32_CHARSET.test(data)) {
     throw new AddressError("encoding", "not a bech32m string: invalid characters");
@@ -175,9 +175,9 @@ const PAYMENT_CODE_FORM: Form = { prefix: PAYMENT_CODE_PREFIX, payloadLength: PA
  * `issuePaymentCode`, which keeps count and stays within the range a restored
  * wallet looks at; this function has no such guard.
  *
- * @throws MistonError `INVALID_ARGUMENT` for an index outside 0 to 2^32 - 1.
+ * @throws VelairaError `INVALID_ARGUMENT` for an index outside 0 to 2^32 - 1.
  */
-export function paymentCodeAt(keys: Pick<MistonKeys, "publicKey" | "encryptionPublic" | "paymentCodeRoot">, index: number): PaymentCode {
+export function paymentCodeAt(keys: Pick<VelairaKeys, "publicKey" | "encryptionPublic" | "paymentCodeRoot">, index: number): PaymentCode {
   return { publicKey: keys.publicKey, encryptionPublic: keys.encryptionPublic, secret: paymentCodeSecret(keys.paymentCodeRoot, index) };
 }
 
@@ -185,19 +185,19 @@ export function paymentCodeAt(keys: Pick<MistonKeys, "publicKey" | "encryptionPu
  * Encodes a payment code. The result contains the secret: treat it like the
  * message it travels in.
  *
- * @throws MistonError `INVALID_ARGUMENT` if either key would not make a valid
+ * @throws VelairaError `INVALID_ARGUMENT` if either key would not make a valid
  *   address or the secret is not 32 bytes.
  */
 export function encodePaymentCode(code: PaymentCode): string {
   if (!(code.secret instanceof Uint8Array) || code.secret.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "a payment code secret must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "a payment code secret must be 32 bytes");
   }
   return bech32m.encode(PAYMENT_CODE_PREFIX, bech32m.toWords(concatBytes(addressPayload(code), code.secret)), PAYMENT_CODE_LENGTH);
 }
 
 /**
  * Decodes a payment code. The same rules as for an address: one case, the
- * prefix "mistonpay", a bech32m checksum, a 96-byte payload, and two keys that
+ * prefix "velairapay", a bech32m checksum, a 96-byte payload, and two keys that
  * would make a valid address.
  *
  * @throws AddressError with the `reason` values of {@link decodeShieldedAddress}.
@@ -219,7 +219,7 @@ export function isPaymentCode(text: string): boolean {
 
 /**
  * Decodes what a payer was given: a payment code if the text has the prefix
- * "mistonpay", a shielded address otherwise. A payment code is recognised by its
+ * "velairapay", a shielded address otherwise. A payment code is recognised by its
  * `secret`.
  *
  * @throws AddressError as {@link decodeShieldedAddress} and {@link decodePaymentCode} do.

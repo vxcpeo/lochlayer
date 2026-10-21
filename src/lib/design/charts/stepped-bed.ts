@@ -82,7 +82,7 @@ export function steppedBedSvg(report: LeakReportLike, options: SteppedBedOptions
   const width = widthOf(options, 640);
   return never(
     () => draw(report, options ?? {}, width),
-    () => voidSvg("ab-plot-bed", width),
+    () => voidSvg("sn-plot-bed", width),
   );
 }
 
@@ -115,7 +115,7 @@ function draw(report: LeakReportLike, options: SteppedBedOptions, width: number)
 
   out +=
     `<defs><pattern id="${id}-h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">` +
-    `<line class="ab-plot-hatch" x1="0.5" y1="0" x2="0.5" y2="6" stroke="${INK.magenta}" stroke-opacity="0.7"/></pattern></defs>`;
+    `<line class="sn-plot-hatch" x1="0.5" y1="0" x2="0.5" y2="6" stroke="${INK.magenta}" stroke-opacity="0.7"/></pattern></defs>`;
 
   let previous = 100;
   lines.forEach((line, i) => {
@@ -125,14 +125,14 @@ function draw(report: LeakReportLike, options: SteppedBedOptions, width: number)
     const headY = stagger && i % 2 === 1 ? top - 9 - 17 : top - 9;
 
     // Column head, with a leader down to the surface when it is on the upper row.
-    out += `<text class="ab-plot-label" x="${n(cx)}" y="${n(headY)}" text-anchor="middle" font-size="${LABEL_SIZE}" fill="${INK.buff}">${esc(heads[i]!)}</text>`;
+    out += `<text class="sn-plot-label" x="${n(cx)}" y="${n(headY)}" text-anchor="middle" font-size="${LABEL_SIZE}" fill="${INK.buff}">${esc(heads[i]!)}</text>`;
     if (stagger && i % 2 === 1) {
-      out += `<line class="ab-plot-rule" x1="${n(cx)}" y1="${n(headY + 5)}" x2="${n(cx)}" y2="${n(top - 3)}" stroke="${INK.rule}"/>`;
+      out += `<line class="sn-plot-rule" x1="${n(cx)}" y1="${n(headY + 5)}" x2="${n(cx)}" y2="${n(top - 3)}" stroke="${INK.rule}"/>`;
     }
 
     // The ground under the bed, and the part of it this finding raised.
     if (line.balance < 100) {
-      out += `<rect class="ab-plot-ground" x="${n(x)}" y="${n(bedY)}" width="${n(col)}" height="${n(bottom - bedY)}" fill="${INK.bed}"/>`;
+      out += `<rect class="sn-plot-ground" x="${n(x)}" y="${n(bedY)}" width="${n(col)}" height="${n(bottom - bedY)}" fill="${INK.bed}"/>`;
     }
     if (line.lost > 0) {
       out += `<rect x="${n(x)}" y="${n(bedY)}" width="${n(col)}" height="${n(y(previous) - bedY)}" fill="url(#${id}-h)"/>`;
@@ -141,30 +141,30 @@ function draw(report: LeakReportLike, options: SteppedBedOptions, width: number)
     // The water, and the bed line under it. data-i is the column's place in the drop sequence
     // (components.css turns it into a delay): an attribute, because a style attribute is
     // refused by a Content-Security-Policy without 'unsafe-inline'.
-    out += `<g class="ab-plot-col" data-i="${i}">`;
+    out += `<g class="sn-plot-col" data-i="${i}">`;
     if (line.balance > 0) {
-      out += `<rect class="ab-plot-water" x="${n(x)}" y="${n(top)}" width="${n(col)}" height="${n(bedY - top)}" fill="${INK.water}"/>`;
+      out += `<rect class="sn-plot-water" x="${n(x)}" y="${n(top)}" width="${n(col)}" height="${n(bedY - top)}" fill="${INK.water}"/>`;
     }
-    out += `<line class="ab-plot-bedline" x1="${n(x)}" y1="${n(bedY)}" x2="${n(x + col)}" y2="${n(bedY)}" stroke="${INK.miston}" stroke-width="2"/>`;
+    out += `<line class="sn-plot-bedline" x1="${n(x)}" y1="${n(bedY)}" x2="${n(x + col)}" y2="${n(bedY)}" stroke="${INK.velaira}" stroke-width="2"/>`;
     out += `</g>`;
 
     // The sounding: what is left. In the water when there is room, otherwise just under the bed line.
     const room = bedY - top;
     const figY = room >= SOUNDING_SIZE + 14 ? bedY - 9 : bedY + SOUNDING_SIZE + 2;
-    out += `<text class="ab-plot-sounding" data-i="${i}" x="${n(cx)}" y="${n(figY)}" text-anchor="middle" font-family="${SERIF}" font-size="${SOUNDING_SIZE}" fill="${INK.buff}">${n(line.balance)}</text>`;
+    out += `<text class="sn-plot-sounding" data-i="${i}" x="${n(cx)}" y="${n(figY)}" text-anchor="middle" font-family="${SERIF}" font-size="${SOUNDING_SIZE}" fill="${INK.buff}">${n(line.balance)}</text>`;
 
     // What it cost.
     if (i === 0) {
-      out += `<text class="ab-plot-quiet" x="${n(cx)}" y="${n(bottom + 19)}" text-anchor="middle" font-size="${LABEL_SIZE}" fill="${INK.paper2}">start</text>`;
+      out += `<text class="sn-plot-quiet" x="${n(cx)}" y="${n(bottom + 19)}" text-anchor="middle" font-size="${LABEL_SIZE}" fill="${INK.paper2}">start</text>`;
     } else {
-      out += `<text class="ab-plot-warn" x="${n(cx)}" y="${n(bottom + 19)}" text-anchor="middle" font-size="${LABEL_SIZE}" font-weight="600" fill="${INK.magenta}">${MINUS}${n(line.less)}</text>`;
+      out += `<text class="sn-plot-warn" x="${n(cx)}" y="${n(bottom + 19)}" text-anchor="middle" font-size="${LABEL_SIZE}" font-weight="600" fill="${INK.magenta}">${MINUS}${n(line.less)}</text>`;
     }
     previous = line.balance;
   });
 
   // The floor of the figure (100 deep) and, last so it lies over everything, the surface.
-  out += `<line class="ab-plot-rule" x1="0" y1="${n(bottom + 0.5)}" x2="${n(width)}" y2="${n(bottom + 0.5)}" stroke="${INK.rule}"/>`;
-  out += `<line class="ab-plot-surface" x1="0" y1="${n(top)}" x2="${n(width)}" y2="${n(top)}" stroke="${INK.buff}" stroke-width="2"/>`;
+  out += `<line class="sn-plot-rule" x1="0" y1="${n(bottom + 0.5)}" x2="${n(width)}" y2="${n(bottom + 0.5)}" stroke="${INK.rule}"/>`;
+  out += `<line class="sn-plot-surface" x1="0" y1="${n(top)}" x2="${n(width)}" y2="${n(top)}" stroke="${INK.buff}" stroke-width="2"/>`;
   return out + `</svg>`;
 }
 

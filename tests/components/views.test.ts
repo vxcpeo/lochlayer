@@ -10,35 +10,35 @@ describe('the start page', () => {
   it('has the five sections, in the order the reference page has them', async () => {
     const { wrapper } = await mountWithRouter(HomeView, { route: '/' });
     await flushPromises();
-    const ids = wrapper.findAll('main > section').map((section) => section.attributes('id')).filter(Boolean);
+    const ids = wrapper.findAll('section[id]').map((section) => section.attributes('id'));
     expect(ids).toEqual(['how', 'scanner', 'private', 'cautions']);
   });
 
   it('opens with the mirror headline and the extension popup', async () => {
     const { wrapper } = await mountWithRouter(HomeView, { route: '/' });
     await flushPromises();
-    expect(wrapper.find('#hero-title .ab-mirror__land').text().replace(/\s+/g, ' ')).toBe('Your wallet is public.');
-    expect(wrapper.find('#hero-title .ab-mirror__water').element.firstChild?.textContent).toBe('The Miston is not.');
-    expect(wrapper.find('.ab-plate .ab-device').exists()).toBe(true);
-    expect(wrapper.find('.ab-plate__figure figcaption').text()).toContain('The extension’s popup, drawn here with example figures.');
+    expect(wrapper.find('#hero-title .sn-hero__land').text().replace(/\s+/g, ' ')).toBe('Your wallet is public.');
+    expect(wrapper.find('#hero-title .sn-hero__water').element.firstChild?.textContent).toBe('The Velaira is not.');
+    expect(wrapper.find('.sn-deck .sn-device').exists()).toBe(true);
+    expect(wrapper.find('.sn-deck .sn-plate__caption').text()).toContain('The extension’s popup, drawn here with example figures.');
   });
 
   it('draws the three-step story and the caution list', async () => {
     const { wrapper } = await mountWithRouter(HomeView, { route: '/' });
     await flushPromises();
-    expect(wrapper.findAll('.ab-steps .ab-step')).toHaveLength(3);
+    expect(wrapper.findAll('.sn-steps .sn-step')).toHaveLength(3);
     expect(wrapper.find('#how').text()).toContain('Dive in, send privately, surface.');
     expect(wrapper.find('#private').text()).toContain('What keeps it private.');
     expect(wrapper.find('#cautions').text()).toContain('Read the cautions before you dive.');
     expect(wrapper.find('#cautions').text()).toContain('Withdrawals can never be paused');
-    expect(wrapper.find('#cautions').text()).toContain('$MISTON token');
+    expect(wrapper.find('#cautions').text()).toContain('$VELAIRA token');
   });
 
   it('carries the example leak report and its figures', async () => {
     const { wrapper } = await mountWithRouter(HomeView, { route: '/' });
     await flushPromises();
-    expect(wrapper.find('#scan-report .ab-rep-example').exists()).toBe(true);
-    expect(wrapper.findAll('#scan-report .ab-rep-fit svg').length).toBe(17);
+    expect(wrapper.find('#scan-report .sn-rep-example').exists()).toBe(true);
+    expect(wrapper.findAll('#scan-report .sn-rep-fit svg').length).toBe(17);
   });
 });
 
@@ -46,13 +46,13 @@ describe('the docs page', () => {
   it('has the caution notice and a contents list of every section', async () => {
     const { wrapper } = await mountWithRouter(DocsView, { route: '/docs' });
     await flushPromises();
-    expect(wrapper.find('h1').text()).toBe('How the Miston keeps a payment private.');
-    const toc = wrapper.findAll('.ab-doc__toc a').map((link) => link.attributes('href'));
+    expect(wrapper.find('h1').text()).toBe('How the Velaira keeps a payment private.');
+    const toc = wrapper.findAll('.sn-contents__list a').map((link) => link.attributes('href'));
     expect(toc).toHaveLength(18);
     expect(toc[0]).toBe('#model');
     expect(toc[17]).toBe('#site');
     for (const href of toc) {
-      expect(wrapper.find(`article${href}`).exists()).toBe(true);
+      expect(wrapper.find(`article ${href}`).exists()).toBe(true);
     }
   });
 
@@ -65,16 +65,21 @@ describe('the docs page', () => {
 
   it('links back to the start page', async () => {
     const { wrapper } = await mountWithRouter(DocsView, { route: '/docs' });
-    expect(wrapper.find('a.ab-btn--line').attributes('href')).toBe('/');
+    expect(wrapper.find('a.sn-btn--line').attributes('href')).toBe('/');
   });
 });
 
 describe('the install page', () => {
   it('marks the store release as coming soon and keeps the manual install and checksum', async () => {
     const { wrapper } = await mountWithRouter(InstallView, { route: '/install' });
-    expect(wrapper.find('.ab-btn--soon').text()).toBe('Coming soon to the Chrome Web Store');
+    expect(wrapper.find('.sn-btn--soon').text()).toBe('Coming soon to the Chrome Web Store');
     expect(wrapper.find('a[href*="chromewebstore"]').exists()).toBe(false);
-    expect(wrapper.find('.ab-ledger').text()).toContain('Load unpacked');
+    const loadFolder = wrapper.findAll('.sn-tile').find((tile) => {
+      const title = tile.find('.sn-tile__title');
+      return title.exists() && title.text() === 'Load the folder';
+    });
+    expect(loadFolder).toBeDefined();
+    expect(loadFolder!.find('.sn-tile__body').text()).toContain('Load unpacked');
     expect(wrapper.find('#download-sha256').text()).toBe('0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e');
   });
 });

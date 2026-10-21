@@ -1,4 +1,4 @@
-// Byte-exact encodings shared with programs/miston_pool: Groth16 proof points,
+// Byte-exact encodings shared with programs/velaira_pool: Groth16 proof points,
 // ExtData (Borsh), its hash, and the `transact` instruction data.
 
 import { sha256 } from "@noble/hashes/sha2";
@@ -6,7 +6,7 @@ import { PublicKey } from "@solana/web3.js";
 
 import { ByteReader, bigIntToBytesBE, bigIntToBytesLE, bytesToBigIntBE, concatBytes, equalBytes } from "./bytes";
 import { BASE_FIELD_MODULUS, MAX_AMOUNT, MAX_ENCRYPTED_OUTPUT_LENGTH, TRANSACT_DISCRIMINATOR } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 import { mod, publicAmountField } from "./field";
 
 /** A Groth16 proof as snarkjs produces it (decimal strings, projective with z = 1). */
@@ -59,25 +59,25 @@ const I64_MAX = (1n << 63n) - 1n;
 
 function coordinate(decimal: string | undefined): bigint {
   if (typeof decimal !== "string" || !/^(0|[1-9][0-9]*)$/.test(decimal)) {
-    throw new MistonError("INVALID_ARGUMENT", "a proof coordinate must be a decimal string");
+    throw new VelairaError("INVALID_ARGUMENT", "a proof coordinate must be a decimal string");
   }
   const v = BigInt(decimal);
-  if (v >= BASE_FIELD_MODULUS) throw new MistonError("INVALID_ARGUMENT", "a proof coordinate is not below the base field modulus");
+  if (v >= BASE_FIELD_MODULUS) throw new VelairaError("INVALID_ARGUMENT", "a proof coordinate is not below the base field modulus");
   return v;
 }
 
 /**
- * snarkjs proof to the bytes `miston_pool::transact` expects:
+ * snarkjs proof to the bytes `velaira_pool::transact` expects:
  *
  *   a = BE32(pi_a[0]) || BE32(q - pi_a[1])                      (A negated, modulus q)
  *   b = BE32(pi_b[0][1]) || BE32(pi_b[0][0]) || BE32(pi_b[1][1]) || BE32(pi_b[1][0])
  *   c = BE32(pi_c[0]) || BE32(pi_c[1])
  *
- * @throws MistonError `INVALID_ARGUMENT` if this is not a Groth16 proof on bn128.
+ * @throws VelairaError `INVALID_ARGUMENT` if this is not a Groth16 proof on bn128.
  */
 export function encodeProof(proof: Groth16Proof): ProofBytes {
   if (proof?.protocol !== "groth16" || proof.curve !== "bn128") {
-    throw new MistonError("INVALID_ARGUMENT", "expected a groth16 proof on bn128");
+    throw new VelairaError("INVALID_ARGUMENT", "expected a groth16 proof on bn128");
   }
   const be = (v: bigint) => bigIntToBytesBE(v, 32);
   const [ax, ay] = proof.pi_a;
@@ -122,12 +122,12 @@ export function proofEncodingProblem(bytes: ProofBytes): string | null {
  * Inverse of {@link encodeProof}: program bytes to a snarkjs proof (A negated
  * back). Strict in the same way the program is: see {@link proofEncodingProblem}.
  *
- * @throws MistonError `INVALID_ARGUMENT` if a part has the wrong length, is all
+ * @throws VelairaError `INVALID_ARGUMENT` if a part has the wrong length, is all
  *   zero, or has a coordinate that is not below q.
  */
 export function decodeProof(bytes: ProofBytes): Groth16Proof {
   const problem = proofEncodingProblem(bytes);
-  if (problem) throw new MistonError("INVALID_ARGUMENT", problem);
+  if (problem) throw new VelairaError("INVALID_ARGUMENT", problem);
   const word = (part: Uint8Array, i: number) => bytesToBigIntBE(part.subarray(i * 32, i * 32 + 32));
   const s = (v: bigint) => v.toString();
   return {
@@ -145,14 +145,14 @@ export function decodeProof(bytes: ProofBytes): Groth16Proof {
 
 function checkExtData(ext: ExtData): void {
   if (typeof ext.extAmount !== "bigint" || ext.extAmount < I64_MIN || ext.extAmount > I64_MAX) {
-    throw new MistonError("INVALID_ARGUMENT", "extAmount must be a bigint that fits in a signed 64-bit integer");
+    throw new VelairaError("INVALID_ARGUMENT", "extAmount must be a bigint that fits in a signed 64-bit integer");
   }
   if (typeof ext.fee !== "bigint" || ext.fee < 0n || ext.fee > MAX_AMOUNT) {
-    throw new MistonError("INVALID_ARGUMENT", "fee must be a bigint that fits in an unsigned 64-bit integer");
+    throw new VelairaError("INVALID_ARGUMENT", "fee must be a bigint that fits in an unsigned 64-bit integer");
   }
   for (const output of [ext.encryptedOutput0, ext.encryptedOutput1]) {
     if (!(output instanceof Uint8Array) || output.length > MAX_ENCRYPTED_OUTPUT_LENGTH) {
-      throw new MistonError("INVALID_ARGUMENT", `an encrypted output is at most ${MAX_ENCRYPTED_OUTPUT_LENGTH} bytes`);
+      throw new VelairaError("INVALID_ARGUMENT", `an encrypted output is at most ${MAX_ENCRYPTED_OUTPUT_LENGTH} bytes`);
     }
   }
 }
@@ -189,7 +189,7 @@ export function extDataHash(ext: ExtData): bigint {
 
 function word32(bytes: Uint8Array, name: string): Uint8Array {
   if (!(bytes instanceof Uint8Array) || bytes.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", `${name} must be 32 bytes`);
+    throw new VelairaError("INVALID_ARGUMENT", `${name} must be 32 bytes`);
   }
   return bytes;
 }
@@ -202,10 +202,10 @@ function word32(bytes: Uint8Array, name: string): Uint8Array {
 export function encodeTransactArgs(args: TransactArgs): Uint8Array {
   const { proof } = args;
   if (proof.a.length !== 64 || proof.b.length !== 128 || proof.c.length !== 64) {
-    throw new MistonError("INVALID_ARGUMENT", "proof parts must be 64, 128 and 64 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "proof parts must be 64, 128 and 64 bytes");
   }
   if (args.inputNullifiers.length !== 2 || args.outputCommitments.length !== 2) {
-    throw new MistonError("INVALID_ARGUMENT", "expected exactly two nullifiers and two commitments");
+    throw new VelairaError("INVALID_ARGUMENT", "expected exactly two nullifiers and two commitments");
   }
   return concatBytes(
     TRANSACT_DISCRIMINATOR,
@@ -232,11 +232,11 @@ export function isTransactData(data: Uint8Array): boolean {
  * program itself ignores trailing bytes; pass `allowTrailingBytes` when
  * decoding data that already executed on chain.
  *
- * @throws MistonError `DECODE_FAILED` on a wrong discriminator, truncated data,
+ * @throws VelairaError `DECODE_FAILED` on a wrong discriminator, truncated data,
  *   an encrypted output over 256 bytes, or (when strict) trailing bytes.
  */
 export function decodeTransactArgs(data: Uint8Array, options: { allowTrailingBytes?: boolean } = {}): TransactArgs {
-  if (!isTransactData(data)) throw new MistonError("DECODE_FAILED", "not a miston_pool transact instruction");
+  if (!isTransactData(data)) throw new VelairaError("DECODE_FAILED", "not a velaira_pool transact instruction");
   try {
     const reader = new ByteReader(data.subarray(8));
     const proof = { a: reader.take(64), b: reader.take(128), c: reader.take(64) };
@@ -256,7 +256,7 @@ export function decodeTransactArgs(data: Uint8Array, options: { allowTrailingByt
     }
     return { proof, root, inputNullifiers, outputCommitments, extData };
   } catch (cause) {
-    throw new MistonError("DECODE_FAILED", "malformed transact instruction data", { cause });
+    throw new VelairaError("DECODE_FAILED", "malformed transact instruction data", { cause });
   }
 }
 

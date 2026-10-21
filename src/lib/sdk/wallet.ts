@@ -5,10 +5,10 @@ import { PublicKey } from "@solana/web3.js";
 
 import { type PaymentCode, paymentCodeAt } from "./address";
 import { FIELD_MODULUS, MAX_AMOUNT, PAYMENT_CODE_GAP, PROGRAM_ID, TREE_DEPTH } from "./constants";
-import { ConsolidationRequiredError, InsufficientBalanceError, MistonError, SyncError } from "./errors";
+import { ConsolidationRequiredError, InsufficientBalanceError, VelairaError, SyncError } from "./errors";
 import { type NewCommitmentEvent, type TransactionTime, transactionTime } from "./events";
 import { assertAmount } from "./field";
-import { type MistonKeys, MAX_PAYMENT_CODE_INDEX, paymentCodeSecret } from "./keys";
+import { type VelairaKeys, MAX_PAYMENT_CODE_INDEX, paymentCodeSecret } from "./keys";
 import { MerkleTree } from "./merkle";
 import { type Note, type NoteSource, type PaymentCodeCandidate, noteCommitment, noteNullifier, openNote } from "./note";
 
@@ -89,7 +89,7 @@ export interface ReceivedNote extends OwnedNote, TransactionTime {
 }
 
 /** An empty state for `keys` on `programId`. */
-export function createWalletState(keys: Pick<MistonKeys, "publicKey">, programId: PublicKey = PROGRAM_ID): WalletState {
+export function createWalletState(keys: Pick<VelairaKeys, "publicKey">, programId: PublicKey = PROGRAM_ID): WalletState {
   return {
     version: WALLET_STATE_VERSION,
     programId: programId.toBase58(),
@@ -209,17 +209,17 @@ export interface IssuedPaymentCode {
  * numbers its codes from 0 as well and hands out the same ones; both devices
  * still find every note, but two payers may then hold the same secret.
  *
- * @throws MistonError `PAYMENT_CODE_LIMIT` when {@link PAYMENT_CODE_GAP} codes
+ * @throws VelairaError `PAYMENT_CODE_LIMIT` when {@link PAYMENT_CODE_GAP} codes
  *   in a row are unpaid (reuse one of them: `paymentCodeAt`), SyncError
  *   `state` if the state does not belong to `keys`.
  */
-export function issuePaymentCode(state: WalletState, keys: Pick<MistonKeys, "publicKey" | "encryptionPublic" | "paymentCodeRoot">): IssuedPaymentCode {
+export function issuePaymentCode(state: WalletState, keys: Pick<VelairaKeys, "publicKey" | "encryptionPublic" | "paymentCodeRoot">): IssuedPaymentCode {
   if (state.version !== WALLET_STATE_VERSION) throw new SyncError("state", "wallet state has an unknown version");
   if (state.publicKey !== keys.publicKey.toString()) throw new SyncError("state", "wallet state belongs to a different key set");
   const { issued, used } = paymentCodeCounts(state);
   const index = Math.max(issued, used);
   if (index - used >= PAYMENT_CODE_GAP || index > MAX_PAYMENT_CODE_INDEX) {
-    throw new MistonError("PAYMENT_CODE_LIMIT", `${PAYMENT_CODE_GAP} payment codes in a row have not been paid yet: reuse one of them`);
+    throw new VelairaError("PAYMENT_CODE_LIMIT", `${PAYMENT_CODE_GAP} payment codes in a row have not been paid yet: reuse one of them`);
   }
   return { state: { ...state, paymentCodes: { issued: index + 1, used } }, code: paymentCodeAt(keys, index), index };
 }
@@ -304,7 +304,7 @@ export interface AppliedEvents {
 export function applyEvents(
   state: WalletState,
   events: readonly NewCommitmentEvent[],
-  keys: MistonKeys,
+  keys: VelairaKeys,
   nullifiers: readonly bigint[] = [],
 ): AppliedEvents {
   if (state.version !== WALLET_STATE_VERSION) throw new SyncError("state", "wallet state has an unknown version");
@@ -432,8 +432,8 @@ export function consolidationCandidates(notes: readonly OwnedNote[]): OwnedNote[
 }
 
 /** Internal: throws unless `state` belongs to `keys` and `programId`. */
-export function assertStateMatches(state: WalletState, keys: Pick<MistonKeys, "publicKey">, programId: PublicKey): void {
+export function assertStateMatches(state: WalletState, keys: Pick<VelairaKeys, "publicKey">, programId: PublicKey): void {
   if (state.version !== WALLET_STATE_VERSION) throw new SyncError("state", "wallet state has an unknown version");
   if (state.publicKey !== keys.publicKey.toString()) throw new SyncError("state", "wallet state belongs to a different key set");
-  if (state.programId !== programId.toBase58()) throw new MistonError("INVALID_ARGUMENT", "wallet state belongs to a different program");
+  if (state.programId !== programId.toBase58()) throw new VelairaError("INVALID_ARGUMENT", "wallet state belongs to a different program");
 }

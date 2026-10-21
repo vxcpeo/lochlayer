@@ -21,7 +21,7 @@ describe('the scanner form', () => {
   it('accepts base58 addresses of 32 to 44 characters and nothing else', () => {
     expect(isAddress('11111111111111111111111111111111')).toBe(true);
     expect(isAddress('Fh3qJ5iBgbd24itfu7gbvo8XVHLjnNhA6aNEPnnNTz8K')).toBe(true);
-    expect(isAddress('miston1qw50someaddress')).toBe(false);
+    expect(isAddress('velaira1qw50someaddress')).toBe(false);
     expect(isAddress('0OIl')).toBe(false);
     expect(isAddress('')).toBe(false);
     expect(isAddress('a'.repeat(31))).toBe(false);

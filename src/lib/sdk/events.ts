@@ -1,4 +1,4 @@
-// Anchor events of miston_pool, read from transaction logs.
+// Anchor events of velaira_pool, read from transaction logs.
 
 import { base58 } from "@scure/base";
 import type { PublicKey } from "@solana/web3.js";

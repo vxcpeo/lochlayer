@@ -11,7 +11,7 @@ const result: VerifyResult = {
   lines: ['The transaction below created a payment of this amount that only the holder of this shielded address can spend.'],
   rows: [
     { label: 'Amount', value: '1.500 SOL', role: 'shielded' },
-    { label: 'Paid to', value: 'miston1qy35w8v6c5d3j4k2m9n0p8r7s6t5u4v3w2x1y0z', role: 'shielded' },
+    { label: 'Paid to', value: 'velaira1qy35w8v6c5d3j4k2m9n0p8r7s6t5u4v3w2x1y0z', role: 'shielded' },
     { label: 'Transaction', value: '5VERYlongSignature', role: 'public' },
     { label: 'When', value: '19 Oct 2026, 08:16 UTC', role: 'public' },
   ],
@@ -34,7 +34,7 @@ describe('the verify page', () => {
     const check = vi.fn(() => new Promise<VerifyResult>((done) => (resolve = done)));
     const { wrapper } = await mountWithRouter(VerifyView, { props: { check } });
     await flushPromises();
-    await wrapper.find('#verify-input').setValue('{"miston":"receipt"}');
+    await wrapper.find('#verify-input').setValue('{"velaira":"receipt"}');
     await wrapper.find('#verify-form').trigger('submit');
     await nextTick();
     expect(wrapper.find('#verify-submit').text()).toBe('Checking');
@@ -43,11 +43,11 @@ describe('the verify page', () => {
     resolve(result);
     await flushPromises();
     expect(wrapper.find('#verify-submit').text()).toBe('Check it');
-    expect(wrapper.find('.ab-verify__band--ok').exists()).toBe(true);
-    expect(wrapper.find('.ab-verify__band-title').text()).toBe('This receipt checks out.');
-    expect(wrapper.find('.ab-verify__band--ok').text()).toContain('only the holder of this shielded address can spend');
-    expect(wrapper.findAll('#verify-result .ab-ledger__row')).toHaveLength(4);
-    expect(wrapper.find('.ab-verify__value.ab-shielded').text()).toBe('1.500 SOL');
+    expect(wrapper.find('#verify-result .sn-status').exists()).toBe(true);
+    expect(wrapper.find('#verify-result .sn-result__title').text()).toBe('This receipt checks out.');
+    expect(wrapper.find('#verify-result .sn-status').text()).toContain('only the holder of this shielded address can spend');
+    expect(wrapper.findAll('#verify-result > div > .sn-result > div')).toHaveLength(4);
+    expect(wrapper.find('#verify-result .sn-result__body .sn-shielded').text()).toBe('1.500 SOL');
   });
 
   it('keeps the failure notice a caution, and shows rows without a figure class when they are plain', async () => {
@@ -62,18 +62,18 @@ describe('the verify page', () => {
     );
     const { wrapper } = await mountWithRouter(VerifyView, { props: { check } });
     await flushPromises();
-    await wrapper.find('#verify-input').setValue('{"miston":"receipt"}');
+    await wrapper.find('#verify-input').setValue('{"velaira":"receipt"}');
     await wrapper.find('#verify-form').trigger('submit');
     await flushPromises();
-    expect(wrapper.find('.ab-verify__band--warn').exists()).toBe(true);
-    expect(wrapper.find('.ab-verify__band--ok').exists()).toBe(false);
-    expect(wrapper.find('#verify-result .ab-ledger .ab-ledger__row dd span').classes()).toEqual([]);
-    expect(wrapper.find('.ab-verify__section').text()).toBe('Where it came from');
-    expect(wrapper.findAll('.ab-verify__value.ab-shielded')).toHaveLength(1);
+    expect(wrapper.find('#verify-result .sn-fail').exists()).toBe(true);
+    expect(wrapper.find('#verify-result .sn-status').exists()).toBe(false);
+    expect(wrapper.find('#verify-result > div > .sn-result > div dd span').classes()).toEqual([]);
+    expect(wrapper.find('#verify-result section.sn-tile__body .sn-result__title').text()).toBe('Where it came from');
+    expect(wrapper.findAll('#verify-result .sn-result__body .sn-shielded')).toHaveLength(1);
   });
 
   it('shows the endpoint in use in its hint', async () => {
     const { wrapper } = await mountWithRouter(VerifyView, { props: { check: vi.fn() } });
-    expect(wrapper.find('[data-rpc-host]').text()).toBe('rpc.miston.xyz');
+    expect(wrapper.find('[data-rpc-host]').text()).toBe('rpc.velaira.xyz');
   });
 });

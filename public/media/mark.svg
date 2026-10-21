@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="miston-mark-t">
-  <title id="miston-mark-t">Miston</title>
-  <rect width="64" height="64" rx="14" fill="#0a5fc4"/>
-  <path d="M17 41V20h6.6L32 33.1 40.4 20H47v21h-5.6V30.2L34.2 41h-4.4l-7.2-10.8V41z" fill="#e8f6ff"/>
-  <path d="M13 50c6-6 11-6 17-0.5s11 5.5 17-0.5" fill="none" stroke="#e8f6ff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="velaira-mark-t">
+  <title id="velaira-mark-t">Velaira</title>
+  <rect width="64" height="64" rx="14" fill="#1f8fe0"/>
+  <path d="M18.00 16.00 32.00 42.00 46.00 16.00" fill="none" stroke="#f2f7ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19.00 50.50H45.00" fill="none" stroke="#7cc4ff" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
 </svg>

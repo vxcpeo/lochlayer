@@ -129,7 +129,7 @@ export function counterpartiesSvg(flows: readonly FlowLike[], options: Counterpa
   const width = widthOf(options, 420);
   return never(
     () => draw(flows, options ?? {}, width),
-    () => voidSvg("ab-plot-who", width),
+    () => voidSvg("sn-plot-who", width),
   );
 }
 
@@ -156,9 +156,9 @@ function draw(flows: readonly FlowLike[], options: CounterpartiesOptions, width:
   const seed = `${all.slice(0, 64).map((c) => `${c.address}${c.count}`).join("")}:${all.length}:${width}`;
   const id = safeId(options.id, () => chartId("who", seed));
 
-  let out = svgOpen({ id, width, height, className: "ab-plot-who", title: "Who this wallet deals with", desc: counterpartiesText(flows, options) });
+  let out = svgOpen({ id, width, height, className: "sn-plot-who", title: "Who this wallet deals with", desc: counterpartiesText(flows, options) });
   if (all.length === 0) {
-    out += `<text class="ab-plot-quiet" x="0" y="${n(height / 2)}" font-size="${LABEL}" fill="${INK.paper2}">No transfers found.</text>`;
+    out += `<text class="sn-plot-quiet" x="0" y="${n(height / 2)}" font-size="${LABEL}" fill="${INK.paper2}">No transfers found.</text>`;
     return out + `</svg>`;
   }
 
@@ -172,12 +172,12 @@ function draw(flows: readonly FlowLike[], options: CounterpartiesOptions, width:
   rows.forEach((c, i) => {
     const y = rowY(i);
     const weight = 1 + (3.5 * c.count) / peak;
-    out += `<line class="ab-plot-link" x1="${stationX}" y1="${n(stationY)}" x2="${n(nodeX)}" y2="${n(y)}" stroke="${INK.buff}" stroke-width="${n(weight)}"/>`;
+    out += `<line class="sn-plot-link" x1="${stationX}" y1="${n(stationY)}" x2="${n(nodeX)}" y2="${n(y)}" stroke="${INK.buff}" stroke-width="${n(weight)}"/>`;
   });
   if (rest > 0) {
     const y = rowY(rows.length);
     for (const dy of [-5, 0, 5]) {
-      out += `<line class="ab-plot-link-faint" x1="${stationX}" y1="${n(stationY)}" x2="${n(nodeX)}" y2="${n(y + dy)}" stroke="${INK.rule}"/>`;
+      out += `<line class="sn-plot-link-faint" x1="${stationX}" y1="${n(stationY)}" x2="${n(nodeX)}" y2="${n(y + dy)}" stroke="${INK.rule}"/>`;
     }
   }
 
@@ -188,19 +188,19 @@ function draw(flows: readonly FlowLike[], options: CounterpartiesOptions, width:
     const ty = y + 4.5 - (extra.length * 14) / 2;
     out += `<circle class="${c.label ? "lc-node-caution" : "lc-node"}" cx="${n(nodeX)}" cy="${n(y)}" r="4" fill="${INK.bed}" stroke="${c.label ? INK.magenta : INK.buff}" stroke-width="1.5"/>`;
     out +=
-      `<text class="ab-plot-strong" x="${n(nodeX + 12)}" y="${n(ty)}" font-size="${LABEL}" font-weight="600" fill="${INK.paper}">` +
-      `${esc(short(c.address))}<tspan class="ab-plot-label" dx="7" font-weight="500" fill="${INK.buff}">\u00d7${n(c.count)}</tspan></text>`;
+      `<text class="sn-plot-strong" x="${n(nodeX + 12)}" y="${n(ty)}" font-size="${LABEL}" font-weight="600" fill="${INK.paper}">` +
+      `${esc(short(c.address))}<tspan class="sn-plot-label" dx="7" font-weight="500" fill="${INK.buff}">\u00d7${n(c.count)}</tspan></text>`;
     extra.forEach((line, k) => {
       out += `<text class="${c.label ? "lc-note-caution" : "lc-quiet"}" x="${n(nodeX + 12)}" y="${n(ty + 14 * (k + 1))}" font-size="${LABEL}" font-weight="500" fill="${c.label ? INK.magenta : INK.paper2}">${esc(line)}</text>`;
     });
   });
   if (rest > 0) {
     const y = rowY(rows.length);
-    out += `<text class="ab-plot-quiet" x="${n(nodeX + 12)}" y="${n(y + 4.5)}" font-size="${LABEL}" fill="${INK.paper2}">${plural(rest, "other", "others")}</text>`;
+    out += `<text class="sn-plot-quiet" x="${n(nodeX + 12)}" y="${n(y + 4.5)}" font-size="${LABEL}" fill="${INK.paper2}">${plural(rest, "other", "others")}</text>`;
   }
 
   // The station: this wallet. A position fix, drawn last so the lines run under it.
-  out += `<circle class="ab-plot-node" cx="${stationX}" cy="${n(stationY)}" r="7.5" fill="${INK.bed}" stroke="${INK.buff}" stroke-width="1.5"/>`;
-  out += `<circle class="ab-plot-station" cx="${stationX}" cy="${n(stationY)}" r="2.5" fill="${INK.buff}"/>`;
+  out += `<circle class="sn-plot-node" cx="${stationX}" cy="${n(stationY)}" r="7.5" fill="${INK.bed}" stroke="${INK.buff}" stroke-width="1.5"/>`;
+  out += `<circle class="sn-plot-station" cx="${stationX}" cy="${n(stationY)}" r="2.5" fill="${INK.buff}"/>`;
   return out + `</svg>`;
 }

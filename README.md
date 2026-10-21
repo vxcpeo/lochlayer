@@ -1,6 +1,6 @@
-# The Miston website, rebuilt in Vue
+# The Velaira website, rebuilt in Vue
 
-A Vue 3 single-page application that reproduces <https://miston.xyz> — the
+A Vue 3 single-page application that reproduces <https://velaira.xyz> — the
 five pages, the two palettes, the scroll story, the leak scanner and its report,
 and the receipt verifier — with the reference site's own CSS, fonts, marks and
 copy.
@@ -19,15 +19,16 @@ npm run typecheck
 
 | Path | What it is |
 | --- | --- |
-| `src/assets/site.css` | The reference site's stylesheet; only its media URLs are made absolute (`/media/…`) |
+| `src/styles/signal.css` | The Signal Navy presentation layer: tokens, top index, bento canvas, tiles, prose, forms, console, footer |
+| `src/styles/signal-report.css` | The leak report, its figures and the extension popup, on the same token set |
 | `public/boot.js` | Runs before the page: `data-js`, the saved palette, the narrowed CSP |
-| `public/media/` | Fonts, the M marks, the tide-line plate, the star field, favicon |
-| `src/App.vue` | The icon sprite, skip link, masthead, `<main id="main">`, footer |
+| `public/media/` | The V marks, the depth plate, the star field, the fonts, favicon |
+| `src/App.vue` | The icon sprite, skip link, top index, the 12-column canvas and the footer |
+| `src/components/Signal*.vue` | The shell (`Top`, `Index`, `Foot`) and the home sections (`Deck`, `Steps`, `Scan`, `Keeps`, `Cautions`) |
 | `src/router.ts` | Five routes, the per-page title/description, hash scrolling |
 | `src/views/` | `HomeView`, `DocsView`, `InstallView`, `PrivacyView`, `VerifyView` |
-| `src/components/home/` | `HeroSection` (cipher reveal), `HowSection` (pinned story), `ScannerSection`, `KeepsSection`, `CautionsSection` |
 | `src/lib/` | Endpoint rules, CSP, theme, cipher, story, scanner wrapper, report builder, verifier, and the vendored reference packages |
-| `src/data/example-report.html` | The example report exactly as the reference server renders it (17 inline figures) |
+| `src/data/example-report.html` | The example report as the reference server renders it (17 inline figures) |
 | `tests/` | Vitest unit and component tests |
 | `e2e/` | Playwright tests |
 
@@ -55,10 +56,12 @@ its privacy page. `src/lib/policy.ts` is the same rule in TypeScript, and
 
 ### What is not identical
 
-The reference hero draws its underwater scene with WebGL. Here the still
-drawings are used directly — the reference site's own fallback when WebGL is
-unavailable. Everything else (layout, type, colour, breakpoints, figures,
-animations, copy) follows the reference.
+The copy, the routes, the behaviour and the figures follow the reference. The
+presentation does not: it was reskinned around **Signal Navy / Bento Canvas** —
+a deep navy canvas of touching tiles, a slim top index, a cyan signal accent and
+a sonar motif — so the layout, type and colour are this site's own. The old
+underwater scene's still drawings survive as the depth plate in the hero and the
+step tiles. `.reskin/REPORT.md` holds the reskin's evidence.
 
 This is a single-page application, where the reference is server-rendered: a
 static host must send `index.html` for the four content routes, and the copy is
@@ -67,4 +70,4 @@ not readable with JavaScript off.
 ## Licence
 
 The vendored packages and the modifications to them are GPL-3.0-only. See
-`../NOTICE.md` for the attribution and for the marks, which are Miston's.
+`../NOTICE.md` for the attribution and for the marks, which are Velaira's.

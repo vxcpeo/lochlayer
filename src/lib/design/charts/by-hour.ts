@@ -104,7 +104,7 @@ export function byHourSvg(flows: readonly FlowLike[], options: ByHourOptions = {
   const width = widthOf(options, 420);
   return never(
     () => draw(flows, options ?? {}, width),
-    () => voidSvg("ab-plot-hours", width),
+    () => voidSvg("sn-plot-hours", width),
   );
 }
 
@@ -155,45 +155,45 @@ function draw(flows: readonly FlowLike[], options: ByHourOptions, width: number)
 
   const height = bottom + 28 + (caution?.row === 1 ? 16 : 0);
 
-  let out = svgOpen({ id, width, height, className: "ab-plot-hours", title: "Transfers by hour of day, UTC", desc: byHourText(flows) });
+  let out = svgOpen({ id, width, height, className: "sn-plot-hours", title: "Transfers by hour of day, UTC", desc: byHourText(flows) });
   out +=
     `<defs><pattern id="${id}-h" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">` +
-    `<line class="ab-plot-hatch" x1="0.5" y1="0" x2="0.5" y2="6" stroke="${INK.magenta}" stroke-opacity="0.7"/></pattern></defs>`;
+    `<line class="sn-plot-hatch" x1="0.5" y1="0" x2="0.5" y2="6" stroke="${INK.magenta}" stroke-opacity="0.7"/></pattern></defs>`;
 
   // Hour marks along the surface, every six hours.
   for (const hour of [0, 6, 12, 18]) {
-    out += `<text class="ab-plot-quiet" x="${n(x(hour) + 5)}" y="${n(top - 9)}" font-size="${LABEL}" fill="${INK.paper2}">${String(hour).padStart(2, "0")}</text>`;
-    out += `<line class="ab-plot-rule" x1="${n(x(hour) + 0.5)}" y1="${n(top - 5)}" x2="${n(x(hour) + 0.5)}" y2="${n(top)}" stroke="${INK.rule}"/>`;
+    out += `<text class="sn-plot-quiet" x="${n(x(hour) + 5)}" y="${n(top - 9)}" font-size="${LABEL}" fill="${INK.paper2}">${String(hour).padStart(2, "0")}</text>`;
+    out += `<line class="sn-plot-rule" x1="${n(x(hour) + 0.5)}" y1="${n(top - 5)}" x2="${n(x(hour) + 0.5)}" y2="${n(top)}" stroke="${INK.rule}"/>`;
   }
   // The end of the day names the clock, where there is room beside the mark for 18.
   const roomy = x(18) + 5 + textWidth("18", LABEL) + CLEAR <= width - textWidth("24 UTC", LABEL);
-  out += `<text class="ab-plot-quiet" x="${n(width)}" y="${n(top - 9)}" text-anchor="end" font-size="${LABEL}" fill="${INK.paper2}">${roomy ? "24 UTC" : "24"}</text>`;
+  out += `<text class="sn-plot-quiet" x="${n(width)}" y="${n(top - 9)}" text-anchor="end" font-size="${LABEL}" fill="${INK.paper2}">${roomy ? "24 UTC" : "24"}</text>`;
 
   // The soundings: ground under every hour, water down to the bed line, as in the stepped bed.
   const quietHours = new Set<number>();
   if (quiet?.guessable) for (let k = 0; k < 6; k++) quietHours.add((quiet.start + k) % 24);
   hours.forEach((count, hour) => {
     const h = count === 0 ? 0 : Math.max(3, (depth * count) / peak);
-    out += `<rect class="ab-plot-ground" x="${n(x(hour))}" y="${n(top + h)}" width="${n(col)}" height="${n(depth - h)}" fill="${INK.bed}"/>`;
+    out += `<rect class="sn-plot-ground" x="${n(x(hour))}" y="${n(top + h)}" width="${n(col)}" height="${n(depth - h)}" fill="${INK.bed}"/>`;
     // The shoal: the six quietest hours, when they give the time zone away.
     if (quietHours.has(hour)) {
       out += `<rect x="${n(x(hour))}" y="${n(top + h)}" width="${n(col)}" height="${n(depth - h)}" fill="url(#${id}-h)"/>`;
     }
     if (count === 0) return;
-    out += `<rect class="ab-plot-water" x="${n(x(hour))}" y="${n(top)}" width="${n(col)}" height="${n(h)}" fill="${INK.water}"/>`;
-    out += `<line class="ab-plot-bedline" x1="${n(x(hour))}" y1="${n(top + h)}" x2="${n(x(hour) + col)}" y2="${n(top + h)}" stroke="${INK.miston}" stroke-width="2"/>`;
+    out += `<rect class="sn-plot-water" x="${n(x(hour))}" y="${n(top)}" width="${n(col)}" height="${n(h)}" fill="${INK.water}"/>`;
+    out += `<line class="sn-plot-bedline" x1="${n(x(hour))}" y1="${n(top + h)}" x2="${n(x(hour) + col)}" y2="${n(top + h)}" stroke="${INK.velaira}" stroke-width="2"/>`;
   });
 
   // One figure only: the deepest.
   if (figure) {
-    out += `<text class="ab-plot-label" x="${n(figure.x)}" y="${n(bottom + 18)}" text-anchor="${figure.anchor}" font-size="${LABEL}" font-weight="500" fill="${INK.buff}">${figure.text}</text>`;
+    out += `<text class="sn-plot-label" x="${n(figure.x)}" y="${n(bottom + 18)}" text-anchor="${figure.anchor}" font-size="${LABEL}" font-weight="500" fill="${INK.buff}">${figure.text}</text>`;
   }
 
   // The caution, in words, under the hatching it names.
   if (caution) {
-    out += `<text class="ab-plot-warn" x="${n(caution.x)}" y="${n(bottom + 18 + caution.row * 16)}" text-anchor="${caution.anchor}" font-size="${LABEL}" font-weight="600" fill="${INK.magenta}">${caution.text}</text>`;
+    out += `<text class="sn-plot-warn" x="${n(caution.x)}" y="${n(bottom + 18 + caution.row * 16)}" text-anchor="${caution.anchor}" font-size="${LABEL}" font-weight="600" fill="${INK.magenta}">${caution.text}</text>`;
   }
 
-  out += `<line class="ab-plot-surface" x1="0" y1="${n(top)}" x2="${n(width)}" y2="${n(top)}" stroke="${INK.buff}" stroke-width="2"/>`;
+  out += `<line class="sn-plot-surface" x1="0" y1="${n(top)}" x2="${n(width)}" y2="${n(top)}" stroke="${INK.buff}" stroke-width="2"/>`;
   return out + `</svg>`;
 }

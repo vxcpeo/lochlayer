@@ -4,16 +4,16 @@
  * which runs before the page is drawn; unit tests run both.
  */
 
-/** The `<meta name="miston:rpc">` default. */
-export const DEFAULT_RPC = 'https://rpc.miston.xyz/';
+/** The `<meta name="velaira:rpc">` default. */
+export const DEFAULT_RPC = 'https://rpc.velaira.xyz/';
 
-/** The `<meta name="miston:waitlist">` address. Only the form may post to it. */
-export const WAITLIST_URL = 'https://waitlist.miston.xyz/v1/waitlist';
+/** The `<meta name="velaira:waitlist">` address. Only the form may post to it. */
+export const WAITLIST_URL = 'https://waitlist.velaira.xyz/v1/waitlist';
 
 /** Where a visitor's own endpoint is kept. Browser only, sent to nobody. */
-export const RPC_STORAGE_KEY = 'miston:rpc';
+export const RPC_STORAGE_KEY = 'velaira:rpc';
 
-export const THEME_STORAGE_KEY = 'miston:theme';
+export const THEME_STORAGE_KEY = 'velaira:theme';
 
 export type EndpointFailure = 'empty' | 'not-https' | 'odd-host' | 'credentials' | 'not-a-url';
 
@@ -104,9 +104,9 @@ export function readChoice(): EndpointChoice {
     }
   })();
   return {
-    defaultRpc: meta('miston:rpc') || DEFAULT_RPC,
+    defaultRpc: meta('velaira:rpc') || DEFAULT_RPC,
     stored,
-    customRpc: meta('miston:custom-rpc') === 'any',
+    customRpc: meta('velaira:custom-rpc') === 'any',
   };
 }
 

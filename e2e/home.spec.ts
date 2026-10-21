@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+﻿import { expect, test } from '@playwright/test';
 
 const SECTIONS = ['#how', '#scanner', '#private', '#cautions'];
 const ADDRESS = 'Fh3qJ5iBgbd24itfu7gbvo8XVHLjnNhA6aNEPnnNTz8K';
@@ -6,11 +6,11 @@ const ADDRESS = 'Fh3qJ5iBgbd24itfu7gbvo8XVHLjnNhA6aNEPnnNTz8K';
 test.describe('the start page', () => {
   test('is the page the reference serves: title, headline, sections, footer', async ({ page }) => {
     await page.goto('/');
-    await expect(page).toHaveTitle('Miston: a shielded balance inside your Solana wallet');
+    await expect(page).toHaveTitle('Velaira: a shielded balance inside your Solana wallet');
     await expect(page.locator('h1')).toContainText('Your wallet is public.');
-    await expect(page.locator('h1')).toContainText('The Miston is not.');
+    await expect(page.locator('h1')).toContainText('The Velaira is not.');
     for (const section of SECTIONS) await expect(page.locator(section)).toBeVisible();
-    await expect(page.locator('.ab-btn--soon')).toContainText('Coming soon');
+    await expect(page.locator('.sn-btn--soon')).toContainText('Coming soon');
     await expect(page.locator('a[href*="chromewebstore"]')).toHaveCount(0);
     await expect(page.locator('footer .tw-foot__token')).toContainText('CYGidBuS8WwUXfZCmb98LnLGL9Mx8SvhdqA6t3xTLoch');
     await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/media/favicon.svg');
@@ -45,7 +45,7 @@ test.describe('the start page', () => {
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'night');
     await page.locator('[data-switch="theme"] button[data-value="dusk"]').click();
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dusk');
-    expect(await page.evaluate(() => localStorage.getItem('miston:theme'))).toBe('dusk');
+    expect(await page.evaluate(() => localStorage.getItem('velaira:theme'))).toBe('dusk');
     await page.reload();
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dusk');
     await expect(page.locator('[data-switch="theme"] button[data-value="dusk"]')).toHaveAttribute('aria-checked', 'true');
@@ -54,14 +54,14 @@ test.describe('the start page', () => {
   test('serves ?theme= without saving it', async ({ page }) => {
     await page.goto('/?theme=dusk');
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dusk');
-    expect(await page.evaluate(() => localStorage.getItem('miston:theme'))).toBeNull();
+    expect(await page.evaluate(() => localStorage.getItem('velaira:theme'))).toBeNull();
   });
 
   test('has one narrowed security policy, put there by the page itself', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('meta[http-equiv="Content-Security-Policy"]')).toHaveCount(2);
-    const narrow = await page.locator('meta[http-equiv="Content-Security-Policy"][data-miston-policy]').getAttribute('content');
-    expect(narrow).toContain("connect-src 'self' https://rpc.miston.xyz https://waitlist.miston.xyz");
+    const narrow = await page.locator('meta[http-equiv="Content-Security-Policy"][data-velaira-policy]').getAttribute('content');
+    expect(narrow).toContain("connect-src 'self' https://rpc.velaira.xyz https://waitlist.velaira.xyz");
     expect(narrow).toContain("default-src 'self'");
     expect(narrow).not.toContain('https: http://localhost');
     await expect(page.locator('html')).toHaveAttribute('data-js', '');
@@ -96,7 +96,7 @@ test.describe('the leak scanner', () => {
   test('refuses an address that is not one, before sending anything', async ({ page }) => {
     const requests: string[] = [];
     page.on('request', (request) => {
-      if (request.url().includes('rpc.miston.xyz')) requests.push(request.url());
+      if (request.url().includes('rpc.velaira.xyz')) requests.push(request.url());
     });
     await page.goto('/');
     await page.fill('#address', 'not-an-address');
@@ -113,14 +113,14 @@ test.describe('the leak scanner', () => {
   });
 
   test('says the RPC did not answer when the endpoint is unreachable, and offers the next step', async ({ page }) => {
-    await page.route('https://rpc.miston.xyz/**', (route) => route.abort());
+    await page.route('https://rpc.velaira.xyz/**', (route) => route.abort());
     await page.goto('/');
     await page.fill('#address', ADDRESS);
     await page.click('#scan-submit');
     const failure = page.locator('#scan-failure');
     await expect(failure).toBeVisible({ timeout: 30_000 });
     await expect(failure.locator('.tw-fail__title')).toContainText('The RPC did not answer');
-    await expect(failure).toContainText('No reply came back from rpc.miston.xyz.');
+    await expect(failure).toContainText('No reply came back from rpc.velaira.xyz.');
     await expect(failure.locator('.tw-cluster')).toContainText('Scan again');
     await expect(failure.locator('.tw-cluster')).toContainText('Use your own RPC');
     expect(await failure.getAttribute('data-reason')).toBe('unreachable');
@@ -132,6 +132,6 @@ test.describe('the leak scanner', () => {
     await page.fill('#rpc-url', 'http://remote.example.com');
     await page.click('#rpc-save');
     await expect(page.locator('#rpc-error')).toContainText('Use an https address.');
-    expect(await page.evaluate(() => localStorage.getItem('miston:rpc'))).toBeNull();
+    expect(await page.evaluate(() => localStorage.getItem('velaira:rpc'))).toBeNull();
   });
 });

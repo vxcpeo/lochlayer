@@ -18,7 +18,7 @@ export type FitOptions = {
 
 /**
  * A stepped figure: the same figure drawn at several widths, in
- * `<div class="ab-rep-fit">`. components.css shows one of them, the widest that
+ * `<div class="sn-rep-fit">`. components.css shows one of them, the widest that
  * fits the element's own width, with a container query. No script is needed
  * and no inline style is written.
  *
@@ -28,7 +28,7 @@ export type FitOptions = {
  * `draw` is called once per width and must return one of the chart helpers'
  * figures drawn at that width (they carry it as `data-w`). The ids inside
  * each drawing have to differ: the default ids do, and an `id` option must
- * include the width. Put the result in `<figure class="ab-rep-fig">`.
+ * include the width. Put the result in `<figure class="sn-rep-fig">`.
  */
 export function fitHtml(draw: (width: number) => string, options: FitOptions = {}): string {
   return never(
@@ -38,7 +38,7 @@ export function fitHtml(draw: (width: number) => string, options: FitOptions = {
       const wanted = ladder.filter((w) => asked.includes(w));
       const max = typeof options?.max === "number" && Number.isFinite(options.max) ? options.max : ladder[ladder.length - 1]!;
       const widths = wanted.length > 0 ? wanted : ladder.filter((w) => w <= Math.max(ladder[0]!, max));
-      const cls = ["ab-rep-fit", text(options?.className, 64)].filter(Boolean).join(" ");
+      const cls = ["sn-rep-fit", text(options?.className, 64)].filter(Boolean).join(" ");
       const copies = widths.map((width) =>
         never(
           () => {
@@ -50,6 +50,6 @@ export function fitHtml(draw: (width: number) => string, options: FitOptions = {
       );
       return `<div class="${esc(cls)}">${copies.join("")}</div>`;
     },
-    () => `<div class="ab-rep-fit"></div>`,
+    () => `<div class="sn-rep-fit"></div>`,
   );
 }

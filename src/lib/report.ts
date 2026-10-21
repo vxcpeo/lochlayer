@@ -57,15 +57,15 @@ export function statementHtml(report: LeakReport): string {
       : 'What helps: a fresh address for each payer, no forwarding of exact amounts, and savings kept in a shielded balance.';
   const rows = statementLines(report).map((line) => {
     if (line.kind === 'open') {
-      return '<li class="ab-rep-row ab-rep-row-open"><span class="ab-rep-what"><strong>A wallet with no leaks</strong><span>Every scan starts here and loses depth for each thing the public history gives away.</span></span><span class="ab-rep-figure ab-num">100</span></li>';
+      return '<li class="sn-rep-row sn-rep-row-open"><span class="sn-rep-what"><strong>A wallet with no leaks</strong><span>Every scan starts here and loses depth for each thing the public history gives away.</span></span><span class="sn-rep-figure sn-num">100</span></li>';
     }
     if (line.kind === 'total') {
-      return `<li class="ab-rep-row ab-rep-row-total"><span class="ab-rep-what"><strong>Privacy score</strong><span>${esc(totalNote)}</span></span><span class="ab-rep-figure">${line.balance}<small>of 100</small></span></li>`;
+      return `<li class="sn-rep-row sn-rep-row-total"><span class="sn-rep-what"><strong>Privacy score</strong><span>${esc(totalNote)}</span></span><span class="sn-rep-figure">${line.balance}<small>of 100</small></span></li>`;
     }
-    const severity = line.severity ? `<span class="ab-rep-sev" data-sev="${esc(line.severity)}">${SEVERITY_WORD[line.severity]}</span>` : '';
-    return `<li class="ab-rep-row">${severity}<span class="ab-rep-what"><strong>${esc(line.title)}</strong><span>${esc(line.detail ?? '')}</span></span><span class="ab-rep-figure ab-rep-figure-less ab-num"><span class="ab-sign">${MINUS}</span>${line.less}</span></li>`;
+    const severity = line.severity ? `<span class="sn-rep-sev" data-sev="${esc(line.severity)}">${SEVERITY_WORD[line.severity]}</span>` : '';
+    return `<li class="sn-rep-row">${severity}<span class="sn-rep-what"><strong>${esc(line.title)}</strong><span>${esc(line.detail ?? '')}</span></span><span class="sn-rep-figure sn-rep-figure-less sn-num"><span class="sn-sign">${MINUS}</span>${line.less}</span></li>`;
   });
-  return `<ol class="ab-rep-list">${rows.join('')}</ol>`;
+  return `<ol class="sn-rep-list">${rows.join('')}</ol>`;
 }
 
 /** The whole live report article, with empty placeholders for its figures. */
@@ -73,10 +73,10 @@ export function buildLiveReportHtml(options: LiveReportOptions): string {
   const { report, flows, host, skipped, asked, own, id = 'scan' } = options;
   const ownFlag = own;
   const hostText = esc(host);
-  const header = `<h3 class="ab-rep-name" id="${id}-title" tabindex="-1">Leak report for <span class="ab-num">${esc(shortAddress(report.address))}</span></h3><p>Read from ${hostText}, in this browser.</p><button class="ab-btn ab-btn--quiet ab-btn--sm ab-rep-clear" type="button" data-clear-report>Clear this report</button>`;
+  const header = `<h3 class="sn-rep-name" id="${id}-title" tabindex="-1">Leak report for <span class="sn-num">${esc(shortAddress(report.address))}</span></h3><p>Read from ${hostText}, in this browser.</p><button class="sn-btn sn-btn--quiet sn-btn--sm sn-rep-clear" type="button" data-clear-report>Clear this report</button>`;
   const partial =
     skipped > 0
-      ? `<div class="ab-rep-section"><div class="ab-callout ab-callout--warn" role="note"><p class="ab-callout__title"><svg class="ab-glyph" aria-hidden="true" focusable="false"><use href="#i-caution"></use></svg>This score is from a partial read</p><p>${hostText} would not return ${plural(skipped, 'transaction')} of the ${asked.toLocaleString('en-US')} asked for, so ${skipped === 1 ? 'it is' : 'they are'} left out. With ${skipped === 1 ? 'it' : 'them'} the score could be lower. Scan again in a minute${ownFlag ? '' : ', or use your own RPC'}.</p></div></div>`
+      ? `<div class="sn-rep-section"><div class="sn-callout sn-callout--warn" role="note"><p class="sn-callout__title"><svg class="sn-glyph" aria-hidden="true" focusable="false"><use href="#i-caution"></use></svg>This score is from a partial read</p><p>${hostText} would not return ${plural(skipped, 'transaction')} of the ${asked.toLocaleString('en-US')} asked for, so ${skipped === 1 ? 'it is' : 'they are'} left out. With ${skipped === 1 ? 'it' : 'them'} the score could be lower. Scan again in a minute${ownFlag ? '' : ', or use your own RPC'}.</p></div></div>`
       : '';
   const fine = `${plural(report.scannedTransactions, 'transaction')} scanned, ${plural(report.transfers, 'transfer')}. Only the most recent transactions are read, so older history is not in this score.`;
   const quiet = quietWindow(hourCounts(flows));
@@ -85,21 +85,21 @@ export function buildLiveReportHtml(options: LiveReportOptions): string {
     : 'Transfers by hour of day, UTC. Deeper is busier. No quiet stretch stands out here.';
   const figures =
     flows.length > 0
-      ? `<div class="ab-rep-section"><h4 class="ab-rep-title">When it is active, and who it deals with</h4><div class="ab-rep-figures"><figure class="ab-rep-fig"><div data-chart="hours"></div><figcaption class="ab-rep-caption">${hoursCaption}</figcaption></figure><figure class="ab-rep-fig"><div data-chart="who"></div><figcaption class="ab-rep-caption">Who this wallet deals with. A heavier line is more transfers.</figcaption></figure></div></div>`
+      ? `<div class="sn-rep-section"><h4 class="sn-rep-title">When it is active, and who it deals with</h4><div class="sn-rep-figures"><figure class="sn-rep-fig"><div data-chart="hours"></div><figcaption class="sn-rep-caption">${hoursCaption}</figcaption></figure><figure class="sn-rep-fig"><div data-chart="who"></div><figcaption class="sn-rep-caption">Who this wallet deals with. A heavier line is more transfers.</figcaption></figure></div></div>`
       : '';
   return (
-    `<article class="ab-rep-sheet ab-wet" data-depth="120" aria-labelledby="${id}-title"><div class="ab-rep-head">${header}</div>` +
+    `<article class="sn-rep-sheet sn-wet" data-depth="120" aria-labelledby="${id}-title"><div class="sn-rep-head">${header}</div>` +
     partial +
-    '<div class="ab-rep-body"><div class="ab-rep-score">' +
-    '<p class="ab-rep-score-label">Privacy score</p>' +
-    `<p class="ab-rep-score-figure"><span class="ab-figure ab-figure--xl ab-exposed">${report.score}</span><span class="ab-rep-score-of">of 100</span></p>` +
-    `<p class="ab-rep-score-verdict">${verdictFor(report.score)}</p>` +
-    `<p class="ab-rep-fine">${fine}</p></div>` +
-    '<figure class="ab-rep-fig"><div data-chart="bed"></div><figcaption class="ab-rep-caption">A wallet with no leaks sits 100 deep, out of sight. Each finding takes depth away, and the hatching is what it cost. Where the bed ends up is the score.</figcaption></figure>' +
+    '<div class="sn-rep-body"><div class="sn-rep-score">' +
+    '<p class="sn-rep-score-label">Privacy score</p>' +
+    `<p class="sn-rep-score-figure"><span class="sn-figure sn-figure--xl sn-exposed">${report.score}</span><span class="sn-rep-score-of">of 100</span></p>` +
+    `<p class="sn-rep-score-verdict">${verdictFor(report.score)}</p>` +
+    `<p class="sn-rep-fine">${fine}</p></div>` +
+    '<figure class="sn-rep-fig"><div data-chart="bed"></div><figcaption class="sn-rep-caption">A wallet with no leaks sits 100 deep, out of sight. Each finding takes depth away, and the hatching is what it cost. Where the bed ends up is the score.</figcaption></figure>' +
     '</div>' +
-    `<div class="ab-rep-section"><h4 class="ab-rep-title">The same, as a statement</h4>${statementHtml(report)}</div>` +
+    `<div class="sn-rep-section"><h4 class="sn-rep-title">The same, as a statement</h4>${statementHtml(report)}</div>` +
     figures +
-    '<div class="ab-rep-section"><p class="ab-rep-fine">This page has no list of known services, so it cannot tell you when a counterparty is an exchange or another identified service. The command-line scanner takes a labels file for that.</p></div>' +
+    '<div class="sn-rep-section"><p class="sn-rep-fine">This page has no list of known services, so it cannot tell you when a counterparty is an exchange or another identified service. The command-line scanner takes a labels file for that.</p></div>' +
     '</article>'
   );
 }

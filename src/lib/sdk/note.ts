@@ -14,9 +14,9 @@ import { poseidon3 } from "poseidon-lite/poseidon3";
 
 import { bigIntToBytesBE, bigIntToBytesLE, bytesToBigIntBE, bytesToBigIntLE, concatBytes, randomBytes, utf8 } from "./bytes";
 import { ENCRYPTED_NOTE_LENGTH, KEYED_NOTE_KEY_INFO, NOTE_KEY_INFO } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 import { type FieldLike, assertAmount, assertField, toField } from "./field";
-import { type MistonKeys, isValidEncryptionPublicKey } from "./keys";
+import { type VelairaKeys, isValidEncryptionPublicKey } from "./keys";
 
 /** A note: `amount` lamports owned by `publicKey`, hidden by `blinding`. */
 export interface Note {
@@ -40,14 +40,14 @@ export function randomBlinding(): bigint {
 /**
  * Builds a note. Without `blinding` a fresh random one is drawn.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the amount is outside `[0, 2^64)`,
+ * @throws VelairaError `INVALID_ARGUMENT` if the amount is outside `[0, 2^64)`,
  *   the public key is not a field element or the blinding is 2^248 or more.
  */
 export function createNote(amount: bigint, publicKey: bigint, blinding: bigint = randomBlinding()): Note {
   assertAmount(amount);
   assertField(publicKey, "publicKey");
   if (typeof blinding !== "bigint" || blinding < 0n || blinding >> 248n !== 0n) {
-    throw new MistonError("INVALID_ARGUMENT", "blinding must be a bigint below 2^248");
+    throw new VelairaError("INVALID_ARGUMENT", "blinding must be a bigint below 2^248");
   }
   return { amount, publicKey, blinding };
 }
@@ -91,11 +91,11 @@ function noteKey(shared: Uint8Array, ephemeralPublic: Uint8Array, recipientPubli
  *   ephemeralPublic (32) || ChaCha20-Poly1305(key, nonce = 0^12, plaintext) (39 + 16)
  *   key       = HKDF-SHA256(ikm = X25519(ephemeralSecret, recipient),
  *                           salt = ephemeralPublic || recipient,
- *                           info = "miston-note-v1", 32 bytes)
+ *                           info = "velaira-note-v1", 32 bytes)
  *   plaintext = amount as u64 little-endian (8) || blinding as 31 bytes big-endian
  *
  * With `psk` the note is a keyed note: `ikm` is the exchange followed by the
- * 32 bytes of `psk`, and `info` is "miston-note-psk-v1". Reading it takes the
+ * 32 bytes of `psk`, and `info` is "velaira-note-psk-v1". Reading it takes the
  * recipient's X25519 key and `psk`, both. Everything else is the same, the
  * ephemeral key included, so the two kinds cannot be told apart on chain.
  * `psk` is the sender's own `selfNoteKey` for a note to itself (the recipient
@@ -108,20 +108,20 @@ function noteKey(shared: Uint8Array, ephemeralPublic: Uint8Array, recipientPubli
  * order. Its raw bytes go into the salt, so a second encoding of the same key
  * would produce a note its owner cannot decrypt.
  *
- * @throws MistonError `INVALID_ARGUMENT` for an invalid note, recipient key or `psk`.
+ * @throws VelairaError `INVALID_ARGUMENT` for an invalid note, recipient key or `psk`.
  */
 export function encryptNote(note: Note, recipientEncryptionPublic: Uint8Array, psk?: Uint8Array): Uint8Array {
   const checked = createNote(note.amount, note.publicKey, note.blinding);
   if (psk !== undefined && (!(psk instanceof Uint8Array) || psk.length !== PSK_BYTES)) {
-    throw new MistonError("INVALID_ARGUMENT", "the pre-shared key of a note must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "the pre-shared key of a note must be 32 bytes");
   }
   if (!(recipientEncryptionPublic instanceof Uint8Array) || recipientEncryptionPublic.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "the recipient encryption key must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "the recipient encryption key must be 32 bytes");
   }
   if (!isValidEncryptionPublicKey(recipientEncryptionPublic)) {
     // Low order: the shared secret would be all zeros and anyone could decrypt.
     // Non-canonical: the recipient would derive a different note key and never see the note.
-    throw new MistonError("INVALID_ARGUMENT", "the recipient encryption key is not a valid X25519 public key");
+    throw new VelairaError("INVALID_ARGUMENT", "the recipient encryption key is not a valid X25519 public key");
   }
   const ephemeralSecret = randomBytes(32);
   const ephemeralPublic = x25519.getPublicKey(ephemeralSecret);
@@ -129,7 +129,7 @@ export function encryptNote(note: Note, recipientEncryptionPublic: Uint8Array, p
   try {
     shared = x25519.getSharedSecret(ephemeralSecret, recipientEncryptionPublic);
   } catch {
-    throw new MistonError("INVALID_ARGUMENT", "the recipient encryption key is not a valid X25519 public key");
+    throw new VelairaError("INVALID_ARGUMENT", "the recipient encryption key is not a valid X25519 public key");
   }
   const key = noteKey(shared, ephemeralPublic, recipientEncryptionPublic, psk);
   const plaintext = concatBytes(bigIntToBytesLE(checked.amount, 8), bigIntToBytesBE(checked.blinding, BLINDING_BYTES));
@@ -160,7 +160,7 @@ export interface OpenedNote {
 }
 
 /** The keys trial decryption uses. Without `selfNoteKey`, notes the wallet sent to itself are not found. */
-export type NoteOpeningKeys = Pick<MistonKeys, "publicKey" | "encryptionSecret" | "encryptionPublic"> & Partial<Pick<MistonKeys, "selfNoteKey">>;
+export type NoteOpeningKeys = Pick<VelairaKeys, "publicKey" | "encryptionSecret" | "encryptionPublic"> & Partial<Pick<VelairaKeys, "selfNoteKey">>;
 
 /**
  * Trial decryption of one `NewCommitment` event. Returns the note, and how

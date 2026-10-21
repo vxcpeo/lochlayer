@@ -1,0 +1,129 @@
+<template>
+  <!-- The icon sprite, once per page. Icons are used as <use href="#i-name">. -->
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+<symbol id="i-caution" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 3.25L17.5 16.5h-15z">
+</path>
+<path d="M10 8.5v3.75">
+</path>
+<path d="M10 14.4v.1">
+</path>
+</symbol>
+  <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 10.5l4 4 8-9">
+</path>
+</symbol>
+  <symbol id="i-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 7.5l5 5 5-5">
+</path>
+</symbol>
+  <symbol id="i-close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5 5l10 10">
+</path>
+<path d="M15 5L5 15">
+</path>
+</symbol>
+  <symbol id="i-copy" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<rect x="7" y="7" width="9.5" height="9.5" rx="1">
+</rect>
+<path d="M4.5 13h-1V3.5H13v1">
+</path>
+</symbol>
+  <symbol id="i-dive" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 7h15">
+</path>
+<path d="M10 2.5v15">
+</path>
+<path d="M5.5 13l4.5 4.5 4.5-4.5">
+</path>
+</symbol>
+  <symbol id="i-external" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M8.5 4.5h-4v11h11v-4">
+</path>
+<path d="M11.5 4.5h4v4">
+</path>
+<path d="M15.5 4.5l-6 6">
+</path>
+</symbol>
+  <symbol id="i-info" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="10" cy="10" r="7.5">
+</circle>
+<path d="M10 9.25v4.5">
+</path>
+<path d="M10 6.4v.1">
+</path>
+</symbol>
+  <symbol id="i-public" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 14h15">
+</path>
+<circle cx="10" cy="7.25" r="3.75">
+</circle>
+</symbol>
+  <symbol id="i-receive" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 5.5h15">
+</path>
+<path d="M17.5 13H8" stroke-dasharray="2.4 2.6">
+</path>
+<path d="M7 9.5L3.5 13 7 16.5">
+</path>
+</symbol>
+  <symbol id="i-refresh" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M16.5 3.75v4.5H12">
+</path>
+<path d="M16.5 8.25L14.25 6a6 6 0 1 0 1.4 6.3">
+</path>
+</symbol>
+  <symbol id="i-scan" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 5.5h15">
+</path>
+<path d="M10 5.5v7">
+</path>
+<path d="M10 12.5l2.25 2.5L10 17.5 7.75 15z">
+</path>
+</symbol>
+  <symbol id="i-send" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 5.5h15">
+</path>
+<path d="M2.5 13h9.5" stroke-dasharray="2.4 2.6">
+</path>
+<path d="M13 9.5l3.5 3.5-3.5 3.5">
+</path>
+</symbol>
+  <symbol id="i-settings" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 6.5h2.75">
+</path>
+<path d="M9.75 6.5h7.75">
+</path>
+<circle cx="7.5" cy="6.5" r="2.25">
+</circle>
+<path d="M2.5 13.5h7.75">
+</path>
+<path d="M14.75 13.5h2.75">
+</path>
+<circle cx="12.5" cy="13.5" r="2.25">
+</circle>
+</symbol>
+  <symbol id="i-shielded" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 6h15">
+</path>
+<circle cx="10" cy="12.75" r="3.75" stroke-dasharray="1.9 2.03">
+</circle>
+</symbol>
+  <symbol id="i-surface" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M2.5 13h15">
+</path>
+<path d="M10 17.5v-15">
+</path>
+<path d="M5.5 7L10 2.5 14.5 7">
+</path>
+</symbol>
+  <symbol id="i-wallet" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M3.5 6.5h13v10h-13z">
+</path>
+<path d="M3.5 6.5l10-3v3">
+</path>
+<path d="M13.4 11.5h.1">
+</path>
+</symbol>
+  </svg>
+</template>

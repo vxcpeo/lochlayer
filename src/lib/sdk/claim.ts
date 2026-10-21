@@ -16,8 +16,8 @@ import { PublicKey } from "@solana/web3.js";
 import { type Form, decodePayload } from "./address";
 import { bigIntToBytesBE, bytesToBigIntBE, concatBytes, copyBytes, randomBytes, utf8 } from "./bytes";
 import { CLAIM_DOMAIN, CLAIM_PREFIX, MAX_AMOUNT, PROGRAM_ID, TREE_DEPTH } from "./constants";
-import { MistonError } from "./errors";
-import { type MistonKeys, keysFromSeed } from "./keys";
+import { VelairaError } from "./errors";
+import { type VelairaKeys, keysFromSeed } from "./keys";
 import { noteCommitment, noteNullifier } from "./note";
 import { type OwnedNote, WALLET_STATE_VERSION, type WalletState } from "./wallet";
 
@@ -46,15 +46,15 @@ export function createClaimSecret(): Uint8Array {
 }
 
 /**
- * The key set of a claim: `keysFromSeed(sha256(utf8("Miston claim v1") || secret))`.
+ * The key set of a claim: `keysFromSeed(sha256(utf8("Velaira claim v1") || secret))`.
  * Its address is what the payer pays; its spending key is what the recipient
  * collects with.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the secret is not 32 bytes.
+ * @throws VelairaError `INVALID_ARGUMENT` if the secret is not 32 bytes.
  */
-export function claimKeys(secret: Uint8Array): MistonKeys {
+export function claimKeys(secret: Uint8Array): VelairaKeys {
   if (!(secret instanceof Uint8Array) || secret.length !== SECRET_BYTES) {
-    throw new MistonError("INVALID_ARGUMENT", "a claim secret must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "a claim secret must be 32 bytes");
   }
   return keysFromSeed(sha256(concatBytes(utf8(CLAIM_DOMAIN), secret)));
 }
@@ -62,27 +62,27 @@ export function claimKeys(secret: Uint8Array): MistonKeys {
 function checked(claim: Claim): Claim {
   const { secret, amount, blinding, leafIndex } = claim;
   if (!(secret instanceof Uint8Array) || secret.length !== SECRET_BYTES) {
-    throw new MistonError("INVALID_ARGUMENT", "a claim secret must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "a claim secret must be 32 bytes");
   }
   if (typeof amount !== "bigint" || amount <= 0n || amount > MAX_AMOUNT) {
-    throw new MistonError("INVALID_ARGUMENT", "a claim amount is between 1 and 2^64 - 1 lamports");
+    throw new VelairaError("INVALID_ARGUMENT", "a claim amount is between 1 and 2^64 - 1 lamports");
   }
   if (typeof blinding !== "bigint" || blinding < 0n || blinding >> 248n !== 0n) {
-    throw new MistonError("INVALID_ARGUMENT", "blinding must be a bigint below 2^248");
+    throw new VelairaError("INVALID_ARGUMENT", "blinding must be a bigint below 2^248");
   }
   if (!Number.isInteger(leafIndex) || leafIndex < 0 || leafIndex >= 2 ** TREE_DEPTH) {
-    throw new MistonError("INVALID_ARGUMENT", "leafIndex is outside the tree");
+    throw new VelairaError("INVALID_ARGUMENT", "leafIndex is outside the tree");
   }
   return claim;
 }
 
 /**
- * Encodes a claim code: bech32m, prefix "mistonclaim", payload
+ * Encodes a claim code: bech32m, prefix "velairaclaim", payload
  * `secret (32) || amount as u64 big-endian (8) || blinding (31) || leafIndex as u32 big-endian (4)`.
  * Always 138 characters. The result IS the money: treat it like cash in an
  * envelope.
  *
- * @throws MistonError `INVALID_ARGUMENT` for a malformed claim.
+ * @throws VelairaError `INVALID_ARGUMENT` for a malformed claim.
  */
 export function encodeClaim(claim: Claim): string {
   const { secret, amount, blinding, leafIndex } = checked(claim);
@@ -92,10 +92,10 @@ export function encodeClaim(claim: Claim): string {
 
 /**
  * Decodes a claim code. The same rules as for an address: one case, the
- * prefix "mistonclaim", a bech32m checksum, a 75-byte payload.
+ * prefix "velairaclaim", a bech32m checksum, a 75-byte payload.
  *
  * @throws AddressError with `reason` `encoding`, `prefix`, `checksum` or
- *   `length`; MistonError `INVALID_ARGUMENT` for an amount of zero or a leaf
+ *   `length`; VelairaError `INVALID_ARGUMENT` for an amount of zero or a leaf
  *   index outside the tree.
  */
 export function decodeClaim(text: string): Claim {
@@ -136,15 +136,15 @@ export function claimNote(claim: Claim): OwnedNote {
  * the transaction is sent (`nullifier_spent`), or `isNullifierSpent` does, at
  * the price of naming the note to the RPC.
  *
- * @throws MistonError `STALE_STATE` if the leaf at the claim's index is not the
+ * @throws VelairaError `STALE_STATE` if the leaf at the claim's index is not the
  *   claim's note: `leaves` is behind, or belongs to another pool, or the code
  *   is not for a note that exists.
  */
 export function claimState(claim: Claim, leaves: readonly string[], programId: PublicKey = PROGRAM_ID): WalletState {
   const note = claimNote(claim);
-  if (leaves.length % 2 !== 0) throw new MistonError("INVALID_ARGUMENT", "an odd number of leaves (every transaction appends two)");
+  if (leaves.length % 2 !== 0) throw new VelairaError("INVALID_ARGUMENT", "an odd number of leaves (every transaction appends two)");
   if (leaves[note.leafIndex] !== note.commitment.toString()) {
-    throw new MistonError("STALE_STATE", "the claim's note is not in the tree at its index; sync and try again");
+    throw new VelairaError("STALE_STATE", "the claim's note is not in the tree at its index; sync and try again");
   }
   return {
     version: WALLET_STATE_VERSION,

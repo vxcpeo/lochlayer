@@ -21,14 +21,14 @@ import { poseidon1 } from "poseidon-lite/poseidon1";
 
 import { bytesToBigIntBE, concatBytes, utf8 } from "./bytes";
 import { KEY_DERIVATION_MESSAGE, NOTE_ENCRYPTION_DOMAIN, PAYMENT_CODE_DOMAIN, SELF_NOTE_DOMAIN } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 import { mod } from "./field";
 
 /**
- * A Miston key set. Everything but `publicKey` and `encryptionPublic` is secret;
+ * A Velaira key set. Everything but `publicKey` and `encryptionPublic` is secret;
  * never log or transmit it.
  */
-export interface MistonKeys {
+export interface VelairaKeys {
   /**
    * Spending key: a BN254 scalar. Secret. In keys v1 it also determines
    * `encryptionSecret`, so handing it to anyone (a remote prover, for
@@ -60,27 +60,27 @@ export function keyDerivationMessage(): Uint8Array {
 }
 
 /**
- * Derives the Miston key set from the wallet's Ed25519 signature of
+ * Derives the Velaira key set from the wallet's Ed25519 signature of
  * {@link keyDerivationMessage}.
  *
  *   seed             = sha256(signature)
  *   privateKey       = BigInt(seed, big-endian) mod r
  *   publicKey        = Poseidon(privateKey)
- *   encryptionSecret = sha256(utf8("Miston note encryption v1") || seed)
+ *   encryptionSecret = sha256(utf8("Velaira note encryption v1") || seed)
  *   encryptionPublic = X25519 base-point multiplication
- *   selfNoteKey      = sha256(utf8("Miston self note v1") || seed)
- *   paymentCodeRoot  = sha256(utf8("Miston payment code v1") || seed)
+ *   selfNoteKey      = sha256(utf8("Velaira self note v1") || seed)
+ *   paymentCodeRoot  = sha256(utf8("Velaira payment code v1") || seed)
  *
  * Pass the wallet's 32-byte Ed25519 public key as `walletPublicKey` and the
  * signature is verified first: a wallet that returns anything other than a
  * real signature of the message would otherwise yield guessable keys.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the signature is not 64 bytes,
+ * @throws VelairaError `INVALID_ARGUMENT` if the signature is not 64 bytes,
  *   `INVALID_SIGNATURE` if verification was requested and fails.
  */
-export function deriveKeys(signature: Uint8Array, walletPublicKey?: Uint8Array): MistonKeys {
+export function deriveKeys(signature: Uint8Array, walletPublicKey?: Uint8Array): VelairaKeys {
   if (!(signature instanceof Uint8Array) || signature.length !== 64) {
-    throw new MistonError("INVALID_ARGUMENT", "expected the 64-byte Ed25519 signature of the key derivation message");
+    throw new VelairaError("INVALID_ARGUMENT", "expected the 64-byte Ed25519 signature of the key derivation message");
   }
   if (walletPublicKey !== undefined) {
     let valid = false;
@@ -90,7 +90,7 @@ export function deriveKeys(signature: Uint8Array, walletPublicKey?: Uint8Array):
       valid = false;
     }
     if (!valid) {
-      throw new MistonError("INVALID_SIGNATURE", "the wallet did not return a valid signature of the key derivation message");
+      throw new VelairaError("INVALID_SIGNATURE", "the wallet did not return a valid signature of the key derivation message");
     }
   }
   return keysFromSeed(sha256(signature));
@@ -102,11 +102,11 @@ export function deriveKeys(signature: Uint8Array, walletPublicKey?: Uint8Array):
  * a claim link's seed is a hash of the link's secret (`claimKeys`). The seed
  * is as secret as the keys.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the seed is not 32 bytes.
+ * @throws VelairaError `INVALID_ARGUMENT` if the seed is not 32 bytes.
  */
-export function keysFromSeed(seed: Uint8Array): MistonKeys {
+export function keysFromSeed(seed: Uint8Array): VelairaKeys {
   if (!(seed instanceof Uint8Array) || seed.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "a key seed must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "a key seed must be 32 bytes");
   }
   const privateKey = mod(bytesToBigIntBE(seed));
   const encryptionSecret = sha256(concatBytes(utf8(NOTE_ENCRYPTION_DOMAIN), seed));
@@ -128,15 +128,15 @@ export const MAX_PAYMENT_CODE_INDEX = 0xffff_ffff;
  * `sha256(paymentCodeRoot || index as u32 big-endian)`. Deterministic, so a wallet restored from its signature can look for notes
  * paid to every code it ever handed out.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the root is not 32 bytes or the
+ * @throws VelairaError `INVALID_ARGUMENT` if the root is not 32 bytes or the
  *   index is not an integer from 0 to 2^32 - 1.
  */
 export function paymentCodeSecret(paymentCodeRoot: Uint8Array, index: number): Uint8Array {
   if (!(paymentCodeRoot instanceof Uint8Array) || paymentCodeRoot.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "the payment code root must be 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "the payment code root must be 32 bytes");
   }
   if (!Number.isInteger(index) || index < 0 || index > MAX_PAYMENT_CODE_INDEX) {
-    throw new MistonError("INVALID_ARGUMENT", "a payment code index is an integer from 0 to 2^32 - 1");
+    throw new VelairaError("INVALID_ARGUMENT", "a payment code index is an integer from 0 to 2^32 - 1");
   }
   return sha256(concatBytes(paymentCodeRoot, Uint8Array.of(index >>> 24, (index >>> 16) & 0xff, (index >>> 8) & 0xff, index & 0xff)));
 }

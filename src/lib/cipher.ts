@@ -1,5 +1,5 @@
 ﻿/**
- * The hero's water line: "The Miston is not." is revealed letter by letter from
+ * The hero's water line: "The Velaira is not." is revealed letter by letter from
  * a scramble of characters. Ported from the reference site's own page script.
  *
  * The animation is decoration only: it writes nothing from the page into the
@@ -21,7 +21,7 @@ function reduced(): boolean {
 /** Starts the reveal on `element`, or finishes it at once when motion is reduced. */
 export function startCipher(element: HTMLElement): void {
   const reset = (): void => {
-    element.querySelector('.ab-scramble')?.remove();
+    element.querySelector('.sn-scramble')?.remove();
     element.removeAttribute('data-cipher');
     element.setAttribute('data-set', '');
   };
@@ -48,7 +48,7 @@ export function startCipher(element: HTMLElement): void {
     });
 
     const cipher = document.createElement('span');
-    cipher.className = 'ab-scramble';
+    cipher.className = 'sn-scramble';
     cipher.setAttribute('aria-hidden', 'true');
     const spans = lines.map((line) => {
       const span = document.createElement('span');

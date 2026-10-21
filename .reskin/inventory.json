@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T16:01:45.189Z",
+  "generatedAt": "2026-10-21T17:00:37.888Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/lochlayer/website",
-    "name": "miston-website",
+    "name": "velaira-website",
     "vueVersion": "^3.5.44",
     "nuxt": false,
     "dependencies": [
@@ -40,14 +40,14 @@
     "frameworks": []
   },
   "stats": {
-    "filesScanned": 64,
-    "vueFiles": 14,
+    "filesScanned": 65,
+    "vueFiles": 15,
     "routes": 6,
-    "staticTextTokens": 740,
+    "staticTextTokens": 735,
     "bindingTokens": 42,
     "eventTokens": 14,
-    "classNames": 276,
-    "colors": 52
+    "classNames": 278,
+    "colors": 60
   },
   "routes": [
     {
@@ -59,7 +59,7 @@
       "dynamic": false
     },
     {
-      "path": "/download/miston-extension-0.1.0.zip",
+      "path": "/download/velaira-extension-0.1.0.zip",
       "dynamic": false,
       "source": "link"
     },
@@ -78,8 +78,8 @@
   ],
   "unresolvedRoutes": [],
   "archetype": {
-    "id": "bento-canvas",
-    "family": "spatial",
+    "id": "marketing-stack",
+    "family": "editorial",
     "traits": {
       "sidebar": false,
       "topbar": false,
@@ -92,139 +92,139 @@
       "charts": true,
       "sticky": true,
       "orbital": false,
-      "terminal": false,
-      "bento": true,
+      "terminal": true,
+      "bento": false,
       "ticker": false,
       "gallery": false
     }
   },
   "palette": [
     {
+      "hex": "#000000",
+      "count": 5
+    },
+    {
       "hex": "#ffffff",
-      "count": 16
+      "count": 4
     },
     {
-      "hex": "#0000cc",
+      "hex": "#0a121b",
+      "count": 3
+    },
+    {
+      "hex": "#1a0f1b",
+      "count": 3
+    },
+    {
+      "hex": "#e7a9df",
+      "count": 3
+    },
+    {
+      "hex": "#b6509e",
+      "count": 2
+    },
+    {
+      "hex": "#f2c94c",
+      "count": 2
+    },
+    {
+      "hex": "#080d14",
       "count": 1
     },
     {
-      "hex": "#0000ff",
+      "hex": "#0e1722",
       "count": 1
     },
     {
-      "hex": "#006b47",
+      "hex": "#101c28",
       "count": 1
     },
     {
-      "hex": "#0a0b0d",
+      "hex": "#121d2a",
       "count": 1
     },
     {
-      "hex": "#12100c",
+      "hex": "#140b14",
       "count": 1
     },
     {
-      "hex": "#4c5259",
+      "hex": "#17232f",
       "count": 1
     },
     {
-      "hex": "#514a3f",
+      "hex": "#182635",
       "count": 1
     },
     {
-      "hex": "#646b73",
+      "hex": "#1e1220",
       "count": 1
     },
     {
-      "hex": "#6a6255",
+      "hex": "#1f2e3d",
       "count": 1
     },
     {
-      "hex": "#6a7078",
+      "hex": "#241222",
       "count": 1
     },
     {
-      "hex": "#7575ff",
+      "hex": "#241c0d",
       "count": 1
     },
     {
-      "hex": "#8a3a00",
+      "hex": "#261628",
       "count": 1
     },
     {
-      "hex": "#aab1bb",
+      "hex": "#2a1630",
       "count": 1
     },
     {
-      "hex": "#aeb7c1",
+      "hex": "#2c1930",
       "count": 1
     },
     {
-      "hex": "#b3261e",
+      "hex": "#2c4155",
       "count": 1
     },
     {
-      "hex": "#b3a894",
+      "hex": "#2ebac6",
       "count": 1
     },
     {
-      "hex": "#c3cad3",
+      "hex": "#2f1c31",
       "count": 1
     },
     {
-      "hex": "#c9c0af",
+      "hex": "#2f2411",
       "count": 1
     },
     {
-      "hex": "#d3d7ff",
+      "hex": "#31465a",
       "count": 1
     },
     {
-      "hex": "#dce2e8",
+      "hex": "#35163a",
       "count": 1
     },
     {
-      "hex": "#dde3e9",
+      "hex": "#3a2340",
       "count": 1
     },
     {
-      "hex": "#e2d9c8",
+      "hex": "#43cbd4",
       "count": 1
     },
     {
-      "hex": "#e4e9ef",
+      "hex": "#513258",
       "count": 1
     },
     {
-      "hex": "#e6ebf0",
+      "hex": "#5ce1a0",
       "count": 1
     },
     {
-      "hex": "#e7e7ff",
-      "count": 1
-    },
-    {
-      "hex": "#e8e8ff",
-      "count": 1
-    },
-    {
-      "hex": "#e8edf2",
-      "count": 1
-    },
-    {
-      "hex": "#e9e3d7",
-      "count": 1
-    },
-    {
-      "hex": "#ece5d7",
-      "count": 1
-    },
-    {
-      "hex": "#f0ebe0",
-      "count": 1
-    },
-    {
-      "hex": "#f2f4f7",
+      "hex": "#74e8b2",
       "count": 1
     }
   ],
@@ -232,402 +232,414 @@
   "classNames": [
     "?",
     "[",
+    "ab-actions",
+    "ab-area",
+    "ab-band",
+    "ab-band__body",
+    "ab-band__gauge",
+    "ab-band__head",
+    "ab-band__lede",
+    "ab-band__title",
+    "ab-bar",
+    "ab-bar__tools",
+    "ab-brand",
+    "ab-brand__mark",
+    "ab-brand__mark--night",
+    "ab-brand__word",
+    "ab-btn",
+    "ab-btn--fill",
+    "ab-btn--hot",
+    "ab-btn--lg",
+    "ab-btn--line",
+    "ab-btn--quiet",
+    "ab-btn--sm",
+    "ab-btn--soon",
+    "ab-btn--stack",
+    "ab-callout",
+    "ab-callout--framed",
+    "ab-callout--inline",
+    "ab-callout--top",
+    "ab-callout--warn",
+    "ab-callout__title",
+    "ab-caption",
+    "ab-check",
+    "ab-check__body",
+    "ab-check__console",
+    "ab-check__result",
+    "ab-cluster",
+    "ab-code",
+    "ab-column",
+    "ab-console",
+    "ab-console__beat",
+    "ab-console__form",
+    "ab-console__limit",
+    "ab-console__set",
+    "ab-cta",
+    "ab-cue",
+    "ab-depth",
+    "ab-device",
+    "ab-device__actions",
+    "ab-device__activity",
+    "ab-device__amount",
+    "ab-device__bath",
+    "ab-device__brand",
+    "ab-device__chip",
+    "ab-device__delta",
+    "ab-device__label",
+    "ab-device__legend",
+    "ab-device__note",
+    "ab-device__over",
+    "ab-device__pane",
+    "ab-device__pane--open",
+    "ab-device__row",
+    "ab-device__rowhead",
+    "ab-device__rowmain",
+    "ab-device__rowmeta",
+    "ab-device__rowtitle",
+    "ab-device__score",
+    "ab-device__score-link",
+    "ab-device__score-of",
+    "ab-device__score-value",
+    "ab-device__top",
+    "ab-doc",
+    "ab-doc__body",
+    "ab-doc__frame",
+    "ab-doc__grid",
+    "ab-doc__head",
+    "ab-doc__list",
+    "ab-doc__rail",
+    "ab-doc__rail-title",
+    "ab-doc__section",
+    "ab-doc__section--wide",
+    "ab-doc__sections",
+    "ab-doc__toc",
+    "ab-download",
+    "ab-exposed",
+    "ab-fail",
+    "ab-fail__detail",
+    "ab-fail__title",
+    "ab-field",
+    "ab-field__err",
+    "ab-field__hint",
+    "ab-field__label",
+    "ab-field__line",
+    "ab-figure",
+    "ab-figure--xl",
+    "ab-fine",
+    "ab-fold",
+    "ab-fold__body",
+    "ab-frame",
+    "ab-glyph",
+    "ab-glyph--sm",
+    "ab-idea",
+    "ab-idea__more",
+    "ab-idea__pair",
+    "ab-idea__what",
+    "ab-ideas",
+    "ab-indexline",
+    "ab-indexline__item",
+    "ab-indexline__link",
+    "ab-indexline__list",
+    "ab-input",
+    "ab-input--lg",
+    "ab-input--mono",
+    "ab-jump",
+    "ab-keeps__figure",
+    "ab-keeps__more",
+    "ab-kept",
+    "ab-kept__tag",
+    "ab-keynote",
+    "ab-lead__lede",
+    "ab-lead__note",
+    "ab-ledger",
+    "ab-ledger--alarm",
+    "ab-ledger--wide",
+    "ab-ledger__def",
+    "ab-ledger__row",
+    "ab-ledger__term",
+    "ab-link",
+    "ab-meter",
+    "ab-meter__fill",
+    "ab-meter__stages",
+    "ab-meter__status",
+    "ab-meter__track",
+    "ab-mirror",
+    "ab-mirror__land",
+    "ab-mirror__water",
+    "ab-none",
+    "ab-none__title",
+    "ab-note",
+    "ab-notes",
+    "ab-num",
+    "ab-observe",
+    "ab-observe__tag",
+    "ab-pal",
+    "ab-pal__btn",
+    "ab-plate",
+    "ab-plate__figure",
+    "ab-plate__glass",
+    "ab-plot",
+    "ab-plot-bed",
+    "ab-plot-bedline",
+    "ab-plot-col",
+    "ab-plot-ground",
+    "ab-plot-hatch",
+    "ab-plot-hours",
+    "ab-plot-label",
+    "ab-plot-link",
+    "ab-plot-link-faint",
+    "ab-plot-node",
+    "ab-plot-quiet",
+    "ab-plot-rule",
+    "ab-plot-sounding",
+    "ab-plot-station",
+    "ab-plot-strong",
+    "ab-plot-surface",
+    "ab-plot-warn",
+    "ab-plot-water",
+    "ab-plot-who",
+    "ab-policy",
+    "ab-procedure",
+    "ab-qty",
+    "ab-readout",
+    "ab-readout-frame",
+    "ab-record",
+    "ab-record__cell",
+    "ab-record__key",
+    "ab-record__val",
+    "ab-rep-body",
+    "ab-rep-caption",
+    "ab-rep-clear",
+    "ab-rep-example",
+    "ab-rep-example-body",
+    "ab-rep-fig",
+    "ab-rep-figure",
+    "ab-rep-figure-less",
+    "ab-rep-figures",
+    "ab-rep-fine",
+    "ab-rep-fit",
+    "ab-rep-fit-bed",
+    "ab-rep-fit-hours",
+    "ab-rep-fit-who",
+    "ab-rep-flag",
+    "ab-rep-fold",
+    "ab-rep-head",
+    "ab-rep-list",
+    "ab-rep-name",
+    "ab-rep-row",
+    "ab-rep-row-open",
+    "ab-rep-row-total",
+    "ab-rep-score",
+    "ab-rep-score-figure",
+    "ab-rep-score-label",
+    "ab-rep-score-of",
+    "ab-rep-score-verdict",
+    "ab-rep-section",
+    "ab-rep-sev",
+    "ab-rep-sheet",
+    "ab-rep-title",
+    "ab-rep-what",
+    "ab-rise",
+    "ab-runhead",
+    "ab-runhead__action",
+    "ab-runhead__lede",
+    "ab-runhead__say",
+    "ab-runhead__title",
+    "ab-scan__aside",
+    "ab-scan__status",
+    "ab-seal",
+    "ab-seal--l",
+    "ab-seal--m",
+    "ab-seal--s",
+    "ab-select",
+    "ab-select-native",
+    "ab-sha",
+    "ab-sheet",
+    "ab-sheet--alarm",
+    "ab-sheet__body",
+    "ab-sheet__head",
+    "ab-sheet__title",
+    "ab-shielded",
+    "ab-sign",
+    "ab-spine",
+    "ab-spine__mark",
+    "ab-spine__route",
+    "ab-spine__routes",
+    "ab-spine__tail",
+    "ab-sprite",
+    "ab-stage",
+    "ab-status",
+    "ab-status__band",
+    "ab-status__depth",
+    "ab-status__fine",
+    "ab-status__gauge",
+    "ab-status__id",
+    "ab-status__line",
+    "ab-status__links",
+    "ab-status__mark",
+    "ab-status__name",
+    "ab-status__note",
+    "ab-status__phase",
+    "ab-status__rail",
+    "ab-status__token",
+    "ab-status__words",
+    "ab-step",
+    "ab-step--dive",
+    "ab-step--move",
+    "ab-step--surface",
+    "ab-step__body",
+    "ab-step__n",
+    "ab-step__plate",
+    "ab-step__rail",
+    "ab-step__text",
+    "ab-step__title",
+    "ab-steps",
+    "ab-steps__strip",
+    "ab-table",
+    "ab-tablewrap",
+    "ab-token",
+    "ab-unit",
+    "ab-verify__band-title",
+    "ab-verify__form",
+    "ab-verify__section",
+    "ab-wet",
     "bath",
     "bath-frac",
     "bath-less",
-    "bp-actions",
-    "bp-area",
-    "bp-brand",
-    "bp-brand__mark",
-    "bp-brand__mark--night",
-    "bp-brand__word",
-    "bp-btn",
-    "bp-btn--fill",
-    "bp-btn--hot",
-    "bp-btn--lg",
-    "bp-btn--line",
-    "bp-btn--quiet",
-    "bp-btn--sm",
-    "bp-btn--stack",
-    "bp-callout",
-    "bp-callout--framed",
-    "bp-callout--inline",
-    "bp-callout--top",
-    "bp-callout--warn",
-    "bp-callout__title",
-    "bp-canvas",
-    "bp-caption",
-    "bp-chapter",
-    "bp-chapter__body",
-    "bp-chapter__head",
-    "bp-chapter__kicker",
-    "bp-chapter__lede",
-    "bp-chapter__title",
-    "bp-cluster",
-    "bp-code",
-    "bp-cta",
-    "bp-cue",
-    "bp-deck",
-    "bp-depth",
-    "bp-device",
-    "bp-device__actions",
-    "bp-device__activity",
-    "bp-device__amount",
-    "bp-device__bath",
-    "bp-device__brand",
-    "bp-device__chip",
-    "bp-device__delta",
-    "bp-device__label",
-    "bp-device__legend",
-    "bp-device__note",
-    "bp-device__over",
-    "bp-device__pane",
-    "bp-device__pane--open",
-    "bp-device__row",
-    "bp-device__rowhead",
-    "bp-device__rowmain",
-    "bp-device__rowmeta",
-    "bp-device__rowtitle",
-    "bp-device__score",
-    "bp-device__score-link",
-    "bp-device__score-of",
-    "bp-device__score-value",
-    "bp-device__top",
-    "bp-doc__body",
-    "bp-doc__frame",
-    "bp-doc__list",
-    "bp-doc__rail",
-    "bp-doc__rail-title",
-    "bp-doc__section",
-    "bp-doc__section--wide",
-    "bp-doc__sections",
-    "bp-doc__toc",
-    "bp-download",
-    "bp-exposed",
-    "bp-fail",
-    "bp-fail__detail",
-    "bp-fail__title",
-    "bp-field",
-    "bp-field__err",
-    "bp-field__hint",
-    "bp-field__label",
-    "bp-field__line",
-    "bp-figure",
-    "bp-figure--xl",
-    "bp-fine",
-    "bp-fold",
-    "bp-fold__body",
-    "bp-foot",
-    "bp-foot__depth",
-    "bp-foot__fine",
-    "bp-foot__id",
-    "bp-foot__links",
-    "bp-foot__mark",
-    "bp-foot__name",
-    "bp-foot__rule",
-    "bp-foot__status",
-    "bp-foot__token",
-    "bp-foot__top",
-    "bp-glyph",
-    "bp-glyph--sm",
-    "bp-idea",
-    "bp-idea__more",
-    "bp-idea__pair",
-    "bp-idea__what",
-    "bp-ideas",
-    "bp-index",
-    "bp-index__item",
-    "bp-index__link",
-    "bp-index__list",
-    "bp-input",
-    "bp-input--lg",
-    "bp-input--mono",
-    "bp-jump",
-    "bp-keeps__figure",
-    "bp-keeps__more",
-    "bp-kept",
-    "bp-kept__tag",
-    "bp-keynote",
-    "bp-lead",
-    "bp-lead__copy",
-    "bp-lead__lede",
-    "bp-lead__note",
-    "bp-ledger",
-    "bp-ledger--alarm",
-    "bp-ledger--wide",
-    "bp-ledger__def",
-    "bp-ledger__row",
-    "bp-ledger__term",
-    "bp-link",
-    "bp-masthead",
-    "bp-meter",
-    "bp-meter__fill",
-    "bp-meter__stages",
-    "bp-meter__status",
-    "bp-meter__track",
-    "bp-mirror",
-    "bp-mirror__land",
-    "bp-mirror__water",
-    "bp-none",
-    "bp-none__title",
-    "bp-note",
-    "bp-notes",
-    "bp-num",
-    "bp-observe",
-    "bp-observe__tag",
-    "bp-page",
-    "bp-page--docs",
-    "bp-page--install",
-    "bp-page--privacy",
-    "bp-pagehead",
-    "bp-pagehead__aside",
-    "bp-pal",
-    "bp-pal__btn",
-    "bp-plate",
-    "bp-plate__body",
-    "bp-plate__deep",
-    "bp-plate__figure",
-    "bp-plate__side",
-    "bp-plot",
-    "bp-plot-bed",
-    "bp-plot-bedline",
-    "bp-plot-col",
-    "bp-plot-ground",
-    "bp-plot-hatch",
-    "bp-plot-hours",
-    "bp-plot-label",
-    "bp-plot-link",
-    "bp-plot-link-faint",
-    "bp-plot-node",
-    "bp-plot-quiet",
-    "bp-plot-rule",
-    "bp-plot-sounding",
-    "bp-plot-station",
-    "bp-plot-strong",
-    "bp-plot-surface",
-    "bp-plot-warn",
-    "bp-plot-water",
-    "bp-plot-who",
-    "bp-qty",
-    "bp-readout",
-    "bp-readout-frame",
-    "bp-record",
-    "bp-record__cell",
-    "bp-record__key",
-    "bp-record__val",
-    "bp-rep-body",
-    "bp-rep-caption",
-    "bp-rep-clear",
-    "bp-rep-example",
-    "bp-rep-example-body",
-    "bp-rep-fig",
-    "bp-rep-figure",
-    "bp-rep-figure-less",
-    "bp-rep-figures",
-    "bp-rep-fine",
-    "bp-rep-fit",
-    "bp-rep-fit-bed",
-    "bp-rep-fit-hours",
-    "bp-rep-fit-who",
-    "bp-rep-flag",
-    "bp-rep-fold",
-    "bp-rep-head",
-    "bp-rep-list",
-    "bp-rep-name",
-    "bp-rep-row",
-    "bp-rep-row-open",
-    "bp-rep-row-total",
-    "bp-rep-score",
-    "bp-rep-score-figure",
-    "bp-rep-score-label",
-    "bp-rep-score-of",
-    "bp-rep-score-verdict",
-    "bp-rep-section",
-    "bp-rep-sev",
-    "bp-rep-sheet",
-    "bp-rep-title",
-    "bp-rep-what",
-    "bp-rise",
-    "bp-scan",
-    "bp-scan__aside",
-    "bp-scan__bar",
-    "bp-scan__form",
-    "bp-scan__limit",
-    "bp-scan__side",
-    "bp-scan__status",
-    "bp-seal",
-    "bp-seal--l",
-    "bp-seal--m",
-    "bp-seal--s",
-    "bp-select",
-    "bp-select-native",
-    "bp-sha",
-    "bp-sheet",
-    "bp-sheet--alarm",
-    "bp-sheet__body",
-    "bp-sheet__head",
-    "bp-sheet__title",
-    "bp-shell",
-    "bp-shielded",
-    "bp-sign",
-    "bp-sprite",
-    "bp-step",
-    "bp-step--dive",
-    "bp-step--move",
-    "bp-step--surface",
-    "bp-step__head",
-    "bp-step__n",
-    "bp-step__plate",
-    "bp-step__text",
-    "bp-step__title",
-    "bp-steps",
-    "bp-steps__strip",
-    "bp-table",
-    "bp-tablewrap",
-    "bp-thesis__lede",
-    "bp-thesis__title",
-    "bp-tile",
-    "bp-tile--12",
-    "bp-tile--4",
-    "bp-tile--5",
-    "bp-tile--7",
-    "bp-tile--8",
-    "bp-token",
-    "bp-tools",
-    "bp-unit",
-    "bp-verify",
-    "bp-verify__band-title",
-    "bp-verify__body",
-    "bp-verify__form",
-    "bp-verify__lead",
-    "bp-verify__panel",
-    "bp-verify__result",
-    "bp-verify__section",
-    "bp-wet",
     "rowClass(row)",
     "visually-hidden"
   ],
   "designSignals": {
     "frameworks": [],
     "cssVars": [
-      "--bp-accent",
-      "--bp-accent-2",
-      "--bp-accent-safe",
-      "--bp-accent-soft",
-      "--bp-body",
-      "--bp-canvas",
-      "--bp-canvas-2",
-      "--bp-danger",
-      "--bp-display",
-      "--bp-ease",
-      "--bp-gap",
-      "--bp-ink",
-      "--bp-ink-2",
-      "--bp-ink-3",
-      "--bp-line",
-      "--bp-line-2",
-      "--bp-line-3",
-      "--bp-max",
-      "--bp-mono",
-      "--bp-motion",
-      "--bp-pad",
-      "--bp-page-pad",
-      "--bp-panel",
-      "--bp-panel-2",
-      "--bp-panel-3",
-      "--bp-r",
-      "--bp-r-sm",
-      "--bp-success",
-      "--bp-warning",
-      "--bp-warning-soft",
+      "--abyss-accent",
+      "--abyss-accent-2",
+      "--abyss-accent-deep",
+      "--abyss-accent-safe",
+      "--abyss-accent-soft",
+      "--abyss-body",
+      "--abyss-danger",
+      "--abyss-display",
+      "--abyss-ease",
+      "--abyss-gap",
+      "--abyss-ground",
+      "--abyss-ground-2",
+      "--abyss-ink",
+      "--abyss-ink-2",
+      "--abyss-ink-3",
+      "--abyss-line",
+      "--abyss-line-2",
+      "--abyss-line-3",
+      "--abyss-max",
+      "--abyss-mono",
+      "--abyss-motion",
+      "--abyss-pad",
+      "--abyss-page-pad",
+      "--abyss-r",
+      "--abyss-r-lg",
+      "--abyss-r-sm",
+      "--abyss-rail",
+      "--abyss-shadow",
+      "--abyss-sheet",
+      "--abyss-sheet-2",
+      "--abyss-sheet-3",
+      "--abyss-success",
+      "--abyss-warning",
+      "--abyss-warning-soft",
+      "--active",
+      "--exact",
       "--fill",
-      "--hot",
       "--line",
-      "--quiet"
+      "--quiet",
+      "--soon"
     ],
     "colorVars": [
       {
-        "name": "--bp-accent",
-        "value": "#0000ff"
+        "name": "--abyss-accent",
+        "value": "#d25fb4"
       },
       {
-        "name": "--bp-accent-2",
-        "value": "#7575ff"
+        "name": "--abyss-accent-2",
+        "value": "#43cbd4"
       },
       {
-        "name": "--bp-accent-safe",
-        "value": "#0000cc"
+        "name": "--abyss-accent-deep",
+        "value": "#a8448e"
       },
       {
-        "name": "--bp-accent-soft",
-        "value": "#e7e7ff"
+        "name": "--abyss-accent-safe",
+        "value": "#f4bce9"
       },
       {
-        "name": "--bp-canvas",
-        "value": "#e9e3d7"
+        "name": "--abyss-accent-soft",
+        "value": "#35163a"
       },
       {
-        "name": "--bp-canvas-2",
-        "value": "#f0ebe0"
+        "name": "--abyss-danger",
+        "value": "#ffb0b0"
       },
       {
-        "name": "--bp-danger",
-        "value": "#b3261e"
+        "name": "--abyss-ground",
+        "value": "#140b14"
       },
       {
-        "name": "--bp-ink",
-        "value": "#12100c"
+        "name": "--abyss-ground-2",
+        "value": "#1a0f1b"
       },
       {
-        "name": "--bp-ink-2",
-        "value": "#514a3f"
+        "name": "--abyss-ink",
+        "value": "#f7eef5"
       },
       {
-        "name": "--bp-ink-3",
-        "value": "#6a6255"
+        "name": "--abyss-ink-2",
+        "value": "#cbb4c6"
       },
       {
-        "name": "--bp-line",
-        "value": "#c9c0af"
+        "name": "--abyss-ink-3",
+        "value": "#a892a3"
       },
       {
-        "name": "--bp-line-2",
-        "value": "#e2d9c8"
+        "name": "--abyss-line",
+        "value": "#3a2340"
       },
       {
-        "name": "--bp-line-3",
-        "value": "#b3a894"
+        "name": "--abyss-line-2",
+        "value": "#2c1930"
       },
       {
-        "name": "--bp-panel",
-        "value": "#fffdf7"
+        "name": "--abyss-line-3",
+        "value": "#513258"
       },
       {
-        "name": "--bp-panel-2",
-        "value": "#f5f0e5"
+        "name": "--abyss-sheet",
+        "value": "#1e1220"
       },
       {
-        "name": "--bp-panel-3",
-        "value": "#ece5d7"
+        "name": "--abyss-sheet-2",
+        "value": "#261628"
       },
       {
-        "name": "--bp-success",
-        "value": "#006b47"
+        "name": "--abyss-sheet-3",
+        "value": "#2f1c31"
       },
       {
-        "name": "--bp-warning",
-        "value": "#8a3a00"
+        "name": "--abyss-success",
+        "value": "#74e8b2"
       },
       {
-        "name": "--bp-warning-soft",
-        "value": "#fbebd9"
+        "name": "--abyss-warning",
+        "value": "#f7d464"
+      },
+      {
+        "name": "--abyss-warning-soft",
+        "value": "#2f2411"
       }
     ],
     "mediaQueries": [
       "@media (max-width: 1180px)",
-      "@media (max-width: 640px)",
-      "@media (max-width: 820px)",
-      "@media (max-width: 960px)",
+      "@media (max-width: 760px)",
+      "@media (max-width: 900px)",
+      "@media (min-width: 760px)",
       "@media (prefers-reduced-motion: no-preference)",
       "@media (prefers-reduced-motion: reduce)"
     ],
@@ -635,21 +647,22 @@
   },
   "structure": {
     "tagCounts": {
-      "a": 33,
+      "a": 30,
+      "abyssindex": 5,
+      "abyssrail": 5,
+      "abyssstatus": 1,
       "article": 18,
-      "blueprintfoot": 1,
-      "blueprintshell": 5,
       "bpcautions": 1,
       "bpdeck": 1,
       "bpkeeps": 1,
       "bpscan": 1,
       "bpsteps": 1,
       "button": 16,
-      "circle": 5,
+      "circle": 6,
       "code": 50,
       "dd": 69,
       "details": 2,
-      "div": 226,
+      "div": 216,
       "dl": 15,
       "dt": 69,
       "figcaption": 2,
@@ -659,34 +672,34 @@
       "h1": 5,
       "h2": 26,
       "h3": 11,
-      "header": 5,
+      "header": 24,
       "hr": 2,
-      "img": 10,
+      "img": 11,
       "input": 2,
       "label": 4,
-      "li": 59,
+      "li": 63,
       "main": 1,
       "nav": 3,
       "noscript": 2,
       "ol": 3,
       "option": 4,
-      "p": 187,
-      "path": 39,
+      "p": 190,
+      "path": 50,
       "pre": 8,
       "rect": 1,
       "router-link": 3,
-      "routerlink": 24,
+      "routerlink": 28,
       "routerview": 1,
-      "section": 12,
+      "section": 11,
       "select": 1,
       "siteicons": 1,
       "slot": 1,
       "small": 3,
-      "span": 181,
-      "strong": 8,
+      "span": 192,
+      "strong": 6,
       "summary": 2,
-      "svg": 24,
-      "symbol": 17,
+      "svg": 28,
+      "symbol": 21,
       "table": 5,
       "tbody": 5,
       "td": 44,
@@ -695,48 +708,94 @@
       "th": 44,
       "thead": 5,
       "tr": 35,
-      "ul": 7,
-      "use": 23
+      "ul": 8,
+      "use": 27
     },
     "depthHistogram": {
-      "0": 16,
-      "1": 41,
-      "2": 89,
-      "3": 76,
-      "4": 133,
-      "5": 180,
-      "6": 264,
-      "7": 203,
-      "8": 127,
-      "9": 105,
-      "10": 92,
-      "11": 17
+      "0": 17,
+      "1": 48,
+      "2": 111,
+      "3": 92,
+      "4": 141,
+      "5": 235,
+      "6": 230,
+      "7": 164,
+      "8": 134,
+      "9": 44,
+      "10": 76,
+      "11": 90,
+      "12": 17
     },
-    "maxDepth": 11,
+    "maxDepth": 12,
     "topLevelTags": [
       "siteicons",
       "a",
       "routerview",
-      "footer",
+      "nav",
       "div",
+      "footer",
       "svg",
       "section",
       "section",
       "section",
       "section",
       "section",
-      "blueprintshell",
-      "blueprintshell",
-      "blueprintshell",
-      "blueprintshell",
-      "blueprintshell"
+      "abyssrail",
+      "abyssrail",
+      "abyssrail",
+      "abyssrail",
+      "abyssrail"
     ],
     "skeletonSample": [
       "siteicons",
       "a",
       "routerview",
+      "nav",
+      "  ul",
+      "    li",
+      "      routerlink",
+      "    li",
+      "      routerlink",
+      "    li",
+      "      routerlink",
+      "div",
+      "  nav",
+      "    span",
+      "      img",
+      "    ul",
+      "      li",
+      "        routerlink",
+      "          svg",
+      "            use",
+      "      li",
+      "        routerlink",
+      "          svg",
+      "            use",
+      "      li",
+      "        routerlink",
+      "          svg",
+      "            use",
+      "      li",
+      "        routerlink",
+      "          svg",
+      "            use",
+      "    span",
+      "  div",
+      "    header",
+      "      routerlink",
+      "        img",
+      "        img",
+      "        span",
+      "      div",
+      "        div",
+      "          button",
+      "        routerlink",
+      "    main",
+      "      slot",
+      "    abyssstatus",
       "footer",
       "  div",
+      "    span",
       "    span",
       "  div",
       "    div",
@@ -744,7 +803,7 @@
       "      div",
       "        p",
       "        p",
-      "    nav",
+      "    div",
       "      ul",
       "        li",
       "          routerlink",
@@ -766,27 +825,6 @@
       "    p",
       "    p",
       "      code",
-      "div",
-      "  header",
-      "    routerlink",
-      "      img",
-      "      img",
-      "      span",
-      "    nav",
-      "      ul",
-      "        li",
-      "          routerlink",
-      "        li",
-      "          routerlink",
-      "        li",
-      "          routerlink",
-      "    div",
-      "      div",
-      "        button",
-      "      routerlink",
-      "  main",
-      "    slot",
-      "  blueprintfoot",
       "svg",
       "  symbol",
       "    path",
@@ -828,43 +866,20 @@
       "    path",
       "    path",
       "    path",
-      "  symbol",
-      "    path",
-      "    path",
-      "    path",
-      "  symbol",
-      "    path",
-      "    path",
-      "    circle",
-      "    path",
-      "    path",
-      "    circle",
-      "  symbol",
-      "    path",
-      "    circle",
-      "  symbol",
-      "    path",
-      "    path",
-      "    path",
-      "  symbol",
-      "    path",
-      "    path",
-      "    path",
-      "section",
-      "  div"
+      "  symbol"
     ]
   },
   "contentContract": {
     "schemaVersion": 1,
     "meta": {
-      "projectName": "miston-website",
+      "projectName": "velaira-website",
       "title": "Privacy score 49 of 100, drawn as a stepped bed",
       "lang": "en"
     },
     "routes": [
       "/",
       "/docs",
-      "/download/miston-extension-0.1.0.zip",
+      "/download/velaira-extension-0.1.0.zip",
       "/install",
       "/privacy",
       "/verify"
@@ -923,7 +938,7 @@
         "count": 1
       },
       {
-        "value": ", somewhere it can stay, such as your Documents folder. The browser runs Miston from that folder, so if you delete or move it later, Miston stops working.",
+        "value": ", somewhere it can stay, such as your Documents folder. The browser runs Velaira from that folder, so if you delete or move it later, Velaira stops working.",
         "count": 1
       },
       {
@@ -931,7 +946,7 @@
         "count": 1
       },
       {
-        "value": ", the Miston RPC proxy, which this project runs.",
+        "value": ", the Velaira RPC proxy, which this project runs.",
         "count": 1
       },
       {
@@ -948,10 +963,6 @@
       },
       {
         "value": ", with six checks.",
-        "count": 1
-      },
-      {
-        "value": "; press",
         "count": 1
       },
       {
@@ -975,7 +986,7 @@
         "count": 1
       },
       {
-        "value": ". If Miston says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
+        "value": ". If Velaira says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
         "count": 1
       },
       {
@@ -1019,7 +1030,7 @@
         "count": 1
       },
       {
-        "value": "$MISTON token:",
+        "value": "$VELAIRA token:",
         "count": 1
       },
       {
@@ -1247,10 +1258,6 @@
         "count": 1
       },
       {
-        "value": "A Miston user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
-        "count": 1
-      },
-      {
         "value": "A new note travels with the payment, encrypted so that only the person it is for can open it.",
         "count": 1
       },
@@ -1351,6 +1358,10 @@
         "count": 1
       },
       {
+        "value": "A Velaira user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
+        "count": 1
+      },
+      {
         "value": "A viewing key",
         "count": 2
       },
@@ -1372,14 +1383,6 @@
       },
       {
         "value": "about 3.5",
-        "count": 1
-      },
-      {
-        "value": "Add to Chrome",
-        "count": 4
-      },
-      {
-        "value": "Added from the Chrome Web Store, Miston updates itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Miston’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
         "count": 1
       },
       {
@@ -1407,7 +1410,7 @@
         "count": 1
       },
       {
-        "value": "an address receive an amount from the Miston, and when. Not which deposit it came from.",
+        "value": "an address receive an amount from the Velaira, and when. Not which deposit it came from.",
         "count": 1
       },
       {
@@ -1451,10 +1454,6 @@
         "count": 1
       },
       {
-        "value": "at the top of this page. It opens the extension’s page on the",
-        "count": 1
-      },
-      {
         "value": "Back to the start page",
         "count": 4
       },
@@ -1491,7 +1490,7 @@
         "count": 1
       },
       {
-        "value": "By default, the Miston RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
+        "value": "By default, the Velaira RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
         "count": 1
       },
       {
@@ -1535,7 +1534,7 @@
         "count": 3
       },
       {
-        "value": "certutil -hashfile miston-extension-0.1.0.zip SHA256",
+        "value": "certutil -hashfile velaira-extension-0.1.0.zip SHA256",
         "count": 1
       },
       {
@@ -1563,10 +1562,6 @@
         "count": 1
       },
       {
-        "value": "Chrome Web Store",
-        "count": 1
-      },
-      {
         "value": "chrome://extensions",
         "count": 1
       },
@@ -1575,12 +1570,16 @@
         "count": 2
       },
       {
-        "value": "claimSeed = sha256(\"Miston claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"mistonclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://miston.xyz/claim#code",
+        "value": "claimSeed = sha256(\"Velaira claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"velairaclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://velaira.xyz/claim#code",
         "count": 1
       },
       {
         "value": "Clients follow three rules so that all transactions look alike. There are always two inputs: an unused one is a dummy note of amount zero with a fresh random key. There are always two outputs: an unused one is a zero-amount note to the sender’s own address, encrypted like any other. The order of the outputs is random.",
         "count": 1
+      },
+      {
+        "value": "Coming soon",
+        "count": 2
       },
       {
         "value": "commitment = Poseidon(amount, publicKey, blinding) nullifier = Poseidon(commitment, leafIndex, tag) tag = Poseidon(privateKey, commitment, leafIndex)",
@@ -1607,7 +1606,7 @@
         "count": 1
       },
       {
-        "value": "connect.miston.xyz",
+        "value": "connect.velaira.xyz",
         "count": 2
       },
       {
@@ -1651,7 +1650,7 @@
         "count": 1
       },
       {
-        "value": "directly inside it. Miston appears in the list of extensions.",
+        "value": "directly inside it. Velaira appears in the list of extensions.",
         "count": 1
       },
       {
@@ -1683,7 +1682,7 @@
         "count": 2
       },
       {
-        "value": "Download Miston 0.1.0",
+        "value": "Download Velaira 0.1.0",
         "count": 1
       },
       {
@@ -1715,7 +1714,7 @@
         "count": 1
       },
       {
-        "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"miston-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"miston-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
+        "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"velaira-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"velaira-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
         "count": 1
       },
       {
@@ -1815,7 +1814,7 @@
         "count": 1
       },
       {
-        "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Miston’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
+        "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Velaira’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
         "count": 1
       },
       {
@@ -1827,7 +1826,7 @@
         "count": 1
       },
       {
-        "value": "How the Miston keeps a payment private.",
+        "value": "How the Velaira keeps a payment private.",
         "count": 1
       },
       {
@@ -1836,10 +1835,6 @@
       },
       {
         "value": "If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux:",
-        "count": 1
-      },
-      {
-        "value": "in Miston and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
         "count": 1
       },
       {
@@ -1867,8 +1862,12 @@
         "count": 1
       },
       {
-        "value": "In the Miston. Visible only to you.",
+        "value": "In the Velaira. Visible only to you.",
         "count": 2
+      },
+      {
+        "value": "in Velaira and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
+        "count": 1
       },
       {
         "value": "In your own browser",
@@ -1887,11 +1886,11 @@
         "count": 1
       },
       {
-        "value": "Install Miston.",
+        "value": "Install the extension",
         "count": 1
       },
       {
-        "value": "Install the extension",
+        "value": "Install Velaira.",
         "count": 1
       },
       {
@@ -1963,7 +1962,7 @@
         "count": 2
       },
       {
-        "value": "Leaks outside the Miston",
+        "value": "Leaks outside the Velaira",
         "count": 2
       },
       {
@@ -2003,47 +2002,7 @@
         "count": 1
       },
       {
-        "value": "message = \"Miston key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Miston note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Miston self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Miston payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"miston\", publicKey || encryptionPublic) payment code = bech32m(\"mistonpay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
-        "count": 1
-      },
-      {
-        "value": "Miston",
-        "count": 4
-      },
-      {
-        "value": "Miston is a browser extension that works beside the wallet you already have. Add it from the Chrome Web Store, in Chrome, Brave or Edge. It takes about two minutes.",
-        "count": 1
-      },
-      {
-        "value": "Miston on X",
-        "count": 1
-      },
-      {
-        "value": "Miston reads the chain through an RPC endpoint. It starts with Miston’s own,",
-        "count": 1
-      },
-      {
-        "value": "Miston runs on Solana mainnet, with real SOL.",
-        "count": 1
-      },
-      {
-        "value": "Miston v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
-        "count": 1
-      },
-      {
-        "value": "miston_pool",
-        "count": 1
-      },
-      {
-        "value": "miston-extension-0.1.0",
-        "count": 1
-      },
-      {
-        "value": "miston1",
-        "count": 2
-      },
-      {
-        "value": "mistonpay1",
+        "value": "message = \"Velaira key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Velaira note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Velaira self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Velaira payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"velaira\", publicKey || encryptionPublic) payment code = bech32m(\"velairapay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
         "count": 1
       },
       {
@@ -2055,7 +2014,7 @@
         "count": 1
       },
       {
-        "value": "Move SOL from your public wallet into the Miston. A screening authority checks where it came from and co-signs the deposit.",
+        "value": "Move SOL from your public wallet into the Velaira. A screening authority checks where it came from and co-signs the deposit.",
         "count": 1
       },
       {
@@ -2123,7 +2082,7 @@
         "count": 1
       },
       {
-        "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Miston extension keeps and sends.",
+        "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Velaira extension keeps and sends.",
         "count": 1
       },
       {
@@ -2155,15 +2114,19 @@
         "count": 1
       },
       {
-        "value": "on Miston’s card on the extensions page. If you loaded it by hand, delete the folder too.",
-        "count": 1
-      },
-      {
-        "value": "On the websites you visit, the extension offers the Miston wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Miston, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
+        "value": "On the websites you visit, the extension offers the Velaira wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Velaira, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
         "count": 1
       },
       {
         "value": "On this page",
+        "count": 1
+      },
+      {
+        "value": "on Velaira’s card on the extensions page. If you loaded it by hand, delete the folder too.",
+        "count": 1
+      },
+      {
+        "value": "Once Velaira is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Velaira’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
         "count": 1
       },
       {
@@ -2195,10 +2158,6 @@
         "count": 5
       },
       {
-        "value": "Open Miston from the toolbar and press",
-        "count": 1
-      },
-      {
         "value": "Open source",
         "count": 1
       },
@@ -2211,7 +2170,11 @@
         "count": 1
       },
       {
-        "value": "opens and your wallet asks you to sign one message, “Miston key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
+        "value": "Open Velaira from the toolbar and press",
+        "count": 1
+      },
+      {
+        "value": "opens and your wallet asks you to sign one message, “Velaira key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
         "count": 1
       },
       {
@@ -2239,7 +2202,7 @@
         "count": 1
       },
       {
-        "value": "Pay any other Miston balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
+        "value": "Pay any other Velaira balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
         "count": 1
       },
       {
@@ -2260,11 +2223,11 @@
       },
       {
         "value": "Press",
-        "count": 2
+        "count": 1
       },
       {
-        "value": "Press the puzzle-piece button in the toolbar and pin Miston, so that it is one press away.",
-        "count": 2
+        "value": "Press the puzzle-piece button in the toolbar and pin Velaira, so that it is one press away.",
+        "count": 1
       },
       {
         "value": "Privacy",
@@ -2375,7 +2338,7 @@
         "count": 1
       },
       {
-        "value": "relayer-mainnet.miston.xyz",
+        "value": "relayer-mainnet.velaira.xyz",
         "count": 1
       },
       {
@@ -2399,7 +2362,7 @@
         "count": 1
       },
       {
-        "value": "rpc.miston.xyz",
+        "value": "rpc.velaira.xyz",
         "count": 3
       },
       {
@@ -2419,7 +2382,7 @@
         "count": 1
       },
       {
-        "value": "screener-mainnet.miston.xyz",
+        "value": "screener-mainnet.velaira.xyz",
         "count": 1
       },
       {
@@ -2475,7 +2438,7 @@
         "count": 1
       },
       {
-        "value": "shasum -a 256 miston-extension-0.1.0.zip",
+        "value": "shasum -a 256 velaira-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -2563,7 +2526,7 @@
         "count": 1
       },
       {
-        "value": "Surface what you have in the Miston first. Then press",
+        "value": "Surface what you have in the Velaira first. Then press",
         "count": 1
       },
       {
@@ -2583,7 +2546,7 @@
         "count": 1
       },
       {
-        "value": "The $MISTON token",
+        "value": "The $VELAIRA token",
         "count": 1
       },
       {
@@ -2611,6 +2574,10 @@
         "count": 1
       },
       {
+        "value": "The Chrome Web Store listing is coming soon. When it is live, this page will link to it, and Chrome, Brave and Edge will install from the same page (Edge asks you once to allow extensions from other stores).",
+        "count": 1
+      },
+      {
         "value": "The code holds everything that spends the note: the keys follow from the secret, and the amount, the blinding and the leaf index open the commitment. Whoever has the link collects it with one private transfer to an address of their own, through the relayer, whose fee comes out of the note. The payer adds that fee on top, so the recipient ends up with the round amount.",
         "count": 1
       },
@@ -2635,6 +2602,10 @@
         "count": 1
       },
       {
+        "value": "The extension is here as a zip file, for a browser without the store, for anyone who wants the file in hand, or for anyone who would rather not wait for the Chrome Web Store listing. Loaded this way it does not update itself.",
+        "count": 1
+      },
+      {
         "value": "The extension is open source, under the GNU General Public License, at",
         "count": 1
       },
@@ -2647,7 +2618,7 @@
         "count": 1
       },
       {
-        "value": "The extension’s popup, drawn here with example figures. The extension is an early alpha. It is on the Chrome Web Store.",
+        "value": "The extension’s popup, drawn here with example figures. The extension is an early alpha. It is coming soon to the Chrome Web Store.",
         "count": 2
       },
       {
@@ -2688,22 +2659,6 @@
       },
       {
         "value": "The live scan needs JavaScript, because it runs in your browser. With JavaScript off, the report below is an example.",
-        "count": 1
-      },
-      {
-        "value": "The Miston",
-        "count": 2
-      },
-      {
-        "value": "The Miston extension",
-        "count": 1
-      },
-      {
-        "value": "The Miston is a shielded pool of SOL held by one Solana program,",
-        "count": 1
-      },
-      {
-        "value": "The Miston is not.",
         "count": 1
       },
       {
@@ -2815,15 +2770,11 @@
         "count": 1
       },
       {
-        "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Miston RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
+        "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Velaira RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
         "count": 1
       },
       {
         "value": "The RPC endpoint,",
-        "count": 1
-      },
-      {
-        "value": "The same extension is here as a zip file, for a browser without the store or for anyone who wants the file in hand. Loaded this way it does not update itself.",
         "count": 1
       },
       {
@@ -2879,6 +2830,10 @@
         "count": 1
       },
       {
+        "value": "The store listing is not live yet.",
+        "count": 1
+      },
+      {
         "value": "The technical version: what is hashed, what is proved, what is encrypted, and what an observer still sees. The plain version is on",
         "count": 1
       },
@@ -2896,6 +2851,22 @@
       },
       {
         "value": "The two nullifier accounts of a transaction cost rent that is never returned. Whoever signs the transaction pays it.",
+        "count": 1
+      },
+      {
+        "value": "The Velaira",
+        "count": 2
+      },
+      {
+        "value": "The Velaira extension",
+        "count": 1
+      },
+      {
+        "value": "The Velaira is a shielded pool of SOL held by one Solana program,",
+        "count": 1
+      },
+      {
+        "value": "The Velaira is not.",
         "count": 1
       },
       {
@@ -2927,19 +2898,15 @@
         "count": 1
       },
       {
-        "value": "there and confirm. Brave and Edge install from the same page (Edge asks you once to allow extensions from other stores).",
-        "count": 1
-      },
-      {
         "value": "There are two ways to derive the key, and on chain they look the same. An address note is keyed by the X25519 exchange alone: that is a payment to a plain address. A keyed note also takes a",
         "count": 1
       },
       {
-        "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Miston records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
+        "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Velaira records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
         "count": 1
       },
       {
-        "value": "These checks are help and not a barrier. They see only the requests that come through the Miston wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
+        "value": "These checks are help and not a barrier. They see only the requests that come through the Velaira wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
         "count": 1
       },
       {
@@ -3063,6 +3030,10 @@
         "count": 1
       },
       {
+        "value": "Until then, load the extension by hand from the zip file below.",
+        "count": 1
+      },
+      {
         "value": "Unzip it",
         "count": 1
       },
@@ -3092,6 +3063,46 @@
       },
       {
         "value": "Value",
+        "count": 1
+      },
+      {
+        "value": "Velaira",
+        "count": 4
+      },
+      {
+        "value": "Velaira is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
+        "count": 1
+      },
+      {
+        "value": "Velaira on X",
+        "count": 1
+      },
+      {
+        "value": "Velaira reads the chain through an RPC endpoint. It starts with Velaira’s own,",
+        "count": 1
+      },
+      {
+        "value": "Velaira runs on Solana mainnet, with real SOL.",
+        "count": 1
+      },
+      {
+        "value": "Velaira v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
+        "count": 1
+      },
+      {
+        "value": "velaira_pool",
+        "count": 1
+      },
+      {
+        "value": "velaira-extension-0.1.0",
+        "count": 1
+      },
+      {
+        "value": "velaira1",
+        "count": 2
+      },
+      {
+        "value": "velairapay1",
         "count": 1
       },
       {
@@ -3159,7 +3170,7 @@
         "count": 1
       },
       {
-        "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Miston is: unaudited software.",
+        "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Velaira is: unaudited software.",
         "count": 1
       },
       {
@@ -3207,7 +3218,7 @@
         "count": 2
       },
       {
-        "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Miston has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
+        "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Velaira has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
         "count": 1
       },
       {
@@ -3215,7 +3226,7 @@
         "count": 1
       },
       {
-        "value": "your address, the amount, the time, and that it went into the Miston.",
+        "value": "your address, the amount, the time, and that it went into the Velaira.",
         "count": 1
       },
       {
@@ -3227,7 +3238,7 @@
         "count": 1
       },
       {
-        "value": "Your shielded keys come from your wallet’s signature on one message, “Miston key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Miston.",
+        "value": "Your shielded keys come from your wallet’s signature on one message, “Velaira key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Velaira.",
         "count": 1
       },
       {
@@ -3235,7 +3246,7 @@
         "count": 1
       },
       {
-        "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Miston.",
+        "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Velaira.",
         "count": 1
       },
       {
@@ -3247,12 +3258,16 @@
       {
         "value": "Not on the chain",
         "count": 4
+      },
+      {
+        "value": "to the Chrome Web Store",
+        "count": 2
       }
     ],
     "attributes": [
       {
         "name": "href",
-        "value": "/download/miston-extension-0.1.0.zip",
+        "value": "/download/velaira-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -3297,8 +3312,23 @@
       },
       {
         "name": "href",
+        "value": "#i-docs",
+        "count": 1
+      },
+      {
+        "name": "href",
         "value": "#i-info",
         "count": 3
+      },
+      {
+        "name": "href",
+        "value": "#i-install",
+        "count": 1
+      },
+      {
+        "name": "href",
+        "value": "#i-privacy",
+        "count": 1
       },
       {
         "name": "href",
@@ -3314,6 +3344,11 @@
         "name": "href",
         "value": "#i-surface",
         "count": 4
+      },
+      {
+        "name": "href",
+        "value": "#i-verify",
+        "count": 1
       },
       {
         "name": "href",
@@ -3407,17 +3442,12 @@
       },
       {
         "name": "href",
-        "value": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
-        "count": 3
-      },
-      {
-        "name": "href",
         "value": "https://github.com/lochlayer/loch-extension",
         "count": 2
       },
       {
         "name": "href",
-        "value": "https://x.com/miston",
+        "value": "https://x.com/velaira",
         "count": 1
       },
       {
@@ -3473,7 +3503,7 @@
       {
         "name": "src",
         "value": "/media/mark-small.svg",
-        "count": 1
+        "count": 2
       },
       {
         "name": "src",
@@ -3482,7 +3512,7 @@
       },
       {
         "name": "src",
-        "value": "/media/miston-plate.svg",
+        "value": "/media/velaira-plate.svg",
         "count": 1
       },
       {
@@ -3503,7 +3533,7 @@
       {
         "name": "to",
         "value": "/docs",
-        "count": 3
+        "count": 4
       },
       {
         "name": "to",
@@ -3538,17 +3568,17 @@
       {
         "name": "to",
         "value": "/install",
-        "count": 2
+        "count": 3
       },
       {
         "name": "to",
         "value": "/privacy",
-        "count": 1
+        "count": 2
       },
       {
         "name": "to",
         "value": "/verify",
-        "count": 2
+        "count": 3
       }
     ],
     "bindings": [
@@ -3803,7 +3833,7 @@
     "links": [
       {
         "kind": "href",
-        "target": "/download/miston-extension-0.1.0.zip",
+        "target": "/download/velaira-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -3848,8 +3878,23 @@
       },
       {
         "kind": "href",
+        "target": "#i-docs",
+        "count": 1
+      },
+      {
+        "kind": "href",
         "target": "#i-info",
         "count": 3
+      },
+      {
+        "kind": "href",
+        "target": "#i-install",
+        "count": 1
+      },
+      {
+        "kind": "href",
+        "target": "#i-privacy",
+        "count": 1
       },
       {
         "kind": "href",
@@ -3865,6 +3910,11 @@
         "kind": "href",
         "target": "#i-surface",
         "count": 4
+      },
+      {
+        "kind": "href",
+        "target": "#i-verify",
+        "count": 1
       },
       {
         "kind": "href",
@@ -3958,17 +4008,12 @@
       },
       {
         "kind": "href",
-        "target": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
-        "count": 3
-      },
-      {
-        "kind": "href",
         "target": "https://github.com/lochlayer/loch-extension",
         "count": 2
       },
       {
         "kind": "href",
-        "target": "https://x.com/miston",
+        "target": "https://x.com/velaira",
         "count": 1
       },
       {
@@ -3989,7 +4034,7 @@
       {
         "kind": "to",
         "target": "/docs",
-        "count": 3
+        "count": 4
       },
       {
         "kind": "to",
@@ -4024,17 +4069,17 @@
       {
         "kind": "to",
         "target": "/install",
-        "count": 2
+        "count": 3
       },
       {
         "kind": "to",
         "target": "/privacy",
-        "count": 1
+        "count": 2
       },
       {
         "kind": "to",
         "target": "/verify",
-        "count": 2
+        "count": 3
       }
     ],
     "assets": [
@@ -4056,7 +4101,7 @@
       {
         "kind": "src",
         "value": "/media/mark-small.svg",
-        "count": 1
+        "count": 2
       },
       {
         "kind": "src",
@@ -4065,7 +4110,7 @@
       },
       {
         "kind": "src",
-        "value": "/media/miston-plate.svg",
+        "value": "/media/velaira-plate.svg",
         "count": 1
       }
     ],
@@ -4101,5 +4146,5 @@
     "api": [],
     "env": []
   },
-  "contentContractHash": "35d14de5664f9502fcbb561dc837a56e1aa858d1f3c8d6116b767c6c0845b4fd"
+  "contentContractHash": "c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c"
 }

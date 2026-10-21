@@ -351,7 +351,7 @@ function hostOnly(value: string): string {
 
 function isOwn(rpcUrl: string): boolean {
   try {
-    const meta = document.querySelector('meta[name="miston:rpc"]')?.getAttribute('content') ?? '';
+    const meta = document.querySelector('meta[name="velaira:rpc"]')?.getAttribute('content') ?? '';
     return new URL(rpcUrl).origin !== new URL(meta).origin;
   } catch {
     return false;

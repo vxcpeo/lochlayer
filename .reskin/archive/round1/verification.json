@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T16:49:55.940Z",
+  "project": {
+    "root": "E:/workspace/chuangye/solana/lochlayer/website",
+    "name": "loch-website",
+    "baseUrl": "http://127.0.0.1:4317/"
+  },
+  "passed": false,
+  "thresholds": {
+    "maxStructureSimilarity": 0.5,
+    "maxLandmarkSimilarity": 0.68,
+    "maxClassOverlap": 0.1,
+    "minAccentDistance": 30,
+    "maxContrastFailures": 0,
+    "maxAxeSerious": 0
+  },
+  "gates": {
+    "sourceContract": {
+      "passed": true,
+      "issues": [],
+      "warnings": [],
+      "hash": "98613a9ccf963bfb9866153d2d67b2ac9eee056d5ca88b7d0ccf82623de137f6"
+    },
+    "skeleton": {
+      "passed": true,
+      "original": {
+        "id": "marketing-stack",
+        "family": "editorial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
+      "current": {
+        "id": "sidebar-workspace",
+        "family": "shell",
+        "traits": {
+          "sidebar": true,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
+      "accent": {
+        "original": "#a8d0e0",
+        "current": "#298dff",
+        "deltaE": 60.95,
+        "min": 30
+      }
+    },
+    "pages": [
+      {
+        "route": "/",
+        "passed": false,
+        "skipped": false,
+        "failures": [
+          "content removed/changed: \"a\" (33 -> 30)",
+          "content removed/changed: \"able\" (1 -> 0)",
+          "content removed/changed: \"address\" (22 -> 17)",
+          "content removed/changed: \"allows\" (1 -> 0)",
+          "content removed/changed: \"and\" (46 -> 40)",
+          "content removed/changed: \"answers\" (1 -> 0)",
+          "content removed/changed: \"anyone\" (6 -> 5)",
+          "content removed/changed: \"at\" (6 -> 5)",
+          "content removed/changed: \"be\" (5 -> 4)",
+          "content removed/changed: \"behind\" (3 -> 2)",
+          "content removed/changed: \"browser\" (2 -> 1)",
+          "content removed/changed: \"By\" (1 -> 0)",
+          "content removed/changed: \"can\" (15 -> 14)",
+          "content removed/changed: \"code\" (1 -> 0)",
+          "content removed/changed: \"coming\" (1 -> 0)",
+          "content removed/changed: \"default\" (1 -> 0)",
+          "content removed/changed: \"either\" (2 -> 1)",
+          "content removed/changed: \"endpoint\" (4 -> 2)",
+          "content removed/changed: \"for\" (10 -> 9)",
+          "content removed/changed: \"from\" (16 -> 15)",
+          "attribute content removed/changed: placeholder=https://",
+          "form field removed/changed: input:rpc:url"
+        ],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.277,
+          "landmarkSimilarity": 0.667,
+          "classOverlap": 0.01
+        },
+        "content": {
+          "missing": [
+            {
+              "key": "a",
+              "expected": 33,
+              "actual": 30
+            },
+            {
+              "key": "able",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "address",
+              "expected": 22,
+              "actual": 17
+            },
+            {
+              "key": "allows",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "and",
+              "expected": 46,
+              "actual": 40
+            },
+            {
+              "key": "answers",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "anyone",
+              "expected": 6,
+              "actual": 5
+            },
+            {
+              "key": "at",
+              "expected": 6,
+              "actual": 5
+            },
+            {
+              "key": "be",
+              "expected": 5,
+              "actual": 4
+            },
+            {
+              "key": "behind",
+              "expected": 3,
+              "actual": 2
+            },
+            {
+              "key": "browser",
+              "expected": 2,
+              "actual": 1
+            },
+            {
+              "key": "By",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "can",
+              "expected": 15,
+              "actual": 14
+            },
+            {
+              "key": "code",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "coming",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "default",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "either",
+              "expected": 2,
+              "actual": 1
+            },
+            {
+              "key": "endpoint",
+              "expected": 4,
+              "actual": 2
+            },
+            {
+              "key": "for",
+              "expected": 10,
+              "actual": 9
+            },
+            {
+              "key": "from",
+              "expected": 16,
+              "actual": 15
+            }
+          ],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 44,
+              "total": 79
+            },
+            "current": {
+              "tokens": 44,
+              "total": 79
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/home-desktop.png",
+          "mobile": "current/home-mobile.png"
+        }
+      },
+      {
+        "route": "/docs",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.164,
+          "landmarkSimilarity": 0.5,
+          "classOverlap": 0.053
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 40,
+              "total": 71
+            },
+            "current": {
+              "tokens": 40,
+              "total": 71
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/docs-desktop.png",
+          "mobile": "current/docs-mobile.png"
+        }
+      },
+      {
+        "route": "/download/loch-extension-0.1.0.zip",
+        "passed": false,
+        "skipped": false,
+        "failures": [
+          "content removed/changed: \"a\" (33 -> 30)",
+          "content removed/changed: \"able\" (1 -> 0)",
+          "content removed/changed: \"address\" (22 -> 17)",
+          "content removed/changed: \"allows\" (1 -> 0)",
+          "content removed/changed: \"and\" (46 -> 40)",
+          "content removed/changed: \"answers\" (1 -> 0)",
+          "content removed/changed: \"anyone\" (6 -> 5)",
+          "content removed/changed: \"at\" (6 -> 5)",
+          "content removed/changed: \"be\" (5 -> 4)",
+          "content removed/changed: \"behind\" (3 -> 2)",
+          "content removed/changed: \"browser\" (2 -> 1)",
+          "content removed/changed: \"By\" (1 -> 0)",
+          "content removed/changed: \"can\" (15 -> 14)",
+          "content removed/changed: \"code\" (1 -> 0)",
+          "content removed/changed: \"coming\" (1 -> 0)",
+          "content removed/changed: \"default\" (1 -> 0)",
+          "content removed/changed: \"either\" (2 -> 1)",
+          "content removed/changed: \"endpoint\" (4 -> 2)",
+          "content removed/changed: \"for\" (10 -> 9)",
+          "content removed/changed: \"from\" (16 -> 15)",
+          "attribute content removed/changed: placeholder=https://",
+          "form field removed/changed: input:rpc:url"
+        ],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.277,
+          "landmarkSimilarity": 0.667,
+          "classOverlap": 0.01
+        },
+        "content": {
+          "missing": [
+            {
+              "key": "a",
+              "expected": 33,
+              "actual": 30
+            },
+            {
+              "key": "able",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "address",
+              "expected": 22,
+              "actual": 17
+            },
+            {
+              "key": "allows",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "and",
+              "expected": 46,
+              "actual": 40
+            },
+            {
+              "key": "answers",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "anyone",
+              "expected": 6,
+              "actual": 5
+            },
+            {
+              "key": "at",
+              "expected": 6,
+              "actual": 5
+            },
+            {
+              "key": "be",
+              "expected": 5,
+              "actual": 4
+            },
+            {
+              "key": "behind",
+              "expected": 3,
+              "actual": 2
+            },
+            {
+              "key": "browser",
+              "expected": 2,
+              "actual": 1
+            },
+            {
+              "key": "By",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "can",
+              "expected": 15,
+              "actual": 14
+            },
+            {
+              "key": "code",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "coming",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "default",
+              "expected": 1,
+              "actual": 0
+            },
+            {
+              "key": "either",
+              "expected": 2,
+              "actual": 1
+            },
+            {
+              "key": "endpoint",
+              "expected": 4,
+              "actual": 2
+            },
+            {
+              "key": "for",
+              "expected": 10,
+              "actual": 9
+            },
+            {
+              "key": "from",
+              "expected": 16,
+              "actual": 15
+            }
+          ],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 44,
+              "total": 79
+            },
+            "current": {
+              "tokens": 44,
+              "total": 79
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/download-loch-extension-0-1-0-zip-desktop.png",
+          "mobile": "current/download-loch-extension-0-1-0-zip-mobile.png"
+        }
+      },
+      {
+        "route": "/install",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.485,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.033
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 7,
+              "total": 7
+            },
+            "current": {
+              "tokens": 7,
+              "total": 7
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/install-desktop.png",
+          "mobile": "current/install-mobile.png"
+        }
+      },
+      {
+        "route": "/privacy",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.39,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.036
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 1,
+              "total": 1
+            },
+            "current": {
+              "tokens": 1,
+              "total": 1
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/privacy-desktop.png",
+          "mobile": "current/privacy-mobile.png"
+        }
+      },
+      {
+        "route": "/verify",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.3,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.032
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 1,
+              "total": 1
+            },
+            "current": {
+              "tokens": 1,
+              "total": 1
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/verify-desktop.png",
+          "mobile": "current/verify-mobile.png"
+        }
+      }
+    ]
+  },
+  "failures": [
+    "/: content removed/changed: \"a\" (33 -> 30)",
+    "/: content removed/changed: \"able\" (1 -> 0)",
+    "/: content removed/changed: \"address\" (22 -> 17)",
+    "/: content removed/changed: \"allows\" (1 -> 0)",
+    "/: content removed/changed: \"and\" (46 -> 40)",
+    "/: content removed/changed: \"answers\" (1 -> 0)",
+    "/: content removed/changed: \"anyone\" (6 -> 5)",
+    "/: content removed/changed: \"at\" (6 -> 5)",
+    "/: content removed/changed: \"be\" (5 -> 4)",
+    "/: content removed/changed: \"behind\" (3 -> 2)",
+    "/: content removed/changed: \"browser\" (2 -> 1)",
+    "/: content removed/changed: \"By\" (1 -> 0)",
+    "/: content removed/changed: \"can\" (15 -> 14)",
+    "/: content removed/changed: \"code\" (1 -> 0)",
+    "/: content removed/changed: \"coming\" (1 -> 0)",
+    "/: content removed/changed: \"default\" (1 -> 0)",
+    "/: content removed/changed: \"either\" (2 -> 1)",
+    "/: content removed/changed: \"endpoint\" (4 -> 2)",
+    "/: content removed/changed: \"for\" (10 -> 9)",
+    "/: content removed/changed: \"from\" (16 -> 15)",
+    "/: attribute content removed/changed: placeholder=https://",
+    "/: form field removed/changed: input:rpc:url",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"a\" (33 -> 30)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"able\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"address\" (22 -> 17)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"allows\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"and\" (46 -> 40)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"answers\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"anyone\" (6 -> 5)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"at\" (6 -> 5)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"be\" (5 -> 4)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"behind\" (3 -> 2)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"browser\" (2 -> 1)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"By\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"can\" (15 -> 14)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"code\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"coming\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"default\" (1 -> 0)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"either\" (2 -> 1)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"endpoint\" (4 -> 2)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"for\" (10 -> 9)",
+    "/download/loch-extension-0.1.0.zip: content removed/changed: \"from\" (16 -> 15)",
+    "/download/loch-extension-0.1.0.zip: attribute content removed/changed: placeholder=https://",
+    "/download/loch-extension-0.1.0.zip: form field removed/changed: input:rpc:url"
+  ],
+  "warnings": [],
+  "baseline": {
+    "generatedAt": "2026-10-19T16:30:50.529Z",
+    "routes": [
+      "/",
+      "/docs",
+      "/download/loch-extension-0.1.0.zip",
+      "/install",
+      "/privacy",
+      "/verify"
+    ]
+  }
+}

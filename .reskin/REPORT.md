@@ -1,60 +1,57 @@
-# Reskin report — Miston rebuilt around Abyss Liquidity / Command Rail
+# Reskin report — Velaira rebuilt around Signal Navy / Bento Canvas
 
-> The UI was rebuilt around **Abyss Liquidity** / **Command Rail**; the original
-> **bento-canvas** shell and palette were removed while the content contract stayed
-> byte-for-byte intact.
+> The UI was rebuilt around **Signal Navy** / **Bento Canvas**; the original
+> **marketing-stack** shell and palette were removed while the content contract
+> stayed byte-for-byte intact.
 
 - Project: `E:\workspace\chuangye\solana\lochlayer\website`
-- Style: `aave-abyss` — **Abyss Liquidity** (dark-technical), catalog DNA (live sampling of
-  aave.com timed out this run; the bundled catalog entry was used)
-- Skeleton: `command-rail` (linear) — see “Skeleton decision” below
-- Seed: `d8080b018197cf3877a01d7f08c46cda4c87bd3ebc7636f6303dc4acb583b159`
-- Original: `bento-canvas` (spatial), accent `#0000ff`, canvas `#e9e3d7`
-- Rebuilt: accent `#b6509e` (night) / `#d25fb4` (dusk) — **90.86 ΔE** from the original
+- Style: `arbitrum-signal` — **Signal Navy** (dark-technical)
+- Skeleton: `bento-canvas` (spatial) — see “Skeleton decision” below
+- Seed: `36f9d9da644a0afd28fe041141c0ffb4b9120b83190c39f498fabfacb0118fc7`
+- Original: `marketing-stack` (editorial), accent `#d25fb4`
+- Rebuilt: accent `#1f8fe0` / `#28a0f0` — **62.05 ΔE** from the original
 - Verification: **PASS** — 6 routes, content intact, skeleton replaced, usability clean
-- Baseline contract hash: `35d14de5664f…`; current source contract `b6412bdd1c90…`
-  (additive-only diff: 18 warnings, 0 issues)
+- Source content contract: `c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c`
+  — identical to the frozen baseline (735 text tokens, 42 bindings, 0 additive warnings)
 
 ## Direction
 
-`choose-style.mjs` sampled 4/10 blockchain references this run (base.org, polygon.technology,
-sui.io and cosmos.network answered; aave.com, solana.com, ethereum.org, uniswap.org and
-optimism.io timed out; arbitrum.io returned 403). It scored every direction for perceptual
-distance from the original accent and canvas, then chose **Abyss Liquidity** from the catalog at
-111.2 ΔE and paired it with **Command Rail**.
+`choose-style.mjs` sampled 9 of 10 blockchain references live (arbitrum.io returned 403, so its
+catalog entry was used) and scored every direction for perceptual distance from the original accent
+and ground. It chose **Signal Navy** at 62 ΔE with **Bento Canvas**, a spatial skeleton rather than
+the original editorial one.
 
-The design DNA used here is abstract: a sunken abyss ground, liquid magenta and teal light,
-glass sheets over 1 px hairlines, a monospace instrument voice, oversized display figures and
-very few straight edges of chrome. No reference logo, image, copy or code was used.
+The DNA used here is abstract: a deep navy ground with a fine technical grid and a cool haze, one
+cyan signal accent, tiles that touch each other on a shared 12-column canvas, condensed display
+type (Bahnschrift), monospace instrument labels (Cascadia Mono) and a sonar-gauge motif. No
+reference logo, image, copy or code was used.
 
-The palette switch keeps its two named temperatures. **Night** is the cool abyss (`#080d14`);
-**Dusk** is the same system on aubergine (`#140b14`). Both keep magenta as the accent and teal as
-the second signal. The choice, the `localStorage` key and the `?theme=` behaviour are unchanged.
+Two temperatures are kept from the old site's palette switch: **Night** (the default navy) and
+**Dusk** (a slightly warmer navy). The choice, the `localStorage` key and the `?theme=` behaviour
+are unchanged.
 
 ## Skeleton decision
 
-The old shell was a top masthead with a text index, over a 12-column bento canvas of mixed-span
-tiles. The rebuild is a command rail: a fixed **76 px glyph spine** on the left edge, a **floating
-command bar** detached from the top edge (brand, palette, install), an **oversized running head**,
-**two-column stages with an off-centre gutter**, and a **bottom status strip** with the depth
-gauge, identity, link rail and fine print.
+The old shell was a command rail: a fixed 76 px glyph spine on the left, a floating command bar
+detached from the top edge, an oversized running head, ruled registers and a bottom status strip.
 
-There is no top navigation bar, no text menu rows in the chrome, no 240 px sidebar and no content
-well. The rail is icons only, named with `aria-label`; the route words that used to live in the
-header now sit in a page-level **index line** under each running head, which is where the start
-page's section links (`How it works`, `Leak scanner`, `Docs`) live.
+The rebuild is a bento canvas: a **slim top index** (brand, four glyph route chips, palette and
+install, on one hairline bar), a **12-column canvas of touching tiles**, **one oversized anchor
+tile per page**, full-bleed **stage bands**, and a **thin footer line**. There is no left rail, no
+floating bar, no icon spine and no ruled register as the primary structure.
 
 | Route | Composition |
 |---|---|
-| `/` | Mega running head (mirror headline) + index line + asymmetric lede/actions; full-bleed plate band holding the extension popup, a marginal caption and a rotated `Scroll` cue; `#how` as a ruled step register (numbered rail, observer note, four-cell record row); `#scanner` as a console (command panel → example-report frame → method fold); `#private` as a two-column ruled register of six ideas; `#cautions` as two stacked ruled ledgers |
-| `/docs` | Running head + index line; sticky margin contents (26 %) beside a single running column of 18 section sheets, each with its own heading header and hairline rule; code and tables as full-width instrument bands |
-| `/install` | Running head + store action + index line; procedure register of eleven ruled rows (term in the left margin, steps in the body), checksum as a code band |
-| `/privacy` | Running head + index line; policy register of nine ruled rows |
-| `/verify` | Running head + index line; console for the pasted receipt; result band (`role="status"`); four explanation rows as a ruled ledger |
+| `/` | Anchor tile (mirror headline + lede + actions + sonar gauge) · support tile (the extension popup, caption, scroll cue) · section band with a mono depth label and three step tiles (number, prose, observer note, record grid) · scanner band (console tile 8 + aside tile 4 with the RPC fold, then the example report as a full-width tile) · six idea tiles for “What keeps it private” · two ledger-tile groups (Cautions, Commitments) |
+| `/docs` | Head tile (h1 + lede) · contents tile (chips) · one prose article of 18 hairline-divided sheets, no margin rail |
+| `/install` | Head tile · support action tile (Coming soon + fine print) · eleven procedure tiles of mixed spans, the download row full width, the checksum in a scrollable code band |
+| `/privacy` | Head tile · nine policy tiles (half and full spans) |
+| `/verify` | Head tile · anchor console tile (form, live result region, sonar motif) · support tile of four explanation sheets · back action |
+| `/download/velaira-extension-0.1.0.zip` | SPA fallback; renders the home composition, as before |
 
-Mobile is a genuinely linear version: the spine becomes a fixed bottom glyph dock, the command
-bar stays a sticky top strip, and every stage collapses to one column. Nothing is hidden to make
-it fit.
+Mobile is a genuinely linear version: the index wraps to two rows, every tile spans the full
+width, the device buttons stack, and the record grids collapse to one column. Nothing is hidden to
+make it fit.
 
 ## Screenshots
 
@@ -77,115 +74,116 @@ Full captures, desktop and 390 px mobile:
 | `/privacy` | [desktop](baseline/privacy-desktop.png) · [mobile](baseline/privacy-mobile.png) | [desktop](current/privacy-desktop.png) · [mobile](current/privacy-mobile.png) |
 | `/verify` | [desktop](baseline/verify-desktop.png) · [mobile](baseline/verify-mobile.png) | [desktop](current/verify-desktop.png) · [mobile](current/verify-mobile.png) |
 
-Review notes, not only numbers: the baseline is a bright, water-toned editorial page with a top
-bar, rounded white tiles, drop shadows and a cobalt accent. The rebuild is a dark abyss with a
-glyph spine, a translucent floating bar, ruled registers instead of cards, magenta/teal signals
-and an oversized running head. The navigation has moved from a horizontal strip in a top bar to a
-fixed icon spine; the first viewport's largest element is a headline, not a card pair. The two
-would not be mistaken for the same shell.
+Review notes, not only numbers: the baseline is a dark-magenta instrument panel with a fixed icon
+spine, a translucent floating bar and ruled registers of numbered steps. The rebuild is a navy
+canvas of tiles with a hairline top index, an oversized headline tile beside the extension popup,
+three equal step tiles, a console tile beside an aside, and a two-column ledger of tiles for the
+cautions. The navigation moved from a 76 px left spine to a slim top bar; the first viewport's
+composition changed from “bar → running head → full-bleed plate” to “index → anchor tile + support
+tile”; the accent moved from magenta to signal blue.
 
 ## Verification
 
-`node …/verify.mjs check` exits 0. Every gate:
+`node …/verify.mjs check --port 4400` exits 0. Every gate:
 
 | Gate | Threshold | Result |
 |---|---|---|
-| Source content contract | unchanged | intact, 0 issues, 18 additive warnings |
-| DOM fingerprint (`/`, worst) | ≤ 0.50 | **0.239** |
-| DOM fingerprint (docs / install / privacy / verify) | ≤ 0.50 | 0.088 / 0.125 / 0.107 / 0.239 |
-| Landmark sequence (worst) | ≤ 0.68 | **0.667** (install, privacy, verify) |
-| CSS class overlap (worst) | ≤ 0.10 | **0.002** |
-| Accent distance | ≥ 30 ΔE | **90.86 ΔE** (`#0000ff` → `#d25fb4`) |
-| Archetype bucket | different id and family | `bento-canvas`/spatial → `marketing-stack`/editorial |
+| Source content contract | unchanged | intact, 0 issues, 0 warnings (`c9f4ef9fdbad`) |
+| DOM fingerprint (`/`, worst) | ≤ 0.50 | **0.199** |
+| DOM fingerprint (docs / install / privacy / verify) | ≤ 0.50 | 0.114 / 0.183 / 0.141 / 0.152 |
+| Landmark sequence (worst) | ≤ 0.68 | **0.667** (home, install, privacy, verify); docs 0.200 |
+| CSS class overlap (worst) | ≤ 0.10 | **0.009** (install) |
+| Accent distance | ≥ 30 ΔE | **62.05 ΔE** (`#d25fb4` → `#1f8fe0`) |
+| Archetype bucket | different id and family | `marketing-stack`/editorial → `bento-canvas`/spatial |
 | Axe serious/critical | 0 | **0** on every route |
-| Contrast failures | 0 | **0** on every route, desktop and mobile (255/321/74/62/39 pairs checked) |
-| Horizontal overflow at 390 px | none | none (`scrollWidth === clientWidth` on all routes) |
+| Contrast failures | 0 | **0** on every route, desktop and mobile (256/321/256/73/62/39 pairs) |
+| Horizontal overflow at 390 px | none | none on all six captures |
 | Keyboard focus visibility | pass | pass |
-| Mobile route navigation | reachable | pass (four-glyph dock) |
-| Build / console / page errors | clean | build passed, 0 console, 0 page errors, 0 failed requests |
+| Mobile route navigation | reachable | pass (two-row index, 44 px targets) |
+| Build / console / page errors | clean | build passed, 0 console errors, 0 page errors |
 
-Rendered word parity: `/` 622, `/docs` 983, `/install` 287, `/privacy` 377, `/verify` 194 —
-identical to the baseline, as is every document title and description, and one `h1` per route.
+Rendered word parity: `/` 622, `/docs` 983, `/install` 291, `/privacy` 377, `/verify` 194 — each
+identical to its baseline count, as is every document title/description, every rendered attribute
+and the numeric token counts.
 
 ## Accessibility and responsiveness
 
-- Landmarks: `nav` (spine) → `header` (command bar) → `main` → `footer` (status strip). The docs
-  page adds its own margin `nav` for the contents and a heading `header` per section. No `aside`,
-  no duplicate `main`, no content hidden behind the chrome.
-- Every input, textarea and select keeps its programmatic label and described-by hints; the
-  verify result stays a live `role="status"` region; the scan states keep their `role="status"`
-  and `role="alert"` regions; the palette is a labelled radiogroup with roving `tabindex` and
-  arrow keys, exactly as before.
-- Visible `:focus-visible` rings in accent-safe magenta on every control, including the rail and
-  the two horizontal overflow containers (`ab-tablewrap`, `ab-sha`); the skip link is retained.
-- All decorative images keep `alt=""`; controls have accessible names; icon-only rail links use
-  `aria-label`.
-- Body contrast is ≥ 4.5:1 and large text ≥ 3:1 on both palettes; muted copy is kept at
-  `#8496a7` on `#080d14` (≈ 6:1) and the dusk set is measured separately.
-- `prefers-reduced-motion: reduce` removes the hero rise and all transitions; the reveal overlay
-  is a static, identical copy of the line, marked `aria-hidden`.
-- The canvas becomes one linear column at 760 px: dock, sticky bar, running head, plate, steps,
-  console, register, cautions, status strip. Tables scroll inside their own bordered wrapper
-  instead of forcing page overflow.
-
-## Tests and build
-
-- `npm run build` (`vue-tsc --noEmit && vite build`) passes.
-- `npm test`: **93 tests in 12 files pass**. The layout test was rewritten for the rail and the
-  index line; every other suite was carried over with the class namespace rename only, so the
-  scanner, verify, report, theme, cipher, endpoint and policy behaviour is still covered by its
-  own assertions.
-- `e2e/` was not run here (it needs a live RPC endpoint); its selectors were renamed with the
-  rest of the suite.
+- Landmarks: `header` (top index) → `main` → `nav` (page sections) → `footer`; the docs page adds
+  its own contents `nav`. No aside, no duplicate main, nothing behind an overlay.
+- Every field keeps its programmatic label and described-by hints; the verify result stays a live
+  `role="status"` region; the scan states keep their `role="status"` and `role="alert"` regions;
+  the palette is a labelled radiogroup with roving `tabindex` and arrow keys, as before.
+- Visible `:focus-visible` rings in accent-safe blue on every control; the skip link is retained.
+- Body contrast is ≥ 4.5:1 and large text ≥ 3:1 on both temperatures (the muted ink was lightened
+  from `#7b91ad` to `#93a8c4` during the build to clear the report sheet's 4.03:1 pair).
+- `prefers-reduced-motion: reduce` removes the hero rise and all transitions; the reveal overlay is
+  a transparent, identical copy of the line, marked `aria-hidden`.
+- Long instrument strings (checksum, commands) scroll inside their own bordered box; the page never
+  widens at 390 px.
+- The canvas becomes one column at 720 px and two columns at 1080 px; the index wraps to two rows
+  and every control stays ≥ 24 px.
 
 ## What changed
 
 Added:
 
-- `src/components/AbyssRail.vue` — glyph spine, floating command bar, palette, install action, stage
-- `src/components/AbyssIndex.vue` — the page-level index line (`How it works`, `Leak scanner`, `Docs`)
-- `src/components/AbyssStatus.vue` — status strip: depth gauge, identity, link rail, fine print
-- `src/assets/abyss.css` — the new token and component system (tokens, shell, bands, registers,
-  console, report, charts, status strip, responsive, reduced motion)
+- `src/styles/signal.css` — tokens, reset, top index, canvas and tile primitives, prose, forms,
+  console, device, steps, keeps, ledger, report frame, footer, responsive and reduced motion
+- `src/styles/signal-report.css` — the leak report, chart and popup rules ported onto the Signal
+  Navy palette (renamed from `ab-rep`/`ab-plot` to `sn-rep`/`sn-plot`)
+- `src/components/SignalTop.vue`, `SignalIndex.vue`, `SignalFoot.vue` — the shell
+- `src/components/home/SignalDeck.vue`, `SignalSteps.vue`, `SignalScan.vue`, `SignalKeeps.vue`,
+  `SignalCautions.vue` — the home sections, logic carried over unchanged
 
 Rewritten / re-presented:
 
-- `src/views/{Home, Docs, Install, Privacy, Verify}View.vue` — new page compositions; all copy,
-  bindings, handlers, ids, names, links and field semantics carried through
-- `src/components/home/Bp{Deck, Steps, Scan, Keeps, Cautions}.vue` — new section composition
-  (band head, plate band, step register, single-column console, idea register, stacked ledgers)
-- `src/components/SiteIcons.vue` — namespace plus four rail glyphs
-- `src/main.ts`, `index.html` (dark colour scheme), `src/router.ts` (presentational
-  `linkActiveClass` / `linkExactActiveClass`)
-- `src/lib/report.ts`, `src/lib/design/**`, `src/data/example-report.html` — class namespace and
-  SVG inks only (the report figures are re-inked into the abyss palette)
+- `src/views/{Home, Docs, Install, Privacy, Verify}View.vue` — new page compositions; every word,
+  binding, handler, id, name and link target carried through (verified by the word diff)
+- `src/App.vue` — the shell moved here (top index, canvas, footer); views are fragments
+- `src/router.ts` — presentational `linkActiveClass` / `linkExactActiveClass` renamed
+- `src/main.ts` — imports the two new stylesheets
+- `src/lib/report.ts`, `src/lib/design/**`, `src/lib/cipher.ts`, `src/data/example-report.html` —
+  class namespace renamed and chart inks re-inked to the new palette
+- `website/public/media/*.svg` — the V mark re-inked to signal blue; the depth plate re-inked from
+  the old magenta to the new accent (geometry unchanged)
+- `twitter/source/*` + `twitter/*.png` — avatar, header and tweet image rebuilt in the same Signal
+  Navy direction and re-rendered at 400×400, 1500×500 and 1600×900
+- `tests/**` — selectors updated to the new markup (and two UTF-8-corrupted fixtures repaired);
+  94/94 pass, `vue-tsc` clean
 
-Removed from the render path:
+Removed from the render path (deleted):
 
-- `src/components/BlueprintShell.vue`, `src/components/BlueprintFoot.vue`
-- `src/assets/blueprint.css` (deleted, not merely unimported)
-- The old `bp-*` and `--bp-*` vocabulary: no `bp-` class, token or selector survives anywhere in
-  `src/`. The only shared rendered class is `visually-hidden` (by contract).
+- `src/components/AbyssRail.vue`, `AbyssIndex.vue`, `AbyssStatus.vue`
+- `src/components/home/BpDeck.vue`, `BpSteps.vue`, `BpScan.vue`, `BpKeeps.vue`, `BpCautions.vue`
+- `src/assets/abyss.css` (deleted, not merely unimported)
+- The whole `ab-*` vocabulary: no `ab-` class, token or selector survives anywhere in `src/` or in
+  the rendered DOM. The only shared rendered class is `visually-hidden` (by contract).
 
 ## Known limitations
 
-- **Inventory bucket.** `inventory.mjs` classifies source text with keyword buckets and has no
-  bucket for `command-rail`. It reads the new source as `marketing-stack` (editorial family)
-  because the docs/install copy contains the word “card” and the shell still carries a
-  headline-style h1. The implemented skeleton is Command Rail; the gate only needs a different
-  archetype id and family, and both differ from `bento-canvas` / spatial.
-- **Baseline re-frozen.** The two earlier rounds of evidence (`../.reskin.previous` and the
-  previous `.reskin`) sat inside the project and were being scanned as source, so the baseline
-  was re-frozen after moving them to `../../reskin-archive/{round1,round2-bento}`. That is why the
-  contract hash differs from the previous report's: the copy is identical, the archived duplicates
-  are simply no longer counted as source. The rendered baseline was captured before any edit.
-- `/download/miston-extension-0.1.0.zip` is a link target rather than a page; the SPA fallback
-  serves the home document for it, and it is captured and compared as such.
-- The static capture exercises the closed example report. The live scan report (after a real
-  scan), the verify result states and the failure states are covered by the component tests
-  rather than by a network-dependent screenshot.
-- The keeps device figure stays in source, hidden with `display: none`, exactly as the baseline
-  rendered it; its copy is still in the content contract.
-- Full-page screenshots draw fixed elements (the 76 px spine, and the bottom dock at 390 px) once,
-  at the viewport position; they appear mid-image in the tall captures even though they are pinned
-  in the browser. The geometric evidence in `current/pages.json` confirms their fixed boxes.
+- **Inventory bucket.** `inventory.mjs` classifies source text with keyword buckets; the rebuild is
+  read as `bento-canvas` because the canvas container is named `.sn-bento` and there is no sidebar
+  or topbar token. The implemented skeleton is Bento Canvas; the gate only needs a different
+  archetype id **and** family, and both differ from `marketing-stack` / editorial.
+- **Keeps popup stays hidden.** The six-idea section still carries a second copy of the extension
+  popup in source with `display:none`, exactly as the baseline rendered it. Its copy is part of the
+  content contract, so it must stay in the DOM; it is not visible and does not affect word parity.
+- **Verification port.** The script's default ports are held by two other running projects on this
+  machine; one early run on 4318 captured a foreign app. Every reported run was pinned with
+  `--port 4400`, and the bogus log is kept out of the evidence.
+- **Old font files.** `website/public/media` still ships the Old Standard TT and Libre Franklin
+  `woff2` files from the previous identity. They are no longer referenced by the new styles; they
+  are kept because the licence notices cover them and removing binaries is outside a reskin.
+- **`/download/…zip`** is a link target rather than a page; the SPA fallback serves the home
+  document for it, and it is captured and compared as such.
+- The static capture exercises the closed example report. The live scan report, the verify result
+  states and the failure states are covered by the component tests rather than by a
+  network-dependent screenshot.
+
+## Tests and build
+
+- `npm run build` (`vue-tsc --noEmit && vite build`) passes.
+- `npm test`: **94 tests in 12 files pass**.
+- `npm run typecheck` passes.
+- `e2e/` was not run here (it needs a live RPC endpoint); its selectors were renamed with the rest
+  of the suite.

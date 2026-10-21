@@ -1,0 +1,3247 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "projectName": "loch-website",
+    "title": "Privacy score 49 of 100, drawn as a stepped bed",
+    "lang": "en"
+  },
+  "routes": [
+    "/",
+    "/docs",
+    "/download/loch-extension-0.1.0.zip",
+    "/install",
+    "/privacy",
+    "/verify"
+  ],
+  "visibleText": [
+    {
+      "value": "-byte secret, derives a whole key set from it, and pays that key set’s address like any other. On chain it is an ordinary private payment.",
+      "count": 1
+    },
+    {
+      "value": "-byte secret, so that reading it takes the recipient’s X25519 key and the secret, both. Every note a wallet keeps is keyed with its own",
+      "count": 1
+    },
+    {
+      "value": ", and a client refuses to prove above a maximum the user has set.",
+      "count": 1
+    },
+    {
+      "value": ", and a proof with a part that is all zero.",
+      "count": 1
+    },
+    {
+      "value": ", and creating an account that exists fails. That is the whole double-spend protection.",
+      "count": 1
+    },
+    {
+      "value": ", and that endpoint learns which transactions were asked about. A viewing key is not sent anywhere: the page downloads the pool’s whole history and reads it here.",
+      "count": 1
+    },
+    {
+      "value": ", does everything. Its proof enforces one equation over the BN254 scalar field, whose modulus is",
+      "count": 1
+    },
+    {
+      "value": ", in Edge",
+      "count": 1
+    },
+    {
+      "value": ", modulo",
+      "count": 1
+    },
+    {
+      "value": ", reads the chain and sends your deposits. It sees your IP address, and your public address when you dive in, read your public balance or run a leak scan. A sync does not name your address. It passes each question on to an RPC provider, which does not see your IP address.",
+      "count": 1
+    },
+    {
+      "value": ", sees the public address you dive in from and the amount. It refuses addresses on the US Treasury’s sanctions list and co-signs the rest.",
+      "count": 1
+    },
+    {
+      "value": ", sends your private transfers and withdrawals to Solana and is paid a fee from the shielded amount. It sees your IP address, the proof, and for a withdrawal the address it goes to.",
+      "count": 1
+    },
+    {
+      "value": ", so",
+      "count": 1
+    },
+    {
+      "value": ", somewhere it can stay, such as your Documents folder. The browser runs Loch from that folder, so if you delete or move it later, Loch stops working.",
+      "count": 1
+    },
+    {
+      "value": ", the fee and the two encrypted notes. Their hash is",
+      "count": 1
+    },
+    {
+      "value": ", the Loch RPC proxy, which this project runs.",
+      "count": 1
+    },
+    {
+      "value": ", two",
+      "count": 2
+    },
+    {
+      "value": ", where your wallet is asked for its signature. The page runs no script of ours; its server sees your IP address.",
+      "count": 1
+    },
+    {
+      "value": ", with Poseidon at every node, kept in one account. Leaves are appended left to right, two per transaction. The program keeps the",
+      "count": 1
+    },
+    {
+      "value": ", with six checks.",
+      "count": 1
+    },
+    {
+      "value": "; press",
+      "count": 1
+    },
+    {
+      "value": ": the note of a deposit, the change of every payment, every empty output. A payment to a payment code is keyed with the secret in the code.",
+      "count": 1
+    },
+    {
+      "value": ": you can read it, build it yourself and change it. The circuit, the program, the services and this site are not published yet. Until you can read them, you are taking them on trust.",
+      "count": 1
+    },
+    {
+      "value": ". A page at",
+      "count": 1
+    },
+    {
+      "value": ". A token at any other address is not ours.",
+      "count": 1
+    },
+    {
+      "value": ". A value",
+      "count": 1
+    },
+    {
+      "value": ". If Loch says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
+      "count": 1
+    },
+    {
+      "value": ". It carries both public keys: one to own notes, one to encrypt them to. A payment code is the address with a secret for one payer added:",
+      "count": 1
+    },
+    {
+      "value": ". None of it involves the circuit or the program. It rests on the two hashes above.",
+      "count": 1
+    },
+    {
+      "value": ". On Windows:",
+      "count": 1
+    },
+    {
+      "value": ". Read them before you use it.",
+      "count": 1
+    },
+    {
+      "value": ". Separating the two fully would change every address, and has not been done.",
+      "count": 1
+    },
+    {
+      "value": ". That endpoint learns which address you looked up. Nothing asks you to connect a wallet, sign anything or type a seed phrase.",
+      "count": 1
+    },
+    {
+      "value": ". The switch is in the top right corner (in Edge, on the left). It only allows extensions to be loaded from a folder.",
+      "count": 1
+    },
+    {
+      "value": ". Value in the pool exists as notes. A note is spent whole, and what is left over comes back as a new note. This is the unspent-output model that Zcash introduced, here with two inputs and two outputs in every transaction: a 2-in, 2-out join-split.",
+      "count": 1
+    },
+    {
+      "value": ".480",
+      "count": 2
+    },
+    {
+      "value": "[\"nullifier\", nullifier]",
+      "count": 1
+    },
+    {
+      "value": "$LOCH token:",
+      "count": 1
+    },
+    {
+      "value": "0.0025",
+      "count": 3
+    },
+    {
+      "value": "0.730",
+      "count": 2
+    },
+    {
+      "value": "0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e",
+      "count": 1
+    },
+    {
+      "value": "1",
+      "count": 1
+    },
+    {
+      "value": "1 048 576",
+      "count": 1
+    },
+    {
+      "value": "1. Add it",
+      "count": 1
+    },
+    {
+      "value": "1.250",
+      "count": 2
+    },
+    {
+      "value": "10",
+      "count": 2
+    },
+    {
+      "value": "100",
+      "count": 1
+    },
+    {
+      "value": "1088",
+      "count": 1
+    },
+    {
+      "value": "114",
+      "count": 2
+    },
+    {
+      "value": "12",
+      "count": 2
+    },
+    {
+      "value": "12 698",
+      "count": 2
+    },
+    {
+      "value": "120 m",
+      "count": 1
+    },
+    {
+      "value": "1208",
+      "count": 1
+    },
+    {
+      "value": "128",
+      "count": 1
+    },
+    {
+      "value": "14:02",
+      "count": 1
+    },
+    {
+      "value": "159 241",
+      "count": 1
+    },
+    {
+      "value": "159 241 to 175 768",
+      "count": 1
+    },
+    {
+      "value": "168",
+      "count": 2
+    },
+    {
+      "value": "175 768",
+      "count": 1
+    },
+    {
+      "value": "180 m",
+      "count": 1
+    },
+    {
+      "value": "2",
+      "count": 1
+    },
+    {
+      "value": "2. Connect your wallet",
+      "count": 1
+    },
+    {
+      "value": "2.000",
+      "count": 3
+    },
+    {
+      "value": "20",
+      "count": 3
+    },
+    {
+      "value": "230 m",
+      "count": 1
+    },
+    {
+      "value": "24",
+      "count": 1
+    },
+    {
+      "value": "256",
+      "count": 3
+    },
+    {
+      "value": "28 Sep",
+      "count": 2
+    },
+    {
+      "value": "3",
+      "count": 1
+    },
+    {
+      "value": "3. Set an RPC endpoint",
+      "count": 1
+    },
+    {
+      "value": "3.1337",
+      "count": 2
+    },
+    {
+      "value": "3.5",
+      "count": 1
+    },
+    {
+      "value": "31",
+      "count": 1
+    },
+    {
+      "value": "32",
+      "count": 2
+    },
+    {
+      "value": "41.207",
+      "count": 2
+    },
+    {
+      "value": "49",
+      "count": 2
+    },
+    {
+      "value": "5.000",
+      "count": 3
+    },
+    {
+      "value": "524 288",
+      "count": 3
+    },
+    {
+      "value": "6.7",
+      "count": 1
+    },
+    {
+      "value": "60 m",
+      "count": 1
+    },
+    {
+      "value": "600",
+      "count": 1
+    },
+    {
+      "value": "64",
+      "count": 5
+    },
+    {
+      "value": "7",
+      "count": 1
+    },
+    {
+      "value": "87",
+      "count": 3
+    },
+    {
+      "value": "9fRk…2mVd",
+      "count": 1
+    },
+    {
+      "value": "A bar stands for something the chain is never given.",
+      "count": 1
+    },
+    {
+      "value": "A chart prints its warnings in magenta, where the navigator cannot miss them. These are ours, followed by what we have committed to.",
+      "count": 1
+    },
+    {
+      "value": "A claim link is a bearer secret, like cash in an envelope. Until it is collected, anyone who saw it can take the payment, and so can the payer, who can take it back. The code travels after the",
+      "count": 1
+    },
+    {
+      "value": "A claim link pays someone who has no shielded address yet. The payer’s wallet draws a",
+      "count": 1
+    },
+    {
+      "value": "A counterparty appears three times or more",
+      "count": 1
+    },
+    {
+      "value": "A counterparty carries a known label",
+      "count": 1
+    },
+    {
+      "value": "A deposit goes through only with a second signature, from the screening authority named in the pool’s configuration, and only up to the cap per deposit set there. Without that signature the program refuses it.",
+      "count": 1
+    },
+    {
+      "value": "A finite tree",
+      "count": 1
+    },
+    {
+      "value": "A hash of everything public about the transaction",
+      "count": 1
+    },
+    {
+      "value": "A Loch user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
+      "count": 1
+    },
+    {
+      "value": "A new note travels with the payment, encrypted so that only the person it is for can open it.",
+      "count": 1
+    },
+    {
+      "value": "A one-person setup",
+      "count": 1
+    },
+    {
+      "value": "A one-person setup, and no audit",
+      "count": 1
+    },
+    {
+      "value": "A payment receipt",
+      "count": 1
+    },
+    {
+      "value": "A payment to a plain",
+      "count": 1
+    },
+    {
+      "value": "A policy the browser enforces",
+      "count": 1
+    },
+    {
+      "value": "A pool for USDC. The program handles SOL only.",
+      "count": 1
+    },
+    {
+      "value": "A pool hides you only among the other people using it, and today that is a small crowd. If you surface the exact amount you dived in with, soon afterwards, anyone can pair the two and most of the benefit is gone. Leave time between them, and surface a different amount.",
+      "count": 1
+    },
+    {
+      "value": "A post-quantum key exchange does not fit in a note: its smallest ciphertext is",
+      "count": 1
+    },
+    {
+      "value": "A program of ours puts each page together when it is asked for. It is told which page, and nothing about who asks: the web server in front of it does not pass your IP address on. It sets no cookie, keeps no record of a request, and holds nothing but the site’s own text. That is a statement about software we run, and you cannot check it from where you are.",
+      "count": 1
+    },
+    {
+      "value": "A proof in place of the details",
+      "count": 1
+    },
+    {
+      "value": "a proof,",
+      "count": 1
+    },
+    {
+      "value": "a proof, two nullifiers, two new commitments and the relayer’s fee. No sender, no recipient, no amount.",
+      "count": 1
+    },
+    {
+      "value": "A quantum computer",
+      "count": 2
+    },
+    {
+      "value": "A receipt",
+      "count": 1
+    },
+    {
+      "value": "A relayer puts the payment on Solana and pays the network fee, so your public wallet is not on it. It does see your IP address and when you sent.",
+      "count": 1
+    },
+    {
+      "value": "A root of the tree",
+      "count": 1
+    },
+    {
+      "value": "A screening authority must co-sign every deposit and can refuse one. It sees the address you deposit from. If you want a pool with nobody at the door, this is not it.",
+      "count": 1
+    },
+    {
+      "value": "A shielded address is",
+      "count": 1
+    },
+    {
+      "value": "A shielded address is a stable identifier. Everyone who is given it knows they are paying the same recipient, and two people can compare. A payment code starts with the same address, so it does not change this. Anyone who knows the address can send notes to it, wanted or not.",
+      "count": 1
+    },
+    {
+      "value": "A shielded balance does nothing for the history a public wallet already has. The leak scanner reads that history and scores it out of",
+      "count": 1
+    },
+    {
+      "value": "A shielded balance inside Phantom, Solflare or Backpack. Pay from it, and your history stays behind.",
+      "count": 1
+    },
+    {
+      "value": "A small crowd",
+      "count": 1
+    },
+    {
+      "value": "A source-of-funds report",
+      "count": 2
+    },
+    {
+      "value": "A tag for every spent note",
+      "count": 1
+    },
+    {
+      "value": "A viewing key",
+      "count": 2
+    },
+    {
+      "value": "A wallet can choose to show something about its own transactions, and whoever is shown it can check it against the chain on",
+      "count": 1
+    },
+    {
+      "value": "A wallet has to read the pool before it can pay: the tree, the new commitments, the nullifiers already spent. A sync asks only for what every client asks for, the history of the tree account. It does not name the wallet’s own notes.",
+      "count": 1
+    },
+    {
+      "value": "A way to revoke a viewing key, and a viewing key that also shows what was spent.",
+      "count": 1
+    },
+    {
+      "value": "A zip file,",
+      "count": 1
+    },
+    {
+      "value": "about 3.5",
+      "count": 1
+    },
+    {
+      "value": "Add to Chrome",
+      "count": 4
+    },
+    {
+      "value": "Added from the Chrome Web Store, Loch updates itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Loch’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
+      "count": 1
+    },
+    {
+      "value": "address, for anyone who knows the address: the amount, and which commitment it is. Not who paid, and not when it was spent. Ask for a payment code if that matters.",
+      "count": 1
+    },
+    {
+      "value": "After",
+      "count": 1
+    },
+    {
+      "value": "All activity",
+      "count": 2
+    },
+    {
+      "value": "alt_bn128",
+      "count": 1
+    },
+    {
+      "value": "Amount",
+      "count": 3
+    },
+    {
+      "value": "Amounts and times correlate. Diving in with",
+      "count": 1
+    },
+    {
+      "value": "an address receive an amount from the Loch, and when. Not which deposit it came from.",
+      "count": 1
+    },
+    {
+      "value": "An admin key",
+      "count": 1
+    },
+    {
+      "value": "An independent Oblivious HTTP relay.",
+      "count": 1
+    },
+    {
+      "value": "An observer sees",
+      "count": 9
+    },
+    {
+      "value": "An outgoing amount equals an incoming one that arrived less than",
+      "count": 1
+    },
+    {
+      "value": "Analytics and third parties",
+      "count": 1
+    },
+    {
+      "value": "and",
+      "count": 3
+    },
+    {
+      "value": "and choose the folder you unzipped: the one that has",
+      "count": 1
+    },
+    {
+      "value": "Any site that gets the user to sign the key-derivation message obtains the shielded keys for good. Whoever holds the wallet’s seed phrase holds the shielded balance too. There is no separate recovery and no rotation.",
+      "count": 1
+    },
+    {
+      "value": "Anything given the spending key can read the wallet’s whole history and everything it will receive. There are no viewing keys to hand to a third party, and no way to revoke one.",
+      "count": 1
+    },
+    {
+      "value": "are the same field element and two different account addresses, so without that check one note could be spent twice.",
+      "count": 1
+    },
+    {
+      "value": "at the top of this page. It opens Loch’s page on the",
+      "count": 1
+    },
+    {
+      "value": "Back to the start page",
+      "count": 4
+    },
+    {
+      "value": "Balance is visible to everyone",
+      "count": 1
+    },
+    {
+      "value": "Becomes readable",
+      "count": 1
+    },
+    {
+      "value": "before you dive in.",
+      "count": 1
+    },
+    {
+      "value": "before you put anything in.",
+      "count": 1
+    },
+    {
+      "value": "Before you start",
+      "count": 1
+    },
+    {
+      "value": "Behind it, a program of ours puts each page together. It is told which page was asked for and is not told your IP address. It sets no cookie and keeps no record of what it is asked.",
+      "count": 1
+    },
+    {
+      "value": "Being removed",
+      "count": 1
+    },
+    {
+      "value": "brave://extensions",
+      "count": 1
+    },
+    {
+      "value": "By default, the Loch RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
+      "count": 1
+    },
+    {
+      "value": "bytes long, and that the program accepted it.",
+      "count": 1
+    },
+    {
+      "value": "bytes they cannot read, beside each new fingerprint.",
+      "count": 1
+    },
+    {
+      "value": "bytes to spare. A secret shared in advance costs nothing on chain. Its price is that the recipient has to get the code to the payer privately.",
+      "count": 1
+    },
+    {
+      "value": "bytes, and a deposit has",
+      "count": 1
+    },
+    {
+      "value": "bytes: three curve points of",
+      "count": 1
+    },
+    {
+      "value": "bytes.",
+      "count": 2
+    },
+    {
+      "value": "Can be forged, from then on",
+      "count": 1
+    },
+    {
+      "value": "Cancel the scan",
+      "count": 1
+    },
+    {
+      "value": "Carried by a relayer",
+      "count": 1
+    },
+    {
+      "value": "Cautions",
+      "count": 3
+    },
+    {
+      "value": "certutil -hashfile loch-extension-0.1.0.zip SHA256",
+      "count": 1
+    },
+    {
+      "value": "characters and starts with",
+      "count": 1
+    },
+    {
+      "value": "characters, starting with",
+      "count": 1
+    },
+    {
+      "value": "Check a receipt",
+      "count": 1
+    },
+    {
+      "value": "Check the file",
+      "count": 1
+    },
+    {
+      "value": "Check what you were given.",
+      "count": 1
+    },
+    {
+      "value": "Checking the wallet’s own Ed25519 signature inside the proof, so that no derived key has to exist. This is research: Ed25519 is expensive to verify in a BN254 circuit, and a quantum computer forges that signature, which it cannot do to the derived key.",
+      "count": 1
+    },
+    {
+      "value": "Chrome Web Store",
+      "count": 1
+    },
+    {
+      "value": "chrome://extensions",
+      "count": 1
+    },
+    {
+      "value": "Claim links",
+      "count": 2
+    },
+    {
+      "value": "claimSeed = sha256(\"Loch claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"lochclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://lochlayer.com/claim#code",
+      "count": 1
+    },
+    {
+      "value": "Clients follow three rules so that all transactions look alike. There are always two inputs: an unused one is a dummy note of amount zero with a fresh random key. There are always two outputs: an unused one is a zero-amount note to the sender’s own address, encrypted like any other. The order of the outputs is random.",
+      "count": 1
+    },
+    {
+      "value": "commitment = Poseidon(amount, publicKey, blinding) nullifier = Poseidon(commitment, leafIndex, tag) tag = Poseidon(privateKey, commitment, leafIndex)",
+      "count": 1
+    },
+    {
+      "value": "Commitments",
+      "count": 1
+    },
+    {
+      "value": "Commitments are the leaves of a Merkle tree of depth",
+      "count": 1
+    },
+    {
+      "value": "Compute units for one",
+      "count": 1
+    },
+    {
+      "value": "compute units on a local validator. The verifier refuses a public input that is not below",
+      "count": 1
+    },
+    {
+      "value": "Connect wallet",
+      "count": 1
+    },
+    {
+      "value": "connect.lochlayer.com",
+      "count": 2
+    },
+    {
+      "value": "Constraints in the circuit",
+      "count": 1
+    },
+    {
+      "value": "constraints. A proof is",
+      "count": 1
+    },
+    {
+      "value": "Cookies",
+      "count": 1
+    },
+    {
+      "value": "CYGidBuS8WwUXfZCmb98LnLGL9Mx8SvhdqA6t3xTLoch",
+      "count": 2
+    },
+    {
+      "value": "Default relayer fee, SOL",
+      "count": 1
+    },
+    {
+      "value": "Deposit screening",
+      "count": 2
+    },
+    {
+      "value": "Deposits are screened",
+      "count": 1
+    },
+    {
+      "value": "Depth of the tree",
+      "count": 1
+    },
+    {
+      "value": "Detail:",
+      "count": 1
+    },
+    {
+      "value": "Developer mode",
+      "count": 1
+    },
+    {
+      "value": "directly inside it. Loch appears in the list of extensions.",
+      "count": 1
+    },
+    {
+      "value": "Dive in",
+      "count": 4
+    },
+    {
+      "value": "Dive in (deposit)",
+      "count": 1
+    },
+    {
+      "value": "Dive in and surface are public",
+      "count": 1
+    },
+    {
+      "value": "Dive in, send privately, surface.",
+      "count": 1
+    },
+    {
+      "value": "Dived in",
+      "count": 2
+    },
+    {
+      "value": "Diving in and surfacing are public",
+      "count": 1
+    },
+    {
+      "value": "Docs",
+      "count": 2
+    },
+    {
+      "value": "Download Loch 0.1.0",
+      "count": 1
+    },
+    {
+      "value": "each input note with a non-zero amount is a leaf of the tree with the given root;",
+      "count": 1
+    },
+    {
+      "value": "each nullifier is the one that belongs to its note, its leaf and that key;",
+      "count": 1
+    },
+    {
+      "value": "each output commitment is the hash of a note whose amount is in range;",
+      "count": 1
+    },
+    {
+      "value": "Each output is published with an encrypted copy of its note, so that the recipient can find it and spend it. An encrypted note is exactly",
+      "count": 1
+    },
+    {
+      "value": "Each record is an example of what the chain keeps at that step.",
+      "count": 1
+    },
+    {
+      "value": "Ed25519 signatures are deterministic, so the same wallet derives the same keys again. That is why there is no new seed phrase. It is also the weak point. The message is not bound to a site, and a wallet shows it as ordinary text: whoever obtains that one signature holds both keys for good, and the keys cannot be rotated without moving the funds.",
+      "count": 1
+    },
+    {
+      "value": "edge://extensions",
+      "count": 1
+    },
+    {
+      "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"loch-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"loch-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
+      "count": 1
+    },
+    {
+      "value": "Encrypted note, bytes",
+      "count": 1
+    },
+    {
+      "value": "Encrypted notes",
+      "count": 2
+    },
+    {
+      "value": "Every deposit and every withdrawal is an ordinary public transaction: the address, the amount and the time. Only what happens between them is shielded.",
+      "count": 1
+    },
+    {
+      "value": "Every page is sent with a Content-Security-Policy that allows no inline style, no script from anywhere but this site, and only the few places a page may connect to. The few scripts written into a page itself each carry a random value made for that one response, which the policy names. Nothing else written into a page can run.",
+      "count": 1
+    },
+    {
+      "value": "Every shielded key follows from one message signed by the wallet the user already has.",
+      "count": 1
+    },
+    {
+      "value": "Everything a wallet keeps: its deposits, its change, its balance. Those are keyed notes, and their second key is in no address. So is what a payer sends to a payment code, as long as the code itself stayed private. Proofs already on chain say nothing to anyone, whatever they can compute, and commitments and nullifiers are hashes.",
+      "count": 1
+    },
+    {
+      "value": "Everything in the left column is on chain for anyone to read. The right column is what stays with the people involved.",
+      "count": 1
+    },
+    {
+      "value": "Exact amounts passed straight through",
+      "count": 1
+    },
+    {
+      "value": "ext_amount",
+      "count": 3
+    },
+    {
+      "value": "ext_amount - fee",
+      "count": 1
+    },
+    {
+      "value": "extDataHash",
+      "count": 1
+    },
+    {
+      "value": "Extension source",
+      "count": 1
+    },
+    {
+      "value": "Fh3q…Tz8K",
+      "count": 3
+    },
+    {
+      "value": "Finding",
+      "count": 1
+    },
+    {
+      "value": "For one transaction the circuit proves all of the following, and shows none of the private values:",
+      "count": 1
+    },
+    {
+      "value": "From",
+      "count": 3
+    },
+    {
+      "value": "From Fh3q…Tz8K, today 14:02",
+      "count": 2
+    },
+    {
+      "value": "From the client. Each becomes a leaf",
+      "count": 1
+    },
+    {
+      "value": "From the client. Each becomes an account",
+      "count": 1
+    },
+    {
+      "value": "From the client. It must be one of the",
+      "count": 1
+    },
+    {
+      "value": "Funding source is public",
+      "count": 1
+    },
+    {
+      "value": "github.com/lochlayer/loch-extension",
+      "count": 1
+    },
+    {
+      "value": "Giving the amount, the owner key and the blinding of a note shows what a commitment on chain holds. Giving its tag as well shows which nullifier spent it, and so in which transaction. The tag is a hash of the spending key that is good for that one note: it spends nothing and says nothing about any other note.",
+      "count": 1
+    },
+    {
+      "value": "Go back to the default endpoint",
+      "count": 1
+    },
+    {
+      "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Loch’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
+      "count": 1
+    },
+    {
+      "value": "has no transactions and no balance for it. Check that the address is right. If it is, it has given nothing away yet.",
+      "count": 1
+    },
+    {
+      "value": "How it works",
+      "count": 1
+    },
+    {
+      "value": "How the Loch keeps a payment private.",
+      "count": 1
+    },
+    {
+      "value": "If that is more than you want to tell anyone, use your own RPC. Once the source code is published, you will be able to run the same scanner on your own machine.",
+      "count": 1
+    },
+    {
+      "value": "If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux:",
+      "count": 1
+    },
+    {
+      "value": "in Loch and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
+      "count": 1
+    },
+    {
+      "value": "In the docs: encrypted notes",
+      "count": 1
+    },
+    {
+      "value": "In the docs: keys",
+      "count": 1
+    },
+    {
+      "value": "In the docs: notes and commitments",
+      "count": 1
+    },
+    {
+      "value": "In the docs: nullifiers",
+      "count": 1
+    },
+    {
+      "value": "In the docs: the proof",
+      "count": 1
+    },
+    {
+      "value": "In the docs: the relayer",
+      "count": 1
+    },
+    {
+      "value": "In the Loch. Visible only to you.",
+      "count": 2
+    },
+    {
+      "value": "In your own browser",
+      "count": 1
+    },
+    {
+      "value": "Input",
+      "count": 1
+    },
+    {
+      "value": "inputNullifier",
+      "count": 1
+    },
+    {
+      "value": "Install",
+      "count": 1
+    },
+    {
+      "value": "Install Loch.",
+      "count": 1
+    },
+    {
+      "value": "Install the extension",
+      "count": 1
+    },
+    {
+      "value": "into the address bar and press Enter. In Brave it is",
+      "count": 1
+    },
+    {
+      "value": "is",
+      "count": 2
+    },
+    {
+      "value": "is one of at most six values, and the right one is recognised from the address. A prover that ran anywhere but on the user’s device would therefore hold the whole wallet, and not one transaction. The reverse does not hold: the three keys that read say nothing about",
+      "count": 1
+    },
+    {
+      "value": "is the type of the transaction. The fee comes out of the shielded value in every type.",
+      "count": 1
+    },
+    {
+      "value": "It does not divide the withdrawn amount among the deposits. Payments are merged and split on the way.",
+      "count": 1
+    },
+    {
+      "value": "It fires when",
+      "count": 1
+    },
+    {
+      "value": "It has seven public inputs, in this order.",
+      "count": 1
+    },
+    {
+      "value": "It reads without scripts",
+      "count": 1
+    },
+    {
+      "value": "It sends requests to the three addresses in its settings and to nothing else. You can change each of them.",
+      "count": 1
+    },
+    {
+      "value": "It works it out again from the instruction",
+      "count": 2
+    },
+    {
+      "value": "Italic is shielded.",
+      "count": 2
+    },
+    {
+      "value": "Keys",
+      "count": 2
+    },
+    {
+      "value": "Keys from the wallet you have",
+      "count": 1
+    },
+    {
+      "value": "Lamports the program moves",
+      "count": 1
+    },
+    {
+      "value": "Largest transaction, of 1232 bytes allowed",
+      "count": 1
+    },
+    {
+      "value": "Leak report",
+      "count": 2
+    },
+    {
+      "value": "Leak scanner",
+      "count": 2
+    },
+    {
+      "value": "Leaks outside the Loch",
+      "count": 2
+    },
+    {
+      "value": "leaves, which is",
+      "count": 1
+    },
+    {
+      "value": "Like any web server, the one that sends you these pages sees your IP address and which page you asked for. The site adds nothing to that: no identifiers, no scripts that report back.",
+      "count": 1
+    },
+    {
+      "value": "Linked to identified services",
+      "count": 1
+    },
+    {
+      "value": "Lists every payment a wallet has received, with its amount: from others, and its own deposits and change. It cannot show which of them were spent, so it gives neither a balance nor what was paid out. Whoever gave it to you cannot take it back, so keep it as carefully as they would.",
+      "count": 1
+    },
+    {
+      "value": "Load the folder",
+      "count": 1
+    },
+    {
+      "value": "Load unpacked",
+      "count": 1
+    },
+    {
+      "value": "Loch",
+      "count": 4
+    },
+    {
+      "value": "Loch is a browser extension that works beside the wallet you already have. Add it from the Chrome Web Store, in Chrome, Brave or Edge. It takes about two minutes.",
+      "count": 1
+    },
+    {
+      "value": "Loch on X",
+      "count": 1
+    },
+    {
+      "value": "Loch reads the chain through an RPC endpoint. It starts with Loch’s own,",
+      "count": 1
+    },
+    {
+      "value": "Loch runs on Solana mainnet, with real SOL.",
+      "count": 1
+    },
+    {
+      "value": "Loch v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
+      "count": 1
+    },
+    {
+      "value": "loch_pool",
+      "count": 1
+    },
+    {
+      "value": "loch-extension-0.1.0",
+      "count": 1
+    },
+    {
+      "value": "loch1",
+      "count": 2
+    },
+    {
+      "value": "lochpay1",
+      "count": 1
+    },
+    {
+      "value": "manifest.json",
+      "count": 1
+    },
+    {
+      "value": "MB. Most of that is the two files your browser uses to build proofs on your own machine.",
+      "count": 1
+    },
+    {
+      "value": "Measured on a local validator against the current build, with real proofs.",
+      "count": 1
+    },
+    {
+      "value": "message = \"Loch key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Loch note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Loch self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Loch payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"loch\", publicKey || encryptionPublic) payment code = bech32m(\"lochpay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
+      "count": 1
+    },
+    {
+      "value": "More takes longer: on a slow endpoint about two minutes for 100.",
+      "count": 1
+    },
+    {
+      "value": "most recent roots and accepts a proof against any of them, so a proof made a few transactions ago still verifies.",
+      "count": 1
+    },
+    {
+      "value": "Move SOL from your public wallet into the Loch. A screening authority checks where it came from and co-signs the deposit.",
+      "count": 1
+    },
+    {
+      "value": "N",
+      "count": 1
+    },
+    {
+      "value": "N + r",
+      "count": 1
+    },
+    {
+      "value": "negative",
+      "count": 1
+    },
+    {
+      "value": "Neither the circuit nor the program has had an external audit. A flaw in either could lose everything in the pool.",
+      "count": 1
+    },
+    {
+      "value": "No analytics",
+      "count": 1
+    },
+    {
+      "value": "No analytics, no telemetry, no advertising. Nothing is sold, and nothing is shared beyond what this section lists.",
+      "count": 1
+    },
+    {
+      "value": "No cookies. No analytics. No request to anyone else until you start a scan.",
+      "count": 1
+    },
+    {
+      "value": "No machine exists that breaks today’s public-key cryptography. The chain is permanent, though, so the question is what someone who records it now could read with such a machine later. Forging is different: it needs the machine at the time, and cannot reach back.",
+      "count": 1
+    },
+    {
+      "value": "None. Every file a page loads comes from this site: no analytics, no trackers, no scripts, fonts or images from anyone else’s server. Each page carries a security policy that allows nothing else. That much is a rule the browser enforces, not a promise.",
+      "count": 1
+    },
+    {
+      "value": "None. The site sets no cookies and reads none.",
+      "count": 1
+    },
+    {
+      "value": "Not built yet",
+      "count": 2
+    },
+    {
+      "value": "note = (amount, publicKey, blinding) commitment = Poseidon(amount, publicKey, blinding)",
+      "count": 1
+    },
+    {
+      "value": "Notes and commitments",
+      "count": 2
+    },
+    {
+      "value": "Nothing about you, with one exception: if you joined the waitlist while it was open, your email address and the day you joined. No time of day, no IP address, no browser details.",
+      "count": 1
+    },
+    {
+      "value": "Nothing found for this address",
+      "count": 1
+    },
+    {
+      "value": "Nothing from anyone else",
+      "count": 1
+    },
+    {
+      "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Loch extension keeps and sends.",
+      "count": 1
+    },
+    {
+      "value": "nothing. Signing a message is not a transaction.",
+      "count": 1
+    },
+    {
+      "value": "nullifier = Poseidon(commitment, leafIndex, Poseidon(privateKey, commitment, leafIndex))",
+      "count": 1
+    },
+    {
+      "value": "Nullifiers",
+      "count": 2
+    },
+    {
+      "value": "Oblivious HTTP (RFC 9458) is the way to stop depending on that statement. The client encrypts each request to the proxy’s key and sends it through a relay run by someone else. The relay sees who is asking and not what; the proxy sees what and not who. The key exchange is X-Wing, a hybrid of ML-KEM-768 and X25519, so a recording of the relay’s traffic does not open if X25519 is broken later. The gateway and the client are built. No independent relay exists yet, so this path is not in use. Either way, the RPC provider behind the proxy sees every query, coming from the proxy.",
+      "count": 1
+    },
+    {
+      "value": "of 100",
+      "count": 2
+    },
+    {
+      "value": "of the link, which a browser does not send to a server, and the page it opens makes no request with it.",
+      "count": 1
+    },
+    {
+      "value": "on Loch’s card on the extensions page. If you loaded it by hand, delete the folder too.",
+      "count": 1
+    },
+    {
+      "value": "On mainnet, with real SOL",
+      "count": 1
+    },
+    {
+      "value": "On the websites you visit, the extension offers the Loch wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Loch, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
+      "count": 1
+    },
+    {
+      "value": "On this page",
+      "count": 1
+    },
+    {
+      "value": "One address for each person",
+      "count": 1
+    },
+    {
+      "value": "one fingerprint for each note. It says nothing about the amount or the owner.",
+      "count": 1
+    },
+    {
+      "value": "One instruction,",
+      "count": 1
+    },
+    {
+      "value": "One key spends and reads",
+      "count": 1
+    },
+    {
+      "value": "One signature holds your keys",
+      "count": 1
+    },
+    {
+      "value": "Only the recipient sees",
+      "count": 1
+    },
+    {
+      "value": "Only you see",
+      "count": 5
+    },
+    {
+      "value": "Open Loch from the toolbar and press",
+      "count": 1
+    },
+    {
+      "value": "Open source",
+      "count": 1
+    },
+    {
+      "value": "Open the extensions page",
+      "count": 1
+    },
+    {
+      "value": "Open the zip file and move the folder inside it,",
+      "count": 1
+    },
+    {
+      "value": "opens and your wallet asks you to sign one message, “Loch key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
+      "count": 1
+    },
+    {
+      "value": "Opens both inputs of a withdrawal, and of the wallet’s earlier transactions that created those notes, back to the deposits. Each step is checked against the nullifiers on chain. An input of amount zero carried nothing in. Where the path reaches a note that came from another wallet, it stops there and says so. It lists where the money entered the pool; it does not divide the withdrawn amount among those deposits.",
+      "count": 1
+    },
+    {
+      "value": "Opens one output of one transaction. It shows that the transaction created a note of a stated amount that only the holder of a stated shielded address can spend. It does not show who paid: the payer and the recipient can both make it, and nobody else can.",
+      "count": 1
+    },
+    {
+      "value": "Or load it by hand",
+      "count": 1
+    },
+    {
+      "value": "outputCommitment",
+      "count": 1
+    },
+    {
+      "value": "over their Borsh encoding, with the first byte set to zero so that it fits in the field. The program recomputes it from what it was actually sent. Change the recipient, the fee or an encrypted note, and the proof no longer verifies. This is what stops a relayer from redirecting a payment.",
+      "count": 1
+    },
+    {
+      "value": "Paste any Solana address. The leak scanner reads the history anyone can read, and tells you what it gives away. You get a privacy score out of 100.",
+      "count": 1
+    },
+    {
+      "value": "Pay any other Loch balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
+      "count": 1
+    },
+    {
+      "value": "Payment code, characters",
+      "count": 1
+    },
+    {
+      "value": "Phantom",
+      "count": 2
+    },
+    {
+      "value": "Point the scan at a node or a provider you trust. Its address is kept in this browser only, in localStorage, and is sent to nobody.",
+      "count": 1
+    },
+    {
+      "value": "positive",
+      "count": 1
+    },
+    {
+      "value": "Press",
+      "count": 2
+    },
+    {
+      "value": "Press the puzzle-piece button in the toolbar and pin Loch, so that it is one press away.",
+      "count": 2
+    },
+    {
+      "value": "Privacy",
+      "count": 1
+    },
+    {
+      "value": "Privacy score",
+      "count": 2
+    },
+    {
+      "value": "Privacy score 49 of 100, drawn as a stepped bed",
+      "count": 1
+    },
+    {
+      "value": "privateKey",
+      "count": 2
+    },
+    {
+      "value": "Product before token",
+      "count": 1
+    },
+    {
+      "value": "Proof, bytes",
+      "count": 1
+    },
+    {
+      "value": "Proofs, and with them a withdrawal of whatever the pool holds. And every Solana signature, the program’s upgrade authority included. Funds here are exactly as safe from a quantum computer as Solana is.",
+      "count": 1
+    },
+    {
+      "value": "Proving time in the extension, seconds",
+      "count": 1
+    },
+    {
+      "value": "Public",
+      "count": 1
+    },
+    {
+      "value": "Public balance",
+      "count": 2
+    },
+    {
+      "value": "Public inputs",
+      "count": 1
+    },
+    {
+      "value": "public.",
+      "count": 1
+    },
+    {
+      "value": "publicAmount",
+      "count": 1
+    },
+    {
+      "value": "r",
+      "count": 4
+    },
+    {
+      "value": "random bytes. Only the commitment goes on chain: it says nothing about the amount or the owner, and it cannot be opened as a different note. Poseidon is circomlib’s, over BN254. Solana offers the same hash as a syscall, so the program and the circuit compute it identically.",
+      "count": 1
+    },
+    {
+      "value": "Read the cautions",
+      "count": 2
+    },
+    {
+      "value": "Read the cautions before you dive.",
+      "count": 1
+    },
+    {
+      "value": "Read the cautions.",
+      "count": 1
+    },
+    {
+      "value": "Read the technical docs",
+      "count": 1
+    },
+    {
+      "value": "Reading the chain",
+      "count": 2
+    },
+    {
+      "value": "Receipt, report or viewing key",
+      "count": 1
+    },
+    {
+      "value": "Receipts, reports and viewing keys",
+      "count": 2
+    },
+    {
+      "value": "Received privately",
+      "count": 2
+    },
+    {
+      "value": "Recent activity",
+      "count": 2
+    },
+    {
+      "value": "recent roots",
+      "count": 1
+    },
+    {
+      "value": "Recent roots accepted",
+      "count": 1
+    },
+    {
+      "value": "Recurring counterparties",
+      "count": 1
+    },
+    {
+      "value": "relayer-mainnet.lochlayer.com",
+      "count": 1
+    },
+    {
+      "value": "Relayer’s fee",
+      "count": 1
+    },
+    {
+      "value": "Remove",
+      "count": 1
+    },
+    {
+      "value": "Removing",
+      "count": 1
+    },
+    {
+      "value": "root",
+      "count": 1
+    },
+    {
+      "value": "RPC endpoint",
+      "count": 1
+    },
+    {
+      "value": "rpc.lochlayer.com",
+      "count": 3
+    },
+    {
+      "value": "Save and reload",
+      "count": 1
+    },
+    {
+      "value": "Scan a wallet address",
+      "count": 1
+    },
+    {
+      "value": "Scan again",
+      "count": 1
+    },
+    {
+      "value": "Scan this address",
+      "count": 1
+    },
+    {
+      "value": "screener-mainnet.lochlayer.com",
+      "count": 1
+    },
+    {
+      "value": "Scroll",
+      "count": 1
+    },
+    {
+      "value": "Sealed for the recipient",
+      "count": 1
+    },
+    {
+      "value": "Sealed notes",
+      "count": 1
+    },
+    {
+      "value": "seconds earlier",
+      "count": 1
+    },
+    {
+      "value": "seconds, on one thread.",
+      "count": 1
+    },
+    {
+      "value": "seed",
+      "count": 1
+    },
+    {
+      "value": "seed mod r",
+      "count": 1
+    },
+    {
+      "value": "selfNoteKey",
+      "count": 1
+    },
+    {
+      "value": "Send privately",
+      "count": 4
+    },
+    {
+      "value": "Send privately (transfer)",
+      "count": 1
+    },
+    {
+      "value": "Sent privately",
+      "count": 2
+    },
+    {
+      "value": "Settings",
+      "count": 1
+    },
+    {
+      "value": "sha256",
+      "count": 1
+    },
+    {
+      "value": "shasum -a 256 loch-extension-0.1.0.zip",
+      "count": 1
+    },
+    {
+      "value": "Shielded",
+      "count": 1
+    },
+    {
+      "value": "Shielded address, characters",
+      "count": 1
+    },
+    {
+      "value": "Shielded balance",
+      "count": 2
+    },
+    {
+      "value": "Shows that one transaction created a payment of a stated amount that only the holder of a stated shielded address can spend. Compare that address with the one you expect. It does not show who paid: the payer and the recipient can both make the same receipt, and nobody else can.",
+      "count": 1
+    },
+    {
+      "value": "Shows where the money behind one withdrawal entered the pool. It opens the wallet’s own transactions on that path, back to the deposits, and each step is checked against the chain. Where the path reaches money that came from another wallet, it stops, and this page says so.",
+      "count": 1
+    },
+    {
+      "value": "Sign that message nowhere else. Anyone who gets that signature gets your shielded balance.",
+      "count": 1
+    },
+    {
+      "value": "Signed by",
+      "count": 1
+    },
+    {
+      "value": "Six ideas do the work. Each sets what anyone can see beside what only you can.",
+      "count": 1
+    },
+    {
+      "value": "Skip to content",
+      "count": 1
+    },
+    {
+      "value": "SOL",
+      "count": 8
+    },
+    {
+      "value": "SOL an hour later links the two for any observer. The crowd a withdrawal hides in is the set of deposits that could plausibly have funded it, and today that set is tiny.",
+      "count": 1
+    },
+    {
+      "value": "SOL and surfacing",
+      "count": 1
+    },
+    {
+      "value": "SOL, or more than",
+      "count": 1
+    },
+    {
+      "value": "Solana wallet address",
+      "count": 1
+    },
+    {
+      "value": "Spending a note publishes a tag, and a tag is refused the second time, so no note is spent twice.",
+      "count": 1
+    },
+    {
+      "value": "Spending a note publishes its nullifier. The program creates an account at an address derived from it,",
+      "count": 1
+    },
+    {
+      "value": "Stays unreadable",
+      "count": 1
+    },
+    {
+      "value": "Stealth receive: an address used once for each payment. It has no design yet. A payment code is not one: it names the same owner every time.",
+      "count": 1
+    },
+    {
+      "value": "sum(inputs) + (ext_amount - fee) = sum(outputs) (mod r)",
+      "count": 1
+    },
+    {
+      "value": "Surface",
+      "count": 4
+    },
+    {
+      "value": "Surface (withdrawal)",
+      "count": 1
+    },
+    {
+      "value": "Surface what you have in the Loch first. Then press",
+      "count": 1
+    },
+    {
+      "value": "Surfaced",
+      "count": 2
+    },
+    {
+      "value": "syscalls. One",
+      "count": 1
+    },
+    {
+      "value": "Take a sounding of your own wallet.",
+      "count": 1
+    },
+    {
+      "value": "That it is a transfer. The root it was proved against, two nullifiers, two new commitments, two encrypted notes, the fee and the relayer",
+      "count": 1
+    },
+    {
+      "value": "The $LOCH token",
+      "count": 1
+    },
+    {
+      "value": "The address, the exact amount and the time are on chain, and so are the type of every transaction, its fee and its relayer. Only the link between a deposit and what follows is hidden.",
+      "count": 1
+    },
+    {
+      "value": "The amount is in lamports. The blinding is",
+      "count": 1
+    },
+    {
+      "value": "the amount they were sent.",
+      "count": 1
+    },
+    {
+      "value": "The amount, from the depositor to the vault",
+      "count": 1
+    },
+    {
+      "value": "The amount, from the vault to the destination. The fee, from the vault to the relayer",
+      "count": 1
+    },
+    {
+      "value": "The check needs JavaScript, because it runs in your browser.",
+      "count": 1
+    },
+    {
+      "value": "The code holds everything that spends the note: the keys follow from the secret, and the amount, the blinding and the leaf index open the commitment. Whoever has the link collects it with one private transfer to an address of their own, through the relayer, whose fee comes out of the note. The payer adds that fee on top, so the recipient ends up with the round amount.",
+      "count": 1
+    },
+    {
+      "value": "The commitments of the two outputs",
+      "count": 1
+    },
+    {
+      "value": "The depositing address, the exact amount and the time. That the screening authority signed. Two new commitments, each with an encrypted note",
+      "count": 1
+    },
+    {
+      "value": "The depositor and the screening authority",
+      "count": 1
+    },
+    {
+      "value": "The destination, the exact amount and the time. Two nullifiers, two new commitments, the fee and the relayer",
+      "count": 1
+    },
+    {
+      "value": "The ext data are the recipient, the relayer,",
+      "count": 1
+    },
+    {
+      "value": "The extension is open source, under the GNU General Public License, at",
+      "count": 1
+    },
+    {
+      "value": "The extension keeps what it needs on your device, and we have no copy of it. In the clear: its settings, and your wallet’s public address and name. Encrypted, under a key that only your wallet’s signature opens: your shielded notes, your activity list and your last leak report. The signature itself is held in the browser’s memory and is gone when the browser closes. There is no account. “Forget this wallet on this device”, or removing the extension, deletes it all.",
+      "count": 1
+    },
+    {
+      "value": "The extension uses the same analysis before a public payment. A plain SOL transfer or a token transfer from the user’s wallet is assessed against the last scan, and a finding of medium severity or higher interrupts with a dialog: cancel, or send anyway. The extension also refuses to pass on a request to sign the key-derivation message.",
+      "count": 1
+    },
+    {
+      "value": "The extension’s popup, drawn here with example figures. The extension is an early alpha. It is on the Chrome Web Store.",
+      "count": 2
+    },
+    {
+      "value": "The fee, from the vault to the relayer",
+      "count": 1
+    },
+    {
+      "value": "The fonts, the styles, the scripts and the drawings are this site’s own files. A page makes no request to another server until you start a scan.",
+      "count": 1
+    },
+    {
+      "value": "the inputs, the outputs and the public amount balance.",
+      "count": 1
+    },
+    {
+      "value": "the keys, and with them your shielded balance.",
+      "count": 1
+    },
+    {
+      "value": "The latest 100",
+      "count": 1
+    },
+    {
+      "value": "The latest 1000",
+      "count": 1
+    },
+    {
+      "value": "The latest 250",
+      "count": 1
+    },
+    {
+      "value": "The latest 500",
+      "count": 1
+    },
+    {
+      "value": "The leak scanner",
+      "count": 1
+    },
+    {
+      "value": "The live scan needs JavaScript, because it runs in your browser. With JavaScript off, the report below is an example.",
+      "count": 1
+    },
+    {
+      "value": "The Loch",
+      "count": 2
+    },
+    {
+      "value": "The Loch extension",
+      "count": 1
+    },
+    {
+      "value": "The Loch is a shielded pool of SOL held by one Solana program,",
+      "count": 1
+    },
+    {
+      "value": "The Loch is not.",
+      "count": 1
+    },
+    {
+      "value": "The model",
+      "count": 2
+    },
+    {
+      "value": "The network sees you",
+      "count": 1
+    },
+    {
+      "value": "The nonce is constant. That is safe here because every key encrypts exactly one message: a fresh ephemeral secret is drawn for every note.",
+      "count": 1
+    },
+    {
+      "value": "The nullifiers of the two inputs",
+      "count": 1
+    },
+    {
+      "value": "The numbers",
+      "count": 2
+    },
+    {
+      "value": "The page reloads so that its security policy allows this endpoint and no other. Use https, or http for a node on this machine.",
+      "count": 1
+    },
+    {
+      "value": "The plaintext holds the amount and the blinding, and nothing about the sender. The encrypted notes are part of the ext data, so the proof binds them and a relayer cannot swap them. There is no forward secrecy: the keys are long-lived, and whoever learns them later can read what they read.",
+      "count": 1
+    },
+    {
+      "value": "The pool can be paused. The pause stops deposits and nothing else: the program has no instruction that stops a withdrawal.",
+      "count": 1
+    },
+    {
+      "value": "The private key is inside the hash. Only the owner of a note can compute its nullifier, and nobody else can match a nullifier to a commitment. Someone who sent you a note knows its amount and blinding, and still cannot tell when you spend it.",
+      "count": 1
+    },
+    {
+      "value": "The program refuses a nullifier that is not below",
+      "count": 1
+    },
+    {
+      "value": "The program verifies the proof with Solana’s",
+      "count": 1
+    },
+    {
+      "value": "The program’s pause switch stops new deposits and nothing else. It has no instruction that stops you surfacing. The program itself can still be upgraded by its admin key.",
+      "count": 1
+    },
+    {
+      "value": "The program’s upgrade authority can replace the program, and with it every rule here. The pool’s admin can replace the screening authority, change the deposit cap and pause deposits. The admin key cannot be rotated.",
+      "count": 1
+    },
+    {
+      "value": "The proof",
+      "count": 2
+    },
+    {
+      "value": "The proof is made on the user’s device. In the extension that takes about",
+      "count": 1
+    },
+    {
+      "value": "The proof system is Groth16 over BN254. The circuit is written in Circom, compiled with circom 2.2.3, and has",
+      "count": 1
+    },
+    {
+      "value": "the prover knows the private key that owns each input note;",
+      "count": 1
+    },
+    {
+      "value": "The proving key comes from a development setup with a single contributor. Whoever ran it could forge proofs and drain the pool. A public ceremony with many contributors has not replaced it yet.",
+      "count": 1
+    },
+    {
+      "value": "The proxy sees the address together with your IP address for as long as it takes to answer, and writes neither down: it keeps no logs. That is a statement about software we run, and you cannot check it from where you are. The proxy passes the question on to an RPC provider. The provider sees which address was looked up, coming from the proxy, and does not see your IP address. It can keep what it sees.",
+      "count": 1
+    },
+    {
+      "value": "The public setup ceremony that replaces the development proving key.",
+      "count": 1
+    },
+    {
+      "value": "The quietest six hours of the day hold under 5% of at least",
+      "count": 1
+    },
+    {
+      "value": "The relayer",
+      "count": 4
+    },
+    {
+      "value": "The relayer cannot change the recipient, an amount or the fee. It can refuse a transaction, or delay it. It sees the client’s IP address and the moment of a transfer or a withdrawal, and can tie both to the transaction it then sends.",
+      "count": 1
+    },
+    {
+      "value": "The relayer pays the network fee and the rent of the two nullifier accounts, and is paid a fee out of the vault. That fee is part of what the proof fixes. The relayer names its own fee, the default being",
+      "count": 1
+    },
+    {
+      "value": "The relayer,",
+      "count": 1
+    },
+    {
+      "value": "The relayer, the screening service and the RPC endpoint each see the client’s IP address. The RPC endpoint is also trusted for what the chain contains: it can hide a spend or invent one until the wallet syncs elsewhere. Neither moves funds.",
+      "count": 1
+    },
+    {
+      "value": "the relayer’s address and its fee.",
+      "count": 1
+    },
+    {
+      "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Loch RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
+      "count": 1
+    },
+    {
+      "value": "The RPC endpoint,",
+      "count": 1
+    },
+    {
+      "value": "The same extension is here as a zip file, for a browser without the store or for anyone who wants the file in hand. Loaded this way it does not update itself.",
+      "count": 1
+    },
+    {
+      "value": "The scan runs in your browser and reads public chain data from",
+      "count": 1
+    },
+    {
+      "value": "The scan runs in your browser. When you start one, your browser asks a Solana RPC endpoint for the public history of the address you pasted. By default that endpoint is",
+      "count": 1
+    },
+    {
+      "value": "The screening service decides on the public facts of a deposit: the address it comes from and the amount. It also sees the client’s IP address. It cannot see inside the pool, so it bounds who can put funds in and not who ends up with them.",
+      "count": 1
+    },
+    {
+      "value": "The screening service,",
+      "count": 1
+    },
+    {
+      "value": "The sender, the recipient and the amount",
+      "count": 1
+    },
+    {
+      "value": "The server",
+      "count": 1
+    },
+    {
+      "value": "The service keeps no access log. To slow down abuse it counts requests per network for a few minutes, in memory only, under a salted hash it cannot turn back into an address. Nothing of that is written to disk.",
+      "count": 1
+    },
+    {
+      "value": "The setup has one contributor",
+      "count": 1
+    },
+    {
+      "value": "The shielded keys",
+      "count": 1
+    },
+    {
+      "value": "The sign of",
+      "count": 1
+    },
+    {
+      "value": "The signature is the wallet",
+      "count": 1
+    },
+    {
+      "value": "The spending key determines the decryption key.",
+      "count": 1
+    },
+    {
+      "value": "the start page",
+      "count": 1
+    },
+    {
+      "value": "The technical version: what is hashed, what is proved, what is encrypted, and what an observer still sees. The plain version is on",
+      "count": 1
+    },
+    {
+      "value": "The text, the cautions and these docs work with JavaScript off. Only the live leak scan, the checks on the verify page and the palette switch need it.",
+      "count": 1
+    },
+    {
+      "value": "The three secrets that read a wallet’s notes, without the one that spends. Its holder sees every payment the wallet receives, its own deposits and change included, for good. A nullifier takes the spending key, so the holder sees no spend and no balance. It cannot be revoked.",
+      "count": 1
+    },
+    {
+      "value": "The tree is finite. It holds",
+      "count": 1
+    },
+    {
+      "value": "The two nullifier accounts of a transaction cost rent that is never returned. Whoever signs the transaction pays it.",
+      "count": 1
+    },
+    {
+      "value": "the verify page",
+      "count": 1
+    },
+    {
+      "value": "The waitlist",
+      "count": 1
+    },
+    {
+      "value": "The waitlist is closed: the site no longer takes addresses. If you joined, your email address is with the waitlist service, which stores it with the day. It is used for two messages: one when the extension is ready to try, and one when the audited release is. No newsletter, no sharing, no tracking pixels and no tracked links.",
+      "count": 1
+    },
+    {
+      "value": "The wallet ever received anything",
+      "count": 1
+    },
+    {
+      "value": "The wallet holds over",
+      "count": 1
+    },
+    {
+      "value": "The web server that sends you these pages is not sent the address, and the page does not put it in its URL or in storage. The request carries no cookies and no referrer.",
+      "count": 1
+    },
+    {
+      "value": "The work in front of us is a wallet that keeps a balance private, then two audits. That comes first.",
+      "count": 1
+    },
+    {
+      "value": "there and confirm. Brave and Edge install from the same page (Edge asks you once to allow extensions from other stores).",
+      "count": 1
+    },
+    {
+      "value": "There are two ways to derive the key, and on chain they look the same. An address note is keyed by the X25519 exchange alone: that is a payment to a plain address. A keyed note also takes a",
+      "count": 1
+    },
+    {
+      "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Loch records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
+      "count": 1
+    },
+    {
+      "value": "These checks are help and not a barrier. They see only the requests that come through the Loch wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
+      "count": 1
+    },
+    {
+      "value": "These services are run by this project and keep no logs. That is a statement about software we run, and you cannot check it from where you are.",
+      "count": 1
+    },
+    {
+      "value": "They do not follow from the wallet’s public key. A quantum computer gets the signing key from it, but the keys come from one exact signature, and making that signature again takes a second secret that is behind a hash. This argument has not been reviewed.",
+      "count": 1
+    },
+    {
+      "value": "This is our token’s contract address:",
+      "count": 1
+    },
+    {
+      "value": "This page describes what is built. What can go wrong with it is on the start page, under",
+      "count": 1
+    },
+    {
+      "value": "This page is being shown inside another page, so the live scan is switched off. Open it in a tab of its own.",
+      "count": 1
+    },
+    {
+      "value": "This site sets no cookies and loads nothing from anyone else’s server: no trackers, no scripts, no fonts. The only request that leaves it is the one you start: a scan. The extension sends no telemetry.",
+      "count": 1
+    },
+    {
+      "value": "This website",
+      "count": 2
+    },
+    {
+      "value": "Three steps, inside the wallet you already have. Its keys come from one message that wallet signs, so there is no new seed phrase.",
+      "count": 1
+    },
+    {
+      "value": "Time",
+      "count": 1
+    },
+    {
+      "value": "timed transfers",
+      "count": 1
+    },
+    {
+      "value": "To",
+      "count": 3
+    },
+    {
+      "value": "To 9fRk…2mVd, 26 Sep",
+      "count": 2
+    },
+    {
+      "value": "To be removed, reply to either message. The address is then deleted. Nothing else is held, so nothing else needs deleting.",
+      "count": 1
+    },
+    {
+      "value": "To reach your wallet the extension opens one page,",
+      "count": 1
+    },
+    {
+      "value": "To receive, a wallet tries to decrypt the encrypted note beside every new commitment in the pool. That costs one X25519 operation per output, then one cheap attempt per key: the wallet’s own, the plain one, and one for each payment code it is looking for. There are no view tags. A note that decrypts is accepted only if its commitment, computed again with the wallet’s own public key, equals the one on chain.",
+      "count": 1
+    },
+    {
+      "value": "To send privately or to surface, the user’s wallet signs nothing on chain. The proof authorises the spend, and a relayer signs and pays for the transaction. A public wallet that paid its own network fee would be named beside the payment.",
+      "count": 1
+    },
+    {
+      "value": "To tell nobody but a node you trust, save your own RPC endpoint on the scanner. Once the source code is published, you will be able to run the scanner on your own machine.",
+      "count": 1
+    },
+    {
+      "value": "token accounts",
+      "count": 1
+    },
+    {
+      "value": "took between",
+      "count": 1
+    },
+    {
+      "value": "transact",
+      "count": 3
+    },
+    {
+      "value": "Transaction",
+      "count": 1
+    },
+    {
+      "value": "transactions for the life of the pool. A full tree refuses every transaction, withdrawals included. A deeper tree or a rollover to a new one both change the circuit, and neither is decided.",
+      "count": 1
+    },
+    {
+      "value": "transactions the pool is frozen, withdrawals included. A transaction of zero value is valid and needs no screening, so capacity can be used up for the price of rent and fees.",
+      "count": 1
+    },
+    {
+      "value": "Transactions the tree holds",
+      "count": 1
+    },
+    {
+      "value": "Transactions to read",
+      "count": 1
+    },
+    {
+      "value": "Turn on",
+      "count": 1
+    },
+    {
+      "value": "Two external audits, one of the circuit and one of the program.",
+      "count": 1
+    },
+    {
+      "value": "two tags with every payment.",
+      "count": 1
+    },
+    {
+      "value": "Type",
+      "count": 2
+    },
+    {
+      "value": "Unaudited",
+      "count": 1
+    },
+    {
+      "value": "Unzip it",
+      "count": 1
+    },
+    {
+      "value": "Updating",
+      "count": 1
+    },
+    {
+      "value": "Upright is public on-chain.",
+      "count": 2
+    },
+    {
+      "value": "Use your own RPC",
+      "count": 2
+    },
+    {
+      "value": "UTC",
+      "count": 1
+    },
+    {
+      "value": "v0.1, on mainnet",
+      "count": 1
+    },
+    {
+      "value": "v0.1, on mainnet.",
+      "count": 2
+    },
+    {
+      "value": "Value",
+      "count": 1
+    },
+    {
+      "value": "wallet",
+      "count": 1
+    },
+    {
+      "value": "What",
+      "count": 1
+    },
+    {
+      "value": "What a check cannot tell you",
+      "count": 1
+    },
+    {
+      "value": "What an observer sees",
+      "count": 2
+    },
+    {
+      "value": "what each note holds, and that it is yours.",
+      "count": 1
+    },
+    {
+      "value": "What is stored",
+      "count": 1
+    },
+    {
+      "value": "What it is",
+      "count": 1
+    },
+    {
+      "value": "What keeps it private.",
+      "count": 1
+    },
+    {
+      "value": "What runs behind the pages",
+      "count": 1
+    },
+    {
+      "value": "What this site does in your browser, and what it does not.",
+      "count": 1
+    },
+    {
+      "value": "What this site keeps.",
+      "count": 1
+    },
+    {
+      "value": "What this version does not protect",
+      "count": 2
+    },
+    {
+      "value": "What you choose on this site is kept in your browser’s localStorage, on your device, and is never sent anywhere: the palette you picked (dusk or night), and the address of your own RPC endpoint if you saved one. Clearing this site’s data in your browser removes it.",
+      "count": 1
+    },
+    {
+      "value": "What you paste stays in this page. To check it, the page reads the transactions it names from",
+      "count": 1
+    },
+    {
+      "value": "Where a page may connect is a second rule. Because you can point the scanner at an RPC endpoint of your own, the policy sent with the page has to allow a connection to any https address. As a page loads, this site’s own script adds a narrower rule: this site, the one RPC endpoint in use and the waitlist, nothing else. The browser enforces that rule too, it cannot be loosened again until the page is reloaded, and the scanner does not start without it. It is put there by the site’s own script, so it guards against a mistake in this site, not against a copy of the site that someone has changed.",
+      "count": 1
+    },
+    {
+      "value": "Where the program gets it",
+      "count": 1
+    },
+    {
+      "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Loch is: unaudited software.",
+      "count": 1
+    },
+    {
+      "value": "Which deposit",
+      "count": 1
+    },
+    {
+      "value": "Which deposit, or which payments, the funds came from",
+      "count": 1
+    },
+    {
+      "value": "Which notes the deposit became, and what is done with them afterwards",
+      "count": 1
+    },
+    {
+      "value": "which notes you spent, who you paid and how much.",
+      "count": 1
+    },
+    {
+      "value": "which of your notes each tag cancels.",
+      "count": 1
+    },
+    {
+      "value": "which wallet is behind the payment.",
+      "count": 1
+    },
+    {
+      "value": "Who learns which address you looked up",
+      "count": 1
+    },
+    {
+      "value": "Whoever ran the development setup could forge proofs and drain the pool. Neither the circuit nor the program has had an external audit.",
+      "count": 1
+    },
+    {
+      "value": "Withdraw to any Solana address, yours or someone else’s. Nothing ties it to a particular deposit.",
+      "count": 1
+    },
+    {
+      "value": "Withdrawals can never be paused",
+      "count": 1
+    },
+    {
+      "value": "Yesterday 19:40",
+      "count": 2
+    },
+    {
+      "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Loch has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
+      "count": 1
+    },
+    {
+      "value": "Your",
+      "count": 1
+    },
+    {
+      "value": "your address, the amount, the time, and that it went into the Loch.",
+      "count": 1
+    },
+    {
+      "value": "Your device proves the notes you spend exist, are yours and add up. Solana checks the proof and learns nothing more.",
+      "count": 1
+    },
+    {
+      "value": "Your shielded balance is a handful of notes. The chain is given a fingerprint of each note, never the note.",
+      "count": 1
+    },
+    {
+      "value": "Your shielded keys come from your wallet’s signature on one message, “Loch key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Loch.",
+      "count": 1
+    },
+    {
+      "value": "Your time zone is guessable",
+      "count": 1
+    },
+    {
+      "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Loch.",
+      "count": 1
+    },
+    {
+      "value": "zero",
+      "count": 1
+    }
+  ],
+  "hiddenText": [
+    {
+      "value": "Not on the chain",
+      "count": 4
+    }
+  ],
+  "attributes": [
+    {
+      "name": "href",
+      "value": "/download/loch-extension-0.1.0.zip",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#cautions",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#claim",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#disclosure",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#encryption",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#how",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#i-caution",
+      "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#i-chevron",
+      "count": 2
+    },
+    {
+      "name": "href",
+      "value": "#i-dive",
+      "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#i-info",
+      "count": 3
+    },
+    {
+      "name": "href",
+      "value": "#i-receive",
+      "count": 2
+    },
+    {
+      "name": "href",
+      "value": "#i-send",
+      "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#i-surface",
+      "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#keys",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#leaks",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#limits",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#main",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#model",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#network",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#next",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#notes",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#nullifiers",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#numbers",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#observer",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#proof",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#quantum",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#relayer",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#scan-report",
+      "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#scanner",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#screening",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#site",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
+      "count": 3
+    },
+    {
+      "name": "href",
+      "value": "https://github.com/lochlayer/loch-extension",
+      "count": 2
+    },
+    {
+      "name": "href",
+      "value": "https://x.com/lochlayer",
+      "count": 1
+    },
+    {
+      "name": "name",
+      "value": "address",
+      "count": 1
+    },
+    {
+      "name": "name",
+      "value": "document",
+      "count": 1
+    },
+    {
+      "name": "name",
+      "value": "limit",
+      "count": 1
+    },
+    {
+      "name": "name",
+      "value": "rpc",
+      "count": 1
+    },
+    {
+      "name": "placeholder",
+      "value": "https://",
+      "count": 1
+    },
+    {
+      "name": "placeholder",
+      "value": "Paste an address",
+      "count": 1
+    },
+    {
+      "name": "placeholder",
+      "value": "Paste it here",
+      "count": 1
+    },
+    {
+      "name": "src",
+      "value": "/media",
+      "count": 5
+    },
+    {
+      "name": "src",
+      "value": "/media/mark-night.svg",
+      "count": 1
+    },
+    {
+      "name": "src",
+      "value": "/media/mark-on-land.svg",
+      "count": 1
+    },
+    {
+      "name": "src",
+      "value": "/media/mark-small.svg",
+      "count": 1
+    },
+    {
+      "name": "src",
+      "value": "/media/mark.svg",
+      "count": 1
+    },
+    {
+      "name": "src",
+      "value": "/media/nessie-under.webp",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/",
+      "count": 4
+    },
+    {
+      "name": "to",
+      "value": "/#cautions",
+      "count": 3
+    },
+    {
+      "name": "to",
+      "value": "/#private",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs",
+      "count": 3
+    },
+    {
+      "name": "to",
+      "value": "/docs#encryption",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs#keys",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs#notes",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs#nullifiers",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs#proof",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/docs#relayer",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/install",
+      "count": 2
+    },
+    {
+      "name": "to",
+      "value": "/privacy",
+      "count": 1
+    },
+    {
+      "name": "to",
+      "value": "/verify",
+      "count": 2
+    }
+  ],
+  "bindings": [
+    {
+      "kind": "attr",
+      "expr": "100",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "1000",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "250",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "500",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "isHome ? '#cautions' : '/#cautions'",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "isHome ? '#how' : '/#how'",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "isHome ? '#scanner' : '/#scanner'",
+      "count": 2
+    },
+    {
+      "kind": "attr",
+      "expr": "isHome ? '#top' : '/'",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "addressError",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "busy ? 'Checking' : 'Check it'",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "elapsed",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "error",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "failure.body",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "failure.detail",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "failure.title",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "host",
+      "count": 3
+    },
+    {
+      "kind": "interpolation",
+      "expr": "item.label",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "line",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "liveMessage",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "note",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "option === 'dusk' ? 'Dusk' : 'Night'",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "result.title",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "row.label",
+      "count": 2
+    },
+    {
+      "kind": "interpolation",
+      "expr": "row.value",
+      "count": 2
+    },
+    {
+      "kind": "interpolation",
+      "expr": "rpcCurrent",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "rpcError",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "section.title",
+      "count": 1
+    },
+    {
+      "kind": "interpolation",
+      "expr": "statusText",
+      "count": 1
+    },
+    {
+      "kind": "link",
+      "expr": "isHome ? '#cautions' : '/#cautions'",
+      "count": 1
+    },
+    {
+      "kind": "link",
+      "expr": "isHome ? '#how' : '/#how'",
+      "count": 1
+    },
+    {
+      "kind": "link",
+      "expr": "isHome ? '#scanner' : '/#scanner'",
+      "count": 2
+    },
+    {
+      "kind": "link",
+      "expr": "isHome ? '#top' : '/'",
+      "count": 1
+    },
+    {
+      "kind": "model",
+      "expr": "address",
+      "count": 1
+    },
+    {
+      "kind": "model",
+      "expr": "documentText",
+      "count": 1
+    },
+    {
+      "kind": "model",
+      "expr": "limit",
+      "count": 1
+    },
+    {
+      "kind": "model",
+      "expr": "rpcUrl",
+      "count": 1
+    }
+  ],
+  "events": [
+    {
+      "event": "click",
+      "handler": "cancel",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "choose(option)",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "onReportClick",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "openOwnRpc",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "resetRpc",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "retry",
+      "count": 1
+    },
+    {
+      "event": "click",
+      "handler": "saveRpc",
+      "count": 1
+    },
+    {
+      "event": "input",
+      "handler": "addressError = ''",
+      "count": 1
+    },
+    {
+      "event": "input",
+      "handler": "error = ''",
+      "count": 1
+    },
+    {
+      "event": "input",
+      "handler": "rpcError = ''",
+      "count": 1
+    },
+    {
+      "event": "keydown",
+      "handler": "onKeydown",
+      "count": 1
+    },
+    {
+      "event": "keydown",
+      "handler": "saveRpc",
+      "count": 1
+    },
+    {
+      "event": "submit",
+      "handler": "submit",
+      "count": 2
+    }
+  ],
+  "links": [
+    {
+      "kind": "href",
+      "target": "/download/loch-extension-0.1.0.zip",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#cautions",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#claim",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#disclosure",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#encryption",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#how",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#i-caution",
+      "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#i-chevron",
+      "count": 2
+    },
+    {
+      "kind": "href",
+      "target": "#i-dive",
+      "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#i-info",
+      "count": 3
+    },
+    {
+      "kind": "href",
+      "target": "#i-receive",
+      "count": 2
+    },
+    {
+      "kind": "href",
+      "target": "#i-send",
+      "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#i-surface",
+      "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#keys",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#leaks",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#limits",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#main",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#model",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#network",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#next",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#notes",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#nullifiers",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#numbers",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#observer",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#proof",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#quantum",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#relayer",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#scan-report",
+      "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#scanner",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#screening",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#site",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
+      "count": 3
+    },
+    {
+      "kind": "href",
+      "target": "https://github.com/lochlayer/loch-extension",
+      "count": 2
+    },
+    {
+      "kind": "href",
+      "target": "https://x.com/lochlayer",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/",
+      "count": 4
+    },
+    {
+      "kind": "to",
+      "target": "/#cautions",
+      "count": 3
+    },
+    {
+      "kind": "to",
+      "target": "/#private",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs",
+      "count": 3
+    },
+    {
+      "kind": "to",
+      "target": "/docs#encryption",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs#keys",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs#notes",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs#nullifiers",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs#proof",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/docs#relayer",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/install",
+      "count": 2
+    },
+    {
+      "kind": "to",
+      "target": "/privacy",
+      "count": 1
+    },
+    {
+      "kind": "to",
+      "target": "/verify",
+      "count": 2
+    }
+  ],
+  "assets": [
+    {
+      "kind": "src",
+      "value": "/media",
+      "count": 5
+    },
+    {
+      "kind": "src",
+      "value": "/media/mark-night.svg",
+      "count": 1
+    },
+    {
+      "kind": "src",
+      "value": "/media/mark-on-land.svg",
+      "count": 1
+    },
+    {
+      "kind": "src",
+      "value": "/media/mark-small.svg",
+      "count": 1
+    },
+    {
+      "kind": "src",
+      "value": "/media/mark.svg",
+      "count": 1
+    },
+    {
+      "kind": "src",
+      "value": "/media/nessie-under.webp",
+      "count": 1
+    }
+  ],
+  "forms": [
+    {
+      "tag": "input",
+      "name": "address",
+      "type": "text",
+      "count": 1
+    },
+    {
+      "tag": "input",
+      "name": "rpc",
+      "type": "url",
+      "count": 1
+    },
+    {
+      "tag": "select",
+      "name": "limit",
+      "type": "",
+      "count": 1
+    },
+    {
+      "tag": "textarea",
+      "name": "document",
+      "type": "",
+      "count": 1
+    }
+  ],
+  "i18n": [],
+  "i18nKeys": [],
+  "i18nFiles": [],
+  "api": [],
+  "env": []
+}

@@ -1,5 +1,5 @@
 /**
- * @loch/design/numerals: how Miston writes amounts and addresses.
+ * @loch/design/numerals: how Velaira writes amounts and addresses.
  *
  * The rules (docs/design/DESIGN.md, "Numerals"):
  *  - Displayed amounts are truncated toward zero, never rounded up: the
@@ -122,8 +122,8 @@ export function parseSol(text: string): bigint | null {
 }
 
 /**
- * A shielded address is bech32m with the prefix "miston" and the separator "1":
- * every one of them begins `miston1`. The prefix says what kind of address it is
+ * A shielded address is bech32m with the prefix "velaira" and the separator "1":
+ * every one of them begins `velaira1`. The prefix says what kind of address it is
  * and nothing about which, so it is kept whole and what follows is shortened
  * or grouped.
  *
@@ -131,7 +131,7 @@ export function parseSol(text: string): bigint | null {
  * address is base58, which has neither "l" nor "O", so it can begin with
  * neither spelling: the two kinds cannot be confused.
  */
-const SHIELDED_PREFIX = /^(?:miston1|MISTON1|mistonpay1|MISTONPAY1)/;
+const SHIELDED_PREFIX = /^(?:velaira1|VELAIRA1|velairapay1|VELAIRAPAY1)/;
 
 function prefixLength(address: string): number {
   return SHIELDED_PREFIX.exec(address)?.[0].length ?? 0;
@@ -139,7 +139,7 @@ function prefixLength(address: string): number {
 
 /**
  * `Fh3q…Tz8K`: the first and last four characters. The same shape the scanner
- * writes. A shielded address keeps its prefix: `miston1qw50…f3t4`.
+ * writes. A shielded address keeps its prefix: `velaira1qw50…f3t4`.
  */
 export function shortAddress(address: string, lead = 4, tail = 4): string {
   const head = prefixLength(address) + lead;
@@ -149,8 +149,8 @@ export function shortAddress(address: string, lead = 4, tail = 4): string {
 
 /**
  * The whole address in groups of four, for checking by eye before signing.
- * A shielded address keeps `miston1` together and groups what follows:
- * `miston1 qw50 8d6q …`.
+ * A shielded address keeps `velaira1` together and groups what follows:
+ * `velaira1 qw50 8d6q …`.
  */
 export function groupAddress(address: string): string {
   const head = prefixLength(address);
@@ -180,7 +180,7 @@ export function escapeHtml(value: string): string {
 export type AmountHtmlOptions = {
   /** Unit written after the figure, e.g. "SOL" or "devnet SOL". Omit in a column whose head already names the unit. */
   unit?: string;
-  /** True when only the holder can see this amount. Sets it italic, in miston blue. */
+  /** True when only the holder can see this amount. Sets it italic, in velaira blue. */
   shielded?: boolean;
   /** Extra class names for the outer element. */
   className?: string;
@@ -188,17 +188,17 @@ export type AmountHtmlOptions = {
 
 /**
  * Markup for an amount in running text, a row or a table cell:
- * `<span class="ab-num ab-exposed"><span class="ab-sign">+</span>5.000</span>`.
+ * `<span class="sn-num sn-exposed"><span class="sn-sign">+</span>5.000</span>`.
  * The exact amount, when digits were dropped, goes in `title`.
  */
 export function amountHtml(parts: AmountParts, options: AmountHtmlOptions = {}, exactText?: string): string {
-  const role = options.shielded ? "ab-shielded" : "ab-exposed";
-  const cls = ["ab-num", role, options.className].filter(Boolean).join(" ");
+  const role = options.shielded ? "sn-shielded" : "sn-exposed";
+  const cls = ["sn-num", role, options.className].filter(Boolean).join(" ");
   const title = parts.truncated && exactText ? ` title="${escapeHtml(exactText)}"` : "";
-  const sign = parts.sign ? `<span class="ab-sign">${escapeHtml(parts.sign)}</span>` : "";
+  const sign = parts.sign ? `<span class="sn-sign">${escapeHtml(parts.sign)}</span>` : "";
   const body = escapeHtml(parts.negligible ? parts.text.slice(parts.sign.length) : `${parts.int}${parts.frac}`);
   // The unit follows a no-break space.
-  const unit = options.unit ? `\u00a0<span class="ab-unit">${escapeHtml(options.unit)}</span>` : "";
+  const unit = options.unit ? `\u00a0<span class="sn-unit">${escapeHtml(options.unit)}</span>` : "";
   return `<span class="${escapeHtml(cls)}"${title}>${sign}${body}</span>${unit}`;
 }
 

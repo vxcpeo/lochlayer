@@ -1,9 +1,9 @@
 {
-  "name": "miston-website",
+  "name": "velaira-website",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The Miston website, rebuilt as a Vue 3 single-page application.",
+  "description": "The Velaira website, rebuilt as a Vue 3 single-page application.",
   "license": "GPL-3.0-only",
   "engines": {
     "node": ">=22"

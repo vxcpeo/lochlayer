@@ -1,10 +1,10 @@
-import { expect, test } from '@playwright/test';
+﻿import { expect, test } from '@playwright/test';
 
 const PAGES = [
-  { path: '/docs', title: 'Technical docs: how the Miston keeps a payment private', heading: 'How the Miston keeps a payment private.' },
-  { path: '/install', title: 'Install Miston: get the extension', heading: 'Install Miston.' },
-  { path: '/privacy', title: 'Privacy: what the Miston site and extension keep', heading: 'What this site keeps.' },
-  { path: '/verify', title: 'Check a Miston receipt, report or viewing key', heading: 'Check what you were given.' },
+  { path: '/docs', title: 'Technical docs: how the Velaira keeps a payment private', heading: 'How the Velaira keeps a payment private.' },
+  { path: '/install', title: 'Install Velaira: get the extension', heading: 'Install Velaira.' },
+  { path: '/privacy', title: 'Privacy: what the Velaira site and extension keep', heading: 'What this site keeps.' },
+  { path: '/verify', title: 'Check a Velaira receipt, report or viewing key', heading: 'Check what you were given.' },
 ];
 
 test.describe('the pages', () => {
@@ -33,7 +33,7 @@ test.describe('the pages', () => {
 
   test('the install page marks the store release as coming soon and keeps the zip checksum', async ({ page }) => {
     await page.goto('/install');
-    await expect(page.locator('.ab-btn--soon')).toContainText('Coming soon');
+    await expect(page.locator('.sn-btn--soon')).toContainText('Coming soon');
     await expect(page.locator('a[href*="chromewebstore"]')).toHaveCount(0);
     await expect(page.locator('#download-sha256')).toHaveText('0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e');
   });
@@ -53,7 +53,7 @@ test.describe('navigation', () => {
     await page.evaluate(() => ((window as unknown as { __kept: boolean }).__kept = true));
     await page.locator('.tw-index a[href="/docs"]').click();
     await expect(page).toHaveURL(/\/docs$/);
-    await expect(page).toHaveTitle('Technical docs: how the Miston keeps a payment private');
+    await expect(page).toHaveTitle('Technical docs: how the Velaira keeps a payment private');
     expect(await page.evaluate(() => (window as unknown as { __kept?: boolean }).__kept)).toBe(true);
   });
 
@@ -81,7 +81,7 @@ test.describe('the verify page', () => {
   test('recognises something that is not a document without asking the chain', async ({ page }) => {
     const rpcCalls: string[] = [];
     page.on('request', (request) => {
-      if (request.url().includes('rpc.miston.xyz')) rpcCalls.push(request.url());
+      if (request.url().includes('rpc.velaira.xyz')) rpcCalls.push(request.url());
     });
     await page.goto('/verify');
     await page.fill('#verify-input', 'hello');
@@ -92,7 +92,7 @@ test.describe('the verify page', () => {
 
   test('treats a claim link as money, not as something to check', async ({ page }) => {
     await page.goto('/verify');
-    await page.fill('#verify-input', 'mistonclaim1abcdef');
+    await page.fill('#verify-input', 'velairaclaim1abcdef');
     await page.click('#verify-submit');
     await expect(page.locator('#verify-result .tw-verify__band-title')).toHaveText('That is a claim link, not something to check.');
     await expect(page.locator('#verify-result .tw-verify__band')).toContainText('A claim link is money');
@@ -100,7 +100,7 @@ test.describe('the verify page', () => {
 
   test('says when a receipt cannot be read', async ({ page }) => {
     await page.goto('/verify');
-    await page.fill('#verify-input', '{"miston":"receipt"}');
+    await page.fill('#verify-input', '{"velaira":"receipt"}');
     await page.click('#verify-submit');
     await expect(page.locator('#verify-result .tw-verify__band-title')).toHaveText('This could not be read.');
   });

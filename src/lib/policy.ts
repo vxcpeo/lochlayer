@@ -58,7 +58,7 @@ export function narrowedPolicy(pagePolicy: string, endpoint: { rpc: string; wait
  */
 export function installNarrowedPolicy(): string | null {
   if (typeof document === 'undefined') return null;
-  if (document.querySelector('meta[data-miston-policy]')) return null;
+  if (document.querySelector('meta[data-velaira-policy]')) return null;
   const page = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
   if (!page) return null;
   const policy = narrowedPolicy(page.getAttribute('content') ?? '', {
@@ -69,7 +69,7 @@ export function installNarrowedPolicy(): string | null {
   const meta = document.createElement('meta');
   meta.setAttribute('http-equiv', 'Content-Security-Policy');
   meta.setAttribute('content', policy);
-  meta.setAttribute('data-miston-policy', '');
+  meta.setAttribute('data-velaira-policy', '');
   document.head.appendChild(meta);
   return policy;
 }

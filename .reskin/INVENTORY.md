@@ -1,6 +1,6 @@
-# Reskin inventory — miston-website
+# Reskin inventory — velaira-website
 
-Generated: 2026-10-20T16:01:45.189Z
+Generated: 2026-10-21T17:00:37.888Z
 
 ## Project
 
@@ -11,36 +11,36 @@ Generated: 2026-10-20T16:01:45.189Z
 | Package manager | npm |
 | Nuxt | no |
 | CSS frameworks | none detected |
-| Files scanned | 64 (14 SFCs) |
+| Files scanned | 65 (15 SFCs) |
 
 ## Original skeleton
 
-- Archetype: **bento-canvas** (spatial)
-- Traits: cards, hero, table, grid, tabs, modal, charts, sticky, bento
-- Max template depth: 11
-- Top-level tags: siteicons, a, routerview, footer, div, svg, section, section, section, section, section, blueprintshell, blueprintshell, blueprintshell, blueprintshell, blueprintshell
+- Archetype: **marketing-stack** (editorial)
+- Traits: cards, hero, table, grid, tabs, modal, charts, sticky, terminal
+- Max template depth: 12
+- Top-level tags: siteicons, a, routerview, nav, div, footer, svg, section, section, section, section, section, abyssrail, abyssrail, abyssrail, abyssrail, abyssrail
 
-The replacement skeleton must not be `bento-canvas` and must not be in the same family (`spatial`).
+The replacement skeleton must not be `marketing-stack` and must not be in the same family (`editorial`).
 
 ## Routes
 
 - `/`
 - `/docs`
-- `/download/miston-extension-0.1.0.zip`
+- `/download/velaira-extension-0.1.0.zip`
 - `/install`
 - `/privacy`
 - `/verify`
 
 ## Palette (most used first)
 
-`#ffffff` (16) · `#0000cc` (1) · `#0000ff` (1) · `#006b47` (1) · `#0a0b0d` (1) · `#12100c` (1) · `#4c5259` (1) · `#514a3f` (1) · `#646b73` (1) · `#6a6255` (1)
+`#000000` (5) · `#ffffff` (4) · `#0a121b` (3) · `#1a0f1b` (3) · `#e7a9df` (3) · `#b6509e` (2) · `#f2c94c` (2) · `#080d14` (1) · `#0e1722` (1) · `#101c28` (1)
 
 ## Content lock
 
-- Static visible text tokens: **740**
+- Static visible text tokens: **735**
 - Binding expressions: **42**
 - Event handlers: **14**
-- Contract hash: `35d14de5664f9502fcbb561dc837a56e1aa858d1f3c8d6116b767c6c0845b4fd`
+- Contract hash: `c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c`
 
 Everything in `.reskin/content-contract.json` is immutable: visible copy, placeholders, labels, routes, link targets, asset sources, bindings, handlers, API endpoints and i18n values. A reskin may move these tokens to new markup but may not rewrite, remove or hide them.
 

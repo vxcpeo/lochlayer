@@ -1,0 +1,167 @@
+<template>
+
+<div class="land" data-theme="night">
+
+<div class="wrap page-head">
+
+<h1 class="t-display-1" id="page-title">Install Loch.</h1>
+
+<p class="t-lede">Loch is a browser extension that works beside the wallet you already have. Add it from the Chrome Web Store, in Chrome, Brave or Edge. It takes about two minutes.</p>
+
+<p class="page__actions">
+<a class="btn btn--primary btn--lg" href="https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf">Add to Chrome</a>
+</p>
+</div>
+</div>
+  <hr class="waterline">
+
+<div class="water page" data-depth="0">
+
+<div class="wrap">
+
+<div class="deflist">
+
+<dl>
+
+<div class="deflist__row">
+
+<dt>Before you start</dt>
+
+<dd>
+
+<p>You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Loch has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.</p>
+
+<p>Loch runs on Solana mainnet, with real SOL. <router-link to="/#cautions">Read the cautions</router-link> before you put anything in.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>1. Add it</dt>
+
+<dd>
+
+<p>Press <strong>Add to Chrome</strong> at the top of this page. It opens Loch’s page on the <a href="https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf">Chrome Web Store</a>; press <strong>Add to Chrome</strong> there and confirm. Brave and Edge install from the same page (Edge asks you once to allow extensions from other stores).</p>
+
+<p>Press the puzzle-piece button in the toolbar and pin Loch, so that it is one press away.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>2. Connect your wallet</dt>
+
+<dd>
+
+<p>Open Loch from the toolbar and press <strong>Connect wallet</strong>. A page at <code>connect.lochlayer.com</code> opens and your wallet asks you to sign one message, “Loch key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.</p>
+
+<p>Sign that message nowhere else. Anyone who gets that signature gets your shielded balance.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>3. Set an RPC endpoint</dt>
+
+<dd>
+
+<p>Loch reads the chain through an RPC endpoint. It starts with Loch’s own, <code>rpc.lochlayer.com</code>. If Loch says it cannot reach the chain or stays behind, or you would rather use a node you chose, open <strong>Settings</strong> in Loch and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Updating</dt>
+
+<dd>
+
+<p>Added from the Chrome Web Store, Loch updates itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Loch’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Removing</dt>
+
+<dd>
+
+<p>Surface what you have in the Loch first. Then press <strong>Remove</strong> on Loch’s card on the extensions page. If you loaded it by hand, delete the folder too.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Or load it by hand</dt>
+
+<dd>
+
+<p>The same extension is here as a zip file, for a browser without the store or for anyone who wants the file in hand. Loaded this way it does not update itself.</p>
+
+<p>
+<a class="btn btn--secondary" download href="/download/loch-extension-0.1.0.zip">Download Loch 0.1.0</a> <span class="t-small">A zip file, <span class="fig">6.7</span>&nbsp;MB. Most of that is the two files your browser uses to build proofs on your own machine.</span>
+</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Unzip it</dt>
+
+<dd>
+
+<p>Open the zip file and move the folder inside it, <code>loch-extension-0.1.0</code>, somewhere it can stay, such as your Documents folder. The browser runs Loch from that folder, so if you delete or move it later, Loch stops working.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Open the extensions page</dt>
+
+<dd>
+
+<p>Type <code>chrome://extensions</code> into the address bar and press Enter. In Brave it is <code>brave://extensions</code>, in Edge <code>edge://extensions</code>.</p>
+
+<p>Turn on <strong>Developer mode</strong>. The switch is in the top right corner (in Edge, on the left). It only allows extensions to be loaded from a folder.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Load the folder</dt>
+
+<dd>
+
+<p>Press <strong>Load unpacked</strong> and choose the folder you unzipped: the one that has <code>manifest.json</code> directly inside it. Loch appears in the list of extensions.</p>
+
+<p>Press the puzzle-piece button in the toolbar and pin Loch, so that it is one press away.</p>
+</dd>
+</div>
+
+<div class="deflist__row">
+
+<dt>Check the file</dt>
+
+<dd>
+
+<p>If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux: <code>shasum -a 256 loch-extension-0.1.0.zip</code>. On Windows: <code>certutil -hashfile loch-extension-0.1.0.zip SHA256</code>.</p>
+
+<div class="code">
+<pre tabindex="0" role="group" aria-label="SHA-256 of the download">
+<code id="download-sha256">0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e</code>
+</pre>
+</div>
+</dd>
+</div>
+</dl>
+</div>
+
+<p class="page__actions">
+<router-link class="btn btn--secondary" to="/">Back to the start page</router-link>
+</p>
+</div>
+</div>
+</template>
+
+<script setup lang="ts">
+// Static markup from the reference page; no component state.
+</script>

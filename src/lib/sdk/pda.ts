@@ -1,4 +1,4 @@
-// Program-derived addresses of miston_pool.
+// Program-derived addresses of velaira_pool.
 
 import { PublicKey } from "@solana/web3.js";
 
@@ -37,7 +37,7 @@ export function vaultPda(programId: PublicKey = PROGRAM_ID): PublicKey {
  * The record created when `nullifier` is spent: seeds
  * `["nullifier", nullifier as 32 bytes big-endian]`.
  *
- * @throws MistonError `INVALID_ARGUMENT` if the nullifier is not a field element.
+ * @throws VelairaError `INVALID_ARGUMENT` if the nullifier is not a field element.
  */
 export function nullifierPda(nullifier: FieldLike, programId: PublicKey = PROGRAM_ID): PublicKey {
   const seed = fieldToBytes(toField(nullifier));

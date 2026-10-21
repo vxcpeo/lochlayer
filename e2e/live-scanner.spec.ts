@@ -122,7 +122,7 @@ test('scans a wallet through a real RPC and draws the report', async ({ page }) 
   await expect
     .poll(async () =>
       page.evaluate(() =>
-        [...document.querySelectorAll('meta[data-miston-policy]')].map((meta) => meta.getAttribute('content') ?? '').join(';'),
+        [...document.querySelectorAll('meta[data-velaira-policy]')].map((meta) => meta.getAttribute('content') ?? '').join(';'),
       ),
     )
     .toContain(`http://127.0.0.1:${port}`);

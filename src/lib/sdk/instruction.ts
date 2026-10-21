@@ -5,7 +5,7 @@ import { PublicKey, SystemProgram, TransactionInstruction } from "@solana/web3.j
 import { bytesToBigIntBE, copyBytes } from "./bytes";
 import { type TransactArgs, decodeTransactArgs, encodeTransactArgs } from "./codec";
 import { FIELD_MODULUS, PROGRAM_ID } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 import { configPda, nullifierPda, treePda, vaultPda } from "./pda";
 
 /** The accounts of `transact`, by name, in the order the program declares them. */
@@ -107,7 +107,7 @@ export function buildTransactInstruction(args: TransactArgs, signers: TransactSi
  * Decoding is structural only. Call {@link transactAccountsProblem} to check
  * that the accounts are the ones the program will accept.
  *
- * @throws MistonError `DECODE_FAILED` if the data is not a `transact` call, has
+ * @throws VelairaError `DECODE_FAILED` if the data is not a `transact` call, has
  *   trailing bytes, or the instruction does not list exactly ten accounts.
  */
 export function decodeTransactInstruction(instruction: TransactionInstruction): DecodedTransact;
@@ -119,10 +119,10 @@ export function decodeTransactInstruction(
   let programId: PublicKey;
   let keys: PublicKey[];
   if ("programIdIndex" in instruction) {
-    if (!accountKeys) throw new MistonError("INVALID_ARGUMENT", "a compiled instruction needs the message's account keys");
+    if (!accountKeys) throw new VelairaError("INVALID_ARGUMENT", "a compiled instruction needs the message's account keys");
     const at = (index: number): PublicKey => {
       const key = accountKeys[index];
-      if (!key) throw new MistonError("DECODE_FAILED", "the instruction refers to an account the message does not have");
+      if (!key) throw new VelairaError("DECODE_FAILED", "the instruction refers to an account the message does not have");
       return key;
     };
     programId = at(instruction.programIdIndex);
@@ -132,7 +132,7 @@ export function decodeTransactInstruction(
     keys = instruction.keys.map((k) => k.pubkey);
   }
   const args = decodeTransactArgs(copyBytes(instruction.data));
-  if (keys.length !== 10) throw new MistonError("DECODE_FAILED", "a transact instruction lists exactly ten accounts");
+  if (keys.length !== 10) throw new VelairaError("DECODE_FAILED", "a transact instruction lists exactly ten accounts");
   const [config, tree, vault, nullifier0, nullifier1, recipient, relayer, screener, signer, systemProgram] = keys as [
     PublicKey,
     PublicKey,
@@ -181,7 +181,7 @@ export function decodeTransactInstruction(
  */
 export function transactAccountsProblem(decoded: DecodedTransact, expectedProgramId: PublicKey = PROGRAM_ID): string | null {
   const { programId, args, accounts } = decoded;
-  if (!programId.equals(expectedProgramId)) return "the instruction is not addressed to the expected miston_pool program";
+  if (!programId.equals(expectedProgramId)) return "the instruction is not addressed to the expected velaira_pool program";
   for (const [name, bytes] of [
     ["root", args.root],
     ["inputNullifiers[0]", args.inputNullifiers[0]],

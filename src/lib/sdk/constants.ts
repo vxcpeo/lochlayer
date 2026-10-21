@@ -1,7 +1,7 @@
 import { PublicKey } from "@solana/web3.js";
 
 /**
- * The `miston_pool` program on devnet and localnet. Every function that talks to
+ * The `velaira_pool` program on devnet and localnet. Every function that talks to
  * the program takes a `programId` argument or option that defaults to this.
  */
 export const PROGRAM_ID = new PublicKey("Lochn2sJLT2hkqMrx85siFPXa9VUTAAx9EXmkPiJL2j");
@@ -15,38 +15,38 @@ export const BASE_FIELD_MODULUS = 2188824287183927522224640574525727508869631115
 /** Depth of the commitment tree: 2^20 leaves, two per transaction. */
 export const TREE_DEPTH = 20;
 
-/** The message a wallet signs to derive Miston keys (keys v1). UTF-8, no terminator. */
-export const KEY_DERIVATION_MESSAGE = "Miston key derivation v1";
+/** The message a wallet signs to derive Velaira keys (keys v1). UTF-8, no terminator. */
+export const KEY_DERIVATION_MESSAGE = "Velaira key derivation v1";
 
 /** Domain separator of the note-encryption key: `sha256(utf8(this) || seed)`. */
-export const NOTE_ENCRYPTION_DOMAIN = "Miston note encryption v1";
+export const NOTE_ENCRYPTION_DOMAIN = "Velaira note encryption v1";
 
 /** Domain separator of the self-note key: `sha256(utf8(this) || seed)`. */
-export const SELF_NOTE_DOMAIN = "Miston self note v1";
+export const SELF_NOTE_DOMAIN = "Velaira self note v1";
 
 /** Domain separator of the payment-code root: `sha256(utf8(this) || seed)`. */
-export const PAYMENT_CODE_DOMAIN = "Miston payment code v1";
+export const PAYMENT_CODE_DOMAIN = "Velaira payment code v1";
 
 /** HKDF `info` of the per-note symmetric key. */
-export const NOTE_KEY_INFO = "miston-note-v1";
+export const NOTE_KEY_INFO = "velaira-note-v1";
 
 /** HKDF `info` of the per-note symmetric key of a keyed note: one whose key also depends on a pre-shared key. */
-export const KEYED_NOTE_KEY_INFO = "miston-note-psk-v1";
+export const KEYED_NOTE_KEY_INFO = "velaira-note-psk-v1";
 
 /** Human-readable part of a shielded address (bech32m). */
-export const ADDRESS_PREFIX = "miston";
+export const ADDRESS_PREFIX = "velaira";
 
 /** Human-readable part of a payment code (bech32m). */
-export const PAYMENT_CODE_PREFIX = "mistonpay";
+export const PAYMENT_CODE_PREFIX = "velairapay";
 
 /** Human-readable part of a claim link's code (bech32m). */
-export const CLAIM_PREFIX = "mistonclaim";
+export const CLAIM_PREFIX = "velairaclaim";
 
 /** Human-readable part of a viewing key (bech32m). */
-export const VIEWING_KEY_PREFIX = "mistonview";
+export const VIEWING_KEY_PREFIX = "velairaview";
 
 /** Domain separator of a claim's key seed: `sha256(utf8(this) || secret)`. */
-export const CLAIM_DOMAIN = "Miston claim v1";
+export const CLAIM_DOMAIN = "Velaira claim v1";
 
 /**
  * How many payment codes in a row may be handed out without one of them being

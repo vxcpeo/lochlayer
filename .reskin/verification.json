@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T16:32:17.185Z",
+  "generatedAt": "2026-10-21T17:40:27.647Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/lochlayer/website",
-    "name": "miston-website",
-    "baseUrl": "http://127.0.0.1:4317/"
+    "name": "velaira-website",
+    "baseUrl": "http://127.0.0.1:4400/"
   },
   "passed": true,
   "thresholds": {
@@ -19,52 +19,12 @@
     "sourceContract": {
       "passed": true,
       "issues": [],
-      "warnings": [
-        "attributes: \"src=/media/mark-small.svg\" count increased 1 -> 2",
-        "attributes: \"to=/docs\" count increased 3 -> 4",
-        "attributes: \"to=/install\" count increased 2 -> 3",
-        "attributes: \"to=/privacy\" count increased 1 -> 2",
-        "attributes: \"to=/verify\" count increased 2 -> 3",
-        "attributes: added \"href=#i-docs\"",
-        "attributes: added \"href=#i-install\"",
-        "attributes: added \"href=#i-privacy\"",
-        "attributes: added \"href=#i-verify\"",
-        "links: \"to:/docs\" count increased 3 -> 4",
-        "links: \"to:/install\" count increased 2 -> 3",
-        "links: \"to:/privacy\" count increased 1 -> 2",
-        "links: \"to:/verify\" count increased 2 -> 3",
-        "links: added \"href:#i-docs\"",
-        "links: added \"href:#i-install\"",
-        "links: added \"href:#i-privacy\"",
-        "links: added \"href:#i-verify\"",
-        "assets: \"src:/media/mark-small.svg\" count increased 1 -> 2"
-      ],
-      "hash": "b6412bdd1c905914b3b346281242ac6a91f1ccb69afbc5398ee45c70a28792f8"
+      "warnings": [],
+      "hash": "c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c"
     },
     "skeleton": {
       "passed": true,
       "original": {
-        "id": "bento-canvas",
-        "family": "spatial",
-        "traits": {
-          "sidebar": false,
-          "topbar": false,
-          "cards": true,
-          "hero": true,
-          "table": true,
-          "grid": true,
-          "tabs": true,
-          "modal": true,
-          "charts": true,
-          "sticky": true,
-          "orbital": false,
-          "terminal": false,
-          "bento": true,
-          "ticker": false,
-          "gallery": false
-        }
-      },
-      "current": {
         "id": "marketing-stack",
         "family": "editorial",
         "traits": {
@@ -85,10 +45,31 @@
           "gallery": false
         }
       },
+      "current": {
+        "id": "bento-canvas",
+        "family": "spatial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": true,
+          "bento": true,
+          "ticker": false,
+          "gallery": false
+        }
+      },
       "accent": {
-        "original": "#0000ff",
-        "current": "#d25fb4",
-        "deltaE": 90.86,
+        "original": "#d25fb4",
+        "current": "#1f8fe0",
+        "deltaE": 62.05,
         "min": 30
       }
     },
@@ -98,21 +79,10 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.239,
-          "landmarkSimilarity": 0.5,
+          "fingerprintSimilarity": 0.199,
+          "landmarkSimilarity": 0.667,
           "classOverlap": 0.002
         },
         "content": {
@@ -148,20 +118,9 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.088,
+          "fingerprintSimilarity": 0.114,
           "landmarkSimilarity": 0.2,
           "classOverlap": 0
         },
@@ -194,25 +153,14 @@
         }
       },
       {
-        "route": "/download/miston-extension-0.1.0.zip",
+        "route": "/download/velaira-extension-0.1.0.zip",
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.239,
-          "landmarkSimilarity": 0.5,
+          "fingerprintSimilarity": 0.199,
+          "landmarkSimilarity": 0.667,
           "classOverlap": 0.002
         },
         "content": {
@@ -239,8 +187,8 @@
           }
         },
         "screenshots": {
-          "desktop": "current/download-miston-extension-0-1-0-zip-desktop.png",
-          "mobile": "current/download-miston-extension-0-1-0-zip-mobile.png"
+          "desktop": "current/download-velaira-extension-0-1-0-zip-desktop.png",
+          "mobile": "current/download-velaira-extension-0-1-0-zip-mobile.png"
         }
       },
       {
@@ -248,22 +196,11 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.125,
+          "fingerprintSimilarity": 0.183,
           "landmarkSimilarity": 0.667,
-          "classOverlap": 0
+          "classOverlap": 0.009
         },
         "content": {
           "missing": [],
@@ -298,20 +235,9 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.107,
+          "fingerprintSimilarity": 0.141,
           "landmarkSimilarity": 0.667,
           "classOverlap": 0
         },
@@ -348,20 +274,9 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [
-          "aria attribute changed/removed: aria-label=Project",
-          "aria attribute added: aria-label=Check a receipt",
-          "aria attribute added: aria-label=Docs",
-          "aria attribute added: aria-label=Install",
-          "aria attribute added: aria-label=Page sections",
-          "aria attribute added: aria-label=Privacy",
-          "link target added: /docs",
-          "link target added: /install",
-          "link target added: /privacy",
-          "link target added: /verify"
-        ],
+        "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.239,
+          "fingerprintSimilarity": 0.152,
           "landmarkSimilarity": 0.667,
           "classOverlap": 0
         },
@@ -396,92 +311,13 @@
     ]
   },
   "failures": [],
-  "warnings": [
-    "attributes: \"src=/media/mark-small.svg\" count increased 1 -> 2",
-    "attributes: \"to=/docs\" count increased 3 -> 4",
-    "attributes: \"to=/install\" count increased 2 -> 3",
-    "attributes: \"to=/privacy\" count increased 1 -> 2",
-    "attributes: \"to=/verify\" count increased 2 -> 3",
-    "attributes: added \"href=#i-docs\"",
-    "attributes: added \"href=#i-install\"",
-    "attributes: added \"href=#i-privacy\"",
-    "attributes: added \"href=#i-verify\"",
-    "links: \"to:/docs\" count increased 3 -> 4",
-    "links: \"to:/install\" count increased 2 -> 3",
-    "links: \"to:/privacy\" count increased 1 -> 2",
-    "links: \"to:/verify\" count increased 2 -> 3",
-    "links: added \"href:#i-docs\"",
-    "links: added \"href:#i-install\"",
-    "links: added \"href:#i-privacy\"",
-    "links: added \"href:#i-verify\"",
-    "assets: \"src:/media/mark-small.svg\" count increased 1 -> 2",
-    "/: aria attribute changed/removed: aria-label=Project",
-    "/: aria attribute added: aria-label=Check a receipt",
-    "/: aria attribute added: aria-label=Docs",
-    "/: aria attribute added: aria-label=Install",
-    "/: aria attribute added: aria-label=Page sections",
-    "/: aria attribute added: aria-label=Privacy",
-    "/: link target added: /docs",
-    "/: link target added: /install",
-    "/: link target added: /privacy",
-    "/: link target added: /verify",
-    "/docs: aria attribute changed/removed: aria-label=Project",
-    "/docs: aria attribute added: aria-label=Check a receipt",
-    "/docs: aria attribute added: aria-label=Docs",
-    "/docs: aria attribute added: aria-label=Install",
-    "/docs: aria attribute added: aria-label=Page sections",
-    "/docs: aria attribute added: aria-label=Privacy",
-    "/docs: link target added: /docs",
-    "/docs: link target added: /install",
-    "/docs: link target added: /privacy",
-    "/docs: link target added: /verify",
-    "/download/miston-extension-0.1.0.zip: aria attribute changed/removed: aria-label=Project",
-    "/download/miston-extension-0.1.0.zip: aria attribute added: aria-label=Check a receipt",
-    "/download/miston-extension-0.1.0.zip: aria attribute added: aria-label=Docs",
-    "/download/miston-extension-0.1.0.zip: aria attribute added: aria-label=Install",
-    "/download/miston-extension-0.1.0.zip: aria attribute added: aria-label=Page sections",
-    "/download/miston-extension-0.1.0.zip: aria attribute added: aria-label=Privacy",
-    "/download/miston-extension-0.1.0.zip: link target added: /docs",
-    "/download/miston-extension-0.1.0.zip: link target added: /install",
-    "/download/miston-extension-0.1.0.zip: link target added: /privacy",
-    "/download/miston-extension-0.1.0.zip: link target added: /verify",
-    "/install: aria attribute changed/removed: aria-label=Project",
-    "/install: aria attribute added: aria-label=Check a receipt",
-    "/install: aria attribute added: aria-label=Docs",
-    "/install: aria attribute added: aria-label=Install",
-    "/install: aria attribute added: aria-label=Page sections",
-    "/install: aria attribute added: aria-label=Privacy",
-    "/install: link target added: /docs",
-    "/install: link target added: /install",
-    "/install: link target added: /privacy",
-    "/install: link target added: /verify",
-    "/privacy: aria attribute changed/removed: aria-label=Project",
-    "/privacy: aria attribute added: aria-label=Check a receipt",
-    "/privacy: aria attribute added: aria-label=Docs",
-    "/privacy: aria attribute added: aria-label=Install",
-    "/privacy: aria attribute added: aria-label=Page sections",
-    "/privacy: aria attribute added: aria-label=Privacy",
-    "/privacy: link target added: /docs",
-    "/privacy: link target added: /install",
-    "/privacy: link target added: /privacy",
-    "/privacy: link target added: /verify",
-    "/verify: aria attribute changed/removed: aria-label=Project",
-    "/verify: aria attribute added: aria-label=Check a receipt",
-    "/verify: aria attribute added: aria-label=Docs",
-    "/verify: aria attribute added: aria-label=Install",
-    "/verify: aria attribute added: aria-label=Page sections",
-    "/verify: aria attribute added: aria-label=Privacy",
-    "/verify: link target added: /docs",
-    "/verify: link target added: /install",
-    "/verify: link target added: /privacy",
-    "/verify: link target added: /verify"
-  ],
+  "warnings": [],
   "baseline": {
-    "generatedAt": "2026-10-20T16:02:29.838Z",
+    "generatedAt": "2026-10-21T17:01:11.440Z",
     "routes": [
       "/",
       "/docs",
-      "/download/miston-extension-0.1.0.zip",
+      "/download/velaira-extension-0.1.0.zip",
       "/install",
       "/privacy",
       "/verify"

@@ -1,5 +1,5 @@
 /**
- * What someone can check about a Miston document, in the page's own words. The
+ * What someone can check about a Velaira document, in the page's own words. The
  * verification itself is the vendored `@loch/sdk/verify` surface: a receipt,
  * a source-of-funds report and a viewing key, each read against the chain.
  *
@@ -11,7 +11,7 @@
 import type { Connection } from '@solana/web3.js';
 import { formatSol } from './design/numerals';
 import { decodeReceipt, decodeSourceReport, verifyReceipt, verifySourceReport, type FundsOrigin, type VerifiedReceipt, type VerifiedSource } from './sdk/disclosure';
-import { MistonError } from './sdk/errors';
+import { VelairaError } from './sdk/errors';
 import { decodeViewingKey, viewNotes, type ViewedNote } from './sdk/viewing';
 import { fetchEvents } from './sdk/sync';
 
@@ -39,13 +39,13 @@ export type DocumentKind = 'receipt' | 'report' | 'viewing-key' | 'claim' | 'unk
 /** Which of the four things someone pasted, read from its first characters. */
 export function classifyDocument(text: string): DocumentKind {
   const trimmed = text.trim();
-  if (/^mistonview1/i.test(trimmed)) return 'viewing-key';
-  if (/mistonclaim1[a-z0-9]+$/i.test(trimmed)) return 'claim';
+  if (/^velairaview1/i.test(trimmed)) return 'viewing-key';
+  if (/velairaclaim1[a-z0-9]+$/i.test(trimmed)) return 'claim';
   if (!trimmed.startsWith('{')) return 'unknown';
   try {
-    const parsed = JSON.parse(trimmed) as { miston?: unknown };
-    if (parsed.miston === 'receipt') return 'receipt';
-    if (parsed.miston === 'source-report') return 'report';
+    const parsed = JSON.parse(trimmed) as { velaira?: unknown };
+    if (parsed.velaira === 'receipt') return 'receipt';
+    if (parsed.velaira === 'source-report') return 'report';
     return 'unknown';
   } catch {
     return 'unknown';
@@ -181,17 +181,17 @@ function refusal(title: string, line: string): VerifyResult {
 const UNKNOWN = (): VerifyResult =>
   refusal(
     'This is not something this page can check.',
-    'Paste a receipt or a report exactly as it was copied from Miston, from the first brace to the last, or a viewing key, which starts with mistonview1.',
+    'Paste a receipt or a report exactly as it was copied from Velaira, from the first brace to the last, or a viewing key, which starts with velairaview1.',
   );
 
 const CLAIM = (): VerifyResult =>
   refusal(
     'That is a claim link, not something to check.',
-    'A claim link is money: do not paste it into pages. Open it in your browser, or paste it into Miston under Receive, to collect it.',
+    'A claim link is money: do not paste it into pages. Open it in your browser, or paste it into Velaira under Receive, to collect it.',
   );
 
 const UNREADABLE = (): VerifyResult =>
-  refusal('This could not be read.', 'It is cut short or was changed on the way. Copy it again from Miston, all of it, and paste it here.');
+  refusal('This could not be read.', 'It is cut short or was changed on the way. Copy it again from Velaira, all of it, and paste it here.');
 
 /** Checks one document against the chain. Never throws. */
 export async function checkDocument(text: string, connection: Connection, host: string): Promise<VerifyResult> {
@@ -211,7 +211,7 @@ export async function checkDocument(text: string, connection: Connection, host: 
     const { events } = await fetchEvents(connection);
     return viewingKeyResult(viewNotes(events, key), events.length);
   } catch (error) {
-    if (error instanceof MistonError && (error.code === 'DECODE_FAILED' || error.code === 'INVALID_ADDRESS')) return UNREADABLE();
+    if (error instanceof VelairaError && (error.code === 'DECODE_FAILED' || error.code === 'INVALID_ADDRESS')) return UNREADABLE();
     return refusal(
       `${host} did not answer.`,
       'The check reads the chain through that endpoint, and it failed or refused. Nothing is wrong with what you pasted as far as this page can tell. Try again in a moment.',

@@ -1,6 +1,6 @@
 /**
  * Dusk and night: the two palettes. The choice is kept in localStorage under
- * `miston:theme`; `?theme=dusk` or `?theme=night` shows a palette without saving
+ * `velaira:theme`; `?theme=dusk` or `?theme=night` shows a palette without saving
  * it, exactly as public/boot.js does before the page is drawn.
  */
 

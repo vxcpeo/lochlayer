@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "miston-website",
+    "projectName": "velaira-website",
     "title": "Privacy score 49 of 100, drawn as a stepped bed",
     "lang": "en"
   },
   "routes": [
     "/",
     "/docs",
-    "/download/miston-extension-0.1.0.zip",
+    "/download/velaira-extension-0.1.0.zip",
     "/install",
     "/privacy",
     "/verify"
@@ -67,7 +67,7 @@
       "count": 1
     },
     {
-      "value": ", somewhere it can stay, such as your Documents folder. The browser runs Miston from that folder, so if you delete or move it later, Miston stops working.",
+      "value": ", somewhere it can stay, such as your Documents folder. The browser runs Velaira from that folder, so if you delete or move it later, Velaira stops working.",
       "count": 1
     },
     {
@@ -75,7 +75,7 @@
       "count": 1
     },
     {
-      "value": ", the Miston RPC proxy, which this project runs.",
+      "value": ", the Velaira RPC proxy, which this project runs.",
       "count": 1
     },
     {
@@ -92,10 +92,6 @@
     },
     {
       "value": ", with six checks.",
-      "count": 1
-    },
-    {
-      "value": "; press",
       "count": 1
     },
     {
@@ -119,7 +115,7 @@
       "count": 1
     },
     {
-      "value": ". If Miston says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
+      "value": ". If Velaira says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
       "count": 1
     },
     {
@@ -163,7 +159,7 @@
       "count": 1
     },
     {
-      "value": "$MISTON token:",
+      "value": "$VELAIRA token:",
       "count": 1
     },
     {
@@ -391,10 +387,6 @@
       "count": 1
     },
     {
-      "value": "A Miston user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
-      "count": 1
-    },
-    {
       "value": "A new note travels with the payment, encrypted so that only the person it is for can open it.",
       "count": 1
     },
@@ -495,6 +487,10 @@
       "count": 1
     },
     {
+      "value": "A Velaira user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
+      "count": 1
+    },
+    {
       "value": "A viewing key",
       "count": 2
     },
@@ -516,14 +512,6 @@
     },
     {
       "value": "about 3.5",
-      "count": 1
-    },
-    {
-      "value": "Add to Chrome",
-      "count": 4
-    },
-    {
-      "value": "Added from the Chrome Web Store, Miston updates itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Miston’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
       "count": 1
     },
     {
@@ -551,7 +539,7 @@
       "count": 1
     },
     {
-      "value": "an address receive an amount from the Miston, and when. Not which deposit it came from.",
+      "value": "an address receive an amount from the Velaira, and when. Not which deposit it came from.",
       "count": 1
     },
     {
@@ -595,10 +583,6 @@
       "count": 1
     },
     {
-      "value": "at the top of this page. It opens the extension’s page on the",
-      "count": 1
-    },
-    {
       "value": "Back to the start page",
       "count": 4
     },
@@ -635,7 +619,7 @@
       "count": 1
     },
     {
-      "value": "By default, the Miston RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
+      "value": "By default, the Velaira RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
       "count": 1
     },
     {
@@ -679,7 +663,7 @@
       "count": 3
     },
     {
-      "value": "certutil -hashfile miston-extension-0.1.0.zip SHA256",
+      "value": "certutil -hashfile velaira-extension-0.1.0.zip SHA256",
       "count": 1
     },
     {
@@ -707,10 +691,6 @@
       "count": 1
     },
     {
-      "value": "Chrome Web Store",
-      "count": 1
-    },
-    {
       "value": "chrome://extensions",
       "count": 1
     },
@@ -719,12 +699,16 @@
       "count": 2
     },
     {
-      "value": "claimSeed = sha256(\"Miston claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"mistonclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://miston.xyz/claim#code",
+      "value": "claimSeed = sha256(\"Velaira claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"velairaclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://velaira.xyz/claim#code",
       "count": 1
     },
     {
       "value": "Clients follow three rules so that all transactions look alike. There are always two inputs: an unused one is a dummy note of amount zero with a fresh random key. There are always two outputs: an unused one is a zero-amount note to the sender’s own address, encrypted like any other. The order of the outputs is random.",
       "count": 1
+    },
+    {
+      "value": "Coming soon",
+      "count": 2
     },
     {
       "value": "commitment = Poseidon(amount, publicKey, blinding) nullifier = Poseidon(commitment, leafIndex, tag) tag = Poseidon(privateKey, commitment, leafIndex)",
@@ -751,7 +735,7 @@
       "count": 1
     },
     {
-      "value": "connect.miston.xyz",
+      "value": "connect.velaira.xyz",
       "count": 2
     },
     {
@@ -795,7 +779,7 @@
       "count": 1
     },
     {
-      "value": "directly inside it. Miston appears in the list of extensions.",
+      "value": "directly inside it. Velaira appears in the list of extensions.",
       "count": 1
     },
     {
@@ -827,7 +811,7 @@
       "count": 2
     },
     {
-      "value": "Download Miston 0.1.0",
+      "value": "Download Velaira 0.1.0",
       "count": 1
     },
     {
@@ -859,7 +843,7 @@
       "count": 1
     },
     {
-      "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"miston-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"miston-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
+      "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"velaira-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"velaira-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
       "count": 1
     },
     {
@@ -959,7 +943,7 @@
       "count": 1
     },
     {
-      "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Miston’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
+      "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Velaira’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
       "count": 1
     },
     {
@@ -971,7 +955,7 @@
       "count": 1
     },
     {
-      "value": "How the Miston keeps a payment private.",
+      "value": "How the Velaira keeps a payment private.",
       "count": 1
     },
     {
@@ -980,10 +964,6 @@
     },
     {
       "value": "If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux:",
-      "count": 1
-    },
-    {
-      "value": "in Miston and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
       "count": 1
     },
     {
@@ -1011,8 +991,12 @@
       "count": 1
     },
     {
-      "value": "In the Miston. Visible only to you.",
+      "value": "In the Velaira. Visible only to you.",
       "count": 2
+    },
+    {
+      "value": "in Velaira and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
+      "count": 1
     },
     {
       "value": "In your own browser",
@@ -1031,11 +1015,11 @@
       "count": 1
     },
     {
-      "value": "Install Miston.",
+      "value": "Install the extension",
       "count": 1
     },
     {
-      "value": "Install the extension",
+      "value": "Install Velaira.",
       "count": 1
     },
     {
@@ -1107,7 +1091,7 @@
       "count": 2
     },
     {
-      "value": "Leaks outside the Miston",
+      "value": "Leaks outside the Velaira",
       "count": 2
     },
     {
@@ -1147,47 +1131,7 @@
       "count": 1
     },
     {
-      "value": "message = \"Miston key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Miston note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Miston self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Miston payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"miston\", publicKey || encryptionPublic) payment code = bech32m(\"mistonpay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
-      "count": 1
-    },
-    {
-      "value": "Miston",
-      "count": 4
-    },
-    {
-      "value": "Miston is a browser extension that works beside the wallet you already have. Add it from the Chrome Web Store, in Chrome, Brave or Edge. It takes about two minutes.",
-      "count": 1
-    },
-    {
-      "value": "Miston on X",
-      "count": 1
-    },
-    {
-      "value": "Miston reads the chain through an RPC endpoint. It starts with Miston’s own,",
-      "count": 1
-    },
-    {
-      "value": "Miston runs on Solana mainnet, with real SOL.",
-      "count": 1
-    },
-    {
-      "value": "Miston v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
-      "count": 1
-    },
-    {
-      "value": "miston_pool",
-      "count": 1
-    },
-    {
-      "value": "miston-extension-0.1.0",
-      "count": 1
-    },
-    {
-      "value": "miston1",
-      "count": 2
-    },
-    {
-      "value": "mistonpay1",
+      "value": "message = \"Velaira key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Velaira note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Velaira self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Velaira payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"velaira\", publicKey || encryptionPublic) payment code = bech32m(\"velairapay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
       "count": 1
     },
     {
@@ -1199,7 +1143,7 @@
       "count": 1
     },
     {
-      "value": "Move SOL from your public wallet into the Miston. A screening authority checks where it came from and co-signs the deposit.",
+      "value": "Move SOL from your public wallet into the Velaira. A screening authority checks where it came from and co-signs the deposit.",
       "count": 1
     },
     {
@@ -1267,7 +1211,7 @@
       "count": 1
     },
     {
-      "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Miston extension keeps and sends.",
+      "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Velaira extension keeps and sends.",
       "count": 1
     },
     {
@@ -1299,15 +1243,19 @@
       "count": 1
     },
     {
-      "value": "on Miston’s card on the extensions page. If you loaded it by hand, delete the folder too.",
-      "count": 1
-    },
-    {
-      "value": "On the websites you visit, the extension offers the Miston wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Miston, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
+      "value": "On the websites you visit, the extension offers the Velaira wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Velaira, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
       "count": 1
     },
     {
       "value": "On this page",
+      "count": 1
+    },
+    {
+      "value": "on Velaira’s card on the extensions page. If you loaded it by hand, delete the folder too.",
+      "count": 1
+    },
+    {
+      "value": "Once Velaira is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Velaira’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
       "count": 1
     },
     {
@@ -1339,10 +1287,6 @@
       "count": 5
     },
     {
-      "value": "Open Miston from the toolbar and press",
-      "count": 1
-    },
-    {
       "value": "Open source",
       "count": 1
     },
@@ -1355,7 +1299,11 @@
       "count": 1
     },
     {
-      "value": "opens and your wallet asks you to sign one message, “Miston key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
+      "value": "Open Velaira from the toolbar and press",
+      "count": 1
+    },
+    {
+      "value": "opens and your wallet asks you to sign one message, “Velaira key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
       "count": 1
     },
     {
@@ -1383,7 +1331,7 @@
       "count": 1
     },
     {
-      "value": "Pay any other Miston balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
+      "value": "Pay any other Velaira balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
       "count": 1
     },
     {
@@ -1404,11 +1352,11 @@
     },
     {
       "value": "Press",
-      "count": 2
+      "count": 1
     },
     {
-      "value": "Press the puzzle-piece button in the toolbar and pin Miston, so that it is one press away.",
-      "count": 2
+      "value": "Press the puzzle-piece button in the toolbar and pin Velaira, so that it is one press away.",
+      "count": 1
     },
     {
       "value": "Privacy",
@@ -1519,7 +1467,7 @@
       "count": 1
     },
     {
-      "value": "relayer-mainnet.miston.xyz",
+      "value": "relayer-mainnet.velaira.xyz",
       "count": 1
     },
     {
@@ -1543,7 +1491,7 @@
       "count": 1
     },
     {
-      "value": "rpc.miston.xyz",
+      "value": "rpc.velaira.xyz",
       "count": 3
     },
     {
@@ -1563,7 +1511,7 @@
       "count": 1
     },
     {
-      "value": "screener-mainnet.miston.xyz",
+      "value": "screener-mainnet.velaira.xyz",
       "count": 1
     },
     {
@@ -1619,7 +1567,7 @@
       "count": 1
     },
     {
-      "value": "shasum -a 256 miston-extension-0.1.0.zip",
+      "value": "shasum -a 256 velaira-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -1707,7 +1655,7 @@
       "count": 1
     },
     {
-      "value": "Surface what you have in the Miston first. Then press",
+      "value": "Surface what you have in the Velaira first. Then press",
       "count": 1
     },
     {
@@ -1727,7 +1675,7 @@
       "count": 1
     },
     {
-      "value": "The $MISTON token",
+      "value": "The $VELAIRA token",
       "count": 1
     },
     {
@@ -1755,6 +1703,10 @@
       "count": 1
     },
     {
+      "value": "The Chrome Web Store listing is coming soon. When it is live, this page will link to it, and Chrome, Brave and Edge will install from the same page (Edge asks you once to allow extensions from other stores).",
+      "count": 1
+    },
+    {
       "value": "The code holds everything that spends the note: the keys follow from the secret, and the amount, the blinding and the leaf index open the commitment. Whoever has the link collects it with one private transfer to an address of their own, through the relayer, whose fee comes out of the note. The payer adds that fee on top, so the recipient ends up with the round amount.",
       "count": 1
     },
@@ -1779,6 +1731,10 @@
       "count": 1
     },
     {
+      "value": "The extension is here as a zip file, for a browser without the store, for anyone who wants the file in hand, or for anyone who would rather not wait for the Chrome Web Store listing. Loaded this way it does not update itself.",
+      "count": 1
+    },
+    {
       "value": "The extension is open source, under the GNU General Public License, at",
       "count": 1
     },
@@ -1791,7 +1747,7 @@
       "count": 1
     },
     {
-      "value": "The extension’s popup, drawn here with example figures. The extension is an early alpha. It is on the Chrome Web Store.",
+      "value": "The extension’s popup, drawn here with example figures. The extension is an early alpha. It is coming soon to the Chrome Web Store.",
       "count": 2
     },
     {
@@ -1832,22 +1788,6 @@
     },
     {
       "value": "The live scan needs JavaScript, because it runs in your browser. With JavaScript off, the report below is an example.",
-      "count": 1
-    },
-    {
-      "value": "The Miston",
-      "count": 2
-    },
-    {
-      "value": "The Miston extension",
-      "count": 1
-    },
-    {
-      "value": "The Miston is a shielded pool of SOL held by one Solana program,",
-      "count": 1
-    },
-    {
-      "value": "The Miston is not.",
       "count": 1
     },
     {
@@ -1959,15 +1899,11 @@
       "count": 1
     },
     {
-      "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Miston RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
+      "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Velaira RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
       "count": 1
     },
     {
       "value": "The RPC endpoint,",
-      "count": 1
-    },
-    {
-      "value": "The same extension is here as a zip file, for a browser without the store or for anyone who wants the file in hand. Loaded this way it does not update itself.",
       "count": 1
     },
     {
@@ -2023,6 +1959,10 @@
       "count": 1
     },
     {
+      "value": "The store listing is not live yet.",
+      "count": 1
+    },
+    {
       "value": "The technical version: what is hashed, what is proved, what is encrypted, and what an observer still sees. The plain version is on",
       "count": 1
     },
@@ -2040,6 +1980,22 @@
     },
     {
       "value": "The two nullifier accounts of a transaction cost rent that is never returned. Whoever signs the transaction pays it.",
+      "count": 1
+    },
+    {
+      "value": "The Velaira",
+      "count": 2
+    },
+    {
+      "value": "The Velaira extension",
+      "count": 1
+    },
+    {
+      "value": "The Velaira is a shielded pool of SOL held by one Solana program,",
+      "count": 1
+    },
+    {
+      "value": "The Velaira is not.",
       "count": 1
     },
     {
@@ -2071,19 +2027,15 @@
       "count": 1
     },
     {
-      "value": "there and confirm. Brave and Edge install from the same page (Edge asks you once to allow extensions from other stores).",
-      "count": 1
-    },
-    {
       "value": "There are two ways to derive the key, and on chain they look the same. An address note is keyed by the X25519 exchange alone: that is a payment to a plain address. A keyed note also takes a",
       "count": 1
     },
     {
-      "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Miston records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
+      "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Velaira records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
       "count": 1
     },
     {
-      "value": "These checks are help and not a barrier. They see only the requests that come through the Miston wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
+      "value": "These checks are help and not a barrier. They see only the requests that come through the Velaira wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
       "count": 1
     },
     {
@@ -2207,6 +2159,10 @@
       "count": 1
     },
     {
+      "value": "Until then, load the extension by hand from the zip file below.",
+      "count": 1
+    },
+    {
       "value": "Unzip it",
       "count": 1
     },
@@ -2236,6 +2192,46 @@
     },
     {
       "value": "Value",
+      "count": 1
+    },
+    {
+      "value": "Velaira",
+      "count": 4
+    },
+    {
+      "value": "Velaira is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
+      "count": 1
+    },
+    {
+      "value": "Velaira on X",
+      "count": 1
+    },
+    {
+      "value": "Velaira reads the chain through an RPC endpoint. It starts with Velaira’s own,",
+      "count": 1
+    },
+    {
+      "value": "Velaira runs on Solana mainnet, with real SOL.",
+      "count": 1
+    },
+    {
+      "value": "Velaira v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
+      "count": 1
+    },
+    {
+      "value": "velaira_pool",
+      "count": 1
+    },
+    {
+      "value": "velaira-extension-0.1.0",
+      "count": 1
+    },
+    {
+      "value": "velaira1",
+      "count": 2
+    },
+    {
+      "value": "velairapay1",
       "count": 1
     },
     {
@@ -2303,7 +2299,7 @@
       "count": 1
     },
     {
-      "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Miston is: unaudited software.",
+      "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Velaira is: unaudited software.",
       "count": 1
     },
     {
@@ -2351,7 +2347,7 @@
       "count": 2
     },
     {
-      "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Miston has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
+      "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Velaira has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
       "count": 1
     },
     {
@@ -2359,7 +2355,7 @@
       "count": 1
     },
     {
-      "value": "your address, the amount, the time, and that it went into the Miston.",
+      "value": "your address, the amount, the time, and that it went into the Velaira.",
       "count": 1
     },
     {
@@ -2371,7 +2367,7 @@
       "count": 1
     },
     {
-      "value": "Your shielded keys come from your wallet’s signature on one message, “Miston key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Miston.",
+      "value": "Your shielded keys come from your wallet’s signature on one message, “Velaira key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Velaira.",
       "count": 1
     },
     {
@@ -2379,7 +2375,7 @@
       "count": 1
     },
     {
-      "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Miston.",
+      "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Velaira.",
       "count": 1
     },
     {
@@ -2391,12 +2387,16 @@
     {
       "value": "Not on the chain",
       "count": 4
+    },
+    {
+      "value": "to the Chrome Web Store",
+      "count": 2
     }
   ],
   "attributes": [
     {
       "name": "href",
-      "value": "/download/miston-extension-0.1.0.zip",
+      "value": "/download/velaira-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -2441,8 +2441,23 @@
     },
     {
       "name": "href",
+      "value": "#i-docs",
+      "count": 1
+    },
+    {
+      "name": "href",
       "value": "#i-info",
       "count": 3
+    },
+    {
+      "name": "href",
+      "value": "#i-install",
+      "count": 1
+    },
+    {
+      "name": "href",
+      "value": "#i-privacy",
+      "count": 1
     },
     {
       "name": "href",
@@ -2458,6 +2473,11 @@
       "name": "href",
       "value": "#i-surface",
       "count": 4
+    },
+    {
+      "name": "href",
+      "value": "#i-verify",
+      "count": 1
     },
     {
       "name": "href",
@@ -2551,17 +2571,12 @@
     },
     {
       "name": "href",
-      "value": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
-      "count": 3
-    },
-    {
-      "name": "href",
       "value": "https://github.com/lochlayer/loch-extension",
       "count": 2
     },
     {
       "name": "href",
-      "value": "https://x.com/miston",
+      "value": "https://x.com/velaira",
       "count": 1
     },
     {
@@ -2617,7 +2632,7 @@
     {
       "name": "src",
       "value": "/media/mark-small.svg",
-      "count": 1
+      "count": 2
     },
     {
       "name": "src",
@@ -2626,7 +2641,7 @@
     },
     {
       "name": "src",
-      "value": "/media/miston-plate.svg",
+      "value": "/media/velaira-plate.svg",
       "count": 1
     },
     {
@@ -2647,7 +2662,7 @@
     {
       "name": "to",
       "value": "/docs",
-      "count": 3
+      "count": 4
     },
     {
       "name": "to",
@@ -2682,17 +2697,17 @@
     {
       "name": "to",
       "value": "/install",
-      "count": 2
+      "count": 3
     },
     {
       "name": "to",
       "value": "/privacy",
-      "count": 1
+      "count": 2
     },
     {
       "name": "to",
       "value": "/verify",
-      "count": 2
+      "count": 3
     }
   ],
   "bindings": [
@@ -2947,7 +2962,7 @@
   "links": [
     {
       "kind": "href",
-      "target": "/download/miston-extension-0.1.0.zip",
+      "target": "/download/velaira-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -2992,8 +3007,23 @@
     },
     {
       "kind": "href",
+      "target": "#i-docs",
+      "count": 1
+    },
+    {
+      "kind": "href",
       "target": "#i-info",
       "count": 3
+    },
+    {
+      "kind": "href",
+      "target": "#i-install",
+      "count": 1
+    },
+    {
+      "kind": "href",
+      "target": "#i-privacy",
+      "count": 1
     },
     {
       "kind": "href",
@@ -3009,6 +3039,11 @@
       "kind": "href",
       "target": "#i-surface",
       "count": 4
+    },
+    {
+      "kind": "href",
+      "target": "#i-verify",
+      "count": 1
     },
     {
       "kind": "href",
@@ -3102,17 +3137,12 @@
     },
     {
       "kind": "href",
-      "target": "https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf",
-      "count": 3
-    },
-    {
-      "kind": "href",
       "target": "https://github.com/lochlayer/loch-extension",
       "count": 2
     },
     {
       "kind": "href",
-      "target": "https://x.com/miston",
+      "target": "https://x.com/velaira",
       "count": 1
     },
     {
@@ -3133,7 +3163,7 @@
     {
       "kind": "to",
       "target": "/docs",
-      "count": 3
+      "count": 4
     },
     {
       "kind": "to",
@@ -3168,17 +3198,17 @@
     {
       "kind": "to",
       "target": "/install",
-      "count": 2
+      "count": 3
     },
     {
       "kind": "to",
       "target": "/privacy",
-      "count": 1
+      "count": 2
     },
     {
       "kind": "to",
       "target": "/verify",
-      "count": 2
+      "count": 3
     }
   ],
   "assets": [
@@ -3200,7 +3230,7 @@
     {
       "kind": "src",
       "value": "/media/mark-small.svg",
-      "count": 1
+      "count": 2
     },
     {
       "kind": "src",
@@ -3209,7 +3239,7 @@
     },
     {
       "kind": "src",
-      "value": "/media/miston-plate.svg",
+      "value": "/media/velaira-plate.svg",
       "count": 1
     }
   ],

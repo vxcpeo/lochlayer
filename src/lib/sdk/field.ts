@@ -1,9 +1,9 @@
 // BN254 scalar-field helpers and the public amount, exactly as
-// programs/miston_pool/src/field.rs computes it.
+// programs/velaira_pool/src/field.rs computes it.
 
 import { bigIntToBytesBE, bytesToBigIntBE } from "./bytes";
 import { FIELD_MODULUS, MAX_AMOUNT } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 
 const I64_MIN = -(1n << 63n);
 const I64_MAX = (1n << 63n) - 1n;
@@ -20,7 +20,7 @@ export function mod(x: bigint, m: bigint = FIELD_MODULUS): bigint {
 /** Throws unless `0 <= value < r`. Returns the value. */
 export function assertField(value: bigint, name = "value"): bigint {
   if (typeof value !== "bigint" || value < 0n || value >= FIELD_MODULUS) {
-    throw new MistonError("INVALID_ARGUMENT", `${name} is not a field element (0 <= x < r)`);
+    throw new VelairaError("INVALID_ARGUMENT", `${name} is not a field element (0 <= x < r)`);
   }
   return value;
 }
@@ -28,7 +28,7 @@ export function assertField(value: bigint, name = "value"): bigint {
 /** Throws unless `0 <= value < 2^64`. Returns the value. */
 export function assertAmount(value: bigint, name = "amount"): bigint {
   if (typeof value !== "bigint" || value < 0n || value > MAX_AMOUNT) {
-    throw new MistonError("INVALID_ARGUMENT", `${name} must be a bigint with 0 <= x < 2^64 (lamports)`);
+    throw new VelairaError("INVALID_ARGUMENT", `${name} must be a bigint with 0 <= x < 2^64 (lamports)`);
   }
   return value;
 }
@@ -41,7 +41,7 @@ export function fieldToBytes(value: bigint): Uint8Array {
 /** 32 big-endian bytes to a field element. Throws on a wrong length or a value >= r. */
 export function bytesToField(bytes: Uint8Array): bigint {
   if (!(bytes instanceof Uint8Array) || bytes.length !== 32) {
-    throw new MistonError("INVALID_ARGUMENT", "expected 32 bytes");
+    throw new VelairaError("INVALID_ARGUMENT", "expected 32 bytes");
   }
   return assertField(bytesToBigIntBE(bytes), "field element");
 }
@@ -58,7 +58,7 @@ export function toField(value: FieldLike): bigint {
  */
 export function publicAmountField(extAmount: bigint, fee: bigint): bigint {
   if (typeof extAmount !== "bigint" || extAmount < I64_MIN || extAmount > I64_MAX) {
-    throw new MistonError("INVALID_ARGUMENT", "extAmount must be a bigint that fits in a signed 64-bit integer");
+    throw new VelairaError("INVALID_ARGUMENT", "extAmount must be a bigint that fits in a signed 64-bit integer");
   }
   assertAmount(fee, "fee");
   return mod(extAmount - fee);

@@ -14,13 +14,13 @@ import { x25519 } from "@noble/curves/ed25519";
 import { type Form, decodePayload } from "./address";
 import { bigIntToBytesBE, bytesToBigIntBE, concatBytes, copyBytes } from "./bytes";
 import { FIELD_MODULUS, PAYMENT_CODE_GAP, VIEWING_KEY_PREFIX } from "./constants";
-import { AddressError, MistonError } from "./errors";
+import { AddressError, VelairaError } from "./errors";
 import { type NewCommitmentEvent, type TransactionTime, transactionTime } from "./events";
-import { type MistonKeys, MAX_PAYMENT_CODE_INDEX, isValidEncryptionPublicKey, paymentCodeSecret } from "./keys";
+import { type VelairaKeys, MAX_PAYMENT_CODE_INDEX, isValidEncryptionPublicKey, paymentCodeSecret } from "./keys";
 import { type NoteSource, type PaymentCodeCandidate, openNote } from "./note";
 
 /** The reading half of a key set. Every field but `publicKey` is secret. */
-export type ViewingKey = Pick<MistonKeys, "publicKey" | "encryptionSecret" | "selfNoteKey" | "paymentCodeRoot">;
+export type ViewingKey = Pick<VelairaKeys, "publicKey" | "encryptionSecret" | "selfNoteKey" | "paymentCodeRoot">;
 
 const PAYLOAD_LENGTH = 128;
 /** prefix + "1" + ceil(128 * 8 / 5) data characters + 6 checksum characters. */
@@ -33,19 +33,19 @@ export function viewingKeyOf(keys: ViewingKey): ViewingKey {
 }
 
 /**
- * Encodes a viewing key: bech32m, prefix "mistonview", payload
+ * Encodes a viewing key: bech32m, prefix "velairaview", payload
  * `publicKey (32, big-endian) || encryptionSecret (32) || selfNoteKey (32) || paymentCodeRoot (32)`.
  * Always 222 characters.
  *
- * @throws MistonError `INVALID_ARGUMENT` for a malformed key.
+ * @throws VelairaError `INVALID_ARGUMENT` for a malformed key.
  */
 export function encodeViewingKey(key: ViewingKey): string {
   const { publicKey, encryptionSecret, selfNoteKey, paymentCodeRoot } = key;
   if (typeof publicKey !== "bigint" || publicKey < 0n || publicKey >= FIELD_MODULUS) {
-    throw new MistonError("INVALID_ARGUMENT", "publicKey is not a field element");
+    throw new VelairaError("INVALID_ARGUMENT", "publicKey is not a field element");
   }
   for (const part of [encryptionSecret, selfNoteKey, paymentCodeRoot]) {
-    if (!(part instanceof Uint8Array) || part.length !== 32) throw new MistonError("INVALID_ARGUMENT", "every secret of a viewing key is 32 bytes");
+    if (!(part instanceof Uint8Array) || part.length !== 32) throw new VelairaError("INVALID_ARGUMENT", "every secret of a viewing key is 32 bytes");
   }
   const payload = concatBytes(bigIntToBytesBE(publicKey, 32), encryptionSecret, selfNoteKey, paymentCodeRoot);
   const text = bech32m.encode(VIEWING_KEY_PREFIX, bech32m.toWords(payload), VIEWING_KEY_LENGTH);

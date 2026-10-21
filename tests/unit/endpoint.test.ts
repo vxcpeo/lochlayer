@@ -71,9 +71,9 @@ describe('the endpoint in use', () => {
 
   it('stores and forgets a saved endpoint', () => {
     expect(saveEndpoint('https://my-node.example.com/')).toBe(true);
-    expect(localStorage.getItem('miston:rpc')).toBe('https://my-node.example.com/');
+    expect(localStorage.getItem('velaira:rpc')).toBe('https://my-node.example.com/');
     expect(saveEndpoint(null)).toBe(true);
-    expect(localStorage.getItem('miston:rpc')).toBeNull();
+    expect(localStorage.getItem('velaira:rpc')).toBeNull();
   });
 
   it('shows the host alone in a sentence', () => {

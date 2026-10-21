@@ -5,18 +5,18 @@ export const esc = escapeHtml;
 
 /** Fallback inks written into the SVG, so a chart opened on its own is still legible. Inline, the stylesheet's tokens win. */
 export const INK = {
-  buff: "#EAF1F7",
-  miston: "#B6509E",
-  paper: "#EAF1F7",
-  paper2: "#8496A7",
-  water: "#2A1630",
-  bed: "#101C28",
-  magenta: "#F2C94C",
-  rule: "#31465A",
+  buff: "#F2F7FF",
+  velaira: "#28A0F0",
+  paper: "#F2F7FF",
+  paper2: "#9DB2CC",
+  water: "#12315A",
+  bed: "#0A1F38",
+  magenta: "#12AAFF",
+  rule: "#2A4F7D",
 } as const;
 
-export const SANS = "'Trebuchet MS', 'Segoe UI', Arial, sans-serif";
-export const SERIF = "'Trebuchet MS', Georgia, serif";
+export const SANS = "'Bahnschrift', 'Segoe UI', Arial, sans-serif";
+export const SERIF = "'Bahnschrift', 'Segoe UI', Georgia, serif";
 
 /**
  * How much of anything the helpers will draw or write. What they are given
@@ -144,7 +144,7 @@ export function safeId(value: unknown, fallback: () => string): string {
 export function svgOpen(opts: { id: string; width: number; height: number; className: string; title: string; desc: string }): string {
   const { id, width, height, className, title, desc } = opts;
   return (
-    `<svg class="ab-plot ${className}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n(width)} ${n(height)}" width="${n(width)}" height="${n(height)}" ` +
+    `<svg class="sn-plot ${className}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n(width)} ${n(height)}" width="${n(width)}" height="${n(height)}" ` +
     `data-w="${n(width)}" role="img" aria-labelledby="${id}-t ${id}-d" font-family="${SANS}">` +
     `<title id="${id}-t">${esc(title)}</title><desc id="${id}-d">${esc(desc)}</desc>`
   );
@@ -155,8 +155,8 @@ export function voidSvg(className: string, width: number): string {
   const w = drawWidth(width, LIMITS.minWidth);
   const message = "This figure could not be drawn.";
   return (
-    `<svg class="ab-plot ${className}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n(w)} 48" width="${n(w)}" height="48" data-w="${n(w)}" role="img" aria-label="${message}" font-family="${SANS}">` +
-    `<text class="ab-plot-quiet" x="0" y="28" font-size="12.5" fill="${INK.paper2}">${message}</text></svg>`
+    `<svg class="sn-plot ${className}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n(w)} 48" width="${n(w)}" height="48" data-w="${n(w)}" role="img" aria-label="${message}" font-family="${SANS}">` +
+    `<text class="sn-plot-quiet" x="0" y="28" font-size="12.5" fill="${INK.paper2}">${message}</text></svg>`
   );
 }
 

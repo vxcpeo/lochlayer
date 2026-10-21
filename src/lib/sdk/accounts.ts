@@ -1,4 +1,4 @@
-// On-chain accounts of miston_pool: decoding and fetching.
+// On-chain accounts of velaira_pool: decoding and fetching.
 //
 // Every fetch here reads at `confirmed` unless told otherwise (DEFAULT_COMMITMENT),
 // the same level sync uses. A `Connection` created without a commitment reads at
@@ -11,7 +11,7 @@ import type { Commitment, Connection } from "@solana/web3.js";
 
 import { ByteReader, bytesToBigIntBE, equalBytes } from "./bytes";
 import { DEFAULT_COMMITMENT, MERKLE_TREE_DISCRIMINATOR, POOL_CONFIG_DISCRIMINATOR, PROGRAM_ID, TREE_DEPTH } from "./constants";
-import { MistonError } from "./errors";
+import { VelairaError } from "./errors";
 import { type FieldLike, toField } from "./field";
 import { configPda, nullifierPda, treePda } from "./pda";
 
@@ -47,11 +47,11 @@ export interface TreeAccount {
  * Decodes `PoolConfig`: 8-byte discriminator, admin (32), screener (32),
  * max_deposit (u64 LE), paused (1), bump (1), vault_bump (1).
  *
- * @throws MistonError `DECODE_FAILED` on a wrong discriminator or short data.
+ * @throws VelairaError `DECODE_FAILED` on a wrong discriminator or short data.
  */
 export function decodePoolConfig(data: Uint8Array): PoolConfig {
   if (data.length < 8 || !equalBytes(data.subarray(0, 8), POOL_CONFIG_DISCRIMINATOR)) {
-    throw new MistonError("DECODE_FAILED", "not a PoolConfig account");
+    throw new VelairaError("DECODE_FAILED", "not a PoolConfig account");
   }
   try {
     const reader = new ByteReader(data.subarray(8));
@@ -64,7 +64,7 @@ export function decodePoolConfig(data: Uint8Array): PoolConfig {
       vaultBump: reader.u8(),
     };
   } catch (cause) {
-    throw new MistonError("DECODE_FAILED", "PoolConfig account data is too short", { cause });
+    throw new VelairaError("DECODE_FAILED", "PoolConfig account data is too short", { cause });
   }
 }
 
@@ -74,11 +74,11 @@ export function decodePoolConfig(data: Uint8Array): PoolConfig {
  * (20 x 32), then the root ring buffer (32 bytes per slot, 64 slots today; the
  * slot count is taken from the account size).
  *
- * @throws MistonError `DECODE_FAILED` on a wrong discriminator or layout.
+ * @throws VelairaError `DECODE_FAILED` on a wrong discriminator or layout.
  */
 export function decodeTreeAccount(data: Uint8Array): TreeAccount {
   if (data.length < 8 || !equalBytes(data.subarray(0, 8), MERKLE_TREE_DISCRIMINATOR)) {
-    throw new MistonError("DECODE_FAILED", "not a MerkleTree account");
+    throw new VelairaError("DECODE_FAILED", "not a MerkleTree account");
   }
   try {
     const reader = new ByteReader(data.subarray(8));
@@ -93,7 +93,7 @@ export function decodeTreeAccount(data: Uint8Array): TreeAccount {
     if (root === undefined || nextIndex > BigInt(2 ** TREE_DEPTH)) throw new RangeError("index out of range");
     return { nextIndex: Number(nextIndex), currentRootIndex: Number(currentRootIndex), root, filledSubtrees, zeros, roots };
   } catch (cause) {
-    throw new MistonError("DECODE_FAILED", "MerkleTree account data has an unexpected layout", { cause });
+    throw new VelairaError("DECODE_FAILED", "MerkleTree account data has an unexpected layout", { cause });
   }
 }
 
@@ -110,8 +110,8 @@ async function fetchOwned(
   commitment: Commitment,
 ): Promise<Uint8Array> {
   const info = await connection.getAccountInfo(address, commitment);
-  if (!info) throw new MistonError("ACCOUNT_NOT_FOUND", `the pool's ${name} account does not exist: is the pool initialised on this cluster?`);
-  if (!info.owner.equals(programId)) throw new MistonError("ACCOUNT_NOT_FOUND", `the pool's ${name} account is not owned by the program`);
+  if (!info) throw new VelairaError("ACCOUNT_NOT_FOUND", `the pool's ${name} account does not exist: is the pool initialised on this cluster?`);
+  if (!info.owner.equals(programId)) throw new VelairaError("ACCOUNT_NOT_FOUND", `the pool's ${name} account is not owned by the program`);
   return info.data;
 }
 

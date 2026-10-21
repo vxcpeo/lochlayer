@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T19:16:34.642Z",
+  "project": {
+    "root": "E:/workspace/chuangye/solana/lochlayer/website",
+    "name": "miston-website",
+    "baseUrl": "http://127.0.0.1:4317/"
+  },
+  "passed": true,
+  "thresholds": {
+    "maxStructureSimilarity": 0.5,
+    "maxLandmarkSimilarity": 0.68,
+    "maxClassOverlap": 0.1,
+    "minAccentDistance": 30,
+    "maxContrastFailures": 0,
+    "maxAxeSerious": 0
+  },
+  "gates": {
+    "sourceContract": {
+      "passed": true,
+      "issues": [],
+      "warnings": [],
+      "hash": "f7bee500e66454d3912d01429fcc82d39f1287edafe73a0721d034fecda6f81d"
+    },
+    "skeleton": {
+      "passed": true,
+      "original": {
+        "id": "sidebar-workspace",
+        "family": "shell",
+        "traits": {
+          "sidebar": true,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
+      "current": {
+        "id": "bento-canvas",
+        "family": "spatial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": true,
+          "ticker": false,
+          "gallery": false
+        }
+      },
+      "accent": {
+        "original": "#298dff",
+        "current": "#0000ff",
+        "deltaE": 83.88,
+        "min": 30
+      }
+    },
+    "pages": [
+      {
+        "route": "/",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.437,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.002
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 44,
+              "total": 79
+            },
+            "current": {
+              "tokens": 44,
+              "total": 79
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/home-desktop.png",
+          "mobile": "current/home-mobile.png"
+        }
+      },
+      {
+        "route": "/docs",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.254,
+          "landmarkSimilarity": 0.429,
+          "classOverlap": 0
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 40,
+              "total": 71
+            },
+            "current": {
+              "tokens": 40,
+              "total": 71
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/docs-desktop.png",
+          "mobile": "current/docs-mobile.png"
+        }
+      },
+      {
+        "route": "/download/loch-extension-0.1.0.zip",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.437,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.002
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 44,
+              "total": 79
+            },
+            "current": {
+              "tokens": 44,
+              "total": 79
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/download-loch-extension-0-1-0-zip-desktop.png",
+          "mobile": "current/download-loch-extension-0-1-0-zip-mobile.png"
+        }
+      },
+      {
+        "route": "/download/miston-extension-0.1.0.zip",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.437,
+          "landmarkSimilarity": 0.6,
+          "classOverlap": 0.002
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 44,
+              "total": 79
+            },
+            "current": {
+              "tokens": 44,
+              "total": 79
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/download-miston-extension-0-1-0-zip-desktop.png",
+          "mobile": "current/download-miston-extension-0-1-0-zip-mobile.png"
+        }
+      },
+      {
+        "route": "/install",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.299,
+          "landmarkSimilarity": 0.5,
+          "classOverlap": 0
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 7,
+              "total": 7
+            },
+            "current": {
+              "tokens": 7,
+              "total": 7
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/install-desktop.png",
+          "mobile": "current/install-mobile.png"
+        }
+      },
+      {
+        "route": "/privacy",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.355,
+          "landmarkSimilarity": 0.5,
+          "classOverlap": 0
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 1,
+              "total": 1
+            },
+            "current": {
+              "tokens": 1,
+              "total": 1
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/privacy-desktop.png",
+          "mobile": "current/privacy-mobile.png"
+        }
+      },
+      {
+        "route": "/verify",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [],
+        "structure": {
+          "fingerprintSimilarity": 0.296,
+          "landmarkSimilarity": 0.5,
+          "classOverlap": 0
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 1,
+              "total": 1
+            },
+            "current": {
+              "tokens": 1,
+              "total": 1
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/verify-desktop.png",
+          "mobile": "current/verify-mobile.png"
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "warnings": [],
+  "baseline": {
+    "generatedAt": "2026-10-19T18:49:27.038Z",
+    "routes": [
+      "/",
+      "/docs",
+      "/download/loch-extension-0.1.0.zip",
+      "/download/miston-extension-0.1.0.zip",
+      "/install",
+      "/privacy",
+      "/verify"
+    ]
+  }
+}
