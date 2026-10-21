@@ -39,9 +39,11 @@ export default defineConfig({
   },
   build: {
     target: 'es2022',
-    // The site is deployed from the repository root: `npm run build` in
-    // `website/` writes `dist/` beside the workspace folders.
-    outDir: '../dist',
+    // Keep the output inside `website/`: Vercel treats `website/` as the project
+    // root and only collects files below it, so a `../dist` beside the workspace
+    // folders is invisible to the deployment and ends in
+    // STATIC_BUILD_NO_OUT_DIR.
+    outDir: 'dist',
     emptyOutDir: true,
   },
   server: {
