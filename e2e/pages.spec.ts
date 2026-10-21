@@ -31,9 +31,10 @@ test.describe('the pages', () => {
     await expect(page.locator('#nullifiers')).toBeInViewport();
   });
 
-  test('the install page offers the store, the zip and its checksum', async ({ page }) => {
+  test('the install page marks the store release as coming soon and keeps the zip checksum', async ({ page }) => {
     await page.goto('/install');
-    await expect(page.locator('a.tw-btn--fill')).toHaveAttribute('href', /chromewebstore\.google\.com/);
+    await expect(page.locator('.ab-btn--soon')).toContainText('Coming soon');
+    await expect(page.locator('a[href*="chromewebstore"]')).toHaveCount(0);
     await expect(page.locator('#download-sha256')).toHaveText('0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e');
   });
 

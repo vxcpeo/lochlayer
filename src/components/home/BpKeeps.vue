@@ -102,7 +102,7 @@
             </p>
           </div>
         </div>
-        <figcaption class="ab-caption">The extension’s popup, drawn here with example figures. The extension is an early alpha. It is on the Chrome Web Store.</figcaption>
+        <figcaption class="ab-caption">The extension’s popup, drawn here with example figures. The extension is an early alpha. It is coming soon to the Chrome Web Store.</figcaption>
       </figure>
 
       <ul class="ab-ideas">

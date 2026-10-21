@@ -656,6 +656,10 @@ strong {
 }
 
 .ab-runhead__action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
   margin: 0 0 clamp(14px, 2vw, 26px);
 }
 
@@ -763,6 +767,27 @@ strong {
 .ab-btn--fill:hover {
   background-color: var(--abyss-accent);
   color: #ffffff;
+}
+
+/* A release that is not available yet: a status, not something to press. */
+.ab-btn--soon {
+  border-color: var(--abyss-line-3);
+  background-color: var(--abyss-sheet-2);
+  color: var(--abyss-ink-2);
+  cursor: default;
+}
+
+.ab-btn--soon:hover {
+  border-color: var(--abyss-line-3);
+  color: var(--abyss-ink-2);
+}
+
+.ab-btn--soon::before {
+  content: "";
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background-color: var(--abyss-accent);
 }
 
 .ab-btn--line {

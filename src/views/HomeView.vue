@@ -12,7 +12,7 @@
         <p class="ab-lead__lede">A shielded balance inside Phantom, Solflare or Backpack. Pay from it, and your history stays behind.</p>
 
         <div class="ab-actions">
-          <a class="ab-btn ab-btn--fill ab-btn--lg" href="https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf">Add to Chrome</a>
+          <span class="ab-btn ab-btn--soon ab-btn--lg">Coming soon<span class="visually-hidden"> to the Chrome Web Store</span></span>
           <a class="ab-link" href="#scanner">Scan a wallet address</a>
         </div>
 

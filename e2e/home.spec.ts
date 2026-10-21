@@ -10,6 +10,8 @@ test.describe('the start page', () => {
     await expect(page.locator('h1')).toContainText('Your wallet is public.');
     await expect(page.locator('h1')).toContainText('The Miston is not.');
     for (const section of SECTIONS) await expect(page.locator(section)).toBeVisible();
+    await expect(page.locator('.ab-btn--soon')).toContainText('Coming soon');
+    await expect(page.locator('a[href*="chromewebstore"]')).toHaveCount(0);
     await expect(page.locator('footer .tw-foot__token')).toContainText('CYGidBuS8WwUXfZCmb98LnLGL9Mx8SvhdqA6t3xTLoch');
     await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/media/favicon.svg');
   });

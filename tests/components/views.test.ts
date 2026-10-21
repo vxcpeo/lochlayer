@@ -70,9 +70,10 @@ describe('the docs page', () => {
 });
 
 describe('the install page', () => {
-  it('offers the store, the download and the checksum', async () => {
+  it('marks the store release as coming soon and keeps the manual install and checksum', async () => {
     const { wrapper } = await mountWithRouter(InstallView, { route: '/install' });
-    expect(wrapper.find('a.ab-btn--fill').attributes('href')).toContain('chromewebstore.google.com');
+    expect(wrapper.find('.ab-btn--soon').text()).toBe('Coming soon to the Chrome Web Store');
+    expect(wrapper.find('a[href*="chromewebstore"]').exists()).toBe(false);
     expect(wrapper.find('.ab-ledger').text()).toContain('Load unpacked');
     expect(wrapper.find('#download-sha256').text()).toBe('0ee00e059e175874e1b0a4f30f7abcd73f12607d6091d89d2fed06f9d341791e');
   });

@@ -3,12 +3,13 @@
     <section class="ab-procedure" aria-labelledby="page-title">
       <header class="ab-runhead">
         <h1 class="ab-runhead__title" id="page-title">Install Miston.</h1>
-        <p class="ab-runhead__lede">Miston is a browser extension that works beside the wallet you already have. Add it from the Chrome Web Store, in Chrome, Brave or Edge. It takes about two minutes.</p>
+        <p class="ab-runhead__lede">Miston is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.</p>
         <AbyssIndex />
       </header>
 
       <p class="ab-runhead__action">
-        <a class="ab-btn ab-btn--fill ab-btn--lg" href="https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf">Add to Chrome</a>
+        <span class="ab-btn ab-btn--soon ab-btn--lg">Coming soon<span class="visually-hidden"> to the Chrome Web Store</span></span>
+        <span class="ab-fine">The store listing is not live yet.</span>
       </p>
 
         <dl class="ab-ledger ab-ledger--wide">
@@ -23,8 +24,8 @@
           <div class="ab-ledger__row">
             <dt class="ab-ledger__term">1. Add it</dt>
             <dd class="ab-ledger__def">
-              <p>Press <strong>Add to Chrome</strong> at the top of this page. It opens the extension’s page on the <a class="ab-link" href="https://chromewebstore.google.com/detail/loch/cholegglblkeacfdjnnogaohmkogmckf">Chrome Web Store</a>; press <strong>Add to Chrome</strong> there and confirm. Brave and Edge install from the same page (Edge asks you once to allow extensions from other stores).</p>
-              <p>Press the puzzle-piece button in the toolbar and pin Miston, so that it is one press away.</p>
+              <p>The Chrome Web Store listing is coming soon. When it is live, this page will link to it, and Chrome, Brave and Edge will install from the same page (Edge asks you once to allow extensions from other stores).</p>
+              <p>Until then, load the extension by hand from the zip file below.</p>
             </dd>
           </div>
 
@@ -46,7 +47,7 @@
           <div class="ab-ledger__row">
             <dt class="ab-ledger__term">Updating</dt>
             <dd class="ab-ledger__def">
-              <p>Added from the Chrome Web Store, Miston updates itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Miston’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.</p>
+              <p>Once Miston is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Miston’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.</p>
             </dd>
           </div>
 
@@ -60,7 +61,7 @@
           <div class="ab-ledger__row">
             <dt class="ab-ledger__term">Or load it by hand</dt>
             <dd class="ab-ledger__def">
-              <p>The same extension is here as a zip file, for a browser without the store or for anyone who wants the file in hand. Loaded this way it does not update itself.</p>
+              <p>The extension is here as a zip file, for a browser without the store, for anyone who wants the file in hand, or for anyone who would rather not wait for the Chrome Web Store listing. Loaded this way it does not update itself.</p>
               <p class="ab-download">
                 <a class="ab-btn ab-btn--line" download href="/download/miston-extension-0.1.0.zip">Download Miston 0.1.0</a> <span class="ab-fine">A zip file, <span class="ab-num">6.7</span>&nbsp;MB. Most of that is the two files your browser uses to build proofs on your own machine.</span>
               </p>

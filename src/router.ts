@@ -21,7 +21,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   install: {
     title: 'Install Miston: get the extension',
     description:
-      'Add the Miston extension to Chrome, Brave or Edge from the Chrome Web Store, or download it and load it by hand, step by step.',
+      'The Miston extension is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, this page has the manual install steps, the zip file and its checksum.',
   },
   privacy: {
     title: 'Privacy: what the Miston site and extension keep',
