@@ -1,9 +1,9 @@
 {
-  "name": "velaira-website",
+  "name": "enclaven-website",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The Velaira website, rebuilt as a Vue 3 single-page application.",
+  "description": "The Enclaven website, rebuilt as a Vue 3 single-page application.",
   "license": "GPL-3.0-only",
   "engines": {
     "node": ">=22"

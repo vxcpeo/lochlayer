@@ -26,7 +26,7 @@ import { type ShieldedAddress, decodeShieldedAddress, encodeShieldedAddress } fr
 import { bytesToBigIntBE } from "./bytes";
 import type { TransactArgs } from "./codec";
 import { DEFAULT_COMMITMENT, FIELD_MODULUS, MAX_AMOUNT, PROGRAM_ID, TREE_DEPTH } from "./constants";
-import { VelairaError } from "./errors";
+import { EnclavenError } from "./errors";
 import { type TransactionLike, type TransactionTime, parseEventLogs, transactCallsOf, transactionTime } from "./events";
 import { type CompiledInstructionLike, decodeTransactInstruction } from "./instruction";
 import { type Note, createNote, noteCommitment } from "./note";
@@ -112,7 +112,7 @@ export const MAX_REPORT_TRANSACTIONS = 256;
  * came from someone else, or from a device that kept no record) ends its
  * branch; the verifier reports it as an origin that is not disclosed.
  *
- * @throws VelairaError `INVALID_ARGUMENT` if the trail is longer than {@link MAX_REPORT_TRANSACTIONS}.
+ * @throws EnclavenError `INVALID_ARGUMENT` if the trail is longer than {@link MAX_REPORT_TRANSACTIONS}.
  */
 export function buildSourceReport(withdrawal: TransactRecord, records: readonly TransactRecord[], programId: PublicKey = PROGRAM_ID): SourceReport {
   const byOutput = new Map<string, TransactRecord>();
@@ -128,7 +128,7 @@ export function buildSourceReport(withdrawal: TransactRecord, records: readonly 
       seen.add(creator);
       history.push(creator);
       queue.push(creator);
-      if (history.length >= MAX_REPORT_TRANSACTIONS) throw new VelairaError("INVALID_ARGUMENT", "the trail behind this withdrawal is too long for one report");
+      if (history.length >= MAX_REPORT_TRANSACTIONS) throw new EnclavenError("INVALID_ARGUMENT", "the trail behind this withdrawal is too long for one report");
     }
   }
   const disclose = ({ signature, inputs }: TransactRecord): TransactDisclosure => ({ ...(signature ? { signature } : {}), inputs });
@@ -143,7 +143,7 @@ const SIGNATURE = /^[1-9A-HJ-NP-Za-km-z]{64,88}$/;
 const MAX_DOCUMENT_LENGTH = 512 * 1024;
 
 function malformed(what: string): never {
-  throw new VelairaError("DECODE_FAILED", `not a valid Velaira disclosure: ${what}`);
+  throw new EnclavenError("DECODE_FAILED", `not a valid Enclaven disclosure: ${what}`);
 }
 
 function decimal(value: unknown, limit: bigint, what: string): bigint {
@@ -205,22 +205,22 @@ function parse(text: string, kind: string): Record<string, unknown> {
     return malformed("not JSON");
   }
   const parsed = record(value, "the document");
-  if (parsed.velaira !== kind) return malformed(`not a ${kind}`);
+  if (parsed.enclaven !== kind) return malformed(`not a ${kind}`);
   if (parsed.version !== 1) return malformed("unknown version");
   return parsed;
 }
 
 /**
- * A receipt as text: one line of JSON, `{"velaira":"receipt","version":1,...}`,
+ * A receipt as text: one line of JSON, `{"enclaven":"receipt","version":1,...}`,
  * numbers as decimal strings. Not secret from the payer or the recipient, who
  * know all of it; to anyone else it gives the amount and the recipient of this
  * one payment.
  */
 export function encodeReceipt(receipt: PaymentReceipt): string {
   const { amount, blinding } = createNote(receipt.note.amount, receipt.note.publicKey, receipt.note.blinding);
-  if (receipt.recipient.publicKey !== receipt.note.publicKey) throw new VelairaError("INVALID_ARGUMENT", "the receipt's note does not belong to its recipient");
+  if (receipt.recipient.publicKey !== receipt.note.publicKey) throw new EnclavenError("INVALID_ARGUMENT", "the receipt's note does not belong to its recipient");
   return JSON.stringify({
-    velaira: "receipt",
+    enclaven: "receipt",
     version: 1,
     programId: receipt.programId.toBase58(),
     nullifier: receipt.nullifier.toString(),
@@ -231,7 +231,7 @@ export function encodeReceipt(receipt: PaymentReceipt): string {
   });
 }
 
-/** @throws VelairaError `DECODE_FAILED` if `text` is not a receipt of version 1. */
+/** @throws EnclavenError `DECODE_FAILED` if `text` is not a receipt of version 1. */
 export function decodeReceipt(text: string): PaymentReceipt {
   const parsed = parse(text, "receipt");
   let recipient: ShieldedAddress;
@@ -250,14 +250,14 @@ export function decodeReceipt(text: string): PaymentReceipt {
 }
 
 /**
- * A report as text: JSON, `{"velaira":"source-report","version":1,...}`. It holds
+ * A report as text: JSON, `{"enclaven":"source-report","version":1,...}`. It holds
  * the amounts of the wallet's notes on the trail and the tags that show when
  * each was spent. Give it only to whoever is meant to see that.
  */
 export function encodeSourceReport(report: SourceReport): string {
-  if (report.history.length > MAX_REPORT_TRANSACTIONS) throw new VelairaError("INVALID_ARGUMENT", "too many transactions for one report");
+  if (report.history.length > MAX_REPORT_TRANSACTIONS) throw new EnclavenError("INVALID_ARGUMENT", "too many transactions for one report");
   return JSON.stringify({
-    velaira: "source-report",
+    enclaven: "source-report",
     version: 1,
     programId: report.programId.toBase58(),
     withdrawal: disclosureToJson(report.withdrawal),
@@ -265,7 +265,7 @@ export function encodeSourceReport(report: SourceReport): string {
   });
 }
 
-/** @throws VelairaError `DECODE_FAILED` if `text` is not a report of version 1. */
+/** @throws EnclavenError `DECODE_FAILED` if `text` is not a report of version 1. */
 export function decodeSourceReport(text: string): SourceReport {
   const parsed = parse(text, "source-report");
   if (!Array.isArray(parsed.history) || parsed.history.length > MAX_REPORT_TRANSACTIONS) return malformed("history is missing or too long");

@@ -1,6 +1,6 @@
 /**
  * Dusk and night: the two palettes. The choice is kept in localStorage under
- * `velaira:theme`; `?theme=dusk` or `?theme=night` shows a palette without saving
+ * `enclaven:theme`; `?theme=dusk` or `?theme=night` shows a palette without saving
  * it, exactly as public/boot.js does before the page is drawn.
  */
 
@@ -18,7 +18,7 @@ export function themeFromQuery(search: string = typeof location === 'undefined' 
   return match ? (match[1] as Theme) : null;
 }
 
-/** The palette the page should start with: the query first, then the saved one, then night. */
+/** The palette the page should start with: the query first, then the saved one, then dusk. */
 export function initialTheme(): Theme {
   const asked = themeFromQuery();
   if (asked) return asked;
@@ -29,7 +29,7 @@ export function initialTheme(): Theme {
     // A browser that refuses storage gets the default.
   }
   const applied = typeof document === 'undefined' ? null : document.documentElement.getAttribute('data-theme');
-  return applied === 'dusk' ? 'dusk' : 'night';
+  return applied === 'night' ? 'night' : 'dusk';
 }
 
 /** Applies a palette to the document, and saves it unless told not to. */

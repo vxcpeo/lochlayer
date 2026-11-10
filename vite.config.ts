@@ -15,14 +15,14 @@ export const PRODUCTION_CSP = [
   "img-src 'self' data:",
   "font-src 'self'",
   "connect-src 'self' https: http://localhost:* http://127.0.0.1:*",
-  "form-action 'self' https://waitlist.velaira.xyz",
+  "form-action 'self' https://waitlist.enclaven.xyz",
   "base-uri 'none'",
   "object-src 'none'",
 ].join('; ');
 
 function productionPolicy(): Plugin {
   return {
-    name: 'velaira-production-policy',
+    name: 'enclaven-production-policy',
     apply: 'build',
     transformIndexHtml(html) {
       return html.replace(/<meta[^>]*http-equiv="Content-Security-Policy"[^>]*>/i, `<meta http-equiv="Content-Security-Policy" content="${PRODUCTION_CSP}">`);

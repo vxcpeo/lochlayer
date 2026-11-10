@@ -1,6 +1,6 @@
 <template>
   <!-- The icon sprite, once per page. Icons are used as <use href="#i-name">. -->
-  <svg class="ab-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+  <svg class="cb-sprite" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
 <symbol id="i-caution" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.25L17.5 16.5h-15z"></path><path d="M10 8.5v3.75"></path><path d="M10 14.4v.1"></path></symbol>
   <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"></path></symbol>
   <symbol id="i-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7.5l5 5 5-5"></path></symbol>

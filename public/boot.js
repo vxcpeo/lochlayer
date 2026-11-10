@@ -1,5 +1,5 @@
 /*
-  Velaira website: the part that has to run before the page is drawn.
+  Enclaven website: the part that has to run before the page is drawn.
 
   A classic script, loaded from this origin in <head>. It does three things
   and nothing else:
@@ -50,7 +50,7 @@
 
   // ?theme=night or ?theme=dusk shows the page in that palette without saving it.
   var asked = /[?&]theme=(dusk|night)(?:&|$)/.exec(window.location.search);
-  var theme = asked ? asked[1] : read("velaira:theme");
+  var theme = asked ? asked[1] : read("enclaven:theme");
   if (theme === "night" || theme === "dusk") root.setAttribute("data-theme", theme);
 
   // http or https, a host of letters, digits and hyphens in labels parted by dots, an optional port.
@@ -83,9 +83,9 @@
   var allow = function (origin) {
     if (origin && origin !== window.location.origin && sources.indexOf(origin) < 0) sources.push(origin);
   };
-  var stored = meta("velaira:custom-rpc") === "any" ? read("velaira:rpc") : null;
-  allow((stored !== null && ownEndpoint(stored)) || plainOrigin(meta("velaira:rpc")));
-  allow(plainOrigin(meta("velaira:waitlist")));
+  var stored = meta("enclaven:custom-rpc") === "any" ? read("enclaven:rpc") : null;
+  allow((stored !== null && ownEndpoint(stored)) || plainOrigin(meta("enclaven:rpc")));
+  allow(plainOrigin(meta("enclaven:waitlist")));
 
   // The policy the server wrote into the page, with its connect-src narrowed.
   var narrow = "connect-src " + sources.join(" ");
@@ -107,6 +107,6 @@
   var policy = document.createElement("meta");
   policy.setAttribute("http-equiv", "Content-Security-Policy");
   policy.setAttribute("content", directives.join("; "));
-  policy.setAttribute("data-velaira-policy", "");
+  policy.setAttribute("data-enclaven-policy", "");
   document.head.appendChild(policy);
 })();

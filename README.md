@@ -1,6 +1,6 @@
-# The Velaira website, rebuilt in Vue
+# The Enclaven website, rebuilt in Vue
 
-A Vue 3 single-page application that reproduces <https://velaira.xyz> — the
+A Vue 3 single-page application that reproduces <https://enclaven.xyz> — the
 five pages, the two palettes, the scroll story, the leak scanner and its report,
 and the receipt verifier — with the reference site's own CSS, fonts, marks and
 copy.
@@ -19,12 +19,13 @@ npm run typecheck
 
 | Path | What it is |
 | --- | --- |
-| `src/styles/signal.css` | The Signal Navy presentation layer: tokens, top index, bento canvas, tiles, prose, forms, console, footer |
-| `src/styles/signal-report.css` | The leak report, its figures and the extension popup, on the same token set |
+| `src/styles/cobalt.css` | The Cobalt Blueprint presentation layer: tokens for the two palettes, the glyph rail, the pill command bar, running heads, the stage grid, rules, forms, console and the status strip |
+| `src/styles/cobalt-report.css` | The leak report, its plots and its sheets, on the same token set |
 | `public/boot.js` | Runs before the page: `data-js`, the saved palette, the narrowed CSP |
-| `public/media/` | The V marks, the depth plate, the star field, the fonts, favicon |
-| `src/App.vue` | The icon sprite, skip link, top index, the 12-column canvas and the footer |
-| `src/components/Signal*.vue` | The shell (`Top`, `Index`, `Foot`) and the home sections (`Deck`, `Steps`, `Scan`, `Keeps`, `Cautions`) |
+| `public/media/` | The marks, the blueprint plate, the fonts, favicon |
+| `src/App.vue` | The icon sprite, skip link, glyph rail, command bar, page column and status strip |
+| `src/components/Cobalt*.vue` | The shell: the rail (`Rail`), the command bar (`Bar`) and the status strip (`Status`) |
+| `src/components/home/*.vue` | The home chapters: the popup figure, the three steps, the scanner, the six ideas and the registers |
 | `src/router.ts` | Five routes, the per-page title/description, hash scrolling |
 | `src/views/` | `HomeView`, `DocsView`, `InstallView`, `PrivacyView`, `VerifyView` |
 | `src/lib/` | Endpoint rules, CSP, theme, cipher, story, scanner wrapper, report builder, verifier, and the vendored reference packages |
@@ -57,11 +58,15 @@ its privacy page. `src/lib/policy.ts` is the same rule in TypeScript, and
 ### What is not identical
 
 The copy, the routes, the behaviour and the figures follow the reference. The
-presentation does not: it was reskinned around **Signal Navy / Bento Canvas** —
-a deep navy canvas of touching tiles, a slim top index, a cyan signal accent and
-a sonar motif — so the layout, type and colour are this site's own. The old
-underwater scene's still drawings survive as the depth plate in the hero and the
-step tiles. `.reskin/REPORT.md` holds the reskin's evidence.
+presentation does not: it was reskinned around **Cobalt Blueprint / Command
+Rail** — a pale blueprint ground ruled with a fine cobalt grid, white sheets that
+butt against hairlines, one electric cobalt for rules, marks, fills and links, a
+fixed glyph rail down the left edge, a pill command bar floating under the top
+edge and oversized running heads — so the layout, type and colour are this
+site's own. The two temperatures are `dusk` (the default: warm paper) and
+`night` (deep ink blue). The old underwater plate survives as a low-contrast
+blueprint watermark in the running head and the step rows. `.reskin/REPORT.md`
+holds the reskin's evidence.
 
 This is a single-page application, where the reference is server-rendered: a
 static host must send `index.html` for the four content routes, and the copy is
@@ -69,5 +74,5 @@ not readable with JavaScript off.
 
 ## Licence
 
-The vendored packages and the modifications to them are GPL-3.0-only. See
-`../NOTICE.md` for the attribution and for the marks, which are Velaira's.
+The vendored packages and the modifications to them are GPL-3.0-only. See the
+repository README for the attribution; the marks are Enclaven's.

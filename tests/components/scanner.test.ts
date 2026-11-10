@@ -1,7 +1,7 @@
 ﻿import { flushPromises, mount } from '@vue/test-utils';
 import { nextTick } from 'vue';
 import { describe, expect, it, vi } from 'vitest';
-import BpScan from '@/components/home/SignalScan.vue';
+import BpScan from '@/components/home/ScanChapter.vue';
 import type { ScanOutcome, ScanProgress } from '@/lib/scanner';
 import type { LeakReport } from '@/lib/scanner-core/types';
 
@@ -52,8 +52,8 @@ describe('the leak scanner on the start page', () => {
   it('shows the example report, collapsed, before any scan', async () => {
     const wrapper = mount(BpScan, { props: { scan: fakeScan({ kind: 'empty' }) } });
     await flushPromises();
-    expect(wrapper.find('#scan-report details.sn-rep-example').exists()).toBe(true);
-    expect(wrapper.find('#scan-report .sn-rep-sheet .sn-rep-flag').text()).toBe('Example report');
+    expect(wrapper.find('#scan-report details.cb-rep-example').exists()).toBe(true);
+    expect(wrapper.find('#scan-report .cb-rep-sheet .cb-rep-flag').text()).toBe('Example report');
     expect(wrapper.find('#scan-report').html()).toContain('An invented wallet, scored 49 of 100');
   });
 
@@ -99,9 +99,9 @@ describe('the leak scanner on the start page', () => {
     expect(reportHtml).toContain('74');
     expect(reportHtml).toContain('data-clear-report');
     expect(wrapper.findAll('#scan-report [data-chart]')).toHaveLength(3);
-    expect(wrapper.find('#scan-report [data-chart="bed"]').html()).toContain('sn-plot-bed');
-    expect(wrapper.find('#scan-report [data-chart="hours"]').html()).toContain('sn-plot-hours');
-    expect(wrapper.find('#scan-report [data-chart="who"]').html()).toContain('sn-plot-who');
+    expect(wrapper.find('#scan-report [data-chart="bed"]').html()).toContain('cb-plot-bed');
+    expect(wrapper.find('#scan-report [data-chart="hours"]').html()).toContain('cb-plot-hours');
+    expect(wrapper.find('#scan-report [data-chart="who"]').html()).toContain('cb-plot-who');
   });
 
   it('puts the example back when the live report is cleared', async () => {
@@ -110,10 +110,10 @@ describe('the leak scanner on the start page', () => {
     await wrapper.find('#address').setValue(ME);
     await wrapper.find('#scan-form').trigger('submit');
     await settle();
-    expect(wrapper.find('#scan-report .sn-rep-name').exists()).toBe(true);
+    expect(wrapper.find('#scan-report .cb-rep-name').exists()).toBe(true);
     await wrapper.find('[data-clear-report]').trigger('click');
     await nextTick();
-    expect(wrapper.find('#scan-report .sn-rep-example').exists()).toBe(true);
+    expect(wrapper.find('#scan-report .cb-rep-example').exists()).toBe(true);
     expect(wrapper.find('#scan-note').text()).toContain('Report cleared.');
     expect((wrapper.find('#address').element as HTMLInputElement).value).toBe('');
   });
@@ -133,11 +133,11 @@ describe('the leak scanner on the start page', () => {
     await wrapper.find('#address').setValue(ME);
     await wrapper.find('#scan-form').trigger('submit');
     await settle();
-    expect(wrapper.find('.sn-fail__title').text()).toContain('The RPC is turning requests away');
-    expect(wrapper.find('.sn-fail').attributes('data-reason')).toBe('rate-limited');
-    expect(wrapper.find('.sn-fail .sn-cluster').text()).toContain('Scan again');
-    expect(wrapper.find('.sn-fail .sn-cluster').text()).toContain('Use your own RPC');
-    expect(wrapper.find('.sn-fail').attributes('role')).toBe('alert');
+    expect(wrapper.find('.cb-fail__title').text()).toContain('The RPC is turning requests away');
+    expect(wrapper.find('.cb-fail').attributes('data-reason')).toBe('rate-limited');
+    expect(wrapper.find('.cb-fail .cb-cluster').text()).toContain('Scan again');
+    expect(wrapper.find('.cb-fail .cb-cluster').text()).toContain('Use your own RPC');
+    expect(wrapper.find('.cb-fail').attributes('role')).toBe('alert');
   });
 
   it('says when an address has no history at all', async () => {
@@ -146,8 +146,8 @@ describe('the leak scanner on the start page', () => {
     await wrapper.find('#address').setValue(ME);
     await wrapper.find('#scan-form').trigger('submit');
     await settle();
-    expect(wrapper.find('#scan-empty .sn-none__title').text()).toBe('Nothing found for this address');
-    expect(wrapper.find('#scan-empty').text()).toContain('rpc.velaira.xyz has no transactions and no balance for it.');
+    expect(wrapper.find('#scan-empty .cb-none__title').text()).toBe('Nothing found for this address');
+    expect(wrapper.find('#scan-empty').text()).toContain('rpc.enclaven.xyz has no transactions and no balance for it.');
   });
 
   it('validates an endpoint before saving it, in the reference words', async () => {

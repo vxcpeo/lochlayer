@@ -10,9 +10,9 @@ describe('the palette', () => {
     expect(themeFromQuery('')).toBeNull();
   });
 
-  it('starts from the query, then from storage, then from night', () => {
-    expect(initialTheme()).toBe('night');
-    localStorage.setItem('velaira:theme', 'dusk');
+  it('starts from the query, then from storage, then from dusk', () => {
+    expect(initialTheme()).toBe('dusk');
+    localStorage.setItem('enclaven:theme', 'dusk');
     expect(initialTheme()).toBe('dusk');
     window.history.replaceState(null, '', '/?theme=night');
     expect(initialTheme()).toBe('night');
@@ -23,10 +23,10 @@ describe('the palette', () => {
     applyTheme('dusk');
     expect(theme.value).toBe('dusk');
     expect(document.documentElement.getAttribute('data-theme')).toBe('dusk');
-    expect(localStorage.getItem('velaira:theme')).toBe('dusk');
+    expect(localStorage.getItem('enclaven:theme')).toBe('dusk');
     applyTheme('night', { save: false });
     expect(theme.value).toBe('night');
-    expect(localStorage.getItem('velaira:theme')).toBe('dusk');
+    expect(localStorage.getItem('enclaven:theme')).toBe('dusk');
   });
 
   it('moves between the two with the arrow keys, wrapping around', () => {

@@ -20,7 +20,7 @@ const receipt: VerifiedReceipt = {
   ok: true,
   signature: '5VERYlongSignatureThatIsNotRealButHasTheRightShape000000000000000000000000000000',
   amount: 1_500_000_000n,
-  recipient: 'velaira1qy35w8v6c5d3j4k2m9n0p8r7s6t5u4v3w2x1y0z',
+  recipient: 'enclaven1qy35w8v6c5d3j4k2m9n0p8r7s6t5u4v3w2x1y0z',
   blockTime: Date.UTC(2026, 9, 19, 8, 16) / 1000,
   slot: 350_000_000,
   commitment: 123n,
@@ -52,14 +52,14 @@ const source: VerifiedSource = {
 
 describe('reading a document', () => {
   it('tells the four kinds apart by their first characters', () => {
-    expect(classifyDocument('velairaview1qqqq')).toBe('viewing-key');
-    expect(classifyDocument('velairaclaim1abcdef')).toBe('claim');
-    expect(classifyDocument('{"velaira":"receipt"}')).toBe('receipt');
-    expect(classifyDocument('{"velaira":"source-report"}')).toBe('report');
-    expect(classifyDocument('{"velaira":"something-else"}')).toBe('unknown');
+    expect(classifyDocument('enclavenview1qqqq')).toBe('viewing-key');
+    expect(classifyDocument('enclavenclaim1abcdef')).toBe('claim');
+    expect(classifyDocument('{"enclaven":"receipt"}')).toBe('receipt');
+    expect(classifyDocument('{"enclaven":"source-report"}')).toBe('report');
+    expect(classifyDocument('{"enclaven":"something-else"}')).toBe('unknown');
     expect(classifyDocument('hello')).toBe('unknown');
     expect(classifyDocument('{not json')).toBe('unknown');
-    expect(classifyDocument('  velairaview1qqq  ')).toBe('viewing-key');
+    expect(classifyDocument('  enclavenview1qqq  ')).toBe('viewing-key');
   });
 
   it('writes lamports as the design system writes SOL', () => {
@@ -153,23 +153,23 @@ describe('checking a document', () => {
   it('refuses what it cannot read, and says what it can', async () => {
     const unknown = await checkDocument('hello', connection, 'rpc.example.com');
     expect(unknown.title).toBe('This is not something this page can check.');
-    expect(unknown.lines[0]).toContain('Paste a receipt or a report exactly as it was copied from Velaira');
+    expect(unknown.lines[0]).toContain('Paste a receipt or a report exactly as it was copied from Enclaven');
   });
 
   it('treats a claim link as money, not as a document', async () => {
-    const claim = await checkDocument('velairaclaim1abcdef', connection, 'rpc.example.com');
+    const claim = await checkDocument('enclavenclaim1abcdef', connection, 'rpc.example.com');
     expect(claim.title).toBe('That is a claim link, not something to check.');
     expect(claim.lines[0]).toContain('A claim link is money');
   });
 
   it('calls a receipt too short to decode unreadable', async () => {
-    const result: VerifyResult = await checkDocument('{"velaira":"receipt"}', connection, 'rpc.example.com');
+    const result: VerifyResult = await checkDocument('{"enclaven":"receipt"}', connection, 'rpc.example.com');
     expect(result.title).toBe('This could not be read.');
     expect(result.ok).toBe(false);
   });
 
   it('calls a report too short to decode unreadable', async () => {
-    const result = await checkDocument('{"velaira":"source-report"}', connection, 'rpc.example.com');
+    const result = await checkDocument('{"enclaven":"source-report"}', connection, 'rpc.example.com');
     expect(result.title).toBe('This could not be read.');
   });
 });

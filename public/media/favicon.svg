@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="velaira-favicon-t">
-  <title id="velaira-favicon-t">Velaira</title>
-  <rect width="64" height="64" rx="14" fill="#1f8fe0"/>
-  <path d="M18.84 16.96 32.00 41.40 45.16 16.96" fill="none" stroke="#f2f7ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M19.78 49.39H44.22" fill="none" stroke="#7cc4ff" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="enclaven-favicon-t">
+  <title id="enclaven-favicon-t">Enclaven</title>
+  <rect width="64" height="64" rx="14" fill="#0000ff"/>
+  <path d="M42.50 17.00H21.50V45.00H42.50" fill="none" stroke="#fbfaf6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21.50 31.00H38.50" fill="none" stroke="#fbfaf6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M20.00 52.50H44.00" fill="none" stroke="#c9ccff" stroke-width="3" stroke-linecap="round" opacity="0.95"/>
 </svg>

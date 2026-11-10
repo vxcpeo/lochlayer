@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T17:00:37.888Z",
+  "generatedAt": "2026-11-09T18:05:55.738Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/lochlayer/website",
-    "name": "velaira-website",
+    "name": "enclaven-website",
     "vueVersion": "^3.5.44",
     "nuxt": false,
     "dependencies": [
@@ -26,7 +26,7 @@
       "vue-router",
       "vue-tsc"
     ],
-    "packageManager": "npm",
+    "packageManager": "pnpm",
     "scripts": {
       "dev": "vite",
       "build": "vue-tsc --noEmit && vite build",
@@ -40,14 +40,14 @@
     "frameworks": []
   },
   "stats": {
-    "filesScanned": 65,
+    "filesScanned": 66,
     "vueFiles": 15,
     "routes": 6,
     "staticTextTokens": 735,
     "bindingTokens": 42,
     "eventTokens": 14,
-    "classNames": 278,
-    "colors": 60
+    "classNames": 247,
+    "colors": 71
   },
   "routes": [
     {
@@ -59,7 +59,7 @@
       "dynamic": false
     },
     {
-      "path": "/download/velaira-extension-0.1.0.zip",
+      "path": "/download/enclaven-extension-0.1.0.zip",
       "dynamic": false,
       "source": "link"
     },
@@ -78,8 +78,8 @@
   ],
   "unresolvedRoutes": [],
   "archetype": {
-    "id": "marketing-stack",
-    "family": "editorial",
+    "id": "bento-canvas",
+    "family": "spatial",
     "traits": {
       "sidebar": false,
       "topbar": false,
@@ -93,554 +93,518 @@
       "sticky": true,
       "orbital": false,
       "terminal": true,
-      "bento": false,
+      "bento": true,
       "ticker": false,
       "gallery": false
     }
   },
   "palette": [
     {
+      "hex": "#04101f",
+      "count": 9
+    },
+    {
+      "hex": "#0c2547",
+      "count": 8
+    },
+    {
+      "hex": "#12315a",
+      "count": 8
+    },
+    {
       "hex": "#000000",
+      "count": 6
+    },
+    {
+      "hex": "#04121f",
       "count": 5
     },
     {
-      "hex": "#ffffff",
+      "hex": "#7cc4ff",
       "count": 4
     },
     {
-      "hex": "#0a121b",
+      "hex": "#28a0f0",
       "count": 3
     },
     {
-      "hex": "#1a0f1b",
-      "count": 3
-    },
-    {
-      "hex": "#e7a9df",
-      "count": 3
-    },
-    {
-      "hex": "#b6509e",
+      "hex": "#071a33",
       "count": 2
+    },
+    {
+      "hex": "#000a1e",
+      "count": 1
+    },
+    {
+      "hex": "#060d1a",
+      "count": 1
+    },
+    {
+      "hex": "#0a1f38",
+      "count": 1
+    },
+    {
+      "hex": "#0b1428",
+      "count": 1
+    },
+    {
+      "hex": "#0d2f52",
+      "count": 1
+    },
+    {
+      "hex": "#0d9ee8",
+      "count": 1
+    },
+    {
+      "hex": "#0e2d52",
+      "count": 1
+    },
+    {
+      "hex": "#101f3c",
+      "count": 1
+    },
+    {
+      "hex": "#122b49",
+      "count": 1
+    },
+    {
+      "hex": "#12aaff",
+      "count": 1
+    },
+    {
+      "hex": "#152a47",
+      "count": 1
+    },
+    {
+      "hex": "#16305a",
+      "count": 1
+    },
+    {
+      "hex": "#163a68",
+      "count": 1
+    },
+    {
+      "hex": "#1b3a60",
+      "count": 1
+    },
+    {
+      "hex": "#1b3a6b",
+      "count": 1
+    },
+    {
+      "hex": "#1d3556",
+      "count": 1
+    },
+    {
+      "hex": "#1f8fe0",
+      "count": 1
+    },
+    {
+      "hex": "#2a4f7d",
+      "count": 1
+    },
+    {
+      "hex": "#2b4e7c",
+      "count": 1
+    },
+    {
+      "hex": "#4ade80",
+      "count": 1
+    },
+    {
+      "hex": "#74bdf7",
+      "count": 1
+    },
+    {
+      "hex": "#93a8c4",
+      "count": 1
+    },
+    {
+      "hex": "#9db2cc",
+      "count": 1
     },
     {
       "hex": "#f2c94c",
-      "count": 2
-    },
-    {
-      "hex": "#080d14",
-      "count": 1
-    },
-    {
-      "hex": "#0e1722",
-      "count": 1
-    },
-    {
-      "hex": "#101c28",
-      "count": 1
-    },
-    {
-      "hex": "#121d2a",
-      "count": 1
-    },
-    {
-      "hex": "#140b14",
-      "count": 1
-    },
-    {
-      "hex": "#17232f",
-      "count": 1
-    },
-    {
-      "hex": "#182635",
-      "count": 1
-    },
-    {
-      "hex": "#1e1220",
-      "count": 1
-    },
-    {
-      "hex": "#1f2e3d",
-      "count": 1
-    },
-    {
-      "hex": "#241222",
-      "count": 1
-    },
-    {
-      "hex": "#241c0d",
-      "count": 1
-    },
-    {
-      "hex": "#261628",
-      "count": 1
-    },
-    {
-      "hex": "#2a1630",
-      "count": 1
-    },
-    {
-      "hex": "#2c1930",
-      "count": 1
-    },
-    {
-      "hex": "#2c4155",
-      "count": 1
-    },
-    {
-      "hex": "#2ebac6",
-      "count": 1
-    },
-    {
-      "hex": "#2f1c31",
-      "count": 1
-    },
-    {
-      "hex": "#2f2411",
-      "count": 1
-    },
-    {
-      "hex": "#31465a",
-      "count": 1
-    },
-    {
-      "hex": "#35163a",
-      "count": 1
-    },
-    {
-      "hex": "#3a2340",
-      "count": 1
-    },
-    {
-      "hex": "#43cbd4",
-      "count": 1
-    },
-    {
-      "hex": "#513258",
-      "count": 1
-    },
-    {
-      "hex": "#5ce1a0",
-      "count": 1
-    },
-    {
-      "hex": "#74e8b2",
       "count": 1
     }
   ],
   "fonts": [],
   "classNames": [
     "?",
-    "[",
-    "ab-actions",
-    "ab-area",
-    "ab-band",
-    "ab-band__body",
-    "ab-band__gauge",
-    "ab-band__head",
-    "ab-band__lede",
-    "ab-band__title",
-    "ab-bar",
-    "ab-bar__tools",
-    "ab-brand",
-    "ab-brand__mark",
-    "ab-brand__mark--night",
-    "ab-brand__word",
-    "ab-btn",
-    "ab-btn--fill",
-    "ab-btn--hot",
-    "ab-btn--lg",
-    "ab-btn--line",
-    "ab-btn--quiet",
-    "ab-btn--sm",
-    "ab-btn--soon",
-    "ab-btn--stack",
-    "ab-callout",
-    "ab-callout--framed",
-    "ab-callout--inline",
-    "ab-callout--top",
-    "ab-callout--warn",
-    "ab-callout__title",
-    "ab-caption",
-    "ab-check",
-    "ab-check__body",
-    "ab-check__console",
-    "ab-check__result",
-    "ab-cluster",
-    "ab-code",
-    "ab-column",
-    "ab-console",
-    "ab-console__beat",
-    "ab-console__form",
-    "ab-console__limit",
-    "ab-console__set",
-    "ab-cta",
-    "ab-cue",
-    "ab-depth",
-    "ab-device",
-    "ab-device__actions",
-    "ab-device__activity",
-    "ab-device__amount",
-    "ab-device__bath",
-    "ab-device__brand",
-    "ab-device__chip",
-    "ab-device__delta",
-    "ab-device__label",
-    "ab-device__legend",
-    "ab-device__note",
-    "ab-device__over",
-    "ab-device__pane",
-    "ab-device__pane--open",
-    "ab-device__row",
-    "ab-device__rowhead",
-    "ab-device__rowmain",
-    "ab-device__rowmeta",
-    "ab-device__rowtitle",
-    "ab-device__score",
-    "ab-device__score-link",
-    "ab-device__score-of",
-    "ab-device__score-value",
-    "ab-device__top",
-    "ab-doc",
-    "ab-doc__body",
-    "ab-doc__frame",
-    "ab-doc__grid",
-    "ab-doc__head",
-    "ab-doc__list",
-    "ab-doc__rail",
-    "ab-doc__rail-title",
-    "ab-doc__section",
-    "ab-doc__section--wide",
-    "ab-doc__sections",
-    "ab-doc__toc",
-    "ab-download",
-    "ab-exposed",
-    "ab-fail",
-    "ab-fail__detail",
-    "ab-fail__title",
-    "ab-field",
-    "ab-field__err",
-    "ab-field__hint",
-    "ab-field__label",
-    "ab-field__line",
-    "ab-figure",
-    "ab-figure--xl",
-    "ab-fine",
-    "ab-fold",
-    "ab-fold__body",
-    "ab-frame",
-    "ab-glyph",
-    "ab-glyph--sm",
-    "ab-idea",
-    "ab-idea__more",
-    "ab-idea__pair",
-    "ab-idea__what",
-    "ab-ideas",
-    "ab-indexline",
-    "ab-indexline__item",
-    "ab-indexline__link",
-    "ab-indexline__list",
-    "ab-input",
-    "ab-input--lg",
-    "ab-input--mono",
-    "ab-jump",
-    "ab-keeps__figure",
-    "ab-keeps__more",
-    "ab-kept",
-    "ab-kept__tag",
-    "ab-keynote",
-    "ab-lead__lede",
-    "ab-lead__note",
-    "ab-ledger",
-    "ab-ledger--alarm",
-    "ab-ledger--wide",
-    "ab-ledger__def",
-    "ab-ledger__row",
-    "ab-ledger__term",
-    "ab-link",
-    "ab-meter",
-    "ab-meter__fill",
-    "ab-meter__stages",
-    "ab-meter__status",
-    "ab-meter__track",
-    "ab-mirror",
-    "ab-mirror__land",
-    "ab-mirror__water",
-    "ab-none",
-    "ab-none__title",
-    "ab-note",
-    "ab-notes",
-    "ab-num",
-    "ab-observe",
-    "ab-observe__tag",
-    "ab-pal",
-    "ab-pal__btn",
-    "ab-plate",
-    "ab-plate__figure",
-    "ab-plate__glass",
-    "ab-plot",
-    "ab-plot-bed",
-    "ab-plot-bedline",
-    "ab-plot-col",
-    "ab-plot-ground",
-    "ab-plot-hatch",
-    "ab-plot-hours",
-    "ab-plot-label",
-    "ab-plot-link",
-    "ab-plot-link-faint",
-    "ab-plot-node",
-    "ab-plot-quiet",
-    "ab-plot-rule",
-    "ab-plot-sounding",
-    "ab-plot-station",
-    "ab-plot-strong",
-    "ab-plot-surface",
-    "ab-plot-warn",
-    "ab-plot-water",
-    "ab-plot-who",
-    "ab-policy",
-    "ab-procedure",
-    "ab-qty",
-    "ab-readout",
-    "ab-readout-frame",
-    "ab-record",
-    "ab-record__cell",
-    "ab-record__key",
-    "ab-record__val",
-    "ab-rep-body",
-    "ab-rep-caption",
-    "ab-rep-clear",
-    "ab-rep-example",
-    "ab-rep-example-body",
-    "ab-rep-fig",
-    "ab-rep-figure",
-    "ab-rep-figure-less",
-    "ab-rep-figures",
-    "ab-rep-fine",
-    "ab-rep-fit",
-    "ab-rep-fit-bed",
-    "ab-rep-fit-hours",
-    "ab-rep-fit-who",
-    "ab-rep-flag",
-    "ab-rep-fold",
-    "ab-rep-head",
-    "ab-rep-list",
-    "ab-rep-name",
-    "ab-rep-row",
-    "ab-rep-row-open",
-    "ab-rep-row-total",
-    "ab-rep-score",
-    "ab-rep-score-figure",
-    "ab-rep-score-label",
-    "ab-rep-score-of",
-    "ab-rep-score-verdict",
-    "ab-rep-section",
-    "ab-rep-sev",
-    "ab-rep-sheet",
-    "ab-rep-title",
-    "ab-rep-what",
-    "ab-rise",
-    "ab-runhead",
-    "ab-runhead__action",
-    "ab-runhead__lede",
-    "ab-runhead__say",
-    "ab-runhead__title",
-    "ab-scan__aside",
-    "ab-scan__status",
-    "ab-seal",
-    "ab-seal--l",
-    "ab-seal--m",
-    "ab-seal--s",
-    "ab-select",
-    "ab-select-native",
-    "ab-sha",
-    "ab-sheet",
-    "ab-sheet--alarm",
-    "ab-sheet__body",
-    "ab-sheet__head",
-    "ab-sheet__title",
-    "ab-shielded",
-    "ab-sign",
-    "ab-spine",
-    "ab-spine__mark",
-    "ab-spine__route",
-    "ab-spine__routes",
-    "ab-spine__tail",
     "ab-sprite",
-    "ab-stage",
-    "ab-status",
-    "ab-status__band",
-    "ab-status__depth",
-    "ab-status__fine",
-    "ab-status__gauge",
-    "ab-status__id",
-    "ab-status__line",
-    "ab-status__links",
-    "ab-status__mark",
-    "ab-status__name",
-    "ab-status__note",
-    "ab-status__phase",
-    "ab-status__rail",
-    "ab-status__token",
-    "ab-status__words",
-    "ab-step",
-    "ab-step--dive",
-    "ab-step--move",
-    "ab-step--surface",
-    "ab-step__body",
-    "ab-step__n",
-    "ab-step__plate",
-    "ab-step__rail",
-    "ab-step__text",
-    "ab-step__title",
-    "ab-steps",
-    "ab-steps__strip",
-    "ab-table",
-    "ab-tablewrap",
-    "ab-token",
-    "ab-unit",
-    "ab-verify__band-title",
-    "ab-verify__form",
-    "ab-verify__section",
-    "ab-wet",
     "bath",
     "bath-frac",
     "bath-less",
+    "result.ok",
     "rowClass(row)",
+    "sn-actions",
+    "sn-band",
+    "sn-band__head",
+    "sn-band__lede",
+    "sn-band__title",
+    "sn-bento",
+    "sn-brand",
+    "sn-brand__mark",
+    "sn-brand__word",
+    "sn-btn",
+    "sn-btn--fill",
+    "sn-btn--lg",
+    "sn-btn--line",
+    "sn-btn--quiet",
+    "sn-btn--sm",
+    "sn-btn--soon",
+    "sn-callout",
+    "sn-callout--framed",
+    "sn-callout--inline",
+    "sn-callout--warn",
+    "sn-callout__title",
+    "sn-cluster",
+    "sn-code",
+    "sn-console",
+    "sn-console__form",
+    "sn-console__set",
+    "sn-contents",
+    "sn-contents__link",
+    "sn-contents__list",
+    "sn-contents__title",
+    "sn-cta",
+    "sn-cue",
+    "sn-deck",
+    "sn-deck__plate",
+    "sn-depth",
+    "sn-device",
+    "sn-device__actions",
+    "sn-device__activity",
+    "sn-device__amount",
+    "sn-device__bath",
+    "sn-device__brand",
+    "sn-device__chip",
+    "sn-device__delta",
+    "sn-device__label",
+    "sn-device__legend",
+    "sn-device__note",
+    "sn-device__over",
+    "sn-device__pane",
+    "sn-device__pane--open",
+    "sn-device__row",
+    "sn-device__rowhead",
+    "sn-device__rowmain",
+    "sn-device__rowmeta",
+    "sn-device__rowtitle",
+    "sn-device__score",
+    "sn-device__score-link",
+    "sn-device__score-of",
+    "sn-device__score-value",
+    "sn-device__top",
+    "sn-err",
+    "sn-exposed",
+    "sn-fail",
+    "sn-fail__detail",
+    "sn-fail__title",
+    "sn-field",
+    "sn-field__label",
+    "sn-field__line",
+    "sn-figure",
+    "sn-figure--xl",
+    "sn-fold",
+    "sn-fold__body",
+    "sn-foot",
+    "sn-foot__code",
+    "sn-foot__fine",
+    "sn-foot__id",
+    "sn-foot__inner",
+    "sn-foot__links",
+    "sn-foot__name",
+    "sn-foot__phase",
+    "sn-foot__token",
+    "sn-glyph",
+    "sn-glyph--sm",
+    "sn-head",
+    "sn-head__title",
+    "sn-hero",
+    "sn-hero__body",
+    "sn-hero__foot",
+    "sn-hero__gauge",
+    "sn-hero__land",
+    "sn-hero__note",
+    "sn-hero__plate",
+    "sn-hero__title",
+    "sn-hero__water",
+    "sn-hint",
+    "sn-index",
+    "sn-index__link",
+    "sn-index__list",
+    "sn-input",
+    "sn-input--lg",
+    "sn-input--mono",
+    "sn-keep",
+    "sn-keep__kept",
+    "sn-keep__text",
+    "sn-keep__title",
+    "sn-keeps",
+    "sn-keeps__figure",
+    "sn-keynote",
+    "sn-lede",
+    "sn-ledger",
+    "sn-ledger-group",
+    "sn-ledger-group__title",
+    "sn-ledger__def",
+    "sn-ledger__row",
+    "sn-ledger__term",
+    "sn-link",
+    "sn-main",
+    "sn-meter",
+    "sn-meter__fill",
+    "sn-meter__stages",
+    "sn-meter__status",
+    "sn-meter__track",
+    "sn-none",
+    "sn-none__title",
+    "sn-note",
+    "sn-note-inline",
+    "sn-num",
+    "sn-observe",
+    "sn-observe__tag",
+    "sn-pal",
+    "sn-pal__btn",
+    "sn-plate__caption",
+    "sn-plot",
+    "sn-plot-bed",
+    "sn-plot-bedline",
+    "sn-plot-col",
+    "sn-plot-ground",
+    "sn-plot-hatch",
+    "sn-plot-hours",
+    "sn-plot-label",
+    "sn-plot-link",
+    "sn-plot-link-faint",
+    "sn-plot-node",
+    "sn-plot-quiet",
+    "sn-plot-rule",
+    "sn-plot-sounding",
+    "sn-plot-station",
+    "sn-plot-strong",
+    "sn-plot-surface",
+    "sn-plot-warn",
+    "sn-plot-water",
+    "sn-plot-who",
+    "sn-prose",
+    "sn-readout",
+    "sn-readout__frame",
+    "sn-record",
+    "sn-record__cell",
+    "sn-record__key",
+    "sn-record__val",
+    "sn-rep-body",
+    "sn-rep-caption",
+    "sn-rep-clear",
+    "sn-rep-example",
+    "sn-rep-example-body",
+    "sn-rep-fig",
+    "sn-rep-figure",
+    "sn-rep-figure-less",
+    "sn-rep-figures",
+    "sn-rep-fine",
+    "sn-rep-fit",
+    "sn-rep-fit-bed",
+    "sn-rep-fit-hours",
+    "sn-rep-fit-who",
+    "sn-rep-flag",
+    "sn-rep-fold",
+    "sn-rep-head",
+    "sn-rep-list",
+    "sn-rep-name",
+    "sn-rep-row",
+    "sn-rep-row-open",
+    "sn-rep-row-total",
+    "sn-rep-score",
+    "sn-rep-score-figure",
+    "sn-rep-score-label",
+    "sn-rep-score-of",
+    "sn-rep-score-verdict",
+    "sn-rep-section",
+    "sn-rep-sev",
+    "sn-rep-sheet",
+    "sn-rep-title",
+    "sn-rep-what",
+    "sn-result",
+    "sn-result__body",
+    "sn-result__meta",
+    "sn-result__title",
+    "sn-rise",
+    "sn-route",
+    "sn-route__glyph",
+    "sn-routes",
+    "sn-scan__aside",
+    "sn-scan__console",
+    "sn-scan__fold",
+    "sn-scan__grid",
+    "sn-scan__report",
+    "sn-scan__status",
+    "sn-seal",
+    "sn-seal--l",
+    "sn-seal--m",
+    "sn-seal--s",
+    "sn-select",
+    "sn-sha",
+    "sn-sheet",
+    "sn-shielded",
+    "sn-sign",
+    "sn-skip",
+    "sn-step",
+    "sn-step__num",
+    "sn-step__plate",
+    "sn-step__text",
+    "sn-step__title",
+    "sn-steps",
+    "sn-steps__strip",
+    "sn-tablewrap",
+    "sn-tile",
+    "sn-tile--anchor",
+    "sn-tile--full",
+    "sn-tile--half",
+    "sn-tile--support",
+    "sn-tile--third",
+    "sn-tile__body",
+    "sn-tile__label",
+    "sn-tile__title",
+    "sn-tools",
+    "sn-top",
+    "sn-top__inner",
+    "sn-unit",
+    "sn-verify",
+    "sn-verify__aside",
+    "sn-verify__gauge",
+    "sn-wet",
     "visually-hidden"
   ],
   "designSignals": {
     "frameworks": [],
     "cssVars": [
-      "--abyss-accent",
-      "--abyss-accent-2",
-      "--abyss-accent-deep",
-      "--abyss-accent-safe",
-      "--abyss-accent-soft",
-      "--abyss-body",
-      "--abyss-danger",
-      "--abyss-display",
-      "--abyss-ease",
-      "--abyss-gap",
-      "--abyss-ground",
-      "--abyss-ground-2",
-      "--abyss-ink",
-      "--abyss-ink-2",
-      "--abyss-ink-3",
-      "--abyss-line",
-      "--abyss-line-2",
-      "--abyss-line-3",
-      "--abyss-max",
-      "--abyss-mono",
-      "--abyss-motion",
-      "--abyss-pad",
-      "--abyss-page-pad",
-      "--abyss-r",
-      "--abyss-r-lg",
-      "--abyss-r-sm",
-      "--abyss-rail",
-      "--abyss-shadow",
-      "--abyss-sheet",
-      "--abyss-sheet-2",
-      "--abyss-sheet-3",
-      "--abyss-success",
-      "--abyss-warning",
-      "--abyss-warning-soft",
-      "--active",
-      "--exact",
+      "--accent",
+      "--accent-2",
+      "--accent-safe",
+      "--accent-soft",
+      "--anchor",
+      "--bg",
+      "--bg-deep",
+      "--border",
+      "--danger",
+      "--display-tracking",
+      "--display-weight",
       "--fill",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--gap",
+      "--i",
+      "--ink",
+      "--label-tracking",
       "--line",
+      "--line-2",
+      "--line-3",
+      "--max-width",
+      "--motion-duration",
+      "--motion-ease",
+      "--muted",
+      "--muted-2",
+      "--page-pad",
       "--quiet",
-      "--soon"
+      "--radius-lg",
+      "--radius-md",
+      "--radius-sm",
+      "--shadow",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--success",
+      "--surface",
+      "--surface-alt",
+      "--surface-raised",
+      "--top-h",
+      "--warning"
     ],
     "colorVars": [
       {
-        "name": "--abyss-accent",
-        "value": "#d25fb4"
+        "name": "--accent",
+        "value": "#1f8fe0"
       },
       {
-        "name": "--abyss-accent-2",
-        "value": "#43cbd4"
+        "name": "--accent-2",
+        "value": "#0d9ee8"
       },
       {
-        "name": "--abyss-accent-deep",
-        "value": "#a8448e"
+        "name": "--accent-safe",
+        "value": "#74bdf7"
       },
       {
-        "name": "--abyss-accent-safe",
-        "value": "#f4bce9"
+        "name": "--accent-soft",
+        "value": "#0d2f52"
       },
       {
-        "name": "--abyss-accent-soft",
-        "value": "#35163a"
+        "name": "--bg",
+        "value": "#0b1428"
       },
       {
-        "name": "--abyss-danger",
-        "value": "#ffb0b0"
+        "name": "--bg-deep",
+        "value": "#060d1a"
       },
       {
-        "name": "--abyss-ground",
-        "value": "#140b14"
+        "name": "--danger",
+        "value": "#ff8f8f"
       },
       {
-        "name": "--abyss-ground-2",
-        "value": "#1a0f1b"
+        "name": "--ink",
+        "value": "#f2f7ff"
       },
       {
-        "name": "--abyss-ink",
-        "value": "#f7eef5"
+        "name": "--line",
+        "value": "#1d3556"
       },
       {
-        "name": "--abyss-ink-2",
-        "value": "#cbb4c6"
+        "name": "--line-2",
+        "value": "#152a47"
       },
       {
-        "name": "--abyss-ink-3",
-        "value": "#a892a3"
+        "name": "--line-3",
+        "value": "#2b4e7c"
       },
       {
-        "name": "--abyss-line",
-        "value": "#3a2340"
+        "name": "--muted",
+        "value": "#9db2cc"
       },
       {
-        "name": "--abyss-line-2",
-        "value": "#2c1930"
+        "name": "--muted-2",
+        "value": "#93a8c4"
       },
       {
-        "name": "--abyss-line-3",
-        "value": "#513258"
+        "name": "--success",
+        "value": "#4ade80"
       },
       {
-        "name": "--abyss-sheet",
-        "value": "#1e1220"
+        "name": "--surface",
+        "value": "#101f3c"
       },
       {
-        "name": "--abyss-sheet-2",
-        "value": "#261628"
+        "name": "--surface-alt",
+        "value": "#16305a"
       },
       {
-        "name": "--abyss-sheet-3",
-        "value": "#2f1c31"
+        "name": "--surface-raised",
+        "value": "#1b3a6b"
       },
       {
-        "name": "--abyss-success",
-        "value": "#74e8b2"
-      },
-      {
-        "name": "--abyss-warning",
-        "value": "#f7d464"
-      },
-      {
-        "name": "--abyss-warning-soft",
-        "value": "#2f2411"
+        "name": "--warning",
+        "value": "#f2c94c"
       }
     ],
     "mediaQueries": [
-      "@media (max-width: 1180px)",
-      "@media (max-width: 760px)",
+      "@media (max-width: 1080px)",
+      "@media (max-width: 720px)",
       "@media (max-width: 900px)",
-      "@media (min-width: 760px)",
-      "@media (prefers-reduced-motion: no-preference)",
       "@media (prefers-reduced-motion: reduce)"
     ],
     "darkMode": false
@@ -648,31 +612,24 @@
   "structure": {
     "tagCounts": {
       "a": 30,
-      "abyssindex": 5,
-      "abyssrail": 5,
-      "abyssstatus": 1,
-      "article": 18,
-      "bpcautions": 1,
-      "bpdeck": 1,
-      "bpkeeps": 1,
-      "bpscan": 1,
-      "bpsteps": 1,
+      "article": 1,
       "button": 16,
-      "circle": 6,
+      "circle": 20,
       "code": 50,
-      "dd": 69,
+      "dd": 45,
       "details": 2,
-      "div": 216,
-      "dl": 15,
-      "dt": 69,
+      "div": 158,
+      "dl": 12,
+      "dt": 45,
       "figcaption": 2,
       "figure": 2,
       "footer": 1,
       "form": 2,
+      "g": 4,
       "h1": 5,
-      "h2": 26,
+      "h2": 49,
       "h3": 11,
-      "header": 24,
+      "header": 5,
       "hr": 2,
       "img": 11,
       "input": 2,
@@ -681,24 +638,31 @@
       "main": 1,
       "nav": 3,
       "noscript": 2,
-      "ol": 3,
+      "ol": 2,
       "option": 4,
-      "p": 190,
-      "path": 50,
+      "p": 193,
+      "path": 55,
       "pre": 8,
       "rect": 1,
       "router-link": 3,
       "routerlink": 28,
       "routerview": 1,
-      "section": 11,
+      "section": 50,
       "select": 1,
+      "signalcautions": 1,
+      "signaldeck": 1,
+      "signalfoot": 1,
+      "signalindex": 1,
+      "signalkeeps": 1,
+      "signalscan": 1,
+      "signalsteps": 1,
+      "signaltop": 1,
       "siteicons": 1,
-      "slot": 1,
       "small": 3,
-      "span": 192,
+      "span": 183,
       "strong": 6,
       "summary": 2,
-      "svg": 28,
+      "svg": 30,
       "symbol": 21,
       "table": 5,
       "tbody": 5,
@@ -708,48 +672,114 @@
       "th": 44,
       "thead": 5,
       "tr": 35,
-      "ul": 8,
+      "ul": 9,
       "use": 27
     },
     "depthHistogram": {
-      "0": 17,
-      "1": 48,
-      "2": 111,
-      "3": 92,
-      "4": 141,
-      "5": 235,
-      "6": 230,
-      "7": 164,
-      "8": 134,
-      "9": 44,
-      "10": 76,
-      "11": 90,
-      "12": 17
+      "0": 52,
+      "1": 126,
+      "2": 276,
+      "3": 244,
+      "4": 197,
+      "5": 179,
+      "6": 175,
+      "7": 62,
+      "8": 9,
+      "9": 5,
+      "10": 1
     },
-    "maxDepth": 12,
+    "maxDepth": 10,
     "topLevelTags": [
       "siteicons",
       "a",
-      "routerview",
-      "nav",
-      "div",
+      "signaltop",
+      "main",
+      "signalfoot",
       "footer",
+      "nav",
+      "header",
       "svg",
       "section",
+      "figure",
+      "section",
+      "section",
+      "section",
+      "header",
+      "nav",
+      "article",
+      "section",
+      "signaldeck",
+      "signalsteps",
+      "signalscan",
+      "signalkeeps",
+      "signalcautions",
+      "header",
+      "div",
       "section",
       "section",
       "section",
       "section",
-      "abyssrail",
-      "abyssrail",
-      "abyssrail",
-      "abyssrail",
-      "abyssrail"
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "p",
+      "header",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "section",
+      "p",
+      "header",
+      "div",
+      "div",
+      "p"
     ],
     "skeletonSample": [
       "siteicons",
       "a",
-      "routerview",
+      "signaltop",
+      "main",
+      "  div",
+      "    signalindex",
+      "    routerview",
+      "signalfoot",
+      "footer",
+      "  div",
+      "    div",
+      "      img",
+      "      p",
+      "      p",
+      "      span",
+      "    ul",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        routerlink",
+      "      li",
+      "        a",
+      "      li",
+      "        a",
+      "    div",
+      "      p",
+      "      p",
+      "        code",
       "nav",
       "  ul",
       "    li",
@@ -758,73 +788,34 @@
       "      routerlink",
       "    li",
       "      routerlink",
-      "div",
-      "  nav",
-      "    span",
+      "header",
+      "  div",
+      "    routerlink",
       "      img",
-      "    ul",
-      "      li",
-      "        routerlink",
-      "          svg",
-      "            use",
-      "      li",
-      "        routerlink",
-      "          svg",
-      "            use",
-      "      li",
-      "        routerlink",
-      "          svg",
-      "            use",
-      "      li",
-      "        routerlink",
-      "          svg",
-      "            use",
-      "    span",
-      "  div",
-      "    header",
-      "      routerlink",
-      "        img",
-      "        img",
-      "        span",
-      "      div",
-      "        div",
-      "          button",
-      "        routerlink",
-      "    main",
-      "      slot",
-      "    abyssstatus",
-      "footer",
-      "  div",
-      "    span",
-      "    span",
-      "  div",
-      "    div",
       "      img",
-      "      div",
-      "        p",
-      "        p",
-      "    div",
+      "      span",
+      "    nav",
       "      ul",
       "        li",
       "          routerlink",
+      "            svg",
+      "              use",
       "        li",
       "          routerlink",
+      "            svg",
+      "              use",
       "        li",
       "          routerlink",
+      "            svg",
+      "              use",
       "        li",
       "          routerlink",
-      "        li",
-      "          routerlink",
-      "        li",
-      "          routerlink",
-      "        li",
-      "          a",
-      "        li",
-      "          a",
-      "  div",
-      "    p",
-      "    p",
-      "      code",
+      "            svg",
+      "              use",
+      "    div",
+      "      div",
+      "        button",
+      "      routerlink",
       "svg",
       "  symbol",
       "    path",
@@ -866,20 +857,26 @@
       "    path",
       "    path",
       "    path",
-      "  symbol"
+      "  symbol",
+      "    path",
+      "    path",
+      "    path",
+      "  symbol",
+      "    path",
+      "    path"
     ]
   },
   "contentContract": {
     "schemaVersion": 1,
     "meta": {
-      "projectName": "velaira-website",
+      "projectName": "enclaven-website",
       "title": "Privacy score 49 of 100, drawn as a stepped bed",
       "lang": "en"
     },
     "routes": [
       "/",
       "/docs",
-      "/download/velaira-extension-0.1.0.zip",
+      "/download/enclaven-extension-0.1.0.zip",
       "/install",
       "/privacy",
       "/verify"
@@ -938,15 +935,15 @@
         "count": 1
       },
       {
-        "value": ", somewhere it can stay, such as your Documents folder. The browser runs Velaira from that folder, so if you delete or move it later, Velaira stops working.",
+        "value": ", somewhere it can stay, such as your Documents folder. The browser runs Enclaven from that folder, so if you delete or move it later, Enclaven stops working.",
+        "count": 1
+      },
+      {
+        "value": ", the Enclaven RPC proxy, which this project runs.",
         "count": 1
       },
       {
         "value": ", the fee and the two encrypted notes. Their hash is",
-        "count": 1
-      },
-      {
-        "value": ", the Velaira RPC proxy, which this project runs.",
         "count": 1
       },
       {
@@ -986,7 +983,7 @@
         "count": 1
       },
       {
-        "value": ". If Velaira says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
+        "value": ". If Enclaven says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
         "count": 1
       },
       {
@@ -1030,7 +1027,7 @@
         "count": 1
       },
       {
-        "value": "$VELAIRA token:",
+        "value": "$ENCLAVEN token:",
         "count": 1
       },
       {
@@ -1358,10 +1355,6 @@
         "count": 1
       },
       {
-        "value": "A Velaira user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
-        "count": 1
-      },
-      {
         "value": "A viewing key",
         "count": 2
       },
@@ -1410,11 +1403,15 @@
         "count": 1
       },
       {
-        "value": "an address receive an amount from the Velaira, and when. Not which deposit it came from.",
+        "value": "an address receive an amount from the Enclaven, and when. Not which deposit it came from.",
         "count": 1
       },
       {
         "value": "An admin key",
+        "count": 1
+      },
+      {
+        "value": "An Enclaven user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
         "count": 1
       },
       {
@@ -1490,7 +1487,7 @@
         "count": 1
       },
       {
-        "value": "By default, the Velaira RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
+        "value": "By default, the Enclaven RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
         "count": 1
       },
       {
@@ -1534,7 +1531,7 @@
         "count": 3
       },
       {
-        "value": "certutil -hashfile velaira-extension-0.1.0.zip SHA256",
+        "value": "certutil -hashfile enclaven-extension-0.1.0.zip SHA256",
         "count": 1
       },
       {
@@ -1570,7 +1567,7 @@
         "count": 2
       },
       {
-        "value": "claimSeed = sha256(\"Velaira claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"velairaclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://velaira.xyz/claim#code",
+        "value": "claimSeed = sha256(\"Enclaven claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"enclavenclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://enclaven.xyz/claim#code",
         "count": 1
       },
       {
@@ -1606,7 +1603,7 @@
         "count": 1
       },
       {
-        "value": "connect.velaira.xyz",
+        "value": "connect.enclaven.xyz",
         "count": 2
       },
       {
@@ -1650,7 +1647,7 @@
         "count": 1
       },
       {
-        "value": "directly inside it. Velaira appears in the list of extensions.",
+        "value": "directly inside it. Enclaven appears in the list of extensions.",
         "count": 1
       },
       {
@@ -1682,7 +1679,7 @@
         "count": 2
       },
       {
-        "value": "Download Velaira 0.1.0",
+        "value": "Download Enclaven 0.1.0",
         "count": 1
       },
       {
@@ -1714,7 +1711,47 @@
         "count": 1
       },
       {
-        "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"velaira-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"velaira-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
+        "value": "Enclaven",
+        "count": 4
+      },
+      {
+        "value": "Enclaven is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
+        "count": 1
+      },
+      {
+        "value": "Enclaven on X",
+        "count": 1
+      },
+      {
+        "value": "Enclaven reads the chain through an RPC endpoint. It starts with Enclaven’s own,",
+        "count": 1
+      },
+      {
+        "value": "Enclaven runs on Solana mainnet, with real SOL.",
+        "count": 1
+      },
+      {
+        "value": "Enclaven v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
+        "count": 1
+      },
+      {
+        "value": "enclaven_pool",
+        "count": 1
+      },
+      {
+        "value": "enclaven-extension-0.1.0",
+        "count": 1
+      },
+      {
+        "value": "enclaven1",
+        "count": 2
+      },
+      {
+        "value": "enclavenpay1",
+        "count": 1
+      },
+      {
+        "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"enclaven-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"enclaven-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
         "count": 1
       },
       {
@@ -1814,7 +1851,7 @@
         "count": 1
       },
       {
-        "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Velaira’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
+        "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Enclaven’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
         "count": 1
       },
       {
@@ -1826,7 +1863,7 @@
         "count": 1
       },
       {
-        "value": "How the Velaira keeps a payment private.",
+        "value": "How the Enclaven keeps a payment private.",
         "count": 1
       },
       {
@@ -1835,6 +1872,10 @@
       },
       {
         "value": "If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux:",
+        "count": 1
+      },
+      {
+        "value": "in Enclaven and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
         "count": 1
       },
       {
@@ -1862,12 +1903,8 @@
         "count": 1
       },
       {
-        "value": "In the Velaira. Visible only to you.",
+        "value": "In the Enclaven. Visible only to you.",
         "count": 2
-      },
-      {
-        "value": "in Velaira and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
-        "count": 1
       },
       {
         "value": "In your own browser",
@@ -1886,11 +1923,11 @@
         "count": 1
       },
       {
-        "value": "Install the extension",
+        "value": "Install Enclaven.",
         "count": 1
       },
       {
-        "value": "Install Velaira.",
+        "value": "Install the extension",
         "count": 1
       },
       {
@@ -1962,7 +1999,7 @@
         "count": 2
       },
       {
-        "value": "Leaks outside the Velaira",
+        "value": "Leaks outside the Enclaven",
         "count": 2
       },
       {
@@ -2002,7 +2039,7 @@
         "count": 1
       },
       {
-        "value": "message = \"Velaira key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Velaira note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Velaira self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Velaira payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"velaira\", publicKey || encryptionPublic) payment code = bech32m(\"velairapay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
+        "value": "message = \"Enclaven key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Enclaven note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Enclaven self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Enclaven payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"enclaven\", publicKey || encryptionPublic) payment code = bech32m(\"enclavenpay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
         "count": 1
       },
       {
@@ -2014,7 +2051,7 @@
         "count": 1
       },
       {
-        "value": "Move SOL from your public wallet into the Velaira. A screening authority checks where it came from and co-signs the deposit.",
+        "value": "Move SOL from your public wallet into the Enclaven. A screening authority checks where it came from and co-signs the deposit.",
         "count": 1
       },
       {
@@ -2082,7 +2119,7 @@
         "count": 1
       },
       {
-        "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Velaira extension keeps and sends.",
+        "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Enclaven extension keeps and sends.",
         "count": 1
       },
       {
@@ -2110,11 +2147,15 @@
         "count": 1
       },
       {
+        "value": "on Enclaven’s card on the extensions page. If you loaded it by hand, delete the folder too.",
+        "count": 1
+      },
+      {
         "value": "On mainnet, with real SOL",
         "count": 1
       },
       {
-        "value": "On the websites you visit, the extension offers the Velaira wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Velaira, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
+        "value": "On the websites you visit, the extension offers the Enclaven wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Enclaven, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
         "count": 1
       },
       {
@@ -2122,11 +2163,7 @@
         "count": 1
       },
       {
-        "value": "on Velaira’s card on the extensions page. If you loaded it by hand, delete the folder too.",
-        "count": 1
-      },
-      {
-        "value": "Once Velaira is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Velaira’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
+        "value": "Once Enclaven is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Enclaven’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
         "count": 1
       },
       {
@@ -2158,6 +2195,10 @@
         "count": 5
       },
       {
+        "value": "Open Enclaven from the toolbar and press",
+        "count": 1
+      },
+      {
         "value": "Open source",
         "count": 1
       },
@@ -2170,11 +2211,7 @@
         "count": 1
       },
       {
-        "value": "Open Velaira from the toolbar and press",
-        "count": 1
-      },
-      {
-        "value": "opens and your wallet asks you to sign one message, “Velaira key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
+        "value": "opens and your wallet asks you to sign one message, “Enclaven key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
         "count": 1
       },
       {
@@ -2202,7 +2239,7 @@
         "count": 1
       },
       {
-        "value": "Pay any other Velaira balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
+        "value": "Pay any other Enclaven balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
         "count": 1
       },
       {
@@ -2226,7 +2263,7 @@
         "count": 1
       },
       {
-        "value": "Press the puzzle-piece button in the toolbar and pin Velaira, so that it is one press away.",
+        "value": "Press the puzzle-piece button in the toolbar and pin Enclaven, so that it is one press away.",
         "count": 1
       },
       {
@@ -2338,7 +2375,7 @@
         "count": 1
       },
       {
-        "value": "relayer-mainnet.velaira.xyz",
+        "value": "relayer-mainnet.enclaven.xyz",
         "count": 1
       },
       {
@@ -2362,7 +2399,7 @@
         "count": 1
       },
       {
-        "value": "rpc.velaira.xyz",
+        "value": "rpc.enclaven.xyz",
         "count": 3
       },
       {
@@ -2382,7 +2419,7 @@
         "count": 1
       },
       {
-        "value": "screener-mainnet.velaira.xyz",
+        "value": "screener-mainnet.enclaven.xyz",
         "count": 1
       },
       {
@@ -2438,7 +2475,7 @@
         "count": 1
       },
       {
-        "value": "shasum -a 256 velaira-extension-0.1.0.zip",
+        "value": "shasum -a 256 enclaven-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -2526,7 +2563,7 @@
         "count": 1
       },
       {
-        "value": "Surface what you have in the Velaira first. Then press",
+        "value": "Surface what you have in the Enclaven first. Then press",
         "count": 1
       },
       {
@@ -2546,7 +2583,7 @@
         "count": 1
       },
       {
-        "value": "The $VELAIRA token",
+        "value": "The $ENCLAVEN token",
         "count": 1
       },
       {
@@ -2595,6 +2632,22 @@
       },
       {
         "value": "The destination, the exact amount and the time. Two nullifiers, two new commitments, the fee and the relayer",
+        "count": 1
+      },
+      {
+        "value": "The Enclaven",
+        "count": 2
+      },
+      {
+        "value": "The Enclaven extension",
+        "count": 1
+      },
+      {
+        "value": "The Enclaven is a shielded pool of SOL held by one Solana program,",
+        "count": 1
+      },
+      {
+        "value": "The Enclaven is not.",
         "count": 1
       },
       {
@@ -2770,7 +2823,7 @@
         "count": 1
       },
       {
-        "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Velaira RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
+        "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Enclaven RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
         "count": 1
       },
       {
@@ -2854,22 +2907,6 @@
         "count": 1
       },
       {
-        "value": "The Velaira",
-        "count": 2
-      },
-      {
-        "value": "The Velaira extension",
-        "count": 1
-      },
-      {
-        "value": "The Velaira is a shielded pool of SOL held by one Solana program,",
-        "count": 1
-      },
-      {
-        "value": "The Velaira is not.",
-        "count": 1
-      },
-      {
         "value": "the verify page",
         "count": 1
       },
@@ -2902,11 +2939,11 @@
         "count": 1
       },
       {
-        "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Velaira records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
+        "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Enclaven records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
         "count": 1
       },
       {
-        "value": "These checks are help and not a barrier. They see only the requests that come through the Velaira wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
+        "value": "These checks are help and not a barrier. They see only the requests that come through the Enclaven wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
         "count": 1
       },
       {
@@ -3066,46 +3103,6 @@
         "count": 1
       },
       {
-        "value": "Velaira",
-        "count": 4
-      },
-      {
-        "value": "Velaira is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
-        "count": 1
-      },
-      {
-        "value": "Velaira on X",
-        "count": 1
-      },
-      {
-        "value": "Velaira reads the chain through an RPC endpoint. It starts with Velaira’s own,",
-        "count": 1
-      },
-      {
-        "value": "Velaira runs on Solana mainnet, with real SOL.",
-        "count": 1
-      },
-      {
-        "value": "Velaira v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
-        "count": 1
-      },
-      {
-        "value": "velaira_pool",
-        "count": 1
-      },
-      {
-        "value": "velaira-extension-0.1.0",
-        "count": 1
-      },
-      {
-        "value": "velaira1",
-        "count": 2
-      },
-      {
-        "value": "velairapay1",
-        "count": 1
-      },
-      {
         "value": "wallet",
         "count": 1
       },
@@ -3170,7 +3167,7 @@
         "count": 1
       },
       {
-        "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Velaira is: unaudited software.",
+        "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Enclaven is: unaudited software.",
         "count": 1
       },
       {
@@ -3218,7 +3215,7 @@
         "count": 2
       },
       {
-        "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Velaira has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
+        "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Enclaven has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
         "count": 1
       },
       {
@@ -3226,7 +3223,7 @@
         "count": 1
       },
       {
-        "value": "your address, the amount, the time, and that it went into the Velaira.",
+        "value": "your address, the amount, the time, and that it went into the Enclaven.",
         "count": 1
       },
       {
@@ -3238,7 +3235,7 @@
         "count": 1
       },
       {
-        "value": "Your shielded keys come from your wallet’s signature on one message, “Velaira key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Velaira.",
+        "value": "Your shielded keys come from your wallet’s signature on one message, “Enclaven key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Enclaven.",
         "count": 1
       },
       {
@@ -3246,7 +3243,7 @@
         "count": 1
       },
       {
-        "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Velaira.",
+        "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Enclaven.",
         "count": 1
       },
       {
@@ -3267,7 +3264,7 @@
     "attributes": [
       {
         "name": "href",
-        "value": "/download/velaira-extension-0.1.0.zip",
+        "value": "/download/enclaven-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -3447,7 +3444,7 @@
       },
       {
         "name": "href",
-        "value": "https://x.com/velaira",
+        "value": "https://x.com/enclaven",
         "count": 1
       },
       {
@@ -3492,6 +3489,11 @@
       },
       {
         "name": "src",
+        "value": "/media/enclaven-plate.svg",
+        "count": 1
+      },
+      {
+        "name": "src",
         "value": "/media/mark-night.svg",
         "count": 1
       },
@@ -3508,11 +3510,6 @@
       {
         "name": "src",
         "value": "/media/mark.svg",
-        "count": 1
-      },
-      {
-        "name": "src",
-        "value": "/media/velaira-plate.svg",
         "count": 1
       },
       {
@@ -3833,7 +3830,7 @@
     "links": [
       {
         "kind": "href",
-        "target": "/download/velaira-extension-0.1.0.zip",
+        "target": "/download/enclaven-extension-0.1.0.zip",
         "count": 1
       },
       {
@@ -4013,7 +4010,7 @@
       },
       {
         "kind": "href",
-        "target": "https://x.com/velaira",
+        "target": "https://x.com/enclaven",
         "count": 1
       },
       {
@@ -4090,6 +4087,11 @@
       },
       {
         "kind": "src",
+        "value": "/media/enclaven-plate.svg",
+        "count": 1
+      },
+      {
+        "kind": "src",
         "value": "/media/mark-night.svg",
         "count": 1
       },
@@ -4106,11 +4108,6 @@
       {
         "kind": "src",
         "value": "/media/mark.svg",
-        "count": 1
-      },
-      {
-        "kind": "src",
-        "value": "/media/velaira-plate.svg",
         "count": 1
       }
     ],
@@ -4146,5 +4143,5 @@
     "api": [],
     "env": []
   },
-  "contentContractHash": "c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c"
+  "contentContractHash": "c4ec5c7ba558322921cd7a3d0b92dad7b917668c7f5894e91b4d34cd1f581bb9"
 }

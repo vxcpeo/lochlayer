@@ -1,0 +1,543 @@
+/* ==================================================================
+   Cobalt Blueprint — the leak report, its charts and its sheets.
+
+   The report is a document inside the scanner chapter: a scored sheet,
+   a ruled list of findings, and two plotted figures. It is inked on the
+   same paper and cobalt as the rest of the site — the warnings keep the
+   magenta the copy below the site refers to.
+   ================================================================== */
+
+/* ---------- instrument type (report context) ---------- */
+
+.cb-rep-sheet .cb-num {
+  color: inherit;
+}
+
+.cb-rep-sheet .cb-exposed {
+  color: var(--ink);
+}
+
+.cb-rep-sheet .cb-sealed {
+  color: var(--accent-safe);
+}
+
+.cb-rep-sheet .cb-glyph {
+  color: currentColor;
+}
+
+/* ---------- the example report fold ---------- */
+
+.cb-rep-fold.cb-rep-example {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.cb-rep-example > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+
+.cb-rep-example > summary::-webkit-details-marker {
+  display: none;
+}
+
+.cb-rep-example > summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-inline-start: 2px;
+  border-inline-end: 1.5px solid var(--accent);
+  border-block-end: 1.5px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+.cb-rep-example[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.cb-rep-example > summary small {
+  margin-inline-start: auto;
+  color: var(--muted-2);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.cb-rep-example-body {
+  padding: 0 0.7rem 0.7rem;
+}
+
+/* ---------- the sheet ---------- */
+
+.cb-rep-sheet {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(12px, 2vw, 20px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.cb-rep-sheet.cb-inset {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.cb-rep-head {
+  display: grid;
+  gap: 4px;
+  padding-block-end: 0.7rem;
+  border-block-end: 1px solid var(--line-3);
+}
+
+.cb-rep-name,
+.cb-rep-flag {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.16rem;
+  font-weight: 740;
+  letter-spacing: -0.028em;
+}
+
+.cb-rep-head p {
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.cb-rep-clear {
+  justify-self: start;
+  margin-block-start: 4px;
+}
+
+.cb-rep-body {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.36fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.cb-rep-score {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--accent);
+  background: var(--surface-alt);
+}
+
+.cb-rep-score-label {
+  margin: 0;
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cb-rep-score-figure {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.cb-rep-score-figure .cb-figure--xl {
+  color: var(--accent-safe);
+}
+
+.cb-rep-score-of {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.cb-rep-score-verdict {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 660;
+  line-height: 1.45;
+}
+
+.cb-rep-fine {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  line-height: 1.6;
+}
+
+.cb-rep-fig {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.cb-rep-caption {
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.cb-rep-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+/* ---------- fitted chart variants ---------- */
+
+.cb-rep-fit {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.cb-rep-fit > [data-w] {
+  display: none;
+}
+
+.cb-rep-fit > svg[data-w] {
+  width: 100%;
+  height: auto;
+}
+
+.cb-rep-fit > [data-w]:first-child {
+  display: block;
+}
+
+.cb-rep-fit:has(> [data-w="318"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="318"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="360"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="360"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="400"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="400"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="440"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="440"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="480"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="480"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="520"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="520"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="568"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="568"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="612"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="612"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="656"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="656"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="704"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="704"] {
+  display: block;
+}
+.cb-rep-fit:has(> [data-w="757"]) > [data-w] {
+  display: none;
+}
+.cb-rep-fit > [data-w][data-w="757"] {
+  display: block;
+}
+
+.cb-rep-fit svg,
+.cb-plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* ---------- the plots ---------- */
+
+.cb-plot {
+  fill: none;
+  stroke: none;
+  font-family: var(--font-mono);
+}
+
+.cb-plot text {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+}
+
+.cb-plot-ground {
+  fill: var(--surface-alt);
+}
+
+.cb-plot-water {
+  fill: var(--accent-soft);
+}
+
+.cb-plot-bedline {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.cb-plot-surface {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.cb-plot-rule {
+  stroke: var(--line-3);
+  stroke-width: 1;
+}
+
+.cb-plot-hatch {
+  stroke: var(--chart-magenta);
+  stroke-opacity: 0.7;
+}
+
+.cb-plot-label {
+  fill: var(--muted);
+}
+
+.cb-plot-quiet {
+  fill: var(--muted-2);
+}
+
+.cb-plot-caution,
+.cb-plot-warn,
+.cb-plot-note-warn {
+  fill: var(--chart-magenta);
+}
+
+.cb-plot-sounding {
+  fill: var(--ink);
+  font-family: var(--font-display);
+}
+
+.cb-plot-strong {
+  fill: var(--ink);
+}
+
+.cb-plot-link {
+  stroke: var(--accent);
+}
+
+.cb-plot-link-faint {
+  stroke: var(--line-3);
+}
+
+.cb-plot-node {
+  stroke: var(--accent);
+  fill: var(--surface);
+}
+
+.cb-plot-node-warn {
+  stroke: var(--chart-magenta);
+  fill: var(--surface);
+}
+
+.cb-plot-station {
+  fill: var(--accent);
+}
+
+/* The counterparty figure uses a short local vocabulary for its nodes. */
+.lc-bed {
+  fill: var(--surface-alt);
+}
+
+.lc-node {
+  stroke: var(--accent);
+  fill: var(--surface);
+}
+
+.lc-node-caution {
+  stroke: var(--chart-magenta);
+  fill: var(--surface);
+}
+
+.lc-quiet {
+  fill: var(--muted-2);
+}
+
+.lc-note-caution {
+  fill: var(--chart-magenta);
+}
+
+/* ---------- findings ---------- */
+
+.cb-rep-section {
+  display: grid;
+  gap: 0.5rem;
+  padding-block-start: 0.7rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.cb-rep-title {
+  margin: 0;
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cb-rep-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block-start: 1px solid var(--line);
+}
+
+.cb-rep-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 14px;
+  padding: 0.5rem 0;
+  border-block-end: 1px solid var(--line-2);
+  font-size: 0.82rem;
+}
+
+.cb-rep-what {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cb-rep-what strong {
+  color: var(--ink);
+  font-weight: 660;
+}
+
+.cb-rep-what span {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.cb-rep-figure {
+  align-self: baseline;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.cb-rep-figure small {
+  margin-inline-start: 0.25rem;
+  color: var(--muted-2);
+  font-size: 0.66rem;
+}
+
+.cb-rep-figure-less {
+  color: var(--danger);
+}
+
+.cb-rep-row-open,
+.cb-rep-row-total {
+  background: var(--surface-alt);
+}
+
+.cb-rep-row-total {
+  border-block-end: 0;
+  font-weight: 600;
+}
+
+.cb-rep-sev {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 0.05rem 0.36rem;
+  border: 1px solid var(--line-3);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cb-rep-sev[data-sev="high"] {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.cb-rep-sev[data-sev="medium"] {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.cb-rep-sheet .cb-note {
+  font-size: 0.8rem;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .cb-rep-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cb-rep-figures {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cb-rep-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cb-rep-figure {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .cb-rep-sheet {
+    padding: 10px;
+  }
+}

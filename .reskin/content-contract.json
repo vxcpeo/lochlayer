@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "velaira-website",
+    "projectName": "enclaven-website",
     "title": "Privacy score 49 of 100, drawn as a stepped bed",
     "lang": "en"
   },
   "routes": [
     "/",
     "/docs",
-    "/download/velaira-extension-0.1.0.zip",
+    "/download/enclaven-extension-0.1.0.zip",
     "/install",
     "/privacy",
     "/verify"
@@ -67,15 +67,15 @@
       "count": 1
     },
     {
-      "value": ", somewhere it can stay, such as your Documents folder. The browser runs Velaira from that folder, so if you delete or move it later, Velaira stops working.",
+      "value": ", somewhere it can stay, such as your Documents folder. The browser runs Enclaven from that folder, so if you delete or move it later, Enclaven stops working.",
+      "count": 1
+    },
+    {
+      "value": ", the Enclaven RPC proxy, which this project runs.",
       "count": 1
     },
     {
       "value": ", the fee and the two encrypted notes. Their hash is",
-      "count": 1
-    },
-    {
-      "value": ", the Velaira RPC proxy, which this project runs.",
       "count": 1
     },
     {
@@ -115,7 +115,7 @@
       "count": 1
     },
     {
-      "value": ". If Velaira says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
+      "value": ". If Enclaven says it cannot reach the chain or stays behind, or you would rather use a node you chose, open",
       "count": 1
     },
     {
@@ -159,7 +159,7 @@
       "count": 1
     },
     {
-      "value": "$VELAIRA token:",
+      "value": "$ENCLAVEN token:",
       "count": 1
     },
     {
@@ -487,10 +487,6 @@
       "count": 1
     },
     {
-      "value": "A Velaira user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
-      "count": 1
-    },
-    {
       "value": "A viewing key",
       "count": 2
     },
@@ -539,11 +535,15 @@
       "count": 1
     },
     {
-      "value": "an address receive an amount from the Velaira, and when. Not which deposit it came from.",
+      "value": "an address receive an amount from the Enclaven, and when. Not which deposit it came from.",
       "count": 1
     },
     {
       "value": "An admin key",
+      "count": 1
+    },
+    {
+      "value": "An Enclaven user can hand you three things: a receipt for one payment, a report on where a withdrawal came from, or a viewing key. Paste it here. The check runs in your browser against the public chain; nobody has to be taken at their word.",
       "count": 1
     },
     {
@@ -619,7 +619,7 @@
       "count": 1
     },
     {
-      "value": "By default, the Velaira RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
+      "value": "By default, the Enclaven RPC proxy, which this project runs, and the RPC provider behind it. The proxy sees the address together with your IP address while it answers, and keeps no log of either. The provider sees the address, coming from the proxy, and not your IP address. It can keep what it sees.",
       "count": 1
     },
     {
@@ -663,7 +663,7 @@
       "count": 3
     },
     {
-      "value": "certutil -hashfile velaira-extension-0.1.0.zip SHA256",
+      "value": "certutil -hashfile enclaven-extension-0.1.0.zip SHA256",
       "count": 1
     },
     {
@@ -699,7 +699,7 @@
       "count": 2
     },
     {
-      "value": "claimSeed = sha256(\"Velaira claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"velairaclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://velaira.xyz/claim#code",
+      "value": "claimSeed = sha256(\"Enclaven claim v1\" || secret) claimKeys = the key set that follows from claimSeed, as a wallet's follows from its seed code = bech32m(\"enclavenclaim\", secret (32) || amount (8) || blinding (31) || leafIndex (4)) link = https://enclaven.xyz/claim#code",
       "count": 1
     },
     {
@@ -735,7 +735,7 @@
       "count": 1
     },
     {
-      "value": "connect.velaira.xyz",
+      "value": "connect.enclaven.xyz",
       "count": 2
     },
     {
@@ -779,7 +779,7 @@
       "count": 1
     },
     {
-      "value": "directly inside it. Velaira appears in the list of extensions.",
+      "value": "directly inside it. Enclaven appears in the list of extensions.",
       "count": 1
     },
     {
@@ -811,7 +811,7 @@
       "count": 2
     },
     {
-      "value": "Download Velaira 0.1.0",
+      "value": "Download Enclaven 0.1.0",
       "count": 1
     },
     {
@@ -843,7 +843,47 @@
       "count": 1
     },
     {
-      "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"velaira-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"velaira-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
+      "value": "Enclaven",
+      "count": 4
+    },
+    {
+      "value": "Enclaven is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
+      "count": 1
+    },
+    {
+      "value": "Enclaven on X",
+      "count": 1
+    },
+    {
+      "value": "Enclaven reads the chain through an RPC endpoint. It starts with Enclaven’s own,",
+      "count": 1
+    },
+    {
+      "value": "Enclaven runs on Solana mainnet, with real SOL.",
+      "count": 1
+    },
+    {
+      "value": "Enclaven v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
+      "count": 1
+    },
+    {
+      "value": "enclaven_pool",
+      "count": 1
+    },
+    {
+      "value": "enclaven-extension-0.1.0",
+      "count": 1
+    },
+    {
+      "value": "enclaven1",
+      "count": 2
+    },
+    {
+      "value": "enclavenpay1",
+      "count": 1
+    },
+    {
+      "value": "encrypted = ephemeralPublic (32) || ciphertext (39) || tag (16) ephemeralSecret = 32 random bytes, fresh for every note ephemeralPublic = X25519(ephemeralSecret, base point) shared = X25519(ephemeralSecret, recipient.encryptionPublic) salt = ephemeralPublic || recipient.encryptionPublic key = HKDF-SHA256(shared, salt, info = \"enclaven-note-v1\") address note key = HKDF-SHA256(shared || psk, salt, info = \"enclaven-note-psk-v1\") keyed note plaintext = amount (8) || blinding (31) ciphertext||tag = ChaCha20-Poly1305(key, nonce = 0, plaintext)",
       "count": 1
     },
     {
@@ -943,7 +983,7 @@
       "count": 1
     },
     {
-      "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Velaira’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
+      "value": "Groth16 needs a setup for each circuit, and whoever keeps the randomness of that setup can forge proofs. Enclaven’s proving key comes from a development setup with a single contributor, who could therefore drain the pool. A public ceremony with many contributors has to replace it. It has not been held.",
       "count": 1
     },
     {
@@ -955,7 +995,7 @@
       "count": 1
     },
     {
-      "value": "How the Velaira keeps a payment private.",
+      "value": "How the Enclaven keeps a payment private.",
       "count": 1
     },
     {
@@ -964,6 +1004,10 @@
     },
     {
       "value": "If you want to be sure the file arrived whole, compare its SHA-256 with this one. On macOS and Linux:",
+      "count": 1
+    },
+    {
+      "value": "in Enclaven and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
       "count": 1
     },
     {
@@ -991,12 +1035,8 @@
       "count": 1
     },
     {
-      "value": "In the Velaira. Visible only to you.",
+      "value": "In the Enclaven. Visible only to you.",
       "count": 2
-    },
-    {
-      "value": "in Velaira and put in the address of your own endpoint; the free plan of any Solana RPC provider is enough.",
-      "count": 1
     },
     {
       "value": "In your own browser",
@@ -1015,11 +1055,11 @@
       "count": 1
     },
     {
-      "value": "Install the extension",
+      "value": "Install Enclaven.",
       "count": 1
     },
     {
-      "value": "Install Velaira.",
+      "value": "Install the extension",
       "count": 1
     },
     {
@@ -1091,7 +1131,7 @@
       "count": 2
     },
     {
-      "value": "Leaks outside the Velaira",
+      "value": "Leaks outside the Enclaven",
       "count": 2
     },
     {
@@ -1131,7 +1171,7 @@
       "count": 1
     },
     {
-      "value": "message = \"Velaira key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Velaira note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Velaira self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Velaira payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"velaira\", publicKey || encryptionPublic) payment code = bech32m(\"velairapay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
+      "value": "message = \"Enclaven key derivation v1\" signature = wallet.signMessage(message) 64-byte Ed25519 signature seed = sha256(signature) privateKey = seed mod r spends notes publicKey = Poseidon(privateKey) encryptionSecret = sha256(\"Enclaven note encryption v1\" || seed) an X25519 key: reads notes encryptionPublic = X25519(encryptionSecret, base point) selfNoteKey = sha256(\"Enclaven self note v1\" || seed) reads the wallet’s own notes paymentCodeRoot = sha256(\"Enclaven payment code v1\" || seed) reads notes paid to its codes address = bech32m(\"enclaven\", publicKey || encryptionPublic) payment code = bech32m(\"enclavenpay\", publicKey || encryptionPublic || sha256(paymentCodeRoot || index))",
       "count": 1
     },
     {
@@ -1143,7 +1183,7 @@
       "count": 1
     },
     {
-      "value": "Move SOL from your public wallet into the Velaira. A screening authority checks where it came from and co-signs the deposit.",
+      "value": "Move SOL from your public wallet into the Enclaven. A screening authority checks where it came from and co-signs the deposit.",
       "count": 1
     },
     {
@@ -1211,7 +1251,7 @@
       "count": 1
     },
     {
-      "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Velaira extension keeps and sends.",
+      "value": "Nothing, unless you give it an email address. This page says what that means, line by line, and what the Enclaven extension keeps and sends.",
       "count": 1
     },
     {
@@ -1239,11 +1279,15 @@
       "count": 1
     },
     {
+      "value": "on Enclaven’s card on the extensions page. If you loaded it by hand, delete the folder too.",
+      "count": 1
+    },
+    {
       "value": "On mainnet, with real SOL",
       "count": 1
     },
     {
-      "value": "On the websites you visit, the extension offers the Velaira wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Velaira, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
+      "value": "On the websites you visit, the extension offers the Enclaven wallet to sites that look for Solana wallets, and warns you before a public transfer gives something away. It looks only at what a site asks your wallet to do through Enclaven, and at the addresses your wallet gives the site. That stays in the browser’s memory until it closes and is never sent. It reads nothing else from the page.",
       "count": 1
     },
     {
@@ -1251,11 +1295,7 @@
       "count": 1
     },
     {
-      "value": "on Velaira’s card on the extensions page. If you loaded it by hand, delete the folder too.",
-      "count": 1
-    },
-    {
-      "value": "Once Velaira is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Velaira’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
+      "value": "Once Enclaven is on the Chrome Web Store, it will update itself. Loaded by hand (below), it does not: download the new version here, put the new folder in place of the old one, and press the reload arrow on Enclaven’s card on the extensions page. Your shielded balance is in neither: it comes back from your wallet’s signature.",
       "count": 1
     },
     {
@@ -1287,6 +1327,10 @@
       "count": 5
     },
     {
+      "value": "Open Enclaven from the toolbar and press",
+      "count": 1
+    },
+    {
       "value": "Open source",
       "count": 1
     },
@@ -1299,11 +1343,7 @@
       "count": 1
     },
     {
-      "value": "Open Velaira from the toolbar and press",
-      "count": 1
-    },
-    {
-      "value": "opens and your wallet asks you to sign one message, “Velaira key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
+      "value": "opens and your wallet asks you to sign one message, “Enclaven key derivation v1”. That signature is what your shielded keys are made from. No new seed phrase is created and no transaction is sent.",
       "count": 1
     },
     {
@@ -1331,7 +1371,7 @@
       "count": 1
     },
     {
-      "value": "Pay any other Velaira balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
+      "value": "Pay any other Enclaven balance. A zero-knowledge proof shows the payment is valid without showing who paid whom, or how much.",
       "count": 1
     },
     {
@@ -1355,7 +1395,7 @@
       "count": 1
     },
     {
-      "value": "Press the puzzle-piece button in the toolbar and pin Velaira, so that it is one press away.",
+      "value": "Press the puzzle-piece button in the toolbar and pin Enclaven, so that it is one press away.",
       "count": 1
     },
     {
@@ -1467,7 +1507,7 @@
       "count": 1
     },
     {
-      "value": "relayer-mainnet.velaira.xyz",
+      "value": "relayer-mainnet.enclaven.xyz",
       "count": 1
     },
     {
@@ -1491,7 +1531,7 @@
       "count": 1
     },
     {
-      "value": "rpc.velaira.xyz",
+      "value": "rpc.enclaven.xyz",
       "count": 3
     },
     {
@@ -1511,7 +1551,7 @@
       "count": 1
     },
     {
-      "value": "screener-mainnet.velaira.xyz",
+      "value": "screener-mainnet.enclaven.xyz",
       "count": 1
     },
     {
@@ -1567,7 +1607,7 @@
       "count": 1
     },
     {
-      "value": "shasum -a 256 velaira-extension-0.1.0.zip",
+      "value": "shasum -a 256 enclaven-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -1655,7 +1695,7 @@
       "count": 1
     },
     {
-      "value": "Surface what you have in the Velaira first. Then press",
+      "value": "Surface what you have in the Enclaven first. Then press",
       "count": 1
     },
     {
@@ -1675,7 +1715,7 @@
       "count": 1
     },
     {
-      "value": "The $VELAIRA token",
+      "value": "The $ENCLAVEN token",
       "count": 1
     },
     {
@@ -1724,6 +1764,22 @@
     },
     {
       "value": "The destination, the exact amount and the time. Two nullifiers, two new commitments, the fee and the relayer",
+      "count": 1
+    },
+    {
+      "value": "The Enclaven",
+      "count": 2
+    },
+    {
+      "value": "The Enclaven extension",
+      "count": 1
+    },
+    {
+      "value": "The Enclaven is a shielded pool of SOL held by one Solana program,",
+      "count": 1
+    },
+    {
+      "value": "The Enclaven is not.",
       "count": 1
     },
     {
@@ -1899,7 +1955,7 @@
       "count": 1
     },
     {
-      "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Velaira RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
+      "value": "The RPC endpoint still sees the client’s IP address and everything it asks. The Enclaven RPC proxy keeps no record of either. That is a statement about software this project runs, and a client cannot check it.",
       "count": 1
     },
     {
@@ -1983,22 +2039,6 @@
       "count": 1
     },
     {
-      "value": "The Velaira",
-      "count": 2
-    },
-    {
-      "value": "The Velaira extension",
-      "count": 1
-    },
-    {
-      "value": "The Velaira is a shielded pool of SOL held by one Solana program,",
-      "count": 1
-    },
-    {
-      "value": "The Velaira is not.",
-      "count": 1
-    },
-    {
       "value": "the verify page",
       "count": 1
     },
@@ -2031,11 +2071,11 @@
       "count": 1
     },
     {
-      "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Velaira records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
+      "value": "These are disclosures, not zero-knowledge proofs: whoever holds a receipt or a report sees what it opens. A wallet can only open what it kept. Enclaven records what a report needs when it makes a transaction, so a report covers transactions made with a version that has this feature, on the device that made them.",
       "count": 1
     },
     {
-      "value": "These checks are help and not a barrier. They see only the requests that come through the Velaira wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
+      "value": "These checks are help and not a barrier. They see only the requests that come through the Enclaven wallet a site was offered. A site can ask the real wallet directly, and then the wallet’s own prompt is all there is.",
       "count": 1
     },
     {
@@ -2195,46 +2235,6 @@
       "count": 1
     },
     {
-      "value": "Velaira",
-      "count": 4
-    },
-    {
-      "value": "Velaira is a browser extension that works beside the wallet you already have. It is coming soon to the Chrome Web Store, in Chrome, Brave or Edge. Until then, it can be loaded by hand.",
-      "count": 1
-    },
-    {
-      "value": "Velaira on X",
-      "count": 1
-    },
-    {
-      "value": "Velaira reads the chain through an RPC endpoint. It starts with Velaira’s own,",
-      "count": 1
-    },
-    {
-      "value": "Velaira runs on Solana mainnet, with real SOL.",
-      "count": 1
-    },
-    {
-      "value": "Velaira v0.1 runs on Solana mainnet. What you dive in with is real SOL. One deposit can be at most 10 SOL.",
-      "count": 1
-    },
-    {
-      "value": "velaira_pool",
-      "count": 1
-    },
-    {
-      "value": "velaira-extension-0.1.0",
-      "count": 1
-    },
-    {
-      "value": "velaira1",
-      "count": 2
-    },
-    {
-      "value": "velairapay1",
-      "count": 1
-    },
-    {
       "value": "wallet",
       "count": 1
     },
@@ -2299,7 +2299,7 @@
       "count": 1
     },
     {
-      "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Velaira is: unaudited software.",
+      "value": "Whether the person in front of you is the one the document is about. And nothing here changes what Enclaven is: unaudited software.",
       "count": 1
     },
     {
@@ -2347,7 +2347,7 @@
       "count": 2
     },
     {
-      "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Velaira has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
+      "value": "You need Chrome, Brave or Edge on a computer, and a Solana wallet extension in the same browser. Enclaven has been tried with Phantom. Solflare and Backpack should work and have not been tried yet.",
       "count": 1
     },
     {
@@ -2355,7 +2355,7 @@
       "count": 1
     },
     {
-      "value": "your address, the amount, the time, and that it went into the Velaira.",
+      "value": "your address, the amount, the time, and that it went into the Enclaven.",
       "count": 1
     },
     {
@@ -2367,7 +2367,7 @@
       "count": 1
     },
     {
-      "value": "Your shielded keys come from your wallet’s signature on one message, “Velaira key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Velaira.",
+      "value": "Your shielded keys come from your wallet’s signature on one message, “Enclaven key derivation v1”. Anyone who gets you to sign that message gets the same keys, and with them your shielded balance. Sign it nowhere but in Enclaven.",
       "count": 1
     },
     {
@@ -2375,7 +2375,7 @@
       "count": 1
     },
     {
-      "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Velaira.",
+      "value": "Your wallet signs one message, and your shielded keys are made from it. Sign that message nowhere but in Enclaven.",
       "count": 1
     },
     {
@@ -2396,7 +2396,7 @@
   "attributes": [
     {
       "name": "href",
-      "value": "/download/velaira-extension-0.1.0.zip",
+      "value": "/download/enclaven-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -2576,7 +2576,7 @@
     },
     {
       "name": "href",
-      "value": "https://x.com/velaira",
+      "value": "https://x.com/enclaven",
       "count": 1
     },
     {
@@ -2621,6 +2621,11 @@
     },
     {
       "name": "src",
+      "value": "/media/enclaven-plate.svg",
+      "count": 1
+    },
+    {
+      "name": "src",
       "value": "/media/mark-night.svg",
       "count": 1
     },
@@ -2637,11 +2642,6 @@
     {
       "name": "src",
       "value": "/media/mark.svg",
-      "count": 1
-    },
-    {
-      "name": "src",
-      "value": "/media/velaira-plate.svg",
       "count": 1
     },
     {
@@ -2962,7 +2962,7 @@
   "links": [
     {
       "kind": "href",
-      "target": "/download/velaira-extension-0.1.0.zip",
+      "target": "/download/enclaven-extension-0.1.0.zip",
       "count": 1
     },
     {
@@ -3142,7 +3142,7 @@
     },
     {
       "kind": "href",
-      "target": "https://x.com/velaira",
+      "target": "https://x.com/enclaven",
       "count": 1
     },
     {
@@ -3219,6 +3219,11 @@
     },
     {
       "kind": "src",
+      "value": "/media/enclaven-plate.svg",
+      "count": 1
+    },
+    {
+      "kind": "src",
       "value": "/media/mark-night.svg",
       "count": 1
     },
@@ -3235,11 +3240,6 @@
     {
       "kind": "src",
       "value": "/media/mark.svg",
-      "count": 1
-    },
-    {
-      "kind": "src",
-      "value": "/media/velaira-plate.svg",
       "count": 1
     }
   ],

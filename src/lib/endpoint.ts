@@ -4,16 +4,16 @@
  * which runs before the page is drawn; unit tests run both.
  */
 
-/** The `<meta name="velaira:rpc">` default. */
-export const DEFAULT_RPC = 'https://rpc.velaira.xyz/';
+/** The `<meta name="enclaven:rpc">` default. */
+export const DEFAULT_RPC = 'https://rpc.enclaven.xyz/';
 
-/** The `<meta name="velaira:waitlist">` address. Only the form may post to it. */
-export const WAITLIST_URL = 'https://waitlist.velaira.xyz/v1/waitlist';
+/** The `<meta name="enclaven:waitlist">` address. Only the form may post to it. */
+export const WAITLIST_URL = 'https://waitlist.enclaven.xyz/v1/waitlist';
 
 /** Where a visitor's own endpoint is kept. Browser only, sent to nobody. */
-export const RPC_STORAGE_KEY = 'velaira:rpc';
+export const RPC_STORAGE_KEY = 'enclaven:rpc';
 
-export const THEME_STORAGE_KEY = 'velaira:theme';
+export const THEME_STORAGE_KEY = 'enclaven:theme';
 
 export type EndpointFailure = 'empty' | 'not-https' | 'odd-host' | 'credentials' | 'not-a-url';
 
@@ -104,9 +104,9 @@ export function readChoice(): EndpointChoice {
     }
   })();
   return {
-    defaultRpc: meta('velaira:rpc') || DEFAULT_RPC,
+    defaultRpc: meta('enclaven:rpc') || DEFAULT_RPC,
     stored,
-    customRpc: meta('velaira:custom-rpc') === 'any',
+    customRpc: meta('enclaven:custom-rpc') === 'any',
   };
 }
 

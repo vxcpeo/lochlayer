@@ -6,8 +6,8 @@
 // code can read them, logging does not show them. `cause` is whatever the
 // underlying library threw and is not covered by this promise.
 
-/** Stable machine-readable codes of {@link VelairaError}. */
-export type VelairaErrorCode =
+/** Stable machine-readable codes of {@link EnclavenError}. */
+export type EnclavenErrorCode =
   /** A caller-supplied value is malformed or out of range. */
   | "INVALID_ARGUMENT"
   /** The key-derivation signature is not a valid signature of the derivation message. */
@@ -44,13 +44,13 @@ export type VelairaErrorCode =
   | "PROGRAM_ERROR";
 
 /** Base class of every error the SDK throws on purpose. */
-export class VelairaError extends Error {
+export class EnclavenError extends Error {
   /** Stable machine-readable code. */
-  readonly code: VelairaErrorCode;
+  readonly code: EnclavenErrorCode;
 
-  constructor(code: VelairaErrorCode, message: string, options?: { cause?: unknown }) {
+  constructor(code: EnclavenErrorCode, message: string, options?: { cause?: unknown }) {
     super(message, options);
-    this.name = "VelairaError";
+    this.name = "EnclavenError";
     this.code = code;
   }
 }
@@ -59,7 +59,7 @@ export class VelairaError extends Error {
 export type AddressErrorReason = "encoding" | "prefix" | "checksum" | "length" | "public_key_range" | "encryption_key";
 
 /** A shielded address or a payment code that cannot be decoded. */
-export class AddressError extends VelairaError {
+export class AddressError extends EnclavenError {
   /** What exactly is wrong with the address. */
   readonly reason: AddressErrorReason;
 
@@ -82,7 +82,7 @@ function hidden(target: object, values: Record<string, bigint>): void {
  * Nothing was proven or sent. Both values are public: the fee is part of the
  * transaction a relayer would have sent.
  */
-export class FeeTooHighError extends VelairaError {
+export class FeeTooHighError extends EnclavenError {
   /** The fee that was asked for, in lamports. */
   readonly fee: bigint;
   /** The maximum the caller allowed, in lamports. */
@@ -101,7 +101,7 @@ export class FeeTooHighError extends VelairaError {
  * `available` are private amounts: they are non-enumerable, so logging the
  * error does not print them.
  */
-export class InsufficientBalanceError extends VelairaError {
+export class InsufficientBalanceError extends EnclavenError {
   /** Lamports needed: amount plus fee. Not enumerable. */
   declare readonly required: bigint;
   /** Lamports in unspent notes. Not enumerable. */
@@ -120,7 +120,7 @@ export class InsufficientBalanceError extends VelairaError {
  * (a private transfer to self), sync, and try again. The amounts are private
  * and non-enumerable, as in {@link InsufficientBalanceError}.
  */
-export class ConsolidationRequiredError extends VelairaError {
+export class ConsolidationRequiredError extends EnclavenError {
   /** Lamports needed: amount plus fee. Not enumerable. */
   declare readonly required: bigint;
   /** Lamports in unspent notes. Not enumerable. */
@@ -139,7 +139,7 @@ export class ConsolidationRequiredError extends VelairaError {
 }
 
 /** Local state and the chain disagree, or events could not be fetched completely. */
-export class SyncError extends VelairaError {
+export class SyncError extends EnclavenError {
   /**
    * What to do about it:
    *
@@ -164,7 +164,7 @@ export class SyncError extends VelairaError {
 }
 
 /**
- * Names of the `velaira_pool` errors, in code order starting at 6000. 6000 to
+ * Names of the `enclaven_pool` errors, in code order starting at 6000. 6000 to
  * 6010 are frozen; 6011 to 6016 were appended when the program was hardened.
  * The program may append more: codes beyond this list are reported as
  * `Unknown`, never guessed.
@@ -189,13 +189,13 @@ export const PROGRAM_ERROR_NAMES = [
   "InvalidDestination",
 ] as const;
 
-/** A `velaira_pool` error name. */
+/** A `enclaven_pool` error name. */
 export type ProgramErrorName = (typeof PROGRAM_ERROR_NAMES)[number];
 
 /** First custom error code Anchor assigns to a program's own errors. */
 export const PROGRAM_ERROR_BASE = 6000;
 
-/** `velaira_pool` error codes by name (InvalidProof = 6000 ... InvalidDestination = 6016). */
+/** `enclaven_pool` error codes by name (InvalidProof = 6000 ... InvalidDestination = 6016). */
 export const PROGRAM_ERROR_CODES: Readonly<Record<ProgramErrorName, number>> = Object.freeze(
   Object.fromEntries(PROGRAM_ERROR_NAMES.map((name, i) => [name, PROGRAM_ERROR_BASE + i])) as Record<ProgramErrorName, number>,
 );
@@ -203,7 +203,7 @@ export const PROGRAM_ERROR_CODES: Readonly<Record<ProgramErrorName, number>> = O
 /**
  * What a rejected transaction means:
  *
- * - a `velaira_pool` error by name;
+ * - a `enclaven_pool` error by name;
  * - `NullifierAlreadySpent`: the system program refused to create a nullifier
  *   account that exists;
  * - `AccountAlreadyInUse`: the system program refused to create an account
@@ -226,10 +226,10 @@ export type ProgramErrorKind =
   | "Unknown";
 
 /** The program rejected the transaction. Produced by `parseProgramError`. */
-export class ProgramError extends VelairaError {
+export class ProgramError extends EnclavenError {
   /** What went wrong. */
   readonly kind: ProgramErrorKind;
-  /** Custom error number (6000 and up for `velaira_pool`, 0 for "already in use"); null if there is none. */
+  /** Custom error number (6000 and up for `enclaven_pool`, 0 for "already in use"); null if there is none. */
   readonly number: number | null;
   /** Program logs the error was read from, if any. */
   readonly logs: readonly string[];

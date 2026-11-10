@@ -1,22 +1,22 @@
 # Reskin verification — PASS
 
-Generated: 2026-10-21T17:40:27.647Z
+Generated: 2026-11-09T18:45:44.031Z
 
-- Project: **velaira-website**
+- Project: **enclaven-website**
 - URL: http://127.0.0.1:4400/
-- Original skeleton: `marketing-stack` (editorial)
-- New skeleton: `bento-canvas` (spatial)
-- Accent: #d25fb4 -> #1f8fe0 (62.05 ΔE; min 30)
-- Source contract: intact (`c9f4ef9fdbad`)
+- Original skeleton: `bento-canvas` (spatial)
+- New skeleton: `marketing-stack` (editorial)
+- Accent: #1f8fe0 -> #0000ff (102.32 ΔE; min 30)
+- Source contract: intact (`0edd38237bae`)
 
 | Route | Result | DOM similarity | Landmark similarity | Axe serious | Screenshot |
 |---|---|---:|---:|---:|---|
-| `/` | PASS | 0.199 | 0.667 | 0 | [desktop](current/home-desktop.png) |
-| `/docs` | PASS | 0.114 | 0.2 | 0 | [desktop](current/docs-desktop.png) |
-| `/download/velaira-extension-0.1.0.zip` | PASS | 0.199 | 0.667 | 0 | [desktop](current/download-velaira-extension-0-1-0-zip-desktop.png) |
-| `/install` | PASS | 0.183 | 0.667 | 0 | [desktop](current/install-desktop.png) |
-| `/privacy` | PASS | 0.141 | 0.667 | 0 | [desktop](current/privacy-desktop.png) |
-| `/verify` | PASS | 0.152 | 0.667 | 0 | [desktop](current/verify-desktop.png) |
+| `/` | PASS | 0.227 | 0.375 | 0 | [desktop](current/home-desktop.png) |
+| `/docs` | PASS | 0.122 | 0.571 | 0 | [desktop](current/docs-desktop.png) |
+| `/download/enclaven-extension-0.1.0.zip` | PASS | 0.227 | 0.375 | 0 | [desktop](current/download-enclaven-extension-0-1-0-zip-desktop.png) |
+| `/install` | PASS | 0.155 | 0.5 | 0 | [desktop](current/install-desktop.png) |
+| `/privacy` | PASS | 0.188 | 0.5 | 0 | [desktop](current/privacy-desktop.png) |
+| `/verify` | PASS | 0.131 | 0.5 | 0 | [desktop](current/verify-desktop.png) |
 
 ## Blocking issues
 
@@ -24,7 +24,12 @@ Generated: 2026-10-21T17:40:27.647Z
 
 ## Warnings
 
-- None.
+- attributes: "src=/media/mark.svg" count increased 1 -> 2
+- assets: "src:/media/mark.svg" count increased 1 -> 2
+- /: aria attribute changed/removed: aria-label=Sections
+- /: aria attribute added: aria-label=Site
+- /download/enclaven-extension-0.1.0.zip: aria attribute changed/removed: aria-label=Sections
+- /download/enclaven-extension-0.1.0.zip: aria attribute added: aria-label=Site
 
 ## Thresholds
 

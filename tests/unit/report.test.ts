@@ -63,17 +63,17 @@ describe('the statement of account', () => {
   const html = statementHtml(report);
 
   it('starts at 100, takes each finding away and ends at the score', () => {
-    expect(html).toContain('class="sn-rep-row sn-rep-row-open"');
-    expect(html).toContain('<span class="sn-rep-figure sn-num">100</span>');
+    expect(html).toContain('class="cb-rep-row cb-rep-row-open"');
+    expect(html).toContain('<span class="cb-rep-figure cb-num">100</span>');
     for (const finding of findings) expect(html).toContain(finding.title);
-    expect(html).toContain('sn-rep-row-total');
+    expect(html).toContain('cb-rep-row-total');
     expect(html).toContain('49<small>of 100</small>');
-    expect(html).toContain('<span class="sn-sign">−</span>16');
+    expect(html).toContain('<span class="cb-sign">−</span>16');
   });
 
   it('labels severity and adds the advice note', () => {
-    expect(html).toContain('<span class="sn-rep-sev" data-sev="medium">Medium</span>');
-    expect(html).toContain('<span class="sn-rep-sev" data-sev="low">Low</span>');
+    expect(html).toContain('<span class="cb-rep-sev" data-sev="medium">Medium</span>');
+    expect(html).toContain('<span class="cb-rep-sev" data-sev="low">Low</span>');
     expect(html).toContain('What helps: a fresh address for each payer');
   });
 
@@ -83,14 +83,14 @@ describe('the statement of account', () => {
 });
 
 describe('the live report article', () => {
-  const html = buildLiveReportHtml({ report, flows, host: 'rpc.velaira.xyz', skipped: 0, asked: 300, own: false });
+  const html = buildLiveReportHtml({ report, flows, host: 'rpc.enclaven.xyz', skipped: 0, asked: 300, own: false });
 
   it('is the same article the reference page draws', () => {
-    expect(html.startsWith('<article class="sn-rep-sheet sn-wet" data-depth="120"')).toBe(true);
-    expect(html).toContain('Leak report for <span class="sn-num">Fh3q…Tz8K</span>');
-    expect(html).toContain('Read from rpc.velaira.xyz, in this browser.');
+    expect(html.startsWith('<article class="cb-rep-sheet cb-inset" data-depth="120"')).toBe(true);
+    expect(html).toContain('Leak report for <span class="cb-num">Fh3q…Tz8K</span>');
+    expect(html).toContain('Read from rpc.enclaven.xyz, in this browser.');
     expect(html).toContain('data-clear-report');
-    expect(html).toContain('<span class="sn-figure sn-figure--xl sn-exposed">49</span>');
+    expect(html).toContain('<span class="cb-figure cb-figure--xl cb-exposed">49</span>');
     expect(html).toContain('Shallow water.');
     expect(html).toContain('300 transactions scanned, 412 transfers.');
     expect(html).toContain('data-chart="bed"');
@@ -132,10 +132,10 @@ describe('drawing the figures', () => {
     root.innerHTML = '<div data-chart="bed"></div><div data-chart="hours"></div><div data-chart="who"></div>';
     const dispose = mountReportCharts(root, report, flows);
     const bed = root.querySelector('[data-chart="bed"]')?.innerHTML ?? '';
-    expect(bed).toContain('sn-plot-bed');
+    expect(bed).toContain('cb-plot-bed');
     expect(bed).toContain('Privacy score 49 of 100');
-    expect(root.querySelector('[data-chart="hours"]')?.innerHTML).toContain('sn-plot-hours');
-    expect(root.querySelector('[data-chart="who"]')?.innerHTML).toContain('sn-plot-who');
+    expect(root.querySelector('[data-chart="hours"]')?.innerHTML).toContain('cb-plot-hours');
+    expect(root.querySelector('[data-chart="who"]')?.innerHTML).toContain('cb-plot-who');
     dispose();
   });
 
@@ -153,10 +153,10 @@ describe('the example report', () => {
   const example = readFileSync(resolve(process.cwd(), 'src/data/example-report.html'), 'utf8');
 
   it('is the pre-rendered article, with all seventeen stepped figures', () => {
-    expect(example.startsWith('<details class="sn-rep-fold sn-rep-example"')).toBe(true);
-    expect((example.match(/sn-plot sn-plot-bed/g) ?? [])).toHaveLength(7);
-    expect((example.match(/sn-plot sn-plot-hours/g) ?? [])).toHaveLength(5);
-    expect((example.match(/sn-plot sn-plot-who/g) ?? [])).toHaveLength(5);
+    expect(example.startsWith('<details class="cb-rep-fold cb-rep-example"')).toBe(true);
+    expect((example.match(/cb-plot cb-plot-bed/g) ?? [])).toHaveLength(7);
+    expect((example.match(/cb-plot cb-plot-hours/g) ?? [])).toHaveLength(5);
+    expect((example.match(/cb-plot cb-plot-who/g) ?? [])).toHaveLength(5);
     expect(example).toContain('An invented wallet, scored 49 of 100');
     expect(example).toContain('data-example=""');
   });

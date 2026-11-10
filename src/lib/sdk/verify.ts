@@ -5,7 +5,7 @@
  * page that only checks does not load the proving code.
  */
 
-export { VelairaError } from "./errors";
+export { EnclavenError } from "./errors";
 export { PROGRAM_ID } from "./constants";
 export { decodeReceipt, decodeSourceReport, verifyReceipt, verifySourceReport } from "./disclosure";
 export type { DisclosureConnection, FundsOrigin, PaymentReceipt, Rejected, SourceReport, VerifiedReceipt, VerifiedSource, VerifyOptions } from "./disclosure";

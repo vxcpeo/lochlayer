@@ -101,7 +101,7 @@ export type StatementHtmlOptions = {
 };
 
 /**
- * The statement as markup: `<ol class="sn-rep-list">`, one row per line, styled
+ * The statement as markup: `<ol class="cb-rep-list">`, one row per line, styled
  * by components.css. Put it inside an element with class `statement-wrap` (or
  * inside `.report`) so it can widen to three columns.
  *
@@ -117,28 +117,28 @@ export function statementHtml(report: LeakReportLike, options: StatementHtmlOpti
       const rows = statementLines(report).map((line) => {
         if (line.kind === "open") {
           return (
-            `<li class="sn-rep-row sn-rep-row-open">` +
-            `<span class="sn-rep-what"><strong>${esc(line.title)}</strong><span>Every scan starts here and loses depth for each thing the public history gives away.</span></span>` +
-            `<span class="sn-rep-figure sn-num">100</span></li>`
+            `<li class="cb-rep-row cb-rep-row-open">` +
+            `<span class="cb-rep-what"><strong>${esc(line.title)}</strong><span>Every scan starts here and loses depth for each thing the public history gives away.</span></span>` +
+            `<span class="cb-rep-figure cb-num">100</span></li>`
           );
         }
         if (line.kind === "total") {
           return (
-            `<li class="sn-rep-row sn-rep-row-total">` +
-            `<span class="sn-rep-what"><strong>${esc(line.title)}</strong>${totalNote ? `<span>${esc(totalNote)}</span>` : ""}</span>` +
-            `<span class="sn-rep-figure">${n(line.balance)}<small>of 100</small></span></li>`
+            `<li class="cb-rep-row cb-rep-row-total">` +
+            `<span class="cb-rep-what"><strong>${esc(line.title)}</strong>${totalNote ? `<span>${esc(totalNote)}</span>` : ""}</span>` +
+            `<span class="cb-rep-figure">${n(line.balance)}<small>of 100</small></span></li>`
           );
         }
         // The severity is one of three known words by now, never the report's own string.
-        const tag = severity && line.severity ? `<span class="sn-rep-sev" data-sev="${line.severity}">${SEVERITY_WORD[line.severity]}</span>` : "";
+        const tag = severity && line.severity ? `<span class="cb-rep-sev" data-sev="${line.severity}">${SEVERITY_WORD[line.severity]}</span>` : "";
         return (
-          `<li class="sn-rep-row">${tag}` +
-          `<span class="sn-rep-what"><strong>${esc(line.title)}</strong>${detail && line.detail ? `<span>${esc(line.detail)}</span>` : ""}</span>` +
-          `<span class="sn-rep-figure sn-rep-figure-less sn-num"><span class="sn-sign">${MINUS}</span>${n(line.less)}</span></li>`
+          `<li class="cb-rep-row">${tag}` +
+          `<span class="cb-rep-what"><strong>${esc(line.title)}</strong>${detail && line.detail ? `<span>${esc(line.detail)}</span>` : ""}</span>` +
+          `<span class="cb-rep-figure cb-rep-figure-less cb-num"><span class="cb-sign">${MINUS}</span>${n(line.less)}</span></li>`
         );
       });
-      return `<ol class="sn-rep-list">${rows.join("")}</ol>`;
+      return `<ol class="cb-rep-list">${rows.join("")}</ol>`;
     },
-    () => `<ol class="sn-rep-list"></ol>`,
+    () => `<ol class="cb-rep-list"></ol>`,
   );
 }

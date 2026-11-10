@@ -1,25 +1,28 @@
 <template>
   <SiteIcons />
-  <a class="sn-skip" href="#main">Skip to content</a>
+  <a class="cb-skip" href="#main">Skip to content</a>
 
-  <SignalTop />
+  <CobaltRail />
 
-  <main id="main" class="sn-main">
-    <div class="sn-bento">
-      <SignalIndex />
-      <RouterView />
-    </div>
-  </main>
+  <div class="cb-shell">
+    <CobaltBar />
 
-  <SignalFoot />
+    <main id="main" class="cb-main">
+      <div class="cb-page">
+        <RouterView />
+      </div>
+    </main>
+
+    <CobaltStatus />
+  </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { RouterView } from 'vue-router';
-import SignalFoot from './components/SignalFoot.vue';
-import SignalIndex from './components/SignalIndex.vue';
-import SignalTop from './components/SignalTop.vue';
+import CobaltBar from './components/CobaltBar.vue';
+import CobaltRail from './components/CobaltRail.vue';
+import CobaltStatus from './components/CobaltStatus.vue';
 import SiteIcons from './components/SiteIcons.vue';
 import { installNarrowedPolicy } from './lib/policy';
 

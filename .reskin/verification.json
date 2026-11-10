@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T17:40:27.647Z",
+  "generatedAt": "2026-11-09T18:45:44.031Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/lochlayer/website",
-    "name": "velaira-website",
+    "name": "enclaven-website",
     "baseUrl": "http://127.0.0.1:4400/"
   },
   "passed": true,
@@ -19,33 +19,15 @@
     "sourceContract": {
       "passed": true,
       "issues": [],
-      "warnings": [],
-      "hash": "c9f4ef9fdbad77d738d0f7c65d99785740143b4e2f2d8d3cdc1a12112060671c"
+      "warnings": [
+        "attributes: \"src=/media/mark.svg\" count increased 1 -> 2",
+        "assets: \"src:/media/mark.svg\" count increased 1 -> 2"
+      ],
+      "hash": "0edd38237bae0a2cd37372c1ffe0be5576dfe70eeebd0736f251a98e9786b5bd"
     },
     "skeleton": {
       "passed": true,
       "original": {
-        "id": "marketing-stack",
-        "family": "editorial",
-        "traits": {
-          "sidebar": false,
-          "topbar": false,
-          "cards": true,
-          "hero": true,
-          "table": true,
-          "grid": true,
-          "tabs": true,
-          "modal": true,
-          "charts": true,
-          "sticky": true,
-          "orbital": false,
-          "terminal": true,
-          "bento": false,
-          "ticker": false,
-          "gallery": false
-        }
-      },
-      "current": {
         "id": "bento-canvas",
         "family": "spatial",
         "traits": {
@@ -66,10 +48,31 @@
           "gallery": false
         }
       },
+      "current": {
+        "id": "marketing-stack",
+        "family": "editorial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": true,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": true,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
       "accent": {
-        "original": "#d25fb4",
-        "current": "#1f8fe0",
-        "deltaE": 62.05,
+        "original": "#1f8fe0",
+        "current": "#0000ff",
+        "deltaE": 102.32,
         "min": 30
       }
     },
@@ -79,11 +82,14 @@
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [],
+        "warnings": [
+          "aria attribute changed/removed: aria-label=Sections",
+          "aria attribute added: aria-label=Site"
+        ],
         "structure": {
-          "fingerprintSimilarity": 0.199,
-          "landmarkSimilarity": 0.667,
-          "classOverlap": 0.002
+          "fingerprintSimilarity": 0.227,
+          "landmarkSimilarity": 0.375,
+          "classOverlap": 0.003
         },
         "content": {
           "missing": [],
@@ -120,8 +126,8 @@
         "failures": [],
         "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.114,
-          "landmarkSimilarity": 0.2,
+          "fingerprintSimilarity": 0.122,
+          "landmarkSimilarity": 0.571,
           "classOverlap": 0
         },
         "content": {
@@ -153,15 +159,18 @@
         }
       },
       {
-        "route": "/download/velaira-extension-0.1.0.zip",
+        "route": "/download/enclaven-extension-0.1.0.zip",
         "passed": true,
         "skipped": false,
         "failures": [],
-        "warnings": [],
+        "warnings": [
+          "aria attribute changed/removed: aria-label=Sections",
+          "aria attribute added: aria-label=Site"
+        ],
         "structure": {
-          "fingerprintSimilarity": 0.199,
-          "landmarkSimilarity": 0.667,
-          "classOverlap": 0.002
+          "fingerprintSimilarity": 0.227,
+          "landmarkSimilarity": 0.375,
+          "classOverlap": 0.003
         },
         "content": {
           "missing": [],
@@ -187,8 +196,8 @@
           }
         },
         "screenshots": {
-          "desktop": "current/download-velaira-extension-0-1-0-zip-desktop.png",
-          "mobile": "current/download-velaira-extension-0-1-0-zip-mobile.png"
+          "desktop": "current/download-enclaven-extension-0-1-0-zip-desktop.png",
+          "mobile": "current/download-enclaven-extension-0-1-0-zip-mobile.png"
         }
       },
       {
@@ -198,8 +207,8 @@
         "failures": [],
         "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.183,
-          "landmarkSimilarity": 0.667,
+          "fingerprintSimilarity": 0.155,
+          "landmarkSimilarity": 0.5,
           "classOverlap": 0.009
         },
         "content": {
@@ -237,8 +246,8 @@
         "failures": [],
         "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.141,
-          "landmarkSimilarity": 0.667,
+          "fingerprintSimilarity": 0.188,
+          "landmarkSimilarity": 0.5,
           "classOverlap": 0
         },
         "content": {
@@ -276,8 +285,8 @@
         "failures": [],
         "warnings": [],
         "structure": {
-          "fingerprintSimilarity": 0.152,
-          "landmarkSimilarity": 0.667,
+          "fingerprintSimilarity": 0.131,
+          "landmarkSimilarity": 0.5,
           "classOverlap": 0
         },
         "content": {
@@ -311,13 +320,20 @@
     ]
   },
   "failures": [],
-  "warnings": [],
+  "warnings": [
+    "attributes: \"src=/media/mark.svg\" count increased 1 -> 2",
+    "assets: \"src:/media/mark.svg\" count increased 1 -> 2",
+    "/: aria attribute changed/removed: aria-label=Sections",
+    "/: aria attribute added: aria-label=Site",
+    "/download/enclaven-extension-0.1.0.zip: aria attribute changed/removed: aria-label=Sections",
+    "/download/enclaven-extension-0.1.0.zip: aria attribute added: aria-label=Site"
+  ],
   "baseline": {
-    "generatedAt": "2026-10-21T17:01:11.440Z",
+    "generatedAt": "2026-11-09T18:06:12.502Z",
     "routes": [
       "/",
       "/docs",
-      "/download/velaira-extension-0.1.0.zip",
+      "/download/enclaven-extension-0.1.0.zip",
       "/install",
       "/privacy",
       "/verify"
